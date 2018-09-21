@@ -119,8 +119,10 @@ hr.style-two {
 	color: rgb(59, 54, 54);
 }
 
-.nav-link:hover {
-	background-color: rgb(210, 205, 247);
+.nav-linkmy:hover {
+ 	background-color: rgb(210, 205, 247); 
+ 	border:1px solid;
+	border-radius: 5px;
 }
 
 #carouselExampleIndicators {
@@ -517,7 +519,7 @@ hr {
 <body>
 	<nav id="n1">
 		<ul class="nav justify-content-center">
-			<li class="nav-item"><a class="nav-link" href="#" >台灣</a>
+			<li class="nav-item"><a class="nav-link nav-linkmy" href="#" >台灣</a>
 
 				<div class="x2">
 					<div class="div1">
@@ -575,10 +577,10 @@ hr {
 								style="color: rgb(53, 135, 243);"></i> <i
 								class="fas fa-shoe-prints " style="color: rgb(89, 113, 253);"></i>
 							</span>
-							<li class="nav-item "><a class="nav-link link1" href="#" name="台北">台北</a></li>
-							<li class="nav-item "><a class="nav-link link2" href="#" name="台中">台中</a></li>
-							<li class="nav-item "><a class="nav-link link3" href="#" name="台南">台南</a></li>
-							<li class="nav-item "><a class="nav-link link4" href="#" name="高雄">高雄</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link1" href="#" name="台北">台北</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link2" href="#" name="台中">台中</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link3" href="#" name="台南">台南</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link4" href="#" name="高雄">高雄</a></li>
 							<span> <i class="fas fa-shoe-prints"
 								style="color: rgb(161, 253, 161);"></i> <i
 								class="fas fa-shoe-prints fa-2x"
@@ -594,7 +596,7 @@ hr {
 
 
 				</div></li>
-			<li class="nav-item"><a class="nav-link" href="#">日本</a>
+			<li class="nav-item"><a class="nav-link nav-linkmy" href="#">日本</a>
 				<div class="x2">
 					<div class="div1">
 						<div class="div2">
@@ -651,10 +653,10 @@ hr {
 								style="color: rgb(250, 44, 222);"></i> <i
 								class="fas fa-shoe-prints " style="color: rgb(247, 1, 214);"></i>
 							</span>
-							<li class="nav-item "><a class="nav-link link5" href="#" name="東京">東京</a></li>
-							<li class="nav-item "><a class="nav-link link6" href="#" name="大阪">大阪</a></li>
-							<li class="nav-item "><a class="nav-link link7" href="#" name="沖繩">沖繩</a></li>
-							<li class="nav-item "><a class="nav-link link8" href="#" name="北海道">北海道</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link5" href="#" name="東京">東京</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link6" href="#" name="大阪">大阪</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link7" href="#" name="沖繩">沖繩</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link8" href="#" name="北海道">北海道</a></li>
 							<span> <i class="fas fa-shoe-prints"
 								style="color: rgb(250, 216, 152);"></i> <i
 								class="fas fa-shoe-prints fa-2x"
@@ -669,7 +671,7 @@ hr {
 					</nav>
 
 				</div></li>
-			<li class="nav-item"><a class="nav-link" href="#">韓國</a>
+			<li class="nav-item"><a class="nav-link nav-linkmy" href="#">韓國</a>
 				<div class="x2">
 					<div class="div1">
 						<div class="div2">
@@ -726,10 +728,10 @@ hr {
 								style="color: rgb(255, 59, 52);"></i> <i
 								class="fas fa-shoe-prints " style="color: rgb(252, 16, 8);"></i>
 							</span>
-							<li class="nav-item "><a class="nav-link link9" href="#" name="首爾">首爾</a></li>
-							<li class="nav-item "><a class="nav-link link10" href="#" name="釜山">釜山</a></li>
-							<li class="nav-item "><a class="nav-link link11" href="#" name="大邱">大邱</a></li>
-							<li class="nav-item "><a class="nav-link link12" href="#" name="濟州島">濟州島</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link9" href="#" name="首爾">首爾</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link10" href="#" name="釜山">釜山</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link11" href="#" name="大邱">大邱</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link12" href="#" name="濟州島">濟州島</a></li>
 							<span> <i class="fas fa-shoe-prints"
 								style="color: rgb(9, 163, 252);"></i> <i
 								class="fas fa-shoe-prints fa-2x"
@@ -744,7 +746,7 @@ hr {
 					</nav>
 
 				</div></li>
-			<li class="nav-item"><a class="nav-link" href="#">美國</a>
+			<li class="nav-item"><a class="nav-link nav-linkmy" href="#">美國</a>
 				<div class="x2">
 					<div class="div1">
 						<div class="div2">
@@ -801,10 +803,10 @@ hr {
 								style="color: rgb(27, 100, 51);"></i> <i
 								class="fas fa-shoe-prints " style="color: rgb(1, 104, 36);"></i>
 							</span>
-							<li class="nav-item "><a class="nav-link link13" href="#" name="紐約">紐約</a></li>
-							<li class="nav-item "><a class="nav-link link14" href="#" name="洛杉磯">洛杉磯</a></li>
-							<li class="nav-item "><a class="nav-link link15" href="#" name="舊金山">舊金山</a></li>
-							<li class="nav-item "><a class="nav-link link16" href="#" name="邁阿密">邁阿密</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link13" href="#" name="紐約">紐約</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link14" href="#" name="洛杉磯">洛杉磯</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link15" href="#" name="舊金山">舊金山</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link16" href="#" name="邁阿密">邁阿密</a></li>
 							<span> <i class="fas fa-shoe-prints"
 								style="color: rgb(116, 178, 180);"></i> <i
 								class="fas fa-shoe-prints fa-2x"
@@ -818,7 +820,7 @@ hr {
 						</ul>
 					</nav>
 				</div></li>
-			<li class="nav-item"><a class="nav-link " href="#">德國</a>
+			<li class="nav-item"><a class="nav-link nav-linkmy " href="#">德國</a>
 				<div class="x2">
 					<div class="div1">
 						<div class="div2">
@@ -875,10 +877,10 @@ hr {
 								style="color: rgb(230, 41, 119);"></i> <i
 								class="fas fa-shoe-prints " style="color: rgb(241, 12, 108);"></i>
 							</span>
-							<li class="nav-item "><a class="nav-link link17" href="#" name="柏林">柏林</a></li>
-							<li class="nav-item "><a class="nav-link link18" href="#" name="漢堡">漢堡</a></li>
-							<li class="nav-item "><a class="nav-link link19" href="#" name="慕尼黑">慕尼黑</a></li>
-							<li class="nav-item "><a class="nav-link link20" href="#" name="法蘭克福">法蘭克福</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link17" href="#" name="柏林">柏林</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link18" href="#" name="漢堡">漢堡</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link19" href="#" name="慕尼黑">慕尼黑</a></li>
+							<li class="nav-item "><a class="nav-link nav-linkmy link20" href="#" name="法蘭克福">法蘭克福</a></li>
 							<span> <i class="fas fa-shoe-prints"
 								style="color: rgb(233, 133, 133);"></i> <i
 								class="fas fa-shoe-prints fa-2x"
@@ -1338,7 +1340,7 @@ hr {
 						         $('#changeCity${i+1}').html('${result[i][0].blogCity}').attr("href",path2+"${result[i][0].blogCity}");
 						         $('#changeTitle${i+1}').html('${result[i][0].blogTitle}');
 						         $('#changeDate${i+1}').html('${result[i][0].updateTime}'.substring(0, 10));
-						         $('#changeMember${i+1}').html('${result[i][2].memberNickName}').attr("href",path3+"${result[i][0].memberID}");
+						         $('#changeMember${i+1}').html('${result[i][2].memberNickName}').attr("href",path3+"${result[i][0].memberID}"+"&lmi="+"${user.memberID}"+"&page=main");
 						         
 						        </c:forEach>
 								

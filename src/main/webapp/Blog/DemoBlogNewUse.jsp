@@ -27,10 +27,26 @@
 	margin: 0;
 	padding: 0;
 }
+.btnbor{
+			border-radius: 10px;
+/*             opacity: 0.5; */
+}
+h4{
+	padding-top:5px;
+}
 .a5 {
 	font-family: 'Noto Sans TC';
-	color: rgb(48, 43, 43);
+	font-size: 200%;
+	color: #252009;
 }
+.a5:hover {
+	transition-property: all;
+	transition-duration: 0.7s;
+	transition-delay: 0s;
+	transition-timing-function: linear;
+	color: rgb(255, 0, 0);
+}
+
 .a1 {
 	font-family: 'Noto Sans TC';
 	color: rgb(48, 43, 43);
@@ -122,7 +138,7 @@ p {
 	max-width:600px;
 }
 .divAS1 {
-            border: 10px solid rgb(0, 179, 149);
+            border: 15px groove rgb(0, 179, 149);
 /*             margin:auto; */
         }
 .divAS12 {
@@ -144,14 +160,15 @@ p {
             text-align: center; 
             margin: auto;
             margin-top: 5px;
-            width: 500px;
-            border: 5px solid rgb(0, 179, 149);
+/*             width: 500px; */
+/*             height: 400px; */
+/*             border: 5px solid rgb(0, 179, 149); */
         }
 .divAS11 img{
-            max-width: 500px;
-            max-height: 350px;
+            width: 500px;
+            height: 350px;
             margin: auto;
-            border: 5px solid rgb(0, 179, 149);
+         border: 5px solid rgb(0, 179, 149); 
         }
 .imguse {
             width: 490px;
@@ -171,7 +188,7 @@ p {
         
         
 .divAS15 {
-			border: 5px dashed rgb(0, 179, 149);
+			border: 2px solid rgb(0, 179, 149); 
             text-align: center;
             font-size: 120%;
             margin: auto;
@@ -191,65 +208,65 @@ p {
   	<div id="container">
 
 		<h2 class="title-text">
-			<span> <input type="button" value=" Add Blog "
+			<span> <input type="button" value=" Content "
 				id="buttonFade0" class="btn btn-info fa-1x btn-lg">
 			</span>
 		</h2>
 
-		<p class="p1">*以下為必填資訊</p>
-
-		<form action="<c:url value="/Blog/BlogNew.controller"/>" method="POST"
-			enctype="multipart/form-data">
-			<input name="memberID" type="hidden" value="${user.memberID}">
-			<input name="blogReleaseTime" type="hidden" value="${BeanSNum[0][0].blogReleaseTime}">
-			<input name="blogSNum" type="hidden" value="${BeanSNum[0][0].blogSNum}">
+<!-- 		<p class="p1">*以下為必填資訊</p> -->
+				
+<%-- 		<form id="form" action="<c:url value="/Blog/BlogNew.controller"/>" method="POST" --%>
+<!-- 			enctype="multipart/form-data"> -->
+<%-- 			<input name="memberID" type="hidden" value="${user.memberID}"> --%>
+<%-- 			<input name="blogReleaseTime" type="hidden" value="${BeanSNum[0][0].blogReleaseTime}"> --%>
+<%-- 			<input name="blogSNum" type="hidden" value="${BeanSNum[0][0].blogSNum}"> --%>
 			
 			
 			
-			<p>*選擇您推薦城市</p>
-			<div class="input-group mb-3">
+<!-- 			<p>*選擇您推薦城市</p> -->
+<!-- 			<div class="input-group mb-3"> -->
 					
-				<div class="input-group-prepend col-auto ">
-					<label class="input-group-text a1" for="inputGroupSelect01"
-						name="blogNation">國家</label>
-				</div>
-				<select name="blogNation" class="custom-select"
-					id="inputGroupSelect01"
-					onchange="changeCollege(this.selectedIndex)">
-					<option selected>請選擇...</option>
-				</select>
+<!-- 				<div class="input-group-prepend col-auto "> -->
+<!-- 					<label class="input-group-text a1" for="inputGroupSelect01" -->
+<!-- 						name="blogNation">國家</label> -->
+<!-- 				</div> -->
+<!-- 				<select name="blogNation" class="custom-select" -->
+<!-- 					id="inputGroupSelect01" -->
+<!-- 					onchange="changeCollege(this.selectedIndex)"> -->
+<!-- 					<option selected>請選擇...</option> -->
+<!-- 				</select> -->
 
-				<div class="input-group-prepend col-auto">
-					<label class="input-group-text a1" for="inputGroupSelect02"
-						name="blogCity">城市</label>
-				</div>
-				<select name="blogCity" class="custom-select"
-					id="inputGroupSelect02">
-					<option selected>請選擇...</option>
-				</select>
-			</div>
-			<p>*編輯您的標題(限50字內)</p>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend col-auto">
-					<label id="title" class="input-group-text a1" for="blogTitle" name="blogTitle">標題</label>
-				</div>
-				<input  name="blogTitle" maxlength="50" id="blogTitle" type="text"
-					class="form-control" aria-label="Default"
-					aria-describedby="inputGroup-sizing-default" required>
-			</div>
-			<p>*選擇您的封面</p>
-			<div class="input-group mb-3">
-				<div class="input-group-prepend col-auto">
-					<span class="input-group-text a1">封面</span>
-				</div>
-				<div class="custom-file">
-					<input name="blogCover" type="file" accept="image/*"
-						class=" text-center center-block file-upload" id="inputGroupFile01"> 
-				</div>
-			</div>
-				<div class="text-center img">
-				<img name="blogPic" id="idCover" class="img-thumbnail avatar" src="<c:url value="/Images/Blog/onload.jpg"/>" alt="avatar">
-				</div>
+<!-- 				<div class="input-group-prepend col-auto"> -->
+<!-- 					<label class="input-group-text a1" for="inputGroupSelect02" -->
+<!-- 						name="blogCity">城市</label> -->
+<!-- 				</div> -->
+<!-- 				<select name="blogCity" class="custom-select" -->
+<!-- 					id="inputGroupSelect02"> -->
+<!-- 					<option selected>請選擇...</option> -->
+<!-- 				</select> -->
+<!-- 			</div> -->
+<!-- 			<p>*編輯您的標題(限50字內)</p> -->
+<!-- 			<div class="input-group mb-3"> -->
+<!-- 				<div class="input-group-prepend col-auto"> -->
+<!-- 					<label id="title" class="input-group-text a1" for="blogTitle" name="blogTitle">標題</label> -->
+<!-- 				</div> -->
+<!-- 				<input  name="blogTitle" maxlength="50" id="blogTitle" type="text" -->
+<!-- 					class="form-control" aria-label="Default" -->
+<!-- 					aria-describedby="inputGroup-sizing-default" required> -->
+<!-- 			</div> -->
+<!-- 			<p>*選擇您的封面</p> -->
+<!-- 			<div class="input-group mb-3"> -->
+<!-- 				<div class="input-group-prepend col-auto"> -->
+<!-- 					<span class="input-group-text a1">封面</span> -->
+<!-- 				</div> -->
+<!-- 				<div class="custom-file"> -->
+<!-- 					<input name="blogCover" type="file" accept="image/*" -->
+<!-- 						class=" text-center center-block file-upload" id="inputGroupFile01">  -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 				<div class="text-center img"> -->
+<%-- 				<img name="blogPic" id="idCover" class="img-thumbnail avatar" src="<c:url value="/Images/Blog/onload.jpg"/>" alt="avatar"> --%>
+<!-- 				</div> -->
 				
 			<p>*編輯您的內容</p>	
 			<div id="summernoteDIV">
@@ -259,7 +276,7 @@ p {
 			
 			<div class="sub0">
 				<div class="sub2">
-					<button id="preview" type="button" class="btn btn-outline-warning btn-lg a1" data-toggle="modal" data-target=".bd-example-modal-lg">預覽</button>
+					<button id="preview" type="button" class="btn btn-warning btn-lg a5" data-toggle="modal" data-target=".bd-example-modal-lg">預覽</button>
 					
 					
 					<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -269,26 +286,33 @@ p {
 					      
 					      
 			<div class="divAS1">
-                <div class="divAS12">
-                    <span id="changeNation" href="#" class="a1 border1 distance">亞洲</span>
-                    <span class="a1 border1 distance">瀏覽次數(<span id="changeBlogViews" href="#"> 999</span>)</span> 
-                    <span id="changeBlogCity" href="#" class="a1 distance">香港</span>
+<!-- 			<h4 class="title-text"> -->
+<!-- 						<span><button id="changeKeyword" type="button" -->
+<!-- 								class="btn btn-info fa-1x hot2">預覽</span> -->
+<!-- 				</h4> -->
+<!--                 <div class="divAS12"> -->
+<!--                     <span id="changeNation" href="#" class="a1 border1 distance">亞洲</span> -->
+<!--                     <span class="a1 border1 distance">瀏覽次數(<span id="changeBlogViews" href="#"> 999</span>)</span>  -->
+<!--                     <span id="changeBlogCity" href="#" class="a1 distance">香港</span> -->
 
-                </div>
-                <div class="divAS13">
-                    <span id="changeBlogTitle" class="a3">【香港】2018香港迪士尼終極攻略，交通、門票、事前準備、攻園須知整理，照著這篇玩就對了！</span>
-                </div>
-                <div class="divAS11">
+<!--                 </div> -->
+<!--                 <div class="divAS13"> -->
+<!--                     <span id="changeBlogTitle" class="a3">【香港】2018香港迪士尼終極攻略，交通、門票、事前準備、攻園須知整理，照著這篇玩就對了！</span> -->
+<!--                 </div> -->
+<!--                 <div class="divAS11"> -->
                     
-                        <img id="changeBlogPic" class="imguse" src="${pageContext.request.contextPath}/Images/Blog/articla1.jpg" alt="article">
+<%--                         <img id="changeBlogPic" class="imguse" src="${pageContext.request.contextPath}/Images/Blog/articla1.jpg" alt="article"> --%>
                     
-                </div>
-                <div class="divAS14">
-                    <span id="changeBlogDate" class="border1 distance a1">2018-09-28</span>
-                    <span class="distance a1">by</span>
-                    <span id="changeMemberName2" href="#" class="a1 ">Kobe</span>
-                </div>
-
+<!--                 </div> -->
+<!--                 <div class="divAS14"> -->
+<!--                     <span id="changeBlogDate" class="border1 distance a1">2018-09-28</span> -->
+<!--                     <span class="distance a1">by</span> -->
+<!--                     <span id="changeMemberName2" href="#" class="a1 ">Kobe</span> -->
+<!--                 </div> -->
+				<h4 class="title-text">
+						<span><button id="changeKeyword" type="button"
+								class="btn btn-info fa-1x hot2">Article</span>
+				</h4>
                 <div class="divAS15">
                     <div id="changeCityContent">一、奧蘭多迪士尼簡介 Source：KKday 奧蘭多迪士尼是全球最大的迪士尼度假區，總共有魔幻王國（Magic Kingdom）、未來世界（Epcot）、好萊塢影城（Hollywood studios）和動物王國（Animal
                         Kingdom）四大主題樂園，因此也被稱為Disney World。而這次編輯會以魔幻王國為主來介紹唷～ 二、怎麼前往奧蘭多迪士尼？ 美國大眾交通工具並不發達，一般以自駕或搭計程車為主，如果你預計在奧蘭多住宿，奧蘭多的飯店幾乎都有往返奧蘭多各大遊樂園的接駁車服務。
@@ -316,9 +340,9 @@ p {
 					</div>
 				</div>
 
-				<div class="sub1">
-					<button id="go" type="submit" class="btn btn-outline-success a5 btn-lg" >送出</button>
-				</div>
+<!-- 				<div class="sub1"> -->
+<!-- 					<span id="go" class="btn btn-info a5 btn-lg btnbor" >送出</span> -->
+<!-- 				</div> -->
 			</div>
 			
 			
@@ -366,17 +390,13 @@ p {
 		
 		
 		$(document).ready(function() {
+
+		
+				$('body').on('click','#confirmBB',function(){
+	 				$("#form").submit();
+				})
 			
-// 			var flagjumppage=false;
-			$('body').on('click','#confirmBu',function(){
-				alert("AAAAAA");
-// 				
-// 				if(flagjumppage == true){
-					window.location.href = "BlogIndex.jsp";
-// 				}
-// 				flagjumppage = !flagjumppage;
-				
-			})
+			
 			//preview---------------------------
 				$("#preview").click(function(){
 					$("#changeNation").text($('#inputGroupSelect01').val());
@@ -386,11 +406,6 @@ p {
 					$("#changeCityContent").html($('#summernote').summernote('code'));
 				})
 				
-			
-			
-			
-			
-			
 			//--------------------------
 			var readURL = function(input) {
 		        if (input.files && input.files[0]) {
@@ -446,12 +461,49 @@ p {
 	    	if(!$("#go").hasClass("disabled")){
 // 	    		alert('更新成功!!!');
 // 	    		swal("資料更新成功", "將導向網誌首頁", "error");
-	    		swal({
-	    			  title: "成功!",
-	    			  text: "將導向網誌首頁",
-	    			  type: "success",
-	    			  confirmButtonText: "<span id='confirmBu'>GO<span>"
-	    			});
+// 	    		swal({
+// 	    			  title: "成功!",
+// 	    			  text: "將導向網誌首頁",
+// 	    			  type: "success",
+// 	    			  confirmButtonText: "<span id='confirmBu'>GO<span>"
+// 	    			});
+	    		
+	    		//---------------------------test
+	    		 //自訂預設值
+	            swal.setDefaults({
+	                confirmButtonText: "確定",
+	                cancelButtonText: "取消"
+	            });
+	            //swal.resetDefaults();//清空自訂預設值
+	            $(function () {
+// 	                $("#go").click(function () {
+	                    //confirm dialog範例
+	                    swal({
+	                        title: "確定送出？",
+	                        html: "按下確定後資料會自動存檔",
+	                        type: "question",
+	                        showCancelButton: true,//顯示取消按鈕
+	                        confirmButtonText:"<span id='confirmB'>回至首頁</span>"
+	                    }).then(
+	                        function (result) {
+	                            if (result.value) {
+	                                //使用者按下「確定」要做的事
+// 	                                swal("完成!", "資料已經送出將回到首頁", "success");
+// 	                                window.location.href = "${pageContext.request.contextPath}/Blog/BlogIndex.jsp";
+									 swal({
+					                    title: "完成!",
+					                    html: "資料已經送出將回到首頁",
+					                    type: "success",
+						    			confirmButtonText:"<span id='confirmBB'>回至首頁</span>"
+					                })
+	                            } else if (result.dismiss === "cancel")
+	                            {
+	                                 //使用者按下「取消」要做的事
+	                                swal("取消", "您可重新輸入資料", "error");
+	                            }//end else  
+	                        });//end then 
+// 	                });
+	            });
 	    	}
 		   }))
     	
@@ -461,7 +513,7 @@ p {
         }
     	
     })
-    
+//     alert('user before if = ' + ${user.memberID});
     </script>
 </body>
 
