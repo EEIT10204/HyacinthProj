@@ -19,7 +19,7 @@
 <link rel="stylesheet" href="<c:url value="/css/proInfo.css"/>">
 <link rel="stylesheet" href="<c:url value="/css/profileActBlog.css"/>">
 <c:import url="/js/profileNews_js.jsp"/>
-<c:import url="/js/profileHist_js.jsp"/>
+<%-- <c:import url="/js/profileHist_js.jsp"/> --%>
 <c:import url="/js/profileActBlog_js.jsp"/>
 <c:import url="/js/profileSelf_js.jsp"/>
 </head>
