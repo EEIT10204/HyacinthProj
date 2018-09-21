@@ -19,51 +19,50 @@ import model.MemberActBean;
 import model.MemberBean;
 import model.MembershipBean;
 import model.NoticeBean;
+<<<<<<< HEAD
 import model.TripBean;
 import model.ViewPointBean;
+=======
+import model.SubMemberBean;
+
 
 @Configuration
 @ComponentScan(basePackages={"model"})
 public class SpringJavaConfiguration {
 	@Bean
+
 	public MessageSource messageSource() {
 		ResourceBundleMessageSource bundle = new ResourceBundleMessageSource();
 		bundle.setBasename("controller.Errors");
 		return bundle;
-	}
-	@Bean
-	public DataSource dataSource() {
-		try {
-			JndiObjectFactoryBean bean = new JndiObjectFactoryBean();
-			bean.setJndiName("java:comp/env/jdbc/xxx");
-			bean.setProxyInterface(DataSource.class);
-			bean.afterPropertiesSet();
-			return (DataSource) bean.getObject();
-		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-		} catch (NamingException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-	@Bean
+
 	public SessionFactory sessionFactory() {
-		LocalSessionFactoryBuilder builder =
-				new LocalSessionFactoryBuilder(dataSource());
-		builder.addAnnotatedClasses(ViewPointBean.class);
-		builder.addAnnotatedClasses(TripBean.class);
+		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource());
+
 		builder.addAnnotatedClasses(ActBean.class);
-		builder.addAnnotatedClasses(MemberActBean.class);
+		builder.addAnnotatedClasses(ACCommentBean.class);
+		builder.addAnnotatedClasses(BlogBean.class);
+		builder.addAnnotatedClasses(BGCommentBean.class);
+		builder.addAnnotatedClasses(CityBean.class);
 		builder.addAnnotatedClasses(MemberBean.class);
-		builder.addAnnotatedClasses(NoticeBean.class);
+		builder.addAnnotatedClasses(SubMemberBean.class);
+		
+		builder.addAnnotatedClasses(MemberActBean.class);
+		builder.addAnnotatedClasses(MemberBlogBean.class);
+		
 		builder.addAnnotatedClasses(MembershipBean.class);
+		builder.addAnnotatedClasses(MemberHistBean.class);
+		builder.addAnnotatedClasses(NoticeBean.class);
+		
 		
 		Properties properties = new Properties();
-		properties.put("hibernate.dialect", "org.hibernate.dialect.SQLServerDialect");
-		properties.put("hibernate.current_session_context_class", "thread");
-		properties.put("hibernate.show_sql", "true");
-		builder.addProperties(properties);
 
+		properties.put("hibernate.dialect", "org.hibernate.dialect.SQLServer2005Dialect");
+		properties.put("hibernate.show_sql", "true");
+		properties.put("hibernate.current_session_context_class", "thread");
+		
+		builder.addProperties(properties);
+		
 		return builder.buildSessionFactory();
-	}
+
 }

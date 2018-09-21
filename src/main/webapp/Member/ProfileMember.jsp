@@ -18,10 +18,8 @@
 <link rel="stylesheet" href="<c:url value="/css/profileSelf.css"/>">
 <link rel="stylesheet" href="<c:url value="/css/newsFeed.css"/>">
 <link rel="stylesheet" href="<c:url value="/css/profileActBlog.css"/>">
-<script src='<c:url value="/js/memberDetail.js"/>'></script>
 <c:import url="/js/profileHist_js.jsp"/>
 <c:import url="/js/profileActBlog_js.jsp"/>
-
 
 </head>
 <body>
@@ -53,31 +51,18 @@
                               <a href="https://plus.google.com/" target="_blank" class="fab fa-google"  style="color: #dd4b39; border: 1px solid #dd4b39;"></a>
                               <a href="https://www.youtube.com/" target="_blank" class="fab fa-youtube"  style="color: #ff0000; border: 1px solid #ff0000;"></a>
                          </div>
-                     	
                       </div>
                      </li>
                     </ul>
-                    <div class="nav flex-column nav-pills list-group">
-                     	<a class="nav-link text-right list-group-item">
-                            <span class="float-left"><i class="fa fa-globe"></i>&nbsp;&nbsp;<strong>About Me</strong></span><button id="showAboutMe"class="clickMe"><i class="fa fa-chevron-down" style="margin-top:5px"></i></button>
-                        </a>
-                         <div id="aboutMe" class="panel" >
-							  <ul style="text-align: left;">
-							  	<li><i class="fa fa-calendar left-none"></i> ${userInfo.memberBirthDay}</li>
-							  	<hr>
-	                            <li><i class="fa fa-envelope" ></i> ${userInfo.memberMail}</li>
-	                            <hr>
-	                            <li><i class="fa fa-phone" ></i> ${userInfo.memberTel} </li>
-                        		</ul>
-                        </div>
+                    <div class="nav flex-column nav-pills list-group" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active text-right list-group-item" id="v-pills-history-tab" data-toggle="pill" href="#v-pills-history" role="tab" aria-controls="v-pills-history" aria-selected="true">
-                            <span class="float-left"><i class="far fa-newspaper"></i>&nbsp;&nbsp;<strong>News Feed</strong></span>  
+                            <span class="float-left"><i class="far fa-newspaper"></i>&nbsp;&nbsp;<strong>News Feed</strong></span> 125 
                         </a>
                         <a class="nav-link text-right list-group-item" id="v-pills-records-tab" data-toggle="pill" href="#v-pills-records" role="tab" aria-controls="v-pills-posts" aria-selected="false">
-                            <span class="float-left"><i class="fas fa-pen-square"></i>&nbsp;&nbsp;<strong>Records</strong></span> 
+                            <span class="float-left"><i class="fas fa-pen-square"></i>&nbsp;&nbsp;<strong>Records</strong></span> 37
                         </a>
                         <a class="nav-link text-right list-group-item" id="v-pills-social-tab" data-toggle="pill" href="#v-pills-social" role="tab" aria-controls="v-pills-social" aria-selected="false">
-                            <span class="float-left"><i class="fas fa-user-friends"></i>&nbsp;&nbsp;<strong>Social</strong></span> ${friendCount}
+                            <span class="float-left"><i class="fas fa-user-friends"></i>&nbsp;&nbsp;<strong>Social</strong></span> 125
                         </a>           
                     </div>
                </div>
@@ -142,7 +127,7 @@
 	                             <div class="iconList">
 		                             <c:forEach var="friend" items="${friendList}">
 		                             <div class="iconList_Icon">
-			                             <a href="<c:url value="/ProfilePageGet?memberID=${friend.memberID}&lmi=${user.memberID}&page=main" />">
+			                             <a href="<c:url value="/ProfilePageGet?memberID=${friend.memberID}&lmi=${user.memberID}" />">
 			                              <img src="data:image/png;base64,${friend.memberPicToBase64}" style="width:150px;height: 150px;border-radius:50%">
 			                              <p>${friend.memberName}</p>
 			                             </a>
@@ -227,19 +212,6 @@
   
  	})
     }
-    </script>
-    <script>
-     $('.clickMe').on("click",function() {
-        /* Toggle between adding and removing the "active" class,
-        to highlight the button that controls the panel */
-       var orginalDisplay=$('#aboutMe').css('display');
-       if(orginalDisplay=="none"){
-    	   $('#aboutMe').css("display","block");
-       }else{
-    	   $('#aboutMe').css("display","none");
-       }
-     
-     })
     </script>
 </body>
 </html>
