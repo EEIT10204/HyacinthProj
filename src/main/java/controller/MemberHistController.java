@@ -43,9 +43,9 @@ public class MemberHistController {
 				e.printStackTrace();
 //				return null;
 			}
-			System.out.println("readNewsFromFriends called. user:"+ mId +"page="+p);
+			//System.out.println("readNewsFromFriends called. user:"+ mId +"page="+p);
 			List<NewsFeed> result = memberHistService.readNewsFromSelf(mId, p, 5);
-			System.out.println("result="+result);
+			//System.out.println("result="+result);
 			return result;
 		}
 		
@@ -63,7 +63,7 @@ public class MemberHistController {
 			
 			System.out.println("readNewsFromFriends called. user:"+ user.getMemberID() +"page="+p);
 			List<NewsFeed> result = memberHistService.readNewsFromFriends(user.getMemberID(), p, 5);
-			System.out.println("result="+result);
+			//System.out.println("result="+result);
 			return result;
 		}
 		
@@ -71,10 +71,10 @@ public class MemberHistController {
 		@ResponseBody
 		public List<Object[]> readCommsByPage(String articleId,String first) {
 			
-			System.out.println("articleId="+articleId);
-			System.out.println("Comm-first="+first);
+			//System.out.println("articleId="+articleId);
+			//System.out.println("Comm-first="+first);
 			String[] tokens = articleId.split("_");
-			System.out.println("tokens[0]="+tokens[0]+",tokens[1]="+tokens[1]);
+			//System.out.println("tokens[0]="+tokens[0]+",tokens[1]="+tokens[1]);
 			Integer id = 0;
 			int p = 1;
 			try {
@@ -93,7 +93,7 @@ public class MemberHistController {
 		@RequestMapping(path={"/news_act_comments"},method= {RequestMethod.POST})
 		@ResponseBody
 		public ACCommentBean leaveMessagesOnAct(String actSNum,String memberID,String commentContent) throws URISyntaxException {
-			System.out.println("actSNum="+actSNum+",memberID="+memberID+",commentContent="+commentContent);
+			//System.out.println("actSNum="+actSNum+",memberID="+memberID+",commentContent="+commentContent);
 			
 			ACCommentBean act_CommentBean = new ACCommentBean();
 			
@@ -164,7 +164,7 @@ public class MemberHistController {
 		@RequestMapping(path={"/tests"},method= {RequestMethod.POST})
 		@ResponseBody
 		public ResponseEntity<?> testIn(String blogSNum,String memberID,String commentContent) throws URISyntaxException {
-			System.out.println("blogSNum="+blogSNum+",memberID="+memberID+",commentContent="+commentContent);
+			//System.out.println("blogSNum="+blogSNum+",memberID="+memberID+",commentContent="+commentContent);
 			
 			BGCommentBean blog_CommentBean= new BGCommentBean();
 			
@@ -177,10 +177,10 @@ public class MemberHistController {
 				return null;
 			}
 			
-			System.out.println("blog_CommentBean="+blog_CommentBean);
+			//System.out.println("blog_CommentBean="+blog_CommentBean);
 //			return (Blog_CommentBean) memberHistService.leaveMessagesOnFeed(null,blog_CommentBean);
 			BGCommentBean resultBean = memberHistService.leaveBlogMessagesOnFeed(blog_CommentBean);
-			System.out.println("resultBean="+resultBean);
+			//System.out.println("resultBean="+resultBean);
 			
 			if(resultBean!=null) {
 				return ResponseEntity.created(new URI("/tests/"+resultBean.getCommentSNum())).body(resultBean);

@@ -5,7 +5,7 @@ $(function () {
         this.multiple = multiple || false;
 
         // Variables privadas
-        var links = this.el.find('.link');
+        var links = this.el.find('.link1');
         // Evento
         links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
     }
@@ -24,5 +24,5 @@ $(function () {
         };
     }
 
-    var accordion = new Accordion($('#accordion'), false);
+    var accordion = new Accordion($('#accordion1'), false);
 });

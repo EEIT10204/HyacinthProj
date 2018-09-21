@@ -7,17 +7,27 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import config.SpringJavaConfiguration;
+
 @Entity
 @Table(name="MemberBlog")
 public class MemberBlogBean implements Serializable{
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 /*
  memberID int references member(memberID),
  blogSNum int references Blog(blogSNum),
  isLike bit,
  score decimal(5,2)
  */
-	
-	private static final long serialVersionUID = 1L;
 	
 	@Id
 	private Integer memberID;
@@ -83,4 +93,5 @@ public class MemberBlogBean implements Serializable{
 	public int hashCode() {
 		return Objects.hash( memberID, blogSNum );
 	}
+	
 }

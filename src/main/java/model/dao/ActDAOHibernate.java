@@ -1,8 +1,8 @@
 package model.dao;
 
-import java.sql.Timestamp;
 import java.util.List;
 
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
 import org.hibernate.Session;
@@ -13,59 +13,19 @@ import org.springframework.stereotype.Repository;
 import model.ActBean;
 import model.ActDAO;
 
+
 @Repository
 public class ActDAOHibernate implements ActDAO {
-	
 
+	
+//Framework Object--------------------------	
 	@Autowired
 	private SessionFactory sessionFactory;
-
 	
 	public Session getSession() {
 		return sessionFactory.getCurrentSession();
 	}
-
-	@Override
-	public ActBean selectByPK(int ActSNum) {
-		return this.getSession().get(ActBean.class, ActSNum);
-	}
-
-	@Override
-	public List<ActBean> selectAll() {
-		return this.getSession().createQuery("from ActBean",ActBean.class).list();		
 	
-	}
-
-	@Override
-	public ActBean insert(ActBean bean) {
-		System.out.println("DAO insert access");
-		if(bean != null) {
-			this.getSession().save(bean);
-		}
-		return null;
-	}
-	
-	@Override
-	public ActBean update(ActBean bean) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean deleteByPK(int ActSNum) {
-		ActBean temp = this.getSession().get(ActBean.class, ActSNum);
-		if(temp!=null) {
-			this.getSession().delete(temp);			
-		}
-		return false;
-	}
-
-	@Override
-	public ActBean selectByActID(ActBean bean) {
-		Query hqy = this.getSession().createQuery("from ActBean WHERE actID Like '" + bean.getActID() + "'");
-		return (ActBean)hqy.getSingleResult();
-	}
-
 	@Override
 	public List<ActBean> selectTopSix() {
 		String HQL = "from ActBean as c order by c.actView desc";
@@ -100,4 +60,55 @@ public class ActDAOHibernate implements ActDAO {
 //									.setMaxResults(num)
 									.list();
 		}
+		
+		@Override
+		public ActBean selectBymemberIDandcreateDate(ActBean bean) {
+			System.out.println("DAO select by memberID and createDate access");
+			try {
+				ActBean temp = this.getSession().createQuery("from ActBean WHERE memberID = " + bean.getMemberID() + " and actCreateDate = '" + bean.getActCreateDate() + "'" ,ActBean.class).getSingleResult();
+				return temp;
+			} catch (NoResultException e) {
+				return null;
+				}
+			}
+
+
+		@Override
+		public ActBean selectByPK(int ActSNum) {
+			return this.getSession().get(ActBean.class, ActSNum);
+		}
+
+		@Override
+		public List<ActBean> selectAll() {
+			return this.getSession().createQuery("from ActBean",ActBean.class).list();		
+		
+		}
+
+		@Override
+		public ActBean insert(ActBean bean) {
+			System.out.println("DAO insert access");
+			if(bean != null) {
+				this.getSession().save(bean);
+			}
+			return bean;
+		}
+		
+		public ActBean update(ActBean bean) {
+			System.out.println("DAO update access");
+			if(bean != null) {
+				this.getSession().update(bean);
+			}
+			return bean;
+		}
+
+		@Override
+		public boolean deleteByPK(int ActSNum) {
+			ActBean temp = this.getSession().get(ActBean.class, ActSNum);
+			if(temp!=null) {
+				this.getSession().delete(temp);
+				
+			}
+			return false;
+		}
+
 }

@@ -1,7 +1,7 @@
 package model;
 
-import java.sql.Timestamp;
 import java.util.List;
+
 
 public interface  ActDAO {
 	public abstract ActBean selectByPK(int ActSNum);
@@ -24,4 +24,6 @@ public interface  ActDAO {
 	
 	public abstract List<ActBean> findHostedByOne(Integer memberID,String sorting,int p,int num);
 	
+	public abstract ActBean selectBymemberIDandcreateDate(ActBean bean);
+
 }
