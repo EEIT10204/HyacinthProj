@@ -180,7 +180,6 @@ public class MemberHistService {
 				newsFeed.setArticlePhoto(blogBean.getBlogCover());
 				newsFeed.setArticleTitle(blogBean.getBlogTitle());
 				newsFeed.setArticleContent(this.HtmlTagsRemove(blogBean.getBlogContext()));
-
 				
 				if(blogBean.getBlogView()!=null) {
 					newsFeed.setViewsNum(blogBean.getBlogView());
@@ -214,12 +213,15 @@ public class MemberHistService {
 	}
 	
 	private String HtmlTagsRemove(String htmlStr) {
-        String regEx_html="<[^>]+>"; 
-        Pattern p_html=Pattern.compile(regEx_html,Pattern.CASE_INSENSITIVE); 
-        Matcher m_html=p_html.matcher(htmlStr); 
-        htmlStr=m_html.replaceAll(""); 
-        htmlStr=htmlStr.replaceAll("&nbsp;"," ");
-        return htmlStr.trim(); 
+		if(htmlStr!=null) {
+	        String regEx_html="<[^>]+>"; 
+	        Pattern p_html=Pattern.compile(regEx_html,Pattern.CASE_INSENSITIVE); 
+	        Matcher m_html=p_html.matcher(htmlStr); 
+	        htmlStr=m_html.replaceAll(""); 
+	        htmlStr=htmlStr.replaceAll("&nbsp;"," ");
+	        return htmlStr.trim(); 
+		}
+		return "";
 	}
 	
 	public List<Object[]> readCommRowsBySNum(String article,Integer id,int first) {

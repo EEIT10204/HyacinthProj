@@ -27,6 +27,7 @@
 	margin: 0;
 	padding: 0;
 }
+
 h4{
 	padding-top:5px;
 }
@@ -328,7 +329,7 @@ p {
 				</div>
 
 				<div class="sub1">
-					<button id="go" type="submit" class="btn btn-outline-success a5 btn-lg" >送出</button>
+					<span id="go" class="btn btn-outline-success a5 btn-lg" >送出</span>
 				</div>
 			</div>
 			
@@ -378,11 +379,11 @@ p {
 		
 		$(document).ready(function() {
 
-			$('body').on('click','#confirmB',function(){
+		
 				$('body').on('click','#confirmBB',function(){
-	 				window.location.href = "${pageContext.request.contextPath}/Blog/BlogIndex.jsp";
+	 				$("#form").submit();
 				})
-			})
+			
 			
 			//preview---------------------------
 				$("#preview").click(function(){

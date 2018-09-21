@@ -130,7 +130,7 @@ $(document).ready(function() {
   var scrollPageHist=1;
   function reqHist(){
 
-       $.getJSON('${pageContext.request.contextPath}/readMyHist.do',{"memberID":memberId,"page":scrollPageHist},function(datas){
+	  $.post('${pageContext.request.contextPath}/readMyHist.do',{"memberID":memberId,"page":scrollPageHist},function(datas){
            //外殼
            var fragment = $(document.createDocumentFragment());
            
@@ -230,7 +230,7 @@ $(document).ready(function() {
 
            scrollPageHist=scrollPageHist+1;
            isFetchHist=true;
-      }).fail(function(){
+      },"json").fail(function(){
           $('#histEnd').text("There are no more posts to show right now!");
       }).always(function(){
           $('#loaderHist').css("display","none");

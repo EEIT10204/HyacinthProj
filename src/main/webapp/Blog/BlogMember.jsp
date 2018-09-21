@@ -45,7 +45,6 @@ body {
 img {
 	border-radius: 10px;
 }
-
 /* star */
 	.ccc{
 	float:right;
@@ -1724,6 +1723,7 @@ hr {
 			
 			$('body').on('click','#confirmB',function(){
 					window.location.href = "${pageContext.request.contextPath}/Blog/BlogIndex.jsp";
+					
 // 					window.event.returnValue = false; 
 				})
 				
@@ -1757,6 +1757,7 @@ hr {
 						    			confirmButtonText:"<span id='confirmB' class='btn btn-outline-dark' style='size:110%;'>回至首頁</span>"
 //style='width:100px;height:40px;border:3px orange double'
 					                })
+					                 $('.swal2-styled').css("padding","0");
 // 								 window.location.href = "BlogIndex.jsp";
 							 }).fail(function(){
 								 swal("完成!",jsonNav.result, "success");
@@ -1768,6 +1769,9 @@ hr {
                             swal("取消", "網誌未被刪除", "error");
                         }//end else  
                     });//end then 
+                
+//                     	padding:0 !important;
+                    
 			});
 			//like star-----------------------------------------------------------------------
 				 $.getJSON('${pageContext.request.contextPath}/Blog/MemberBloglike.controller',{'blogSNum':URL},function(json){
