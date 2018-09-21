@@ -27,6 +27,9 @@
 	margin: 0;
 	padding: 0;
 }
+h4{
+	padding-top:5px;
+}
 .a5 {
 	font-family: 'Noto Sans TC';
 	color: rgb(48, 43, 43);
@@ -122,7 +125,7 @@ p {
 	max-width:600px;
 }
 .divAS1 {
-            border: 10px solid rgb(0, 179, 149);
+            border: 15px groove rgb(0, 179, 149);
 /*             margin:auto; */
         }
 .divAS12 {
@@ -144,14 +147,15 @@ p {
             text-align: center; 
             margin: auto;
             margin-top: 5px;
-            width: 500px;
-            border: 5px solid rgb(0, 179, 149);
+/*             width: 500px; */
+/*             height: 400px; */
+/*             border: 5px solid rgb(0, 179, 149); */
         }
 .divAS11 img{
-            max-width: 500px;
-            max-height: 350px;
+            width: 500px;
+            height: 350px;
             margin: auto;
-            border: 5px solid rgb(0, 179, 149);
+         border: 5px solid rgb(0, 179, 149); 
         }
 .imguse {
             width: 490px;
@@ -171,7 +175,7 @@ p {
         
         
 .divAS15 {
-			border: 5px dashed rgb(0, 179, 149);
+			border: 2px solid rgb(0, 179, 149); 
             text-align: center;
             font-size: 120%;
             margin: auto;
@@ -269,6 +273,10 @@ p {
 					      
 					      
 			<div class="divAS1">
+			<h4 class="title-text">
+						<span><button id="changeKeyword" type="button"
+								class="btn btn-info fa-1x hot2">預覽</span>
+				</h4>
                 <div class="divAS12">
                     <span id="changeNation" href="#" class="a1 border1 distance">亞洲</span>
                     <span class="a1 border1 distance">瀏覽次數(<span id="changeBlogViews" href="#"> 999</span>)</span> 
@@ -288,7 +296,10 @@ p {
                     <span class="distance a1">by</span>
                     <span id="changeMemberName2" href="#" class="a1 ">Kobe</span>
                 </div>
-
+				<h4 class="title-text">
+						<span><button id="changeKeyword" type="button"
+								class="btn btn-info fa-1x hot2">Article</span>
+				</h4>
                 <div class="divAS15">
                     <div id="changeCityContent">一、奧蘭多迪士尼簡介 Source：KKday 奧蘭多迪士尼是全球最大的迪士尼度假區，總共有魔幻王國（Magic Kingdom）、未來世界（Epcot）、好萊塢影城（Hollywood studios）和動物王國（Animal
                         Kingdom）四大主題樂園，因此也被稱為Disney World。而這次編輯會以魔幻王國為主來介紹唷～ 二、怎麼前往奧蘭多迪士尼？ 美國大眾交通工具並不發達，一般以自駕或搭計程車為主，如果你預計在奧蘭多住宿，奧蘭多的飯店幾乎都有往返奧蘭多各大遊樂園的接駁車服務。

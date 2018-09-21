@@ -1322,6 +1322,7 @@ hr {
 							//Change 6FORM
 							if ('${result}' != "") {
 // 								alert('${result}');
+								var path3 = "<c:url value='/ProfilePageGet'><c:param name='memberID' value=""/></c:url>";
 								var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
 								var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
 // 								 alert(path);
@@ -1337,7 +1338,7 @@ hr {
 						         $('#changeCity${i+1}').html('${result[i][0].blogCity}').attr("href",path2+"${result[i][0].blogCity}");
 						         $('#changeTitle${i+1}').html('${result[i][0].blogTitle}');
 						         $('#changeDate${i+1}').html('${result[i][0].updateTime}'.substring(0, 10));
-						         $('#changeMember${i+1}').html('${result[i][2].memberNickName}');
+						         $('#changeMember${i+1}').html('${result[i][2].memberNickName}').attr("href",path3+"${result[i][0].memberID}");
 						         
 						        </c:forEach>
 								
@@ -1367,7 +1368,7 @@ hr {
 									 var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
 // 										alert(path);
 									 var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
-
+									 var path3 = "<c:url value='/ProfilePageGet'><c:param name='memberID' value=""/></c:url>";
 									 $.each(json,function(i,product){
 // 										 alert(product[0].blogSNum);    .attr("href",path2+"${result[i][0].blogCity}");
 										if(i < 6){
@@ -1380,7 +1381,7 @@ hr {
 										$('#changeCity'+(i+1)).html(product[0].blogCity).attr("href",path2+product[0].blogCity);
 										$('#changeTitle'+(i+1)).html(product[0].blogTitle);
 										$('#changeDate'+(i+1)).html(new Date(product[0].updateTime).toISOString().split('T')[0]);
-										$('#changeMember'+(i+1)).html(product[2].memberNickName);
+										$('#changeMember'+(i+1)).html(product[2].memberNickName).attr("href",path3+product[0].memberID+"&lmi="+"${user.memberID}"+"&page=main");
 										}
 // 										aside
 										if(i >= 6 && i<10){

@@ -50,7 +50,7 @@ public class BlogDAOHibernate implements BlogDAO {
 			search="台灣";
 		}
 		if(search!=null) {
-			hql = hql+"where (nation = :var1 OR blogCity=:var1  OR blogTitle like :var2  OR blogCover like :var2 )and blogVisibility=1 ";
+			hql = hql+"where (nation = :var1 OR blogCity=:var1 OR memberNickName = :var1 OR blogTitle like :var2  OR blogCover like :var2 )and blogVisibility=1 ";
 		}
 		else if(search==null) {
 			hql = hql+"where blogVisibility=1 ";
