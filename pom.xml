@@ -16,8 +16,8 @@
 	</properties>
 
 	<dependencies>
-	
-	<!-- 		tomcat寄信用                         -->
+
+		<!-- tomcat寄信用 -->
 		<dependency>
 			<groupId>com.sun.mail</groupId>
 			<artifactId>javax.mail</artifactId>

@@ -5,4 +5,17 @@
 				username="sa" password="passw0rd"
 				driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
 				url="jdbc:sqlserver://localhost:1433;database=HYACINTH" />
+	
+	<!-- Gmail as SMTP Server example -->
+	<Resource name="mail/Session" auth="Container" type="javax.mail.Session"
+	    mail.transport.protocol="smtp"
+	    mail.smtp.auth="true"
+	    mail.smtp.host="smtp.gmail.com"
+	    mail.smtp.port="465"
+	    mail.smtp.user="HyacinthSystem@gmail.com"
+	    password="Jav@dev10238"
+	    mail.smtp.quitwait="false"
+	    mail.smtp.starttls.enable="true"
+	    mail.smtp.socketFactory.class="javax.net.ssl.SSLSocketFactory"
+	    mail.debug="true"/>
 </Context>

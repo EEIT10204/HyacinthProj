@@ -3,25 +3,25 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="viewPoint.select" class="org.springframework.web.servlet.view.InternalResourceView">
-	<property name="url" value="/Console/ViewPointManage.jsp"></property>
-</bean>
+	<bean id="viewPoint.select" class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/Console/ViewPointManage.jsp"></property>
+	</bean>
 
-<bean id="viewPoint.insert" class="org.springframework.web.servlet.view.InternalResourceView">
-	<property name="url" value="/Console/ViewPointManage.jsp"></property>
-</bean>
+	<bean id="viewPoint.insert" class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/Console/ViewPointManage.jsp"></property>
+	</bean>
 
-<bean id="forwardProfileMember" class="org.springframework.web.servlet.view.InternalResourceView">
-  <property name="url" value="/Member/ProfileMember.jsp"></property>
- </bean>
- <bean id="forwardProfileSelf" class="org.springframework.web.servlet.view.InternalResourceView">
-  <property name="url" value="/Member/ProfileSelf.jsp"></property>
- </bean>
+	<bean id="forwardProfileMember" class="org.springframework.web.servlet.view.InternalResourceView">
+  		<property name="url" value="/Member/ProfileMember.jsp"></property>
+ 	</bean>
+ 	<bean id="forwardProfileSelf" class="org.springframework.web.servlet.view.InternalResourceView">
+  		<property name="url" value="/Member/ProfileSelf.jsp"></property>
+ 	</bean>
  
- <bean id="redirectIndex" class="org.springframework.web.servlet.view.RedirectView">
-  <property name="contextRelative" value="true"></property>
-  <property name="url" value="/Index/Index.jsp"></property>
- </bean>
+ 	<bean id="redirectIndex" class="org.springframework.web.servlet.view.RedirectView">
+  		<property name="contextRelative" value="true"></property>
+  		<property name="url" value="/Index/Index.jsp"></property>
+ 	</bean>
  
  	<bean id="okPage1" class="org.springframework.web.servlet.view.InternalResourceView">
 		<property name="url" value="/Blog/BlogIndex.jsp"></property>
@@ -51,7 +51,7 @@
 		<property name="url" value="/index.jsp"></property>
 	</bean>
 	
-		<bean id="login.success" class="org.springframework.web.servlet.view.RedirectView">
+	<bean id="login.success" class="org.springframework.web.servlet.view.RedirectView">
 		<property name="contextRelative" value="true"></property>
 		<property name="url" value="/Index/Index.jsp"></property>
 	</bean>
@@ -74,7 +74,7 @@
  		 <property name="url" value="/Index/Index.jsp"></property>
  	</bean>
 
-		<bean id="act.display" class="org.springframework.web.servlet.view.InternalResourceView">
+	<bean id="act.display" class="org.springframework.web.servlet.view.InternalResourceView">
 		<property name="url" value="/Act/ActDisplay.jsp"></property>
 	</bean>
 	
