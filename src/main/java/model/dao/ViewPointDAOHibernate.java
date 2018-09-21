@@ -133,10 +133,6 @@ public class ViewPointDAOHibernate implements ViewPointDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	public ViewPointBean select(int viewPointID) {
-		return this.getSession().get(ViewPointBean.class, viewPointID);
-	}
 
 
 

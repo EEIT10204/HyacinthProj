@@ -8,8 +8,6 @@
 <%-- <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script> --%>
 <%-- <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.js"></script> --%>
 <%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css"> --%>
-<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.29/sweetalert2.min.css" /> -->
-<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.29/sweetalert2.all.min.js" type="text/javascript"></script> -->
 <title>檢舉管理系統</title>
 
 <style>
@@ -220,39 +218,28 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-        <img src="${pageContext.request.contextPath}/Images/Index/warning.png" style="height:20px;margin-top:10px;">
-        <h4 class="modal-title" style="margin-left:12px;">檢舉</h4>
+        <h4 class="modal-title">檢舉</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>          
         </div>
         <div class="modal-body">
         	<form>
-       		<span style="margin-left:5px;font-size:16px;">理由:</span> <br>
-       		<textArea style="vertical-align:top; width:400px;margin-left:55px;margin-top:10px;height:200px;" id="reportReason" >test123</textArea>
-<!--        		<input type="text" id="reportMember" value="5"/> <input type="text" id="referID" value="ACC00006"/> -->
+       		<span>理由:</span> <textArea style="vertical-align:top; width:400px" id="reportReason" >test123</textArea>
+       		<input type="text" id="reportMember" value="5"/> <input type="text" id="referID" value="ACC00006"/>
        		</form>
         </div>
         <div class="modal-footer">
-        	<button onclick="sendReport()" type="button" class="btn btn-primary" data-dismiss="modal" style="color:white;">送出</button>
-          <button type="button" class="btn btn-primary" data-dismiss="modal" style="color:white;">取消</button>
+        	<button onclick="sendReport()" type="button" class="btn btn-default" data-dismiss="modal">送出</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
         </div>
       </div>
       
-     
-      
     </div>
-  </div> <!-- Report Modal end -->
+  </div>
   
-  <input data-toggle="modal" data-target="#reportModal" type="button" value="欠檢舉"/> <intput type="button" onclick="testSwal()">Test SWAL</button>
+  <input data-toggle="modal" data-target="#reportModal" type="button" value="欠檢舉"/>
 
 	
 	<script>
-	
-// 	function testSwal(){
-// 		swal({
-// 			  title: '<span class="title">Title</span>',
-// 			  html: '<span class="text">HTML description</span>'
-// 			});
-// 	}
 	
 	function sendReport(){
 // 		alert('send report');
@@ -410,7 +397,7 @@
 				$('#actOwner').empty().text(data['memberName']);
 				$('#actTitle').empty().text(data['actTitle']);
 				var picStr = String.fromCharCode.apply(null, new Uint8Array(data['actPhoto']));
-				$('#actCover').empty().attr("src","data:image/jpg;base64," + btoa(picStr));
+				$('#actCover').attr("src","data:image/jpg;base64," + btoa(picStr));
 				$('#actContent').empty().html(data['actIntro']);
 				},
 			error: function (response) {

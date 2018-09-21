@@ -19,14 +19,11 @@ import model.ActBean;
 import model.BGCommentBean;
 import model.BlogBean;
 import model.CityBean;
-import model.MemberActBean;
 import model.MemberBean;
 import model.MemberBlogBean;
-import model.MemberHistBean;
 import model.MembershipBean;
 import model.NoticeBean;
 import model.ReportBean;
-import model.TripBean;
 import model.ViewPointBean;
 
 @Configuration
@@ -68,10 +65,7 @@ public class SpringJavaConfiguration {
 		builder.addAnnotatedClass(MembershipBean.class);
 		builder.addAnnotatedClass(NoticeBean.class);
 		builder.addAnnotatedClass(MemberBlogBean.class);
-		builder.addAnnotatedClass(MemberHistBean.class);
-		builder.addAnnotatedClass(MemberActBean.class);
-		builder.addAnnotatedClass(TripBean.class);
-		
+				
 				
 		Properties properties = new Properties();
 		properties.put("hibernate.dialect", "org.hibernate.dialect.SQLServer2005Dialect");

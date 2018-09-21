@@ -45,11 +45,12 @@ public class SpringMvcJavaConfiguration implements WebMvcConfigurer {
 				new ServletContextResource(application, "/WEB-INF/spring-views.xml"));
 		registry.viewResolver(xmlViewResolver);
 	}
-	//一定要加for photo
-	@Bean
-	  public CommonsMultipartResolver multipartResolver() {
-	      CommonsMultipartResolver resolver=new CommonsMultipartResolver();
-	      resolver.setDefaultEncoding("utf-8");
-	      return resolver;
-	  }
+	
+	
+	 @Bean
+	 public CommonsMultipartResolver multipartResolver() {
+	     CommonsMultipartResolver resolver=new CommonsMultipartResolver();
+	     resolver.setDefaultEncoding("utf-8");
+	     return resolver;
+	 }
 }

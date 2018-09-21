@@ -263,21 +263,5 @@ public class BlogDAOHibernate implements BlogDAO {
 		return query.list();
 		
 	}
-	@Override   //H.C.Chen
-	public BlogBean findByPK(Integer blogSNum) {
-		return this.getSession().get(BlogBean.class, blogSNum);
-	}
-
-	@Override  //H.C.Chen
-	public List<BlogBean> findPostedByOne(Integer memberID,String sorting,int p,int num) {
-		return this.getSession().createQuery("from BlogBean where memberID=:var1 AND blogVisibility=1 "
-											+"order by "+sorting+" desc",BlogBean.class)
-								.setParameter("var1", memberID)
-//								.setParameter("var2", sorting)
-//								.setFirstResult((p-1)*num)
-//								.setMaxResults(num)
-								.list();
-	}
-	
 
 }

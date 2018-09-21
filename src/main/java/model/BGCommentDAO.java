@@ -13,12 +13,4 @@ public interface BGCommentDAO {
 	public abstract BGCommentBean update(BGCommentBean bean);
 	
 	public abstract BGCommentBean delete(BGCommentBean bean);
-	
-	public abstract Integer findCommentsNum(Integer blogSNum);
-	
-	public abstract List<Object[]> findCommRows(Integer blogSNum,int first, int num);
-	
-	public abstract BGCommentBean insertCommRow(BGCommentBean bean);
-	
-	
 }

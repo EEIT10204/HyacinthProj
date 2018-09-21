@@ -28,45 +28,36 @@ public class MemberController {
 	@RequestMapping(path = { "/ProfilePageGet"})
 	public String profileMemberGet( @RequestParam("memberID")Integer memberID, 
 									@RequestParam(value="lmi" , required=false)Integer lmi,
-									@RequestParam(value="page" , required=false)String page,
+									@RequestParam(value="notice" , required=false)Integer notice,
 									Model model) {
 		//lmi = login memberID
 		System.out.println("run MemberGetcontroller");
 		System.out.println("memberID:"+memberID);
 		System.out.println("lmi:"+lmi);
-		
-		if(!memberID.equals(lmi)) {
+		System.out.println("notice:"+notice);
+		if(memberID!=lmi) {
 		MemberBean bean = memberDAO.findByPK(memberID);
 		model.addAttribute("userInfo",bean);
 		List<MemberBean> friendList = membershipDAO.selectWhoIsMyFriend(memberID);
 		model.addAttribute("friendList",friendList);
-		System.out.println("會員 "+ bean.getMemberName()+" 的好友列表: "+friendList);
+		System.out.println("friendList:"+friendList);
 		System.out.println("GO MEMBER_PAGE");
 		return "forwardProfileMember";
 		}else {
-			if("".equals(page)!=true&&page.length()!=0) {
-				if("main".equals(page)) {
-					System.out.println(page);
-					model.addAttribute("page","main");
-				}else if("notice".equals(page)) {
-					System.out.println(page);
-					model.addAttribute("page","notice");
-				}
-			}
 			MemberBean bean = memberDAO.findByPK(lmi);
 			model.addAttribute("userInfo",bean);
 			List<MemberBean> friendList = membershipDAO.selectWhoIsMyFriend(lmi);
 			model.addAttribute("friendList",friendList);
-//			if(notice!=null) {
-//				List<NoticeBean> noticeList=noticeService.selectMyNotice(lmi);
-//				int count = noticeList.size();
-//				System.out.println("通知筆數"+count);
-//				model.addAttribute("noticeList",noticeList);
-//				model.addAttribute("noticeCount",count);
-//				return "forwardProfileSelf";
-//			}
-//			model.addAttribute("noticeCount",0);
-			System.out.println("會員 "+ bean.getMemberName()+" 的好友列表: "+friendList);
+			if(notice!=null) {
+				List<NoticeBean> noticeList=noticeService.selectMyNotice(lmi);
+				int count = noticeList.size();
+				System.out.println("通知筆數"+count);
+				model.addAttribute("noticeList",noticeList);
+				model.addAttribute("noticeCount",count);
+				return "forwardProfileSelf";
+			}
+			model.addAttribute("noticeCount",0);
+			System.out.println("friendList:"+friendList);
 			System.out.println("GO SELF_PAGE");
 			return "forwardProfileSelf";
 			

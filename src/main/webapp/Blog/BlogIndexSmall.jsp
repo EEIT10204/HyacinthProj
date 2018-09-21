@@ -34,37 +34,6 @@ body{
 img{
 border-radius: 10px;
 }
-.border001{
-			border-top: 5px #378e70 ridge ;
-            border-bottom: 5px #50c49b groove; 
-            border-right: 5px #50c49b groove; 
-            border-left: 5px #378e70 ridge;
-}
-.border002{
-border-top: 5px #378e70 ridge ;
-            border-bottom: 5px #50c49b groove; 
-            border-right: 5px #50c49b groove; 
-            border-left: 5px #378e70 ridge;
-}
-.border0034{
-border-top: 5px #378e70 ridge ;
-            border-bottom: 5px #50c49b groove; 
-            border-right: 5px #50c49b groove; 
-            border-left: 5px #378e70 ridge;
-}
-.border005{
-border-top: 5px #378e70 ridge ;
-            border-bottom: 5px #50c49b groove; 
-            border-right: 5px #50c49b groove; 
-            border-left: 5px #378e70 ridge;
-}
-.border006{
-border-top: 5px #378e70 ridge ;
-            border-bottom: 5px #50c49b groove; 
-            border-right: 5px #50c49b groove; 
-            border-left: 5px #378e70 ridge;
-}
-
 
 a {
     text-decoration:none;
@@ -223,8 +192,8 @@ hr.style-two {
 
 /* article */
 .divHeight {
-/*  	border: 2px solid green;  */
-	height: 480px;
+/* 	border: 2px solid green; */
+	height: 520px;
 }
 
 .hot {
@@ -269,23 +238,23 @@ article {
 
 .divAS1 {
 /* 	border: crimson solid 1px;  */
-/* 	margin-top: 2px; */
+	margin-top: 10px;
 	flex:0.5;
-  	margin-right: 10px;  
+ 	margin-right: 20px; 
 }
 
 .divAS2 {
 	/* border: crimson solid 1px; */
 	flex:0.5;
-/* 	margin-top: 10px; */
+	margin-top: 10px;
 
 }
 
 .divAS11 {
-/* 	margin-top: 5px; */
+	margin-top: 5px;
     width: 100%;
-	height: 250px;
-/*  	border:2px solid;  */
+	height: 300px;
+/* 	border:2px solid; */
 }
 
 .divAS12 {
@@ -293,8 +262,6 @@ article {
 	margin-top: 5px;
 	text-align: center;
 	font-size: 90%;
-	height: 20px;
-/* 	border:2px solid;  */
 }
 
 .distance {
@@ -310,30 +277,25 @@ article {
 
 .divAS13 {
 	margin-top: 15px;
-/* 	margin-bottom: 20px; */
+	margin-bottom: 20px;
 /* 	width: 450px; */
 	text-align: center;
 	font-size: 120%;
-/* 	border:2px solid;  */
-	height: 60px;
 }
 
 .divAS14 {
-/* 	padding-top: 10px; */
-	padding-bottom: 5px;
+	margin-top: 5px;
+	margin-bottom: 15px;
 /* 	width: 450px; */
 	text-align: center;
 	font-size: 80%;
-/* 	border:2px solid;  */
-	height: 40px;
 }
 
 .divAS15 {
-/* 	padding-top: 10px; */
+	margin-top: 10px;
+	margin-bottom: 10px;
 /* 	width: 450px; */
 	text-align: center;
-/* 	border:2px solid;  */
-	height: 60px;
 }
 
 .a2 {
@@ -472,7 +434,7 @@ hr {
 }
 
 .divText {
-/* 	border: 3px green solid;  */
+	border: 3px green solid; 
 	font-size:90%;
 	font-family: 'Noto Sans TC';
 	color: grey;
@@ -901,14 +863,14 @@ hr {
 		<article class="col-sm-8">
 			<div class="hot">
 				<div class="hot0 ">
-					<button type="button" class="btn btn-info "><a class="a3" href="<c:url value="/Blog/BlogIndex.controller">
+					<button type="button" class="btn btn-info "><a class="a3" href="<c:url value="../Blog/BlogIndex.controller">
 																			  <c:param name="page" value="1"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="new"/>
 																			  </c:url>">最新文章</a></button>
 				</div>
 				<div class="hot1">
-					<button type="button" class="btn btn-info "><a class="a3" href="<c:url value="/Blog/BlogIndex.controller">
+					<button type="button" class="btn btn-info "><a class="a3" href="<c:url value="../Blog/BlogIndex.controller">
     																		  <c:param name="page" value="1"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="hot"/>
@@ -926,7 +888,10 @@ hr {
 
 			<div id="d5">
 				<div class="divAS1">
-					<div class="divHeight border01">
+				
+				
+				
+					<div class="divHeight">
 						<div>
 							<a class="url1" href="#"> 
 							<img id="changePic1" class="divAS11" alt="">
@@ -951,7 +916,7 @@ hr {
 					</div>
 					
 					
-					<div class="divHeight border034">
+					<div class="divHeight">
 						<div>
 							<a class="url3" href="#"> <img id="changePic3" class="divAS11" alt="">
 							</a>
@@ -974,7 +939,7 @@ hr {
 						</div>
 					</div>
 					
-					<div class="divHeight border05">
+					<div class="divHeight">
 						<div>
 							<a class="url5" href="#"> <img id="changePic5" class="divAS11" alt="">
 							</a>
@@ -999,7 +964,7 @@ hr {
 					</div>
 				</div>
 				<div class="divAS2">
-					<div class="divHeight border02">
+					<div class="divHeight">
 						<div>
 							<a class="url2" href="#"> <img id="changePic2" class="divAS11" alt="">
 							</a>
@@ -1022,7 +987,7 @@ hr {
 							<a class="url2" href="#"><button type="button" class="btn btn-info a2">閱讀全文</button></a>
 						</div>
 					</div>
-					<div class="divHeight border034">
+					<div class="divHeight">
 						<div>
 							<a class="url4" href="#"> <img id="changePic4" class="divAS11"alt="">
 							</a>
@@ -1046,7 +1011,7 @@ hr {
 						</div>
 					</div>
 					
-					<div class="divHeight border06">
+					<div class="divHeight">
 						<div>
 							<a class="url6" href="#"> <img id="changePic6" class="divAS11" alt="">
 							</a>
@@ -1075,7 +1040,7 @@ hr {
 			<div class="divAS16">
 				<nav aria-label="Page navigation example ">
 					<ul class="pagination justify-content-center pagination-lg">
-						<li class="page-item" id="page0"><a  class="page-link liBG2" href="<c:url value="/Blog/BlogIndex.controller">
+						<li class="page-item" id="page0"><a  class="page-link liBG2" href="<c:url value="../Blog/BlogIndex.controller">
     																		  <c:param name="page" value="replaced"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="${newhot}"/>
@@ -1083,32 +1048,32 @@ hr {
 							aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
 								<span class="sr-only ">Previous</span>
 						</a></li>
-						<li class="page-item" id="page1"><a class="page-link liBG" href="<c:url value="/Blog/BlogIndex.controller">
+						<li class="page-item" id="page1"><a class="page-link liBG" href="<c:url value="../Blog/BlogIndex.controller">
     																		   <c:param name="page" value="1"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="${newhot}"/>
 																			  </c:url>">1</a></li>
-						<li class="page-item" id="page2"><a class="page-link liBG" href="<c:url value="/Blog/BlogIndex.controller">
+						<li class="page-item" id="page2"><a class="page-link liBG" href="<c:url value="../Blog/BlogIndex.controller">
     																		  <c:param name="page" value="2"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="${newhot}"/>
 																			  </c:url>">2</a></li>
-						<li class="page-item"id="page3"><a class="page-link liBG" href="<c:url value="/Blog/BlogIndex.controller">
+						<li class="page-item"id="page3"><a class="page-link liBG" href="<c:url value="../Blog/BlogIndex.controller">
     																		  <c:param name="page" value="3"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="${newhot}"/>
 																			  </c:url>">3</a></li>
-						<li class="page-item" id="page4"><a class="page-link liBG" href="<c:url value="/Blog/BlogIndex.controller">
+						<li class="page-item" id="page4"><a class="page-link liBG" href="<c:url value="../Blog/BlogIndex.controller">
     																		  <c:param name="page" value="4"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="${newhot}"/>
 																			  </c:url>">4</a></li>
-						<li class="page-item " id="page5"><a class="page-link liBG" href="<c:url value="/Blog/BlogIndex.controller">
+						<li class="page-item " id="page5"><a class="page-link liBG" href="<c:url value="../Blog/BlogIndex.controller">
     																		  <c:param name="page" value="5"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="${newhot}"/>
 																			  </c:url>">5</a></li>
-						<li class="page-item" id="page6"><a   tabindex="-1" class="page-link liBG2" href="<c:url value="/Blog/BlogIndex.controller">
+						<li class="page-item" id="page6"><a   tabindex="-1" class="page-link liBG2" href="<c:url value="../Blog/BlogIndex.controller">
     																		  <c:param name="page" value="replaced"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="${newhot}"/>
@@ -1133,7 +1098,7 @@ hr {
 							<div>
 									<form class="form-inline" method="get"
 										action="<c:url value="/Blog/BlogIndex.controller"/>">
-										<input id="keyword" maxlength="6"  name="search" class="form-control mr-sm-2 transition1 " type="search"
+										<input id="keyword" name="search" class="form-control mr-sm-2 transition1 " type="search"
 											placeholder="國家，城市及關鍵字" aria-label="Search" required>
 										<button id="keyword1" class="btn btn-outline-success my-2 my-sm-0 btnt1 "
 											type="submit">Search</button>
@@ -1300,12 +1265,12 @@ hr {
 							//NAV 	
 							
 							var member = "${user.memberID}"; 
-// 							alert('member= ' +  member);
+							alert('member= ' +  member);
 							
 							var nav = ["台北","台中","台南","高雄","東京","大阪","沖繩","北海道","首爾","釜山","大邱","濟州島","紐約","洛杉磯","舊金山","邁阿密","柏林","漢堡","慕尼黑","法蘭克福"]; 
-							var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
-							var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
-							 $.getJSON('${pageContext.request.contextPath}/Blog/BlogIndexNav.controller',function(jsonNav){
+							var path2 = "<c:url value='../Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
+							var path = "<c:url value='../Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
+							 $.getJSON('../Blog/BlogIndexNav.controller',function(jsonNav){
 									 $.each(jsonNav,function(idx,navProduct){
 										 for(var i = 1;i<=20;i++){
 										 if(navProduct.blogCity==nav[i-1]){
@@ -1322,8 +1287,8 @@ hr {
 							//Change 6FORM
 							if ('${result}' != "") {
 // 								alert('${result}');
-								var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
-								var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
+								var path2 = "<c:url value='../Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
+								var path = "<c:url value='../Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
 // 								 alert(path);
 								//FIRST
 								<c:forEach var="i" begin="0" end="5" step="1">
@@ -1337,8 +1302,6 @@ hr {
 						         $('#changeCity${i+1}').html('${result[i][0].blogCity}').attr("href",path2+"${result[i][0].blogCity}");
 						         $('#changeTitle${i+1}').html('${result[i][0].blogTitle}');
 						         $('#changeDate${i+1}').html('${result[i][0].updateTime}'.substring(0, 10));
-						         $('#changeMember${i+1}').html('${result[i][2].memberNickName}');
-						         
 						        </c:forEach>
 								
 						        <c:forEach var="i" begin="0" end="3" step="1">
@@ -1362,11 +1325,11 @@ hr {
 }
 							else if ('${result}' == ""){
 								
-								 $.getJSON('${pageContext.request.contextPath}/Blog/BlogIndexFirstOnload2.controller',function(json){
+								 $.getJSON('../Blog/BlogIndexFirstOnload2.controller',function(json){
 									 
-									 var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
+									 var path = "<c:url value='../Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
 // 										alert(path);
-									 var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
+									 var path2 = "<c:url value='../Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
 
 									 $.each(json,function(i,product){
 // 										 alert(product[0].blogSNum);    .attr("href",path2+"${result[i][0].blogCity}");

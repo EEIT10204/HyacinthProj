@@ -8,10 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/datatables.min.css"/>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.29/sweetalert2.min.css" />
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/datatables.min.js"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.29/sweetalert2.all.min.js" type="text/javascript"></script>
-
 <title>後台景點管理</title>
 
 <style>
@@ -110,7 +107,6 @@ background-color: 	#acd6ff;
 		 <button type="button" class="btn  " name="action" value="Clear" onclick="clearForm()" style="background-color: #46a3ff;color: white;margin-left:5px;margin-top:-50px;; ">清空</button>			
 		 </p>
 	</form>
-	<intput type="button" onclick="testSwal()">Test SWAL</button>
 </div>
 
 <div class="aside">
@@ -127,23 +123,7 @@ background-color: 	#acd6ff;
 			</tr>	
 		</c:forEach>	
 		</tbody>
-		
-	
-	</table>
-
-</div>
-
-</div>
-</div>
-<script>
-		
-		function testSwal(){
-			swal({
-				  title: '<span class="title">Title</span>',
-				  html: '<span class="text">HTML description</span>'
-				});
-		}
-		
+		<script>
 		$(document).ready( function () {
 		    $('#viewPointTable').DataTable({
 				  "columnDefs": [
@@ -152,6 +132,9 @@ background-color: 	#acd6ff;
 					  ]
 					});
 		} );
+		
+		
+
 		
 			function fillForm(id, name, info, city, type, address){
 				$('#inputName').val(name);
@@ -165,12 +148,19 @@ background-color: 	#acd6ff;
 			
 			function clearForm() {
 			    document.getElementById("uploadForm").reset();
-			    $('#reportBody').empty().html('<tr><td valign="top" colspan="4" class="dataTables_empty">No data available in table</td></tr>');
+			    $('reportBody').empty();
 			    var errors = document.getElementsByClassName("errors")
 			    for (i = 0; i < errors.length; i++) {
 			        errors[i].innerHTML="";
 			    }
 			}
 		</script>
+	
+	</table>
+
+</div>
+
+</div>
+</div>
 </body>
 </html>

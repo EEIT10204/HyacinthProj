@@ -18,7 +18,5 @@ public interface BlogDAO {
 	public abstract List<Object[]> selectByInput(String search,String page,int num,String newhot);
 	public abstract BlogBean updateDelete(Integer blogSNum);
 	public abstract BlogBean selectByBlogID(BlogBean bean);
-	public abstract List<BlogBean> selectTopSix();
-	public abstract BlogBean findByPK(Integer blogSNum);
-	public abstract List<BlogBean> findPostedByOne(Integer memberID,String sorting,int p,int num);
+	public List<BlogBean> selectTopSix();
 }

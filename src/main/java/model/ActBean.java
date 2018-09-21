@@ -1,7 +1,6 @@
 package model;
 
 import java.util.Arrays;
-import java.util.Base64;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -42,7 +41,7 @@ public class ActBean{
 	@Override
 	public String toString() {
 		return "ActBean [memberID=" + memberID + ", actSNum=" + actSNum + ", actID=" + actID + ", actPhoto="
-				+ actPhoto.length + ", actTitle=" + actTitle + ", actCity=" + actCity + ", actintro="
+				+ Arrays.toString(actPhoto) + ", actTitle=" + actTitle + ", actCity=" + actCity + ", actintro="
 				+ actIntro + ", actCreateTimestamp=" + actCreateDate + ", actStartTime=" + actStartTime + ", actEndTime="
 				+ actEndTime + ", actJoinDeadLine=" + actJoinDeadLine + ", actStatus=" + actStatus
 				+ ", minParticipants=" + minParticipants + ", maxParticipants=" + maxParticipants + ", participantsNow="
@@ -85,11 +84,11 @@ public class ActBean{
 	public void setActCity(String actCity) {
 		this.actCity = actCity;
 	}
-	public String getActIntro() {
+	public String getActintro() {
 		return actIntro;
 	}
-	public void setActIntro(String actIntro) {
-		this.actIntro = actIntro;
+	public void setActintro(String actintro) {
+		this.actIntro = actintro;
 	}
 	public java.sql.Timestamp getActCreateDate() {
 		return actCreateDate;
@@ -170,12 +169,6 @@ public class ActBean{
 		this.actVisibility = actVisibility;
 	}
 	
-	public String getActPhotoToBase64() {
-	    if(actPhoto!=null) {
-	     return Base64.getEncoder().encodeToString(actPhoto);
-	    }
-	    return null;
-	   }
 	
 
 	
