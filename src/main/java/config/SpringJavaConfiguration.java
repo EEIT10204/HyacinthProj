@@ -23,6 +23,7 @@ import model.MemberBlogBean;
 import model.MemberHistBean;
 import model.MembershipBean;
 import model.NoticeBean;
+import model.SubMemberBean;
 
 @Configuration
 @ComponentScan(basePackages= {"model"})
@@ -38,6 +39,7 @@ public class SpringJavaConfiguration {
 		builder.addAnnotatedClasses(BGCommentBean.class);
 		builder.addAnnotatedClasses(CityBean.class);
 		builder.addAnnotatedClasses(MemberBean.class);
+		builder.addAnnotatedClasses(SubMemberBean.class);
 		
 		builder.addAnnotatedClasses(MemberActBean.class);
 		builder.addAnnotatedClasses(MemberBlogBean.class);

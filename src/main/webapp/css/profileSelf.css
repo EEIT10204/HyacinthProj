@@ -20,6 +20,8 @@
 #idCover{
     z-index: 0;
     width: 100%;  
+    max-height: 422px;
+    overflow:hidden;
     border-radius: 25px 25px 0 0;
 }
 
@@ -79,9 +81,9 @@
     cursor: pointer;
 }
 .btn-o:focus {
-/*     background: #b63b4d; */
+    background: #b63b4d;
     color: #fff;
-/*     border: 1px solid #b63b4d; */
+    border: 1px solid #b63b4d;
 }
 
 /*------PersonalInfo--------*/
@@ -239,10 +241,10 @@ a {
 }
 
 .accordion li.open .link {
-/*     color: #b63b4d; */
+    color: #b63b4d;
 }
 .accordion li.open i{
-/*     color: #b63b4d; */
+    color: #b63b4d;
 }
 
 .accordion li.open i.fa-chevron-down {
@@ -301,9 +303,9 @@ a {
 }
 
 .edit-pic a:focus {
-/*     background: #b63b4d; */
+    background: #b63b4d;
     color: #fff;
-/*     border: 1px solid #b63b4d; */
+    border: 1px solid #b63b4d;
 }
 
 /*----------好友列表---------*/
@@ -317,19 +319,4 @@ a {
 .iconList>.iconList_Icon{
  margin: 10px;
  float: left;
-}
-.clickMe {
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-}
-.panel {
-    padding: 15px 30px 5px 30px;
-    background-color: white;
-    overflow: hidden;
-    display:none;
-    border-bottom: 1px solid #E5E7E9 ;
 }

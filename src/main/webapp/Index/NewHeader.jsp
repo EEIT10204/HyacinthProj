@@ -24,11 +24,6 @@ html, body {
 	font-family:'Noto Sans TC',san-serif;
 }
 
-.img-circle{
-height: 200px;
-    width: 200px;
-	border-radius: 50%
-}
 </style>
 </head>
 <body>
@@ -186,11 +181,6 @@ height: 200px;
 										        <input type="radio" class="form-check-input" id="female" name="memberGender" value="F">女
 										      </label>
 										 	</div>
-										 	<div class="form-check-inline">
-										      <label class="form-check-label" for="female">
-										        <input type="radio" class="form-check-input" id="female" name="memberGender" value="s">保密
-										      </label>
-										 	</div>
 									 </div>
 										 <div class="form-group">
 											<label for="memberBirthDay">生日:</label>
@@ -211,19 +201,16 @@ height: 200px;
 <!-- 								    </div> -->
 								    <div class="form-group">
 								      <label for="memberPic">照片:</label>
-								      <div class="text-center">
-                                          <img class="avatarP img-circle img-thumbnail" src="<c:url value="/Images/Member/avatar_2x.png" />" alt="avatar">
-                                          <h6>Upload a different photo...</h6>
-                                          <input type="file" name="memberPic" accept="image/*" class="text-center center-block file-upload">
-                                      </div>
+								      <input type="file" class="form-control-file border" id="memberPic" name="memberPic">
 								    </div>
 							    </div>
+							    
 							    <hr>
 							    <button id="registButton" type="submit" class="btn btn-primary">註冊</button>
 							    <button type="reset" class="btn btn-sm btn-second">清除</button>
 							</form>
 					    </div>
-					  </div>	 
+					  </div>	
 					</div>
 				</div>
 			</div>
@@ -361,19 +348,5 @@ height: 200px;
 		    language: "zh-TW",
 		});
 	</script>
-	<script> //註冊區域預覽圖顯示
-	 var readURL = function(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $(input).prev().prev().attr('src', e.target.result);
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }   
-    $(".file-upload").on('change', function(){
-        readURL(this);
-    });
-    </script>
 </body>
 </html>
