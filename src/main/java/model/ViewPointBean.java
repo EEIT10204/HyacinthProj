@@ -11,14 +11,14 @@ import javax.persistence.Table;
 public class ViewPointBean {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer viewPointID;
-	private String viewPointName = null;
-	private String viewPointAddress = null;
+	private Integer viewPointID; 
+	private String viewPointName;
+	private String viewPointAddress;
 	private String viewPointCity;
 	private String viewPointInfo;
 	private String viewPointType;
 	private String latitue;
-	private String longtitue;
+	private String longtitue; 
 	
 	@Override
 	public String toString() {
@@ -41,8 +41,8 @@ public class ViewPointBean {
 	public String getViewPointAddress() {
 		return viewPointAddress;
 	}
-	public void setViewPointAddress(String viewPointAddres) {
-		this.viewPointAddress = viewPointAddres;
+	public void setViewPointAddress(String viewPointAddress) {
+		this.viewPointAddress = viewPointAddress;
 	}
 	public String getViewPointCity() {
 		return viewPointCity;
@@ -53,8 +53,8 @@ public class ViewPointBean {
 	public String getViewPointInfo() {
 		return viewPointInfo;
 	}
-	public void setViewPointInfo(String viewPointInfo) {
-		this.viewPointInfo = viewPointInfo;
+	public void setVewPointInfo(String vewPointInfo) {
+		this.viewPointInfo = vewPointInfo;
 	}
 	public String getViewPointType() {
 		return viewPointType;

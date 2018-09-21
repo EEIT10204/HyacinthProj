@@ -14,7 +14,7 @@
 <script src='<c:url value="/js/bootstrap-datepicker.min.js"/>'></script>
 <script src='<c:url value="/js/bootstrap-datepicker.zh-TW.min.js"/>'></script>
 
-<!-- 字型 -->	
+<!-- 字型 -->
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/notosanstc.css">
 <!-- ICON -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
@@ -24,18 +24,16 @@ html, body {
 	font-family:'Noto Sans TC',san-serif;
 }
 
-.img-circle{
-height: 200px;
-    width: 200px;
-	border-radius: 50%
-}
 </style>
 </head>
-<body>
-
+<body >
+<div id="fb-root"></div>
+<script>
+	
+</script>
 
 <nav class="navbar navbar-expand-md bg-light navbar-light" style="border-radius:10px;">
-    <img class="navbar-brand" src='<c:url value="/Images/Index/Logo.png"/>' width="250px" height="70px"/>
+<%--     <img class="navbar-brand" src='<c:url value="/Images/Index/Logo.png"/>' width="250px" height="70px"/> --%>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav ml-auto">
         <form class="form-inline" action="">
@@ -186,11 +184,6 @@ height: 200px;
 										        <input type="radio" class="form-check-input" id="female" name="memberGender" value="F">女
 										      </label>
 										 	</div>
-										 	<div class="form-check-inline">
-										      <label class="form-check-label" for="female">
-										        <input type="radio" class="form-check-input" id="female" name="memberGender" value="s">保密
-										      </label>
-										 	</div>
 									 </div>
 										 <div class="form-group">
 											<label for="memberBirthDay">生日:</label>
@@ -211,19 +204,16 @@ height: 200px;
 <!-- 								    </div> -->
 								    <div class="form-group">
 								      <label for="memberPic">照片:</label>
-								      <div class="text-center">
-                                          <img class="avatarP img-circle img-thumbnail" src="<c:url value="/Images/Member/avatar_2x.png" />" alt="avatar">
-                                          <h6>Upload a different photo...</h6>
-                                          <input type="file" name="memberPic" accept="image/*" class="text-center center-block file-upload">
-                                      </div>
+								      <input type="file" class="form-control-file border" id="memberPic" name="memberPic">
 								    </div>
 							    </div>
+							    
 							    <hr>
 							    <button id="registButton" type="submit" class="btn btn-primary">註冊</button>
 							    <button type="reset" class="btn btn-sm btn-second">清除</button>
 							</form>
 					    </div>
-					  </div>	 
+					  </div>	
 					</div>
 				</div>
 			</div>
@@ -242,62 +232,58 @@ height: 200px;
 		     });
 		   });
 </script>
-<script type="text/javascript"> //修改NavBar按鈕功能
+	<script type="text/javascript"> //修改NavBar按鈕功能
 	$( document ).ready(function() {
 		if('${user}'!=""){
 				$.getJSON("${pageContext.request.contextPath}/getNotice",{"memberID":${user.memberID}},function(data){
 		    	if(data.status=="findNoticeList"){
-		    		alert("有新訊息")	
-					if('${user.memberHierachy}'=='Admin'){
-						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
+		    		alert("有新訊息")
+		    		if('${user.memberHierachy}'=='Admin'){
+						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }' style='text-decoration:none;color:black'>個人首頁</a></button><a href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
 						);
-						$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&page=notice'/>'  style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='spanNoticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>"+data.count+"</span></a></li>")
+						$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&notice=${user.memberID}'/>'  style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='spanNoticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>${noticeCountFirst}</span></a></li>")
 						$('#blogNav').html("<a class='dropdown-item' href='<c:url value='/Blog/BlogIndex.jsp'/>'>網誌首頁</a><a class='dropdown-item' href='<c:url value='/Blog/BlogNew.jsp'/>'>新增網誌</a>")
 						$('#ActNav').html("<a class='dropdown-item' href='<c:url value='/Act/ActIndex.jsp'/>'>活動首頁</a><a class='dropdown-item' href='<c:url value='/Act/ActNew.jsp'/>'>新增活動</a>")
 						$('#HomeNav').html("<a class='dropdown-item' href='<c:url value='/Index/Index.jsp'/>'>回首頁</a><a class='dropdown-item' href='<c:url value='/Console/ViewPointManage.jsp'/>'>景點管理</a><a class='dropdown-item' href='<c:url value='/Console/Console.jsp'/>'>檢舉管理</a>");	
-						$('#spanNoticeCount1').text(data.count);
 					}else if( '${user.memberID}' != ""){
 
-						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}//ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID}&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
+						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}//ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }' style='text-decoration:none;color:black'>個人首頁</a></button><a href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
 						);
-						$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&page=notice'/>'  style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='noticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>"+data.count+"</span></a></li>");
+						$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&notice=${user.memberID}'/>'  style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='noticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>${noticeCountFirst}</span></a></li>");
 						$('#blogNav').html("<a class='dropdown-item' href='<c:url value='/Blog/BlogIndex.jsp'/>'>網誌首頁</a><a class='dropdown-item' href='<c:url value='/Blog/BlogNew.jsp'/>'>新增網誌</a>")
 						$('#ActNav').html("<a class='dropdown-item' href='<c:url value='/Act/ActIndex.jsp'/>'>活動首頁</a><a class='dropdown-item' href='<c:url value='/Act/ActNew.jsp'/>'>新增活動</a>")
-						$('#spanNoticeCount1').text(data.count);				
-		    		}
+					}
 		    	}else if (data.status=="NoNewNoticeList"){
 		    		alert("無新訊息")
-		    		if('${user.memberHierachy}'=='Admin'){
-						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
-						);
-						$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&page=notice'/>' style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='spanNoticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>"+data.count+"</span></a></li>")
-						$('#blogNav').html("<a class='dropdown-item' href='<c:url value='/Blog/BlogIndex.jsp'/>'>網誌首頁</a><a class='dropdown-item' href='<c:url value='/Blog/BlogNew.jsp'/>'>新增網誌</a>")
-						$('#ActNav').html("<a class='dropdown-item' href='<c:url value='/Act/ActIndex.jsp'/>'>活動首頁</a><a class='dropdown-item' href='<c:url value='/Act/ActNew.jsp'/>'>新增活動</a>")
-						$('#HomeNav').html("<a class='dropdown-item' href='<c:url value='/Index/Index.jsp'/>'>回首頁</a><a class='dropdown-item' href='<c:url value='/Console/ViewPointManage.jsp'/>'>景點管理</a><a class='dropdown-item' href='<c:url value='/Console/Console.jsp'/>'>檢舉管理</a>");
-						$('#spanNoticeCount1').text(data.count);
-					}else if( '${user.memberID}' != ""){
-
-						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}//ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
-						);
-						$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&page=notice'/>'  style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='noticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>"+data.count+"</span></a></li>");
-						$('#blogNav').html("<a class='dropdown-item' href='<c:url value='/Blog/BlogIndex.jsp'/>'>網誌首頁</a><a class='dropdown-item' href='<c:url value='/Blog/BlogNew.jsp'/>'>新增網誌</a>")
-						$('#ActNav').html("<a class='dropdown-item' href='<c:url value='/Act/ActIndex.jsp'/>'>活動首頁</a><a class='dropdown-item' href='<c:url value='/Act/ActNew.jsp'/>'>新增活動</a>")
-						$('#spanNoticeCount1').text(data.count);
-					}
 		    	}
-			})
-		}
-		})
-
+		    	})
+				
+			}
+	})
 	</script>
-	
 	<script type="text/javascript">
-	function reloadOnce() {
-	    if(!window.location.hash) {
-	        window.location = window.location + '#loaded';
-	        window.location.reload();
-	    }
-	}
+// 	function changeNav(){
+// 			alert('${user.memberName}');
+// 			alert('${user.memberID}');
+// 			if('${user.memberHierachy}'=='Admin'){
+// 				$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }' style='text-decoration:none;color:black'>個人首頁</a></button><a href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
+// 				);
+// 				$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&notice=${user.memberID}'/>'  style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='spanNoticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>${noticeCountFirst}</span></a></li>")
+// 				$('#blogNav').html("<a class='dropdown-item' href='<c:url value='/Blog/BlogIndex.jsp'/>'>網誌首頁</a><a class='dropdown-item' href='<c:url value='/Blog/BlogNew.jsp'/>'>新增網誌</a>")
+// 				$('#ActNav').html("<a class='dropdown-item' href='<c:url value='/Act/ActIndex.jsp'/>'>活動首頁</a><a class='dropdown-item' href='<c:url value='/Act/ActNew.jsp'/>'>新增活動</a>")
+// 				$('#HomeNav').html("<a class='dropdown-item' href='<c:url value='/Index/Index.jsp'/>'>回首頁</a><a class='dropdown-item' href='<c:url value='/Console/ViewPointManage.jsp'/>'>景點管理</a><a class='dropdown-item' href='<c:url value='/Console/Console.jsp'/>'>檢舉管理</a>");
+				
+// 			}
+			
+// 			else if( '${user.memberID}' != ""){
+
+// 				$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}//ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }' style='text-decoration:none;color:black'>個人首頁</a></button><a href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
+// 				);
+// 				$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&notice=${user.memberID}'/>'  style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='noticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>${noticeCountFirst}</span></a></li>");
+// 				$('#blogNav').html("<a class='dropdown-item' href='<c:url value='/Blog/BlogIndex.jsp'/>'>網誌首頁</a><a class='dropdown-item' href='<c:url value='/Blog/BlogNew.jsp'/>'>新增網誌</a>")
+// 				$('#ActNav').html("<a class='dropdown-item' href='<c:url value='/Act/ActIndex.jsp'/>'>活動首頁</a><a class='dropdown-item' href='<c:url value='/Act/ActNew.jsp'/>'>新增活動</a>")
+// 			}
+// 	}
 	
 	</script>
 
@@ -361,19 +347,5 @@ height: 200px;
 		    language: "zh-TW",
 		});
 	</script>
-	<script> //註冊區域預覽圖顯示
-	 var readURL = function(input) {
-        if (input.files && input.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $(input).prev().prev().attr('src', e.target.result);
-            }
-            reader.readAsDataURL(input.files[0]);
-        }
-    }   
-    $(".file-upload").on('change', function(){
-        readURL(this);
-    });
-    </script>
 </body>
 </html>
