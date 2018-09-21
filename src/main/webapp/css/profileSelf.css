@@ -21,6 +21,8 @@
 #idCover{
     z-index: 0;
     width: 100%;  
+    max-height: 422px;
+    overflow:hidden;
     border-radius: 25px 25px 0 0;
 }
 #idProPic{
@@ -178,6 +180,130 @@ a {
     background: #0b7dda;
     cursor: pointer;
 }
+<<<<<<< HEAD
+=======
+
+
+
+
+/*-----------------------------*/
+
+.accordion {
+    width: 100%;
+    max-width: 290px;
+    margin: 0;
+    background: #FFF;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    /* border: 2px solid skyblue; */
+}
+
+.accordion .link {
+    cursor: pointer;
+    display: block;
+    padding: 15px 15px 15px 15px;
+    color: #4D4D4D;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 1px solid #CCC;
+    position: relative;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.accordion li:last-child .link {
+    border-bottom: 0;
+}
+
+.accordion li i {
+    /* position: absolute; */
+    /* top: 16px;
+    left: 12px; */
+    margin-right: 15px;
+    font-size: 18px;
+    color: #595959;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.accordion li i.fa-chevron-down {
+    /* right: 12px; */
+    float: right;
+}
+
+.accordion li.open .link {
+    color: #b63b4d;
+}
+.accordion li.open i{
+    color: #b63b4d;
+}
+
+.accordion li.open i.fa-chevron-down {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.accordion li .submenu i{
+    color: #ffffff;
+}
+
+.accordion li.default .submenu{
+    display: block;
+}
+
+#idSocialBar{
+    position: relative;
+    /* border: 1px solid blue; */
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #CCC;
+}
+
+#accordion:hover .edit-pic {
+    opacity: unset;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.edit-pic a {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    /* border: 1px solid green; */
+    border-radius: 50%;
+    color: #666666;
+    font-size: 21px;
+    height: 39px;
+    line-height: 38px;
+    margin: 3px;
+    text-align: center;
+    width: 39px;
+    -webkit-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    text-decoration: none !important;
+    /* display: list-item; */
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.edit-pic a:hover {
+    font-size: 17px;
+    opacity: 0.9;
+}
+
+.edit-pic a:focus {
+    background: #b63b4d;
+    color: #fff;
+    border: 1px solid #b63b4d;
+}
+
+/*----------好友列表---------*/
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
 .iconList{
 	text-align:center;
 	display: inline-block;
@@ -186,6 +312,11 @@ a {
 	margin-top: 20px;
 }
 .iconList>.iconList_Icon{
+<<<<<<< HEAD
 	margin: 10px;
 	float: left;
+=======
+ margin: 10px;
+ float: left;
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
 }

@@ -14,6 +14,7 @@
 </head>
 <body>
     <div id="idTop" class="container">
+<<<<<<< HEAD
         <!-- <img id="idCover" src="nature-design.jpg" alt="Cover"> -->
         <img id="idCover" src="<c:url value="/Images/Member/nature-design.jpg"/>" alt="Cover">
         <img id="idProPic" class="img-thumbnail" src="data:image/png;base64,${user.memberPicToBase64}" alt="Profile image" style="height: 16em;"/>
@@ -21,6 +22,16 @@
             <button class="btn-o"><i class="fa fa-user-plus"></i> Friend </button> 
             <button class="btn-o"><i class="fa fa-plus"></i> Follow </button>
         </div> -->
+=======
+        <c:if test="${empty subInfo.memberCoverToBase64}">
+            <img id="idCover" src="<c:url value="/Images/Member/nature-design.jpg"/>" alt="Cover">
+        </c:if>
+        <c:if test="${not empty subInfo.memberCoverToBase64}">
+			<img id="idCover" src="<c:url value="data:image/png;base64,${subInfo.memberCoverToBase64}"/>" alt="Cover">
+	  	</c:if>    
+        <c:if test="${not empty user.memberPicToBase64}"><img id="idProPic" class="img-thumbnail" src="data:image/png;base64,${user.memberPicToBase64}" alt="Profile image"/></c:if>       
+        <c:if test="${empty user.memberPicToBase64}"><img id="idProPic" class="img-thumbnail" src="<c:url value="/Images/Member/fb_user.jpg"/>" alt="Profile image"/></c:if>
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
         <div id="idUserBasic">
                 <h2><i>${user.memberName}</i></h2>
                 <h3><small><i class="fas fa-map-marker-alt"></i> California, USA</small></h3>
@@ -33,6 +44,7 @@
             <div id="asideLeft" class="col-md-3">
                 <div class="row">
                     <div class="nav flex-column nav-pills list-group" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+<<<<<<< HEAD
                         <a class="nav-link <c:if test="${noticeCount=='0'}"> <c:out value="active"/></c:if> text-right list-group-item" id="v-pills-news-tab" data-toggle="pill" href="#v-pills-news" role="tab" aria-controls="v-pills-news" aria-selected="true">
                             <span class="float-left"><i class="far fa-newspaper"></i>&nbsp;&nbsp;<strong>News Feed</strong></span> 125 
                         </a>
@@ -41,6 +53,16 @@
                         </a>
                         <a class="nav-link text-right list-group-item" id="v-pills-favorite-tab" data-toggle="pill" href="#v-pills-favorite" role="tab" aria-controls="v-pills-favorite" aria-selected="false">
                             <span class="float-left"><i class="fas fa-heart"></i>&nbsp;&nbsp;<strong>Favorite</strong></span> 37
+=======
+                        <a class="nav-link text-right list-group-item <c:if test="${page eq 'main'}"> <c:out value="active"/> </c:if>" id="v-pills-news-tab" data-toggle="pill" href="#v-pills-news" role="tab" aria-controls="v-pills-news" aria-selected="true">
+                            <span class="float-left"><i class="far fa-newspaper"></i>&nbsp;&nbsp;<strong>News Feed</strong></span> 125 
+                        </a>
+                        <a class="nav-link text-right list-group-item" id="v-pills-activities-tab" data-toggle="pill" href="#v-pills-activities" role="tab" aria-controls="v-pills-activities" aria-selected="false">
+                            <span class="float-left"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;<strong>My Activities</strong></span> 37
+                        </a>
+                        <a class="nav-link text-right list-group-item" id="v-pills-blogs-tab" data-toggle="pill" href="#v-pills-blogs" role="tab" aria-controls="v-pills-blogs" aria-selected="false">
+                            <span class="float-left"><i class="fas fa-edit"></i>&nbsp;&nbsp;<strong>My Blogs</strong></span> 37
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
                         </a>
                         <a class="nav-link text-right list-group-item" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
                             <span class="float-left"><i class="fas fa-user-circle"></i>&nbsp;&nbsp;<strong>Profile</strong></span> 13
@@ -48,6 +70,7 @@
                         <a class="nav-link text-right list-group-item" id="v-pills-privacy-tab" data-toggle="pill" href="#v-pills-privacy" role="tab" aria-controls="v-pills-privacy" aria-selected="false">
                             <span class="float-left"><i class="fas fa-key"></i>&nbsp;&nbsp;<strong>Privacy</strong></span> 37
                         </a>
+<<<<<<< HEAD
                         <a class="nav-link text-right list-group-item" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
                             <span class="float-left"><i class="fab fa-facebook-messenger"></i>&nbsp;&nbsp;<strong>Messages</strong></span> 78
                         </a>
@@ -56,6 +79,19 @@
                         </a>
                         <a class="nav-link text-right list-group-item" id="v-pills-friend-tab" data-toggle="pill" href="#v-pills-friend" role="tab" aria-controls="v-pills-friend" aria-selected="false">
                             <span class="float-left"><i class="fas fa-history"></i>&nbsp;&nbsp;<strong>Friends</strong></span> 78
+=======
+                        <a class="nav-link text-right list-group-item" id="v-pills-social-tab" data-toggle="pill" href="#v-pills-social" role="tab" aria-controls="v-pills-social" aria-selected="false">
+                            <span class="float-left"><i class="fas fa-user-friends"></i>&nbsp;&nbsp;<strong>Social</strong></span> 125
+                        </a>
+                        <a class="nav-link text-right list-group-item" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                            <span class="float-left"><i class="fab fa-facebook-messenger"></i>&nbsp;&nbsp;<strong>Messages</strong></span> 78
+                        </a>
+                        <a class="nav-link text-right list-group-item <c:if test="${page eq 'notice'}"> <c:out value="active"/>  </c:if>" id="v-pills-notification-tab" data-toggle="pill" href="#v-pills-notification" role="tab" aria-controls="v-pills-notification" aria-selected="false">
+                            <span class="float-left"><i class="far fa-envelope"></i>&nbsp;&nbsp;<strong>Notification</strong></span> <span id="spanNoticeCount1"></span>
+                        </a>
+                        <a class="nav-link text-right list-group-item" id="v-pills-history-tab" data-toggle="pill" href="#v-pills-history" role="tab" aria-controls="v-pills-history" aria-selected="false">
+                            <span class="float-left"><i class="fas fa-history"></i>&nbsp;&nbsp;<strong>History</strong></span> 100
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
                         </a>
                     </div>
                </div>
@@ -243,44 +279,53 @@
                                             <hr>
                                         </div><!--/tab-pane-->
                                         <div class="tab-pane" id="advance">
-                                                <form class="form" action="##" method="post" id="advancedForm">
+                                                <form class="form" action="<c:url value="/updateSubMember.controller"/>" method="post" enctype="multipart/form-data" id="advancedForm">
                                                     <hr>
                                                     <div class="text-center">
+<<<<<<< HEAD
                                                         <img class="img-thumbnail avatarC" src="nature-design.jpg" alt="avatar">
+=======
+                                                    	<c:if test="${empty subInfo.memberCoverToBase64}">
+                                                        	<img class="img-thumbnail avatarC" src="<c:url value="/Images/Member/nature-design.jpg"/>" alt="avatar">
+                                                       	</c:if>
+                                                       	<c:if test="${not empty subInfo.memberCoverToBase64}">
+	               											<img class="img-thumbnail avatarC" src="<c:url value="data:image/png;base64,${subInfo.memberCoverToBase64}"/>" alt="avatar">
+	          										  	</c:if>    
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
                                                         <h6>Upload a different Cover...</h6>
-                                                        <input type="file" class="text-center center-block file-upload">
+                                                        <input type="file" name="memberCover" accept="image/*" class="text-center center-block file-upload">
                                                     </div>
                                                     <hr>
-                                                    <input type="hidden" id="memberID" name="memberID" value="sss">
+                                                    <input type="hidden" id="memberID" name="memberID" value="${user.memberID}">
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                                 <label for="job"><h4>Job</h4></label>
-                                                                <input type="text" class="form-control" name="job" id="job" placeholder="works for" >
+                                                                <input type="text" class="form-control" name="memberJob" id="memberJob" value="${subInfo.memberJob}" placeholder="works for" >
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                                 <label for="location"><h4>Location</h4></label>
-                                                                <input type="text" class="form-control" name="location" id="location" placeholder="somewhere" >
+                                                                <input type="text" class="form-control" name="memberLocation" id="memberLocation" value="${subInfo.memberLocation}" placeholder="somewhere" >
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="facebook"><h4>Facebook</h4></label>
-                                                        <input type="text" class="form-control" id="facebook" placeholder="">
+                                                        <input type="text" class="form-control" name="memberFB" id="memberFB" value="${subInfo.memberFB}" placeholder="">
                                                     </div>
                                                     <div class="form-group">
                                                             <label for="instagram"><h4>Instagram</h4></label>
-                                                            <input type="text" class="form-control" id="instagram" placeholder="">
+                                                            <input type="text" class="form-control" name="memberIG" id="memberIG" value="${subInfo.memberIG}" placeholder="">
                                                     </div>
                                                     <div class="form-group">
                                                             <label for="twitter"><h4>Twitter</h4></label>
-                                                            <input type="text" class="form-control" id="twitter" placeholder="">
+                                                            <input type="text" class="form-control" name="memberTwitter" id="memberTwitter" value="${subInfo.memberTwitter}" placeholder="">
                                                     </div>
                                                     <div class="form-group">
                                                             <label for="googleplus"><h4>Google+</h4></label>
-                                                            <input type="text" class="form-control" id="googleplus" placeholder="">
+                                                            <input type="text" class="form-control" name="memberGooglePlus" id="memberGooglePlus" value="${subInfo.memberGooglePlus}" placeholder="">
                                                     </div>
                                                     <div class="form-group">
                                                             <label for="youtube"><h4>Youtube</h4></label>
-                                                            <input type="text" class="form-control" id="youtube" placeholder="">
+                                                            <input type="text" class="form-control" name="memberYT" id="memberYT" value="${subInfo.memberYT}" placeholder="">
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="col-xs-12 text-center">
@@ -313,8 +358,13 @@
                                                             <input type="text" class="form-control" name="memberPwd" id="memberPwd" placeholder="New Password" >
                                                     </div>
                                                     <div class="form-group col-md-6">
+<<<<<<< HEAD
                                                             <label for="verifyPwd"><h4>Verify</h4></label>
                                                             <input type="text" class="form-control" name="verifyPwd" id="verifyPwd" placeholder="Verify" >
+=======
+                                                            <label for="password"><h4>Verify</h4></label>
+                                                            <input type="password" class="form-control" name="verifyPwd" id="verifyPwd" placeholder="Verify" >
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
                                                     </div>
                                                 </div>
                                                 <div class="form-group row">
@@ -332,14 +382,150 @@
                                 </div><!--content-->
                             </div> <!--rol-->
                         </div><!--profileRow end-->
+<<<<<<< HEAD
                     </div> <!--v-pills-profile end-->
                     <div class=" tab-pane fade " id="v-pills-friend" role="tabpanel" aria-labelledby="v-pills-friend-tab">
+=======
+                    </div> <!--v-pills-privacy end-->
+                    <div class="tab-pane fade" id="v-pills-activities" role="tabpanel" aria-labelledby="v-pills-activities-tab">
+ 						<h1 class="text-center mb-3">My Activities</h1>
+ 						<h2 class="text-center mb-3 actType">Hosted&nbsp;(&nbsp;<span id="sumHosted">0</span>&nbsp;)</h2>
+						<div id="actHosted" class="carousel slide" data-ride="carousel" data-interval="false">
+				            <ol class="carousel-indicators">
+								<!-- carousel-indicators generated here -->
+				            </ol>
+				            <div class="carousel-inner">
+								<!-- Hosted Activities cards generated here -->
+				                <a class="carousel-control-prev" href="#actHosted" role="button" data-slide="prev">
+					                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					                <span class="sr-only">Previous</span>
+				                </a>
+				                <a class="carousel-control-next" href="#actHosted" role="button" data-slide="next">
+					                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					                <span class="sr-only">Next</span>
+				                </a>
+				            </div> <!-- carousel-inner end -->
+					    </div> <!--  actHosted end -->
+					    <h2 class="text-center mb-3 actType">Joined&nbsp;(&nbsp;<span id="sumJoined">0</span>&nbsp;)</h2>
+        				<div id="actJoined" class="carousel slide" data-ride="carousel" data-interval="false">
+	           				<ol class="carousel-indicators">
+								<!-- carousel-indicators generated here -->
+		   			        </ol>
+	           				<div class="carousel-inner">
+	          					<!-- Joined Activities cards generated here -->
+				                <a class="carousel-control-prev" href="#actJoined" role="button" data-slide="prev">
+					                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					                <span class="sr-only">Previous</span>
+				                </a>
+				                <a class="carousel-control-next" href="#actJoined" role="button" data-slide="next">
+					                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					                <span class="sr-only">Next</span>
+				                </a>
+				            </div> <!-- carousel-inner end -->
+			       		</div> <!--  actJoined end -->
+			       		<h2 class="text-center mb-3 actType">Followed&nbsp;(&nbsp;<span id="sumFollowed">0</span>&nbsp;)</h2>
+        				<div id="actFollowed" class="carousel slide" data-ride="carousel" data-interval="false">
+	           				<ol class="carousel-indicators">
+								<!-- carousel-indicators generated here -->
+		   			        </ol>
+	           				<div class="carousel-inner">
+	          					<!-- Followed Activities cards generated here -->
+				                <a class="carousel-control-prev" href="#actFollowed" role="button" data-slide="prev">
+					                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					                <span class="sr-only">Previous</span>
+				                </a>
+				                <a class="carousel-control-next" href="#actFollowed" role="button" data-slide="next">
+					                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					                <span class="sr-only">Next</span>
+				                </a>
+				            </div> <!-- carousel-inner end -->
+			       		</div> <!--  actFollowed end -->
+               		</div> <!--v-pills-activities end-->
+               		
+               		<div class="tab-pane fade" id="v-pills-blogs" role="tabpanel" aria-labelledby="v-pills-blogs-tab">
+ 						<h1 class="text-center mb-3">My Blogs</h1>
+ 						<h2 class="text-center mb-3 actType">Posted&nbsp;(&nbsp;<span id="sumPosted">0</span>&nbsp;)</h2>
+						<div id="bgPosted" class="carousel slide" data-ride="carousel" data-interval="false">
+				            <ol class="carousel-indicators">
+								<!-- carousel-indicators generated here -->
+				            </ol>
+				            <div class="carousel-inner">
+								<!-- Posted Blogs cards generated here -->
+				                <a class="carousel-control-prev" href="#bgPosted" role="button" data-slide="prev">
+					                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					                <span class="sr-only">Previous</span>
+				                </a>
+				                <a class="carousel-control-next" href="#bgPosted" role="button" data-slide="next">
+					                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					                <span class="sr-only">Next</span>
+				                </a>
+				            </div> <!-- carousel-inner end -->
+					    </div> <!--  bgPosted end -->
+					    <h2 class="text-center mb-3 actType">Saved&nbsp;(&nbsp;<span id="sumSaved">0</span>&nbsp;)</h2>
+        				<div id="bgSaved" class="carousel slide" data-ride="carousel" data-interval="false">
+	           				<ol class="carousel-indicators">
+								<!-- carousel-indicators generated here -->
+		   			        </ol>
+	           				<div class="carousel-inner">
+	          					<!-- Joined Activities cards generated here -->
+				                <a class="carousel-control-prev" href="#bgSaved" role="button" data-slide="prev">
+					                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					                <span class="sr-only">Previous</span>
+				                </a>
+				                <a class="carousel-control-next" href="#bgSaved" role="button" data-slide="next">
+					                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+					                <span class="sr-only">Next</span>
+				                </a>
+				            </div> <!-- carousel-inner end -->
+			       		</div> <!--  bgSaved end -->				
+               		</div> <!--v-pills-blogs end-->
+ 					<div class="tab-pane fade" id="v-pills-history" role="tabpanel" aria-labelledby="v-pills-history-tab">
+	                    <div class="row">
+	                        <h1>History</h1>
+	                    </div>
+	                    <div id="showHist">
+	                    <!-- History generated here-->
+	                    </div>
+	                    <div id="loaderHist"></div>
+	                    <div id="histEnd" style="margin:50px 0;color:#1DA1F2; text-align:center; font-size:30px; font-weight:bolder;">
+						</div>
+                	</div> <!--v-pills-history end-->
+                	<div class="tab-pane fade  <c:if test="${page eq 'notice'}"> <c:out value="show active"/>  </c:if>" id="v-pills-notification" role="tabpanel" aria-labelledby="v-pills-notification-tab">
+	                    <div class="row">
+	                        <h1>Notification</h1>
+	                    </div>
+	                    <div class="row notificationRow">
+	                        <div class="col">
+	                            <div class="content">
+	                                <c:forEach var="noticeFirst" items="${noticeListFirst}" varStatus="loop">
+	                              		<div class="alert alert-info fade in alert-dismissible show">
+	           								<button id="closeButton${loop.count}" type="button" onclick="isRead(${noticeFirst.noticeID})" class="close" data-dismiss="alert" aria-label="Close" >
+	              							<span aria-hidden="true" style="font-size:20px">&times;</span>
+	            							</button><a href="<c:url value="/ProfilePageGet?memberID=${noticeFirst.memberID_Sender}&lmi=${user.memberID}" />">${noticeFirst.messegeContent}</a>
+	            							<c:if test="${noticeFirst.actSNum=='0'and noticeFirst.caseID=='0'}">
+									        	<div style="float: right">
+										            <span id="timeshow">${noticeFirst.noticeTime}</span>
+										            <div id="buttonStatus${loop.count}" style="display: inline-block;">
+										            <button id="confirmButton${loop.count}" type="button" onclick="friendAccept(${noticeFirst.memberID_Sender},${noticeFirst.memberID_Receiver})" class="btn btn-success btn-sm">接受</button>
+										            <button id="rejectButton${loop.count}" type="button" class="btn btn-danger btn-sm ">拒絕</button>
+	             								</div>
+	             							</div>
+	            						</c:if>
+	         						</div>
+                              </c:forEach>
+                            </div><!--content-->
+                        </div> <!--rol-->
+                    </div><!-- notificationRow end-->
+                </div> <!--v-pills- notification end-->
+                <div class=" tab-pane fade " id="v-pills-social" role="tabpanel" aria-labelledby="v-pills-social-tab">
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
                         <div class="row">
                             <h1>Friends</h1>
                         </div>
                         <div class="row friendRow">
                             <div class="col">
                                 <div class="content" style="background-color: white;border-radius:5px;">
+<<<<<<< HEAD
                             	<div class="iconList">
                             	<c:forEach var="friend" items="${friendList}">
                             	<div class="iconList_Icon">
@@ -409,6 +595,19 @@
 <!-- 									</div> -->
 									
                                 </div><!--content-->
+=======
+		                             <div class="iconList">
+			                             <c:forEach var="friend" items="${friendList}">
+			                             <div class="iconList_Icon">
+				                             <a href="<c:url value="/ProfilePageGet?memberID=${friend.memberID }&lmi=${user.memberID}" />">
+				                              <img src="data:image/png;base64,${friend.memberPicToBase64}" style="width:150px;height: 150px;border-radius:50%">
+				                              <p>${friend.memberName}</p>
+			                             </a>
+			                             </div>
+			                             </c:forEach>
+		              				</div>
+                            	</div><!--content-->
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
                             </div> <!--rol-->
                         </div><!-- notificationRow end-->
                     </div> <!--v-pills- notification end-->

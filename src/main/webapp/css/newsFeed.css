@@ -74,6 +74,28 @@
      color: orange;
 }
 
+<<<<<<< HEAD
+=======
+.postAll{
+	color:#212529;
+/* 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+  	font-family: arial;	
+}
+.postAll:hover{
+	cursor: pointer;
+	background-color: white;
+	background: rgba(0, 0, 150, 0.1);
+/* 	border: 1px solid green; */
+/* 	opacity: 0.8;	 */
+	
+}
+
+a{
+  text-decoration:none !important; 
+/*   color:#212529; */
+}
+
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
 .postButton{
     width: 90%;
     /* border: 1px solid green; */

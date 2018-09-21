@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<<<<<<< HEAD
 <title>${userInfo.memberName}個人首頁</title>
 	<%@ include file="/Index/NewHeader.jsp"%>
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
@@ -12,6 +13,24 @@
 
     <link rel="stylesheet" href='<c:url value="/css/profileMember.css"/>' >
     <link rel="stylesheet" href='<c:url value="/css/newsFeed.css"/>'>
+=======
+<title>ProfileMember</title>
+<%@ include file="/Index/NewHeader.jsp"%>
+
+<%-- <link rel="stylesheet" href="<c:url value="/css/bootstrap.min.css"/>"> --%>
+<link rel="stylesheet" href="<c:url value="/css/all.css"/>">
+
+<%-- <script src="<c:url value="/js/jquery-3.3.1.min.js"/>"></script> --%>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
+<%-- <script src="<c:url value="/js/bootstrap.min.js"/>"></script> --%>
+
+<link rel="stylesheet" href="<c:url value="/css/profileSelf.css"/>">
+<link rel="stylesheet" href="<c:url value="/css/newsFeed.css"/>">
+<link rel="stylesheet" href="<c:url value="/css/profileActBlog.css"/>">
+<c:import url="/js/profileHist_js.jsp"/>
+<c:import url="/js/profileActBlog_js.jsp"/>
+
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
 </head>
 <body>
     <div id="idTop" class="container">
@@ -34,6 +53,7 @@
             <div id="asideLeft" class="col-md-3">
                 <div class="row">
                    <ul id="accordion" class="accordion">
+<<<<<<< HEAD
                        <li>
                            <div id="idSocialBar" class="col col_4">
                                <div class="edit-pic">
@@ -59,6 +79,30 @@
                         <a class="nav-link text-right list-group-item" id="v-pills-favorite-tab" data-toggle="pill" href="#v-pills-favorite" role="tab" aria-controls="v-pills-favorite" aria-selected="false">
                             <span class="float-left"><i class="fas fa-heart"></i>&nbsp;&nbsp;<strong>Favorite</strong></span> 37
                         </a>
+=======
+                    <li>
+                      <div id="idSocialBar" class="col col_4">
+                         <div class="edit-pic">
+                              <a href="https://web.facebook.com/" target="_blank" class="fab fa-facebook" style="color: #3b5998; border: 1px solid #3b5998;"></a>
+                              <a href="https://www.instagram.com/elizabetholsenofficial/" target="_blank" class="fab fa-instagram"  style="color: #833ab4;border: 1px solid #833ab4;"></a>
+                              <a href="https://twitter.com/elizabetholsenn" target="_blank" class="fab fa-twitter"  style="color: #1da1f2;border: 1px solid #1da1f2;"></a>
+                              <a href="https://plus.google.com/" target="_blank" class="fab fa-google"  style="color: #dd4b39; border: 1px solid #dd4b39;"></a>
+                              <a href="https://www.youtube.com/" target="_blank" class="fab fa-youtube"  style="color: #ff0000; border: 1px solid #ff0000;"></a>
+                         </div>
+                      </div>
+                     </li>
+                    </ul>
+                    <div class="nav flex-column nav-pills list-group" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active text-right list-group-item" id="v-pills-history-tab" data-toggle="pill" href="#v-pills-history" role="tab" aria-controls="v-pills-history" aria-selected="true">
+                            <span class="float-left"><i class="far fa-newspaper"></i>&nbsp;&nbsp;<strong>News Feed</strong></span> 125 
+                        </a>
+                        <a class="nav-link text-right list-group-item" id="v-pills-records-tab" data-toggle="pill" href="#v-pills-records" role="tab" aria-controls="v-pills-posts" aria-selected="false">
+                            <span class="float-left"><i class="fas fa-pen-square"></i>&nbsp;&nbsp;<strong>Records</strong></span> 37
+                        </a>
+                        <a class="nav-link text-right list-group-item" id="v-pills-social-tab" data-toggle="pill" href="#v-pills-social" role="tab" aria-controls="v-pills-social" aria-selected="false">
+                            <span class="float-left"><i class="fas fa-user-friends"></i>&nbsp;&nbsp;<strong>Social</strong></span> 125
+                        </a>           
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
                     </div>
                     <li>
                    </ul>
@@ -178,6 +222,7 @@
                     <div class="row socialRow">
                         <div class="col">
                             <div class="content" style="background-color: white;border-radius:5px;">
+<<<<<<< HEAD
                             	<div class="iconList">
                             	<c:forEach var="friend" items="${friendList}">
                             	<div class="iconList_Icon">
@@ -189,6 +234,18 @@
                             	</c:forEach>
         					</div>
                         
+=======
+	                             <div class="iconList">
+		                             <c:forEach var="friend" items="${friendList}">
+		                             <div class="iconList_Icon">
+			                             <a href="<c:url value="/ProfilePageGet?memberID=${friend.memberID}&lmi=${user.memberID}" />">
+			                              <img src="data:image/png;base64,${friend.memberPicToBase64}" style="width:150px;height: 150px;border-radius:50%">
+			                              <p>${friend.memberName}</p>
+			                             </a>
+		                             </div>
+	                             </c:forEach>
+	             				</div>
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
                             </div><!--content-->
                         </div> <!--rol-->
                     </div><!--profileRow end-->

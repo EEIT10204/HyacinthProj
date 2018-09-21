@@ -23,17 +23,53 @@ import model.MemberBean;
 import model.MemberBlogBean;
 import model.MembershipBean;
 import model.NoticeBean;
+<<<<<<< HEAD
 import model.ReportBean;
 import model.ViewPointBean;
+=======
+import model.SubMemberBean;
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
 
 @Configuration
 @ComponentScan(basePackages={"model"})
 public class SpringJavaConfiguration {
 	@Bean
+<<<<<<< HEAD
 	public MessageSource messageSource() {
 		ResourceBundleMessageSource bundle = new ResourceBundleMessageSource();
 		bundle.setBasename("controller.Errors");
 		return bundle;
+=======
+	public SessionFactory sessionFactory() {
+		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource());
+
+		builder.addAnnotatedClasses(ActBean.class);
+		builder.addAnnotatedClasses(ACCommentBean.class);
+		builder.addAnnotatedClasses(BlogBean.class);
+		builder.addAnnotatedClasses(BGCommentBean.class);
+		builder.addAnnotatedClasses(CityBean.class);
+		builder.addAnnotatedClasses(MemberBean.class);
+		builder.addAnnotatedClasses(SubMemberBean.class);
+		
+		builder.addAnnotatedClasses(MemberActBean.class);
+		builder.addAnnotatedClasses(MemberBlogBean.class);
+		
+		builder.addAnnotatedClasses(MembershipBean.class);
+		builder.addAnnotatedClasses(MemberHistBean.class);
+		builder.addAnnotatedClasses(NoticeBean.class);
+		
+		
+		Properties properties = new Properties();
+//		properties.put("hibernate.dialect", "org.hibernate.dialect.SQLServerDialect");
+		//Hibernate 分頁需更換SQLServer版本
+		properties.put("hibernate.dialect", "org.hibernate.dialect.SQLServer2005Dialect");
+		properties.put("hibernate.show_sql", "true");
+		properties.put("hibernate.current_session_context_class", "thread");
+		
+		builder.addProperties(properties);
+		
+		return builder.buildSessionFactory();
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
 	}
 	@Bean
 	public DataSource dataSource() {
