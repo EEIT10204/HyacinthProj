@@ -110,10 +110,14 @@ vertical-align: middle;
 </div>
 
     <div style="background-color: #f5f5f5; margin:auto; text-align: center; margin-right: ">
-		<button type="button" id="LikeOrDisLike"class="btn btn-primary"  value="like" >like</button>
-		<button type="button" class="btn btn-success" id="AttendOrNot"  value="Attend">Attend</button> <!-- ${attendStatus} -->
+			<button type="button" id="LikeOrDisLike"class="btn btn-primary"  value="${likebottuntype}">${likebottuntype}</button>
+		<button type="button" class="btn btn-success" id="AttendOrNot"  value="${attendbottuntype}">${attendbottuntype}</button> <!-- ${attendStatus} -->
 		<button type="button" class="btn btn-danger"  id="sendReport" value="sendReport">Report</button>
 		<button type="button" class="btn btn-warning" id="invite" value="invite">Invite</button>
+		<input type="hidden" id= "num" value="${useractSNum}">
+		<input type="hidden" id= "mem" value="${userid}">
+		
+
 		
 	
  
@@ -130,21 +134,23 @@ $( document ).ready(function() {
  $('#LikeOrDisLike').on('click',this.value ,function () {
 	 
 	 alert(this.value);
-	 if(this.value == 'like'){
+	 if(this.value == 'Like'){
 		 var process = true;
-	    	$('#LikeOrDisLike').text("dislike").attr("value","dislike");
-	 }
-	 else{
+	    	$('#LikeOrDisLike').text("disLike").attr("value","disLike");
+	 } else if (this.value == 'disLike'){
 		 var process = false;
-	    	$('#LikeOrDisLike').text("like").attr("value","like");
+	    	$('#LikeOrDisLike').text("Like").attr("value","Like");
+	  }else if (this.value == 'none'){
+		 var process = 'none';
+	    	$('#allButton').html("<h3>please login !<h3>");
 	 }
 	 
     $.ajax({
 	    type : "post",
 	    url : "${pageContext.request.contextPath}/memberact.Controller",
 	    data:JSON.stringify({
-	    	"actSNum":2,
-	    	"memberID":3,
+	    	"actSNum":document.getElementById("num").value,
+	    	"memberID":document.getElementById("mem").value,
 	    	"isLike":process,    	
 	    }),
 	    
@@ -177,8 +183,8 @@ $( document ).ready(function() {
 	    type : "post",
 	    url : "${pageContext.request.contextPath}/memberact.Controller",
 	    data:JSON.stringify({
-	    	"actSNum":2,
-	    	"memberID":3,
+	    	"actSNum":document.getElementById("num").value,
+	    	"memberID":document.getElementById("mem").value,
 	    	"isAttend":process,    	
 	    }),
 	    

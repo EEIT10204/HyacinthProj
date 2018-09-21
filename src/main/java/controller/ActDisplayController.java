@@ -90,8 +90,8 @@ public class ActDisplayController {
 		}
 		//////////////////////////////////////////////
 		Integer id = memberBean.getMemberID();
-		model.addAttribute("user",id);
-		model.addAttribute("user",actSNum);
+		model.addAttribute("userid",id);
+		model.addAttribute("useractSNum",actSNum);
 		
 		}
 //		
