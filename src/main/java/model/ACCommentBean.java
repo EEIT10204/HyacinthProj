@@ -10,45 +10,23 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Act_Comment")
 public class ACCommentBean {
-/*
- memberID int references member(memberID) NOT NULL,
- ActSNum int references Act(ActSNum) NOT NULL,
- commentSNum int primary key IDENTITY NOT NULL,
- ACCommentID AS 'ACC'+RIGHT('00000'+convert(varchar,commentSNum),5) PERSISTED NOT NULL,
- commentContent nvarchar(500),
- replyTime datetime,
- commentVisibility int
-*/	
-	
-	private Integer memberID;
-	private Integer actSNum;
-	@Column(insertable=false,updatable=false)
+	@Column(insertable=false, updatable=false)
 	private Integer commentSNum;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(insertable=false, updatable=false)
 	private String ACCommentID;
 	private String commentContent;
 	private java.sql.Timestamp replyTime;
+	private Integer memberID;
+	private Integer actSNum;
 	private Integer commentVisibility;
 	
 	@Override
 	public String toString() {
-		return "Act_CommentBean [memberID=" + memberID + ", actSNum=" + actSNum + ", commentSNum=" + commentSNum
-				+ ", ACCommentID=" + ACCommentID + ", commentContent=" + commentContent + ", replyTime=" + replyTime
+		return "ACCommentBean [commentSNum=" + commentSNum + ", ACCommentID=" + ACCommentID + ", commentContent="
+				+ commentContent + ", replyTime=" + replyTime + ", memberID=" + memberID + ", actSNum=" + actSNum
 				+ ", commentVisibility=" + commentVisibility + "]";
-	}
-	
-	public Integer getMemberID() {
-		return memberID;
-	}
-	public void setMemberID(Integer memberID) {
-		this.memberID = memberID;
-	}
-	public Integer getActSNum() {
-		return actSNum;
-	}
-	public void setActSNum(Integer actSNum) {
-		this.actSNum = actSNum;
 	}
 	public Integer getCommentSNum() {
 		return commentSNum;
@@ -74,11 +52,24 @@ public class ACCommentBean {
 	public void setReplyTime(java.sql.Timestamp replyTime) {
 		this.replyTime = replyTime;
 	}
+	public Integer getMemberID() {
+		return memberID;
+	}
+	public void setMemberID(Integer memberID) {
+		this.memberID = memberID;
+	}
+	public Integer getActSNum() {
+		return actSNum;
+	}
+	public void setActSNum(Integer actSNum) {
+		this.actSNum = actSNum;
+	}
 	public Integer getCommentVisibility() {
 		return commentVisibility;
 	}
 	public void setCommentVisibility(Integer commentVisibility) {
 		this.commentVisibility = commentVisibility;
 	}
-	
+
 }
+

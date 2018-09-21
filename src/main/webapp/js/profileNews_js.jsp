@@ -270,9 +270,9 @@ $(document).ready(function() {
 //			$(input).parent().next().hide();
 //			$(input).parent().next().slideDown(1000);
       }).fail(function(){
-//			alert("已無更舊留言!!");
+// 		  alert("已無更舊留言!!");
           $(input).parent().next().append('<div style="color:#D12C84; text-align:center; font-size:16px;">No other comments.</div>');
-//           $(input).attr("name",1001);
+          $(input).attr("name",1001);
       }).always(function(){
           $('#loadersmall').remove();
       });

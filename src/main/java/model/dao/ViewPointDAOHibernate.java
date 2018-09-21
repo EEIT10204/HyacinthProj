@@ -16,6 +16,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Repository;
 
 import config.SpringJavaConfiguration;
+import model.ActBean;
+import model.TripBean;
 import model.ViewPointBean;
 import model.ViewPointDAO;
 
@@ -39,7 +41,7 @@ public class ViewPointDAOHibernate implements ViewPointDAO {
 		vBean3.setViewPointName("test name");
 		vBean3.setViewPointAddress("test address");
 		vBean3.setViewPointType("food");
-		vBean3.setViewPointInfo("test info");
+		vBean3.setVewPointInfo("test info");
 		
 		vDAO.insert(vBean3);
 		
@@ -121,17 +123,34 @@ public class ViewPointDAOHibernate implements ViewPointDAO {
 	@Override
 	public ViewPointBean update(ViewPointBean bean) {
 		if(bean != null) {
-			this.getSession().saveOrUpdate(bean);
-			System.out.println(bean.toString());
+			this.getSession().save(bean);;
+			this.getSession().getTransaction().commit();
+			this.getSession().close();
 			return bean;
 		}
 		return null;
 	}
 
 	@Override
-	public ViewPointBean delete(int viewPointID) {
+	public boolean delete(int viewPointID) {
 		// TODO Auto-generated method stub
-		return null;
+		return false;
+	}
+	
+	@Override
+	public ViewPointBean select(ViewPointBean bean) {
+		System.out.println("DAO select by ActSNum access");
+		try {
+			ViewPointBean temp = this.getSession().createQuery("from TripBean WHERE ViewPointID LIKE '" + bean.getViewPointID() + "'",ViewPointBean.class).getSingleResult();
+			return temp;
+		} catch (NoResultException e) {
+			return null;
+		}
+
+	}
+	
+	public ViewPointBean select(int viewPointID) {
+		return this.getSession().get(ViewPointBean.class, viewPointID);
 	}
 
 

@@ -92,7 +92,7 @@ function getHosts(personId){
         	 
         	 var pText1=$('<p></p>').addClass('card-text').append(spanLocation,spanActStatus);
 
-        	 var pText2=$('<p style="text-align:right; font-size:16px;"></p>').addClass('card-text').append(smallTime);
+        	 var pText2=$('<p style="text-align:right; font-size:15px;"></p>').addClass('card-text').append(smallTime);
         	 var divCardBody=$('<div></div>').addClass('card-body').append(h4Title,pText1,pText2);
         	 var divCard=$('<div></div>').addClass('card').append(imgActCov,divCardBody);
         	 var aLink=$('<a></a>').attr('href',actPath+getObj.actSNum).append(divCard);
@@ -168,7 +168,7 @@ function getJoins(){
         	 
         	 var pText1=$('<p></p>').addClass('card-text').append(spanLocation,spanActStatus);
 
-        	 var pText2=$('<p style="text-align:right; font-size:16px;"></p>').addClass('card-text').append(smallTime);
+        	 var pText2=$('<p style="text-align:right; font-size:15px;"></p>').addClass('card-text').append(smallTime);
         	 var divCardBody=$('<div></div>').addClass('card-body').append(h4Title,pText1,pText2);
         	 var divCard=$('<div></div>').addClass('card').append(aAuth,imgActCov,divCardBody);
         	 var aLink=$('<a></a>').attr('href',actPath+getObj[1].actSNum).append(divCard);
@@ -241,7 +241,7 @@ function getFollows(){
         	 
         	 var pText1=$('<p></p>').addClass('card-text').append(spanLocation,spanActStatus);
 
-        	 var pText2=$('<p style="text-align:right; font-size:16px;"></p>').addClass('card-text').append(smallTime);
+        	 var pText2=$('<p style="text-align:right; font-size:15px;"></p>').addClass('card-text').append(smallTime);
         	 var divCardBody=$('<div></div>').addClass('card-body').append(h4Title,pText1,pText2);
         	 var divCard=$('<div></div>').addClass('card').append(aAuth,imgActCov,divCardBody);
         	 var aLink=$('<a></a>').attr('href',actPath+getObj[1].actSNum).append(divCard);
@@ -310,7 +310,7 @@ function getPosts(personId){
     	 
     	 var pText1=$('<p></p>').addClass('card-text').append(spanLocation,spanActStatus);
 
-    	 var pText2=$('<p style="text-align:right; font-size:16px;"></p>').addClass('card-text').append(smallTime);
+    	 var pText2=$('<p style="text-align:right; font-size:15px;"></p>').addClass('card-text').append(smallTime);
     	 var divCardBody=$('<div></div>').addClass('card-body').append(h4Title,pText1,pText2);
     	 var divCard=$('<div></div>').addClass('card').append(imgActCov,divCardBody);
     	 var aLink=$('<a></a>').attr('href',blogPath+getObj.blogSNum).append(divCard);
@@ -380,7 +380,7 @@ function getSaves(){
         	 }
         	 var pText1=$('<p></p>').addClass('card-text').append(spanLocation,spanActStatus);
 
-        	 var pText2=$('<p style="text-align:right; font-size:16px;"></p>').addClass('card-text').append(smallTime);
+        	 var pText2=$('<p style="text-align:right; font-size:15px;"></p>').addClass('card-text').append(smallTime);
         	 var divCardBody=$('<div></div>').addClass('card-body').append(h4Title,pText1,pText2);
         	 var divCard=$('<div></div>').addClass('card').append(aAuth,imgActCov,divCardBody);
         	 var aLink=$('<a></a>').attr('href',blogPath+getObj[1].blogSNum).append(divCard);

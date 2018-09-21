@@ -8,6 +8,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    /* word-break: break-all; */
 }
 /* Container idTop*/
 #idTop{
@@ -20,23 +21,15 @@
 #idCover{
     z-index: 0;
     width: 100%;  
+    max-height: 422px;
+    overflow:hidden;
     border-radius: 25px 25px 0 0;
 }
-
-#idBackPic{
-    margin: -150px 10px 0px 50px;
-    z-index: 1;
-    width: 20%; 
-}
-
 #idProPic{
     margin: -150px 10px 0px 50px;
     z-index: 2;
-    width: 228px; 
-    height: 269px;
-/*     width: 20%;  */
-/*     max-height: 269px; */
-    overflow: hidden;
+    width: 20%; 
+    height: 16rem;
 }
 /*------Button------*/
 #idFollow {
@@ -79,9 +72,9 @@
     cursor: pointer;
 }
 .btn-o:focus {
-/*     background: #b63b4d; */
+    background: #b63b4d;
     color: #fff;
-/*     border: 1px solid #b63b4d; */
+    border: 1px solid #b63b4d;
 }
 
 /*------PersonalInfo--------*/
@@ -175,6 +168,7 @@ a {
     color: #212529;
     /* border: 1px solid brown */
 }
+
 #sendMail{
     border: none; /* Remove borders */
     color: white; /* Add a text color */
@@ -186,6 +180,8 @@ a {
     background: #0b7dda;
     cursor: pointer;
 }
+<<<<<<< HEAD
+=======
 
 
 
@@ -239,10 +235,10 @@ a {
 }
 
 .accordion li.open .link {
-/*     color: #b63b4d; */
+    color: #b63b4d;
 }
 .accordion li.open i{
-/*     color: #b63b4d; */
+    color: #b63b4d;
 }
 
 .accordion li.open i.fa-chevron-down {
@@ -301,35 +297,26 @@ a {
 }
 
 .edit-pic a:focus {
-/*     background: #b63b4d; */
+    background: #b63b4d;
     color: #fff;
-/*     border: 1px solid #b63b4d; */
+    border: 1px solid #b63b4d;
 }
 
 /*----------好友列表---------*/
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
 .iconList{
- text-align:center;
- display: inline-block;
- width:100%; 
- margin-left:20px;
- margin-top: 20px;
+	text-align:center;
+	display: inline-block;
+	width:100%; 
+	margin-left:20px;
+	margin-top: 20px;
 }
 .iconList>.iconList_Icon{
+<<<<<<< HEAD
+	margin: 10px;
+	float: left;
+=======
  margin: 10px;
  float: left;
-}
-.clickMe {
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-}
-.panel {
-    padding: 15px 30px 5px 30px;
-    background-color: white;
-    overflow: hidden;
-    display:none;
-    border-bottom: 1px solid #E5E7E9 ;
+>>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
 }

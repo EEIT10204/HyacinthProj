@@ -34,4 +34,9 @@ public class BGCommentService {
 		bGCommentDAO.update(bean);
 		return bean;
 	}
+	
+	public List<Object[]> selectBlogCommMemberJoin(Integer blogSNum){
+		List<Object[]> results = bGCommentDAO.selectBlogCommMemberJoin(blogSNum);		
+		return results;
+	}
 }
