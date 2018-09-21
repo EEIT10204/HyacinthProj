@@ -8,7 +8,6 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    /* word-break: break-all; */
 }
 /* Container idTop*/
 #idTop{
@@ -21,15 +20,23 @@
 #idCover{
     z-index: 0;
     width: 100%;  
-    max-height: 422px;
-    overflow:hidden;
     border-radius: 25px 25px 0 0;
 }
+
+#idBackPic{
+    margin: -150px 10px 0px 50px;
+    z-index: 1;
+    width: 20%; 
+}
+
 #idProPic{
     margin: -150px 10px 0px 50px;
     z-index: 2;
-    width: 20%; 
-    height: 16rem;
+    width: 228px; 
+    height: 269px;
+/*     width: 20%;  */
+/*     max-height: 269px; */
+    overflow: hidden;
 }
 /*------Button------*/
 #idFollow {
@@ -168,7 +175,6 @@ a {
     color: #212529;
     /* border: 1px solid brown */
 }
-
 #sendMail{
     border: none; /* Remove borders */
     color: white; /* Add a text color */
@@ -180,8 +186,6 @@ a {
     background: #0b7dda;
     cursor: pointer;
 }
-<<<<<<< HEAD
-=======
 
 
 
@@ -303,20 +307,14 @@ a {
 }
 
 /*----------好友列表---------*/
->>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
 .iconList{
-	text-align:center;
-	display: inline-block;
-	width:100%; 
-	margin-left:20px;
-	margin-top: 20px;
+ text-align:center;
+ display: inline-block;
+ width:100%; 
+ margin-left:20px;
+ margin-top: 20px;
 }
 .iconList>.iconList_Icon{
-<<<<<<< HEAD
-	margin: 10px;
-	float: left;
-=======
  margin: 10px;
  float: left;
->>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
 }

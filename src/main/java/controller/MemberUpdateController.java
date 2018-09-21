@@ -25,18 +25,13 @@ import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 
 import model.MemberBean;
 import model.MemberService;
-import model.SubMemberBean;
-import model.SubMemberService;
 
 @Controller
-@SessionAttributes(names={"user","subInfo"})
+@SessionAttributes(names={"user"})
 public class MemberUpdateController {
 	
 	@Autowired
 	private MemberService memberService;
-	
-	@Autowired
-	private SubMemberService subMemberService;
 	
 	@InitBinder
 	public void registerPropertyEditor(WebDataBinder webDataBinder) {
@@ -134,22 +129,6 @@ public class MemberUpdateController {
 		}
 		return "verifyError.page";
 	}
-	
-	
-	@RequestMapping(path={"/updateSubMember.controller"},method= {RequestMethod.POST})
-	public String updateSubMember(Model model
- 			,@ModelAttribute(name="advancedForm") SubMemberBean subMemberBean,BindingResult bindingResult
- 			,@RequestParam("memberCover") MultipartFile memberCover
-			) {
-		System.out.println("updateSubMember.controller is called~");
-		System.out.println("subMemberBean="+subMemberBean);
-		System.out.println("memberCover="+memberCover);
-		SubMemberBean result = subMemberService.updateSubMemberInfo(subMemberBean);
-		model.addAttribute("subInfo",result);
-		return "profileSelf.page";	
-	}	
-	
-	
 	
 	
 

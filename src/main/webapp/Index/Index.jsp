@@ -18,8 +18,8 @@
 <%--     <script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script> --%>
 <%--     <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.js"></script> --%>
 <%-- 	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script> --%>
-	<script src="${pageContext.request.contextPath}/js/IndexOnload.js"></script>
-<%-- 	<script src="${pageContext.request.contextPath}/js/ActOnload.js"></script> --%>
+	<script src="${pageContext.request.contextPath}/js/IndexOnload2.js"></script>
+
 	
 <%-- 	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script> --%>
 	<script src="${pageContext.request.contextPath}/js/jquery.poptrox.min.js"></script>
@@ -213,7 +213,7 @@ background-color: rgb(235, 235, 235);
 
 		<article>
 		
-<a href="${pageContext.request.contextPath}/ACCommentController?actSNum=2&memberID=2">123123123564568</a>	
+<%-- <a href="${pageContext.request.contextPath}/ACCommentController?actSNum=2&memberID=2">123123123564568</a>	 --%>
 <%-- <a href="${pageContext.request.contextPath}/Index/ACCommentController">123123123564568</a> --%>
 		    <!-- Banner -->
     <section id="banner">
@@ -263,37 +263,37 @@ background-color: rgb(235, 235, 235);
 			  <div class="carousel-item active" id="loopBlog1">
 			  <div class="city" id="cities1" style="white-space: nowrap" "width: 300px" "height: 100px"></div>
               <div class="words" id="textTile1"></div>
-				<img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/Japan-Travel.jpg" alt="First slide">
+				<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/Japan-Travel.jpg" alt="First slide"></a>
 			  </div>
 			  
 			  <div class="carousel-item" id="loopBlog2">
 			  <div class="city" id="cities2"></div>
               <div class="words" id="textTile2"></div>
-				<img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/london2.jpg" alt="Second slide">
+				<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/london2.jpg" alt="Second slide"></a>
 			  </div>
 			  
 			  <div class="carousel-item" id="loopBlog3">
 			  <div class="city" id="cities3"></div>
               <div class="words" id="textTile3"></div>
-				<img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/london3.jpg" alt="Third slide">
+				<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/london3.jpg" alt="Third slide"></a>
 			  </div>
 			  
 			  <div class="carousel-item" id="loopBlog4">
 			  <div class="city" id="cities4"></div>
               <div class="words" id="textTile4"></div>
-					<img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/Japan-Travel.jpg" alt="Fourth slide">
+					<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/Japan-Travel.jpg" alt="Fourth slide"></a>
 				  </div>
 				  
 			  <div class="carousel-item" id="loopBlog5">
 			  <div class="city" id="cities5"></div>
               <div class="words" id="textTile5"></div>
-					<img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/Tokyo_Travel.jpg" alt="Fifth slide">
+					<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/Tokyo_Travel.jpg" alt="Fifth slide"></a>
 			  </div>
 			  
 			   <div class="carousel-item" id="loopBlog6">
 			   <div class="city" id="cities6"></div>
               <div class="words" id="textTile6"></div>
-					<img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/Japan-Travel.jpg" alt="Sixth slide">
+					<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/Japan-Travel.jpg" alt="Sixth slide"></a>
 			  </div>
 			</div>
 			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -387,27 +387,6 @@ background-color: rgb(235, 235, 235);
 	 </script>
 	 
 			</article>		
-			
-		<!-- Footer -->
-<!-- 			<footer id="footer"> -->
-<!-- 						<div class="footerdown"> -->
-<!-- 							<ul class="icons"> -->
-<%-- 								<li><a href="https://twitter.com/login" class="icon fa-twitter"><span class="label"><img src="${pageContext.request.contextPath}/Images/Index/twitter.png" width="60"></span></a></li> --%>
-<%-- 								<li><a href="https://zh-tw.facebook.com/" class="icon fa-facebook"><span class="label"><img src="${pageContext.request.contextPath}/Images/Index/facebook.png" width="60px"></span></a></li> --%>
-<%-- 								<li><a href="https://www.instagram.com/?hl=zh-tw" class="icon fa-instagram"><span class="label"><img src="${pageContext.request.contextPath}/Images/Index/instagram.png" width="60px"></span></a></li> --%>
-<!-- 								<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li> -->
-<!-- 								<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li> -->
-<!-- 							</ul> -->
-<!-- 						</div> -->
-<!-- 					</div> -->
-<!-- 					<ul class="copyright"> -->
-<!-- 						<li>&copy; Untitled. All rights reserved.</li> -->
-<!-- 						<li>Design: TEMPLATED</a></li> -->
-<!-- 						<li>Images: Unsplash</a></li> -->
-<!-- 					</ul> -->
-<!-- 				</div> -->
-<!-- 			</footer> -->
-<%-- <jsp:include page="/Index/footer.jsp"></jsp:include> --%>
-
 	</body>
+<jsp:include page="../Index/Footer.jsp" />
 </html>

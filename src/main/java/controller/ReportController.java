@@ -121,7 +121,7 @@ public class ReportController {
 			temp.setBGCommentID(referID);
 			BGCommentBean bgCommentResult = bGCommentService.selectByCommentID(temp);
 			MemberBean memberResult = memberDAO.findByPK(bgCommentResult.getMemberID());
-			
+			System.out.println("show detail BGC: " + bgCommentResult.toString());
 			//test select by blogSNum
 //			temp.setBGCommentID(null);
 //			temp.setBlogSNum(1);
@@ -158,15 +158,14 @@ public class ReportController {
 			JsonElement jsonTree = beanToJson.toJsonTree(blogResult);
 			jsonTree.getAsJsonObject().addProperty("memberName", memberResult.getMemberName());
 			String json = beanToJson.toJson(jsonTree);
-			System.out.println("bgComment json: " + json);
+//			System.out.println("bgComment json: " + json);
 			return json;		
 		}
 		else if(referID.contains("AC")) {
-			System.out.println("AC");
 			ActBean actBean = new ActBean();
 			actBean.setActID(referID);
 			ActBean actResult = actDAO.selectByActID(actBean);
-//			System.out.println("Act detail: " + actBean.toString());
+			System.out.println("Act detail: " + actResult.toString());
 			MemberBean memberResult = memberDAO.findByPK(actResult.getMemberID());
 			
 			Gson beanToJson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();

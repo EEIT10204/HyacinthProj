@@ -4,9 +4,5 @@
 				maxTotal="100" maxIdle="30"	maxWaitMillis="10000"
 				username="sa" password="passw0rd"
 				driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
-<<<<<<< HEAD
 				url="jdbc:sqlserver://localhost:1433;database=HYACINTH" />
-=======
-				url="jdbc:sqlserver://localhost:1433;database=hyacinth" />
->>>>>>> c89f0141882deea9b6670f84845d38c26d69ae3c
 </Context>

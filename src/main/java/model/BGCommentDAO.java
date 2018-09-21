@@ -14,5 +14,11 @@ public interface BGCommentDAO {
 	
 	public abstract BGCommentBean delete(BGCommentBean bean);
 	
-	public abstract List<Object[]> selectBlogCommMemberJoin(Integer blogSNum);
+	public abstract Integer findCommentsNum(Integer blogSNum);
+	
+	public abstract List<Object[]> findCommRows(Integer blogSNum,int first, int num);
+	
+	public abstract BGCommentBean insertCommRow(BGCommentBean bean);
+	
+	
 }

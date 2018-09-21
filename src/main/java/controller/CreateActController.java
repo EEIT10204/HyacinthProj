@@ -85,7 +85,7 @@ public class CreateActController {
         }
 //		
         actbean.setActCity(abean.getActCity());
-        actbean.setActintro(abean.getActintro());
+        actbean.setActIntro(abean.getActIntro());
         actbean.setActPhoto(abean.getActPhoto());
         actbean.setActTitle(abean.getActTitle());
         actbean.setActView(abean.getActView());

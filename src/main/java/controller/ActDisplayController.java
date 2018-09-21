@@ -35,7 +35,6 @@ import model.dao.ViewPointDAOHibernate;
 @Controller
 public class ActDisplayController {
 
-
 	@Autowired
 	private ActDAOHibernate actDAOHibernate;
 	@Autowired
@@ -51,53 +50,32 @@ public class ActDisplayController {
 	@RequestMapping(
 			path={"/actdisplay.controller"}
 			)
-	public String method( Model model, @RequestParam Integer actSNum , @SessionAttribute(name="user", required=false) MemberBean memberBean) throws JsonParseException, JsonMappingException, IOException {
-	
-		 
-		if (memberBean==null) {
+	public String method( Model model, @RequestParam Integer actSNum , @SessionAttribute(name="user" ,required=false) MemberBean memberBean) throws JsonParseException, JsonMappingException, IOException {
+			int id = memberBean.getMemberID();
 		
-			model.addAttribute("likebottuntype","none");	
-			model.addAttribute("attendbottuntype","none");	
-		}else {
 	   MemberActBean temp1 = new MemberActBean();
-	    temp1.setMemberID(memberBean.getMemberID()); 
+	    temp1.setMemberID(id); 
 		temp1.setActSNum(actSNum);
 		temp1.setIsLike(null);
 		temp1.setIsAttend(null);
+		
 		MemberActBean NowYourAct = memberActDAOHibernate.select(temp1);
-//		model.addAttribute("NowYourAct", NowYourAct);
-		if(NowYourAct==null) {
-			model.addAttribute("likebottuntype","Like");
-			model.addAttribute("attendbottuntype","Attend");
-		}else {
-			
-		
-		if(NowYourAct.getIsLike()==null){
-			model.addAttribute("likebottuntype","Like");
-		}
-		else{
-			if(NowYourAct.getIsLike() == true)
-				model.addAttribute("likebottuntype","disLike");
-			else
-				model.addAttribute("likebottuntype","Like");
-		}// Like End
-		
-		if(NowYourAct.getIsAttend()==null){
-			model.addAttribute("attendbottuntype","Attend");
-		}else{
-		   if(NowYourAct.getIsAttend()==true){
-		       model.addAttribute("attendbottuntype","Attend");}
-		   else 
-			   model.addAttribute("attendbottuntype","disAttend");
-		   }
-		}
-		//////////////////////////////////////////////
-		Integer id = memberBean.getMemberID();
-		model.addAttribute("user",id);
-		model.addAttribute("user",actSNum);
-		
-		}
+		model.addAttribute("memberAct" , NowYourAct);
+//		if(NowYourAct.getIsLike()==null&&NowYourAct.getIsAttend()==null) {
+//			model.addAttribute("likeStatus","like");
+//			
+//		}\
+//		if(NowYourAct.getIsLike()) {
+//			model.addAttribute("likeStatus","like");
+//		}else {
+//			model.addAttribute("likeStatus","dislike");
+//		}
 //		
+//		if(NowYourAct.getIsAttend()) {
+//			model.addAttribute("attendStatus","attend");
+//		}else {
+//			model.addAttribute("attendStatus","disattend");
+//		}
 //		
         ActBean abean = actDAOHibernate.selectByPK(actSNum);
 	    List<TripBean> trip = tripDAOHibernate.select(abean.getActSNum());		

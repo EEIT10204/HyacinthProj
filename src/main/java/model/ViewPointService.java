@@ -9,23 +9,37 @@ import model.dao.ViewPointDAOHibernate;
 
 @Service
 public class ViewPointService {
+	
 	@Autowired
-	private ViewPointDAOHibernate vPointDAOHibernate;
-
-
-	public List<ViewPointBean> select(ViewPointBean bean) {
-		// TODO Auto-generated method stub
-		return null;
+	private ViewPointDAOHibernate viewPointDAO;
+	
+	public List<ViewPointBean> select(ViewPointBean bean){
+		
+		List<ViewPointBean> results = viewPointDAO.selectAll();
+		return results;
 	}
-
-	public List<ViewPointBean> selectByCondition(ViewPointBean bean) {
-		List<ViewPointBean> result=vPointDAOHibernate.selectByCondition(bean);
-		return result;
+	
+	public List<ViewPointBean> selectByCondition(ViewPointBean bean){
+		List<ViewPointBean> results = viewPointDAO.selectByCondition(bean);
+		return results;
 	}
-
+	
 	public ViewPointBean insert(ViewPointBean bean) {
-		// TODO Auto-generated method stub
-		return null;
+		ViewPointBean temp = viewPointDAO.selectByName(bean);
+		
+		if(temp == null) { //No duplicate viewPoint name found
+			temp = viewPointDAO.insert(bean);
+		return temp;
+		}
+		else {
+			System.out.println("service not insert");
+			return null;
+		}		
 	}
-
+	
+	public ViewPointBean update(ViewPointBean bean) {
+		
+		ViewPointBean temp = viewPointDAO.update(bean);
+		return temp;
+	}
 }

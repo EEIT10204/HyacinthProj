@@ -30,7 +30,7 @@ public class LoginController {
 	public String login(Model model, String memberAccount, String memberPwd) {
 		
 		HashMap<String, String> errors = new HashMap<>();
-		model.addAttribute("errorMsgs", errors); 
+		model.addAttribute("errorMsgs", errors);
 		
 		MemberBean result = memberService.login(memberAccount,memberPwd);
 		if(result==null) {

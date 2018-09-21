@@ -17,7 +17,7 @@ import config.SpringJavaConfiguration;
 @Service
 public class MemberHistService {
 	
-	
+/*	
 	public static void main(String[] args) {
 		
 		//ApplicationContext context = new ClassPathXmlApplicationContext("beans.config.xml");
@@ -59,7 +59,7 @@ public class MemberHistService {
 			((ConfigurableApplicationContext) context).close(); //close()方法即會引發destroy
 		}	
 	}
-
+*/
 	@Autowired
 	private MemberHistDAO memberHistDAO;
 	@Autowired
@@ -175,7 +175,7 @@ public class MemberHistService {
 					newsFeed.setAuthorPic(authorBean.getMemberPic());
 					newsFeed.setAuthorName(authorBean.getMemberName());
 				}
-				newsFeed.setArticleTime(blogBean.getUpdatetime());
+				newsFeed.setArticleTime(blogBean.getUpdateTime());
 				newsFeed.setArticleLocation(blogBean.getBlogCity());
 				newsFeed.setArticlePhoto(blogBean.getBlogCover());
 				newsFeed.setArticleTitle(blogBean.getBlogTitle());

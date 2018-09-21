@@ -31,7 +31,7 @@ public class RegisterController {
 	
 		webDataBinder.registerCustomEditor(byte[].class,new ByteArrayMultipartFileEditor());
 		 
-	} 
+	}
 	
 	@RequestMapping(path = { "RegistController" })
 	public String register( Model model,MemberBean memberBean,BindingResult bindingResult) {

@@ -24,6 +24,7 @@ private BlogService blogService;
 public List<ActBean> onloadA(){
 	System.out.println("logining sucess!");
 	List<ActBean> acts = actService.selectTopSix();
+	System.out.println("Index Controll acts: " + acts.toString());
 	return acts;
  }
 

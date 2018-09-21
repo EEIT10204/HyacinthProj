@@ -200,7 +200,7 @@ p {
 
 		<form action="<c:url value="/Blog/BlogNew.controller"/>" method="POST"
 			enctype="multipart/form-data">
-			<input name="memberID" type="hidden" value="1">
+			<input name="memberID" type="hidden" value="${user.memberID}">
 			<input name="blogReleaseTime" type="hidden" value="${BeanSNum[0][0].blogReleaseTime}">
 			<input name="blogSNum" type="hidden" value="${BeanSNum[0][0].blogSNum}">
 			

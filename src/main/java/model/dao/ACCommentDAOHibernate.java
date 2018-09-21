@@ -52,5 +52,40 @@ public class ACCommentDAOHibernate implements ACCommentDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	//CRUD--------------------------
+	@Override  //H.C.Chen
+	public Integer findCommentsNum(Integer actSNum) {  
+		return this.getSession()
+				.createQuery("select count(*) from ACCommentBean "+
+											"where actSNum=:var1 AND commentVisibility='1'",Long.class)
+				.setParameter("var1", actSNum)
+				.uniqueResult()
+				.intValue();  //預設回傳是Long,Long無法轉Integer但可以轉int;
+	}
+
+	@Override  //H.C.Chen
+	public List<Object[]> findCommRows(Integer actSNum,int first, int num) {
+		return this.getSession()
+				.createQuery("select ac,m from ACCommentBean as ac  "+
+							 "join MemberBean as m on ac.memberID=m.memberID "+ 
+							 "AND ac.actSNum=:var1 AND ac.commentVisibility='1' "+
+							 "order by replyTime desc",Object[].class)
+				.setParameter("var1", actSNum)
+				.setFirstResult(first)
+				.setMaxResults(num)
+				.list();
+	}
+
+	@Override  //H.C.Chen
+	public ACCommentBean insertCommRow(ACCommentBean bean) {
+		if(bean!=null) {
+			bean.setReplyTime(new java.sql.Timestamp(new java.util.Date().getTime()));
+			bean.setCommentVisibility(1);
+			this.getSession().save(bean);
+			return bean;
+		}
+		return null;
+	}
 
 }
