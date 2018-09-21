@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import model.MemberBean;
 import model.MemberDAO;
 import model.MembershipDAO;
-import model.NoticeBean;
 import model.NoticeService;
 
 @Controller
@@ -39,6 +38,8 @@ public class MemberController {
 		MemberBean bean = memberDAO.findByPK(memberID);
 		model.addAttribute("userInfo",bean);
 		List<MemberBean> friendList = membershipDAO.selectWhoIsMyFriend(memberID);
+		int friendCount = friendList.size();
+		model.addAttribute("friendCount",friendCount);
 		model.addAttribute("friendList",friendList);
 		System.out.println("會員 "+ bean.getMemberName()+" 的好友列表: "+friendList);
 		System.out.println("GO MEMBER_PAGE");
@@ -56,6 +57,8 @@ public class MemberController {
 			MemberBean bean = memberDAO.findByPK(lmi);
 			model.addAttribute("userInfo",bean);
 			List<MemberBean> friendList = membershipDAO.selectWhoIsMyFriend(lmi);
+			int friendCount = friendList.size();
+			model.addAttribute("friendCount",friendCount);
 			model.addAttribute("friendList",friendList);
 //			if(notice!=null) {
 //				List<NoticeBean> noticeList=noticeService.selectMyNotice(lmi);
