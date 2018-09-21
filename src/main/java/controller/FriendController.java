@@ -151,6 +151,8 @@ public class FriendController {
 	@RequestMapping(path = { "/showFriendList.controller" })
 	public String showFriendList(MembershipBean bean,BindingResult bindingResult,Model model) {
 		List<MemberBean> friendList = membershipService.friendList(bean.getMemberID_A());
+		int friendCount = friendList.size();
+		model.addAttribute("friendCount",friendCount);
 		model.addAttribute("friendList",friendList);
 		System.out.println("好友列表:"+friendList);
 		return "forwardTEST";
