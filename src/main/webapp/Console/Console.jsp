@@ -20,7 +20,6 @@
 	}
 	table th {
 		border:1px black solid;
-		 
 	}
 	table td {
 		border:1px black solid;

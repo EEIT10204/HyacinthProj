@@ -10,46 +10,23 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Blog_Comment")
 public class BGCommentBean {
-/*
- memberID int references member(memberID) NOT NULL,
- blogSNum int references blog(blogSNum) NOT NULL,
- commentSNum int primary key IDENTITY NOT NULL,
- BGCommentID AS 'BGC'+RIGHT('00000'+convert(varchar,commentSNum),5) PERSISTED NOT NULL,
- commentContent nvarchar(500),
- replyTime datetime,
- commentVisibility int 
- */
-	
-	private Integer memberID;
-	private Integer blogSNum;
-	@Column(insertable=false,updatable=false)
+	@Column(insertable=false, updatable=false)
 	private Integer commentSNum;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(insertable=false, updatable=false)
 	private String BGCommentID;
 	private String commentContent;
 	private java.sql.Timestamp replyTime;
+	private Integer memberID;
+	private Integer blogSNum;
 	private Integer commentVisibility;
-	
 	
 	@Override
 	public String toString() {
-		return "Blog_CommentBean [memberID=" + memberID + ", blogSNum=" + blogSNum + ", commentSNum=" + commentSNum
-				+ ", BGCommentID=" + BGCommentID + ", commentContent=" + commentContent + ", replyTime=" + replyTime
+		return "BGCommentBean [commentSNum=" + commentSNum + ", BGCommentID=" + BGCommentID + ", commentContent="
+				+ commentContent + ", replyTime=" + replyTime + ", memberID=" + memberID + ", blogSNum=" + blogSNum
 				+ ", commentVisibility=" + commentVisibility + "]";
-	}
-	
-	public Integer getMemberID() {
-		return memberID;
-	}
-	public void setMemberID(Integer memberID) {
-		this.memberID = memberID;
-	}
-	public Integer getBlogSNum() {
-		return blogSNum;
-	}
-	public void setBlogSNum(Integer blogSNum) {
-		this.blogSNum = blogSNum;
 	}
 	public Integer getCommentSNum() {
 		return commentSNum;
@@ -75,11 +52,24 @@ public class BGCommentBean {
 	public void setReplyTime(java.sql.Timestamp replyTime) {
 		this.replyTime = replyTime;
 	}
+	public Integer getMemberID() {
+		return memberID;
+	}
+	public void setMemberID(Integer memberID) {
+		this.memberID = memberID;
+	}
+	public Integer getBlogSNum() {
+		return blogSNum;
+	}
+	public void setBlogSNum(Integer blogSNum) {
+		this.blogSNum = blogSNum;
+	}
 	public Integer getCommentVisibility() {
 		return commentVisibility;
 	}
 	public void setCommentVisibility(Integer commentVisibility) {
 		this.commentVisibility = commentVisibility;
 	}
-	
 }
+
+

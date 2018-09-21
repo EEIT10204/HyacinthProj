@@ -197,10 +197,10 @@ p {
 		</h2>
 
 		<p class="p1">*以下為必填資訊</p>
-				
-		<form id="form" action="<c:url value="/Blog/BlogNew.controller"/>" method="POST"
+
+		<form action="<c:url value="/Blog/BlogNew.controller"/>" method="POST"
 			enctype="multipart/form-data">
-			<input name="memberID" type="hidden" value="${user.memberID}">
+			<input name="memberID" type="hidden" value="1">
 			<input name="blogReleaseTime" type="hidden" value="${BeanSNum[0][0].blogReleaseTime}">
 			<input name="blogSNum" type="hidden" value="${BeanSNum[0][0].blogSNum}">
 			
@@ -366,13 +366,17 @@ p {
 		
 		
 		$(document).ready(function() {
-
-			$('body').on('click','#confirmB',function(){
-				$('body').on('click','#confirmBB',function(){
-	 				window.location.href = "${pageContext.request.contextPath}/Blog/BlogIndex.jsp";
-				})
-			})
 			
+// 			var flagjumppage=false;
+			$('body').on('click','#confirmBu',function(){
+				alert("AAAAAA");
+// 				
+// 				if(flagjumppage == true){
+					window.location.href = "BlogIndex.jsp";
+// 				}
+// 				flagjumppage = !flagjumppage;
+				
+			})
 			//preview---------------------------
 				$("#preview").click(function(){
 					$("#changeNation").text($('#inputGroupSelect01').val());
@@ -382,6 +386,11 @@ p {
 					$("#changeCityContent").html($('#summernote').summernote('code'));
 				})
 				
+			
+			
+			
+			
+			
 			//--------------------------
 			var readURL = function(input) {
 		        if (input.files && input.files[0]) {
@@ -437,49 +446,12 @@ p {
 	    	if(!$("#go").hasClass("disabled")){
 // 	    		alert('更新成功!!!');
 // 	    		swal("資料更新成功", "將導向網誌首頁", "error");
-// 	    		swal({
-// 	    			  title: "成功!",
-// 	    			  text: "將導向網誌首頁",
-// 	    			  type: "success",
-// 	    			  confirmButtonText: "<span id='confirmBu'>GO<span>"
-// 	    			});
-	    		
-	    		//---------------------------test
-	    		 //自訂預設值
-	            swal.setDefaults({
-	                confirmButtonText: "確定",
-	                cancelButtonText: "取消"
-	            });
-	            //swal.resetDefaults();//清空自訂預設值
-	            $(function () {
-// 	                $("#go").click(function () {
-	                    //confirm dialog範例
-	                    swal({
-	                        title: "確定送出？",
-	                        html: "按下確定後資料會自動存檔",
-	                        type: "question",
-	                        showCancelButton: true,//顯示取消按鈕
-	                        confirmButtonText:"<span id='confirmB'>回至首頁</span>"
-	                    }).then(
-	                        function (result) {
-	                            if (result.value) {
-	                                //使用者按下「確定」要做的事
-// 	                                swal("完成!", "資料已經送出將回到首頁", "success");
-// 	                                window.location.href = "${pageContext.request.contextPath}/Blog/BlogIndex.jsp";
-									 swal({
-					                    title: "完成!",
-					                    html: "資料已經送出將回到首頁",
-					                    type: "success",
-						    			confirmButtonText:"<span id='confirmBB'>回至首頁</span>"
-					                })
-	                            } else if (result.dismiss === "cancel")
-	                            {
-	                                 //使用者按下「取消」要做的事
-	                                swal("取消", "您可重新輸入資料", "error");
-	                            }//end else  
-	                        });//end then 
-// 	                });
-	            });
+	    		swal({
+	    			  title: "成功!",
+	    			  text: "將導向網誌首頁",
+	    			  type: "success",
+	    			  confirmButtonText: "<span id='confirmBu'>GO<span>"
+	    			});
 	    	}
 		   }))
     	
@@ -489,7 +461,7 @@ p {
         }
     	
     })
-//     alert('user before if = ' + ${user.memberID});
+    
     </script>
 </body>
 

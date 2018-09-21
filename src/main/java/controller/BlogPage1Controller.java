@@ -19,10 +19,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 
+import model.BGCommentBean;
+import model.BGCommentService;
 import model.BlogBean;
 import model.BlogService;
 import model.CityBean;
-import model.MemberBean;
 import model.MemberBlogBean;
 import model.MemberBlogService;
 
@@ -32,6 +33,8 @@ public class BlogPage1Controller {
 	private BlogService blogService;
 	@Autowired
 	private MemberBlogService memberBlogService;
+	@Autowired
+	private BGCommentService bGCommentService;
 	
 	@InitBinder
 	 public void registerPropertyEditor(WebDataBinder webDataBinder) {
@@ -150,26 +153,50 @@ public class BlogPage1Controller {
 		
 	}
 	
-	
-	
+		
 	//BlogEditor用----首頁至個人網誌用-------------------------------------------------------
 	@RequestMapping(path= {"/Blog/BlogMember.controller"})
 	public String BlogEditor(
 			@RequestParam("blogSNum")Integer blogSNum,
-			Model model
+			Model model,BGCommentBean bean,BindingResult bindingResult
 			) {
 		System.out.println("run controller  Editor");
 		
 		List<Object[]> BeanSNum = blogService.selectByBlogNewPage(blogSNum);
-		model.addAttribute("BeanSNum", BeanSNum);
+		
 		
 		for(Object[] BeanSNum1:BeanSNum) {
 			System.out.println(((CityBean)BeanSNum1[1]).getNation());
 		}
-		
+		List<Object[]> catchAllComment = bGCommentService.selectBlogCommMemberJoin(blogSNum);
+		model.addAttribute("BGComment",catchAllComment);
+		model.addAttribute("BeanSNum", BeanSNum);
 		return "BlogMember";
 		
 	}
+	
+	//Blog留言新增功能
+	@RequestMapping(path= {"/Blog/BlogMember.comment"})
+	public String BlogCommentInsert(
+			@RequestParam("blogSNum")Integer blogSNum,
+			Model model,BGCommentBean bean,BindingResult bindingResult
+			) {
+		System.out.println("run commet: " + bean.toString());
+		
+		
+//		System.out.println("bgCom count: " + bean.size());
+		BGCommentBean result = bGCommentService.insert(bean);
+		List<Object[]> InsertComment = bGCommentService.selectBlogCommMemberJoin(blogSNum);
+		System.out.println("comment catch reply: " + InsertComment.size());
+		List<Object[]> BeanSNum = blogService.selectByBlogNewPage(blogSNum);
+
+		
+		model.addAttribute("BGComment",InsertComment);
+		model.addAttribute("BeanSNum", BeanSNum);
+		return "BlogMember";
+		
+	}
+	
 	//BlogIndex用-----------------------------------------------------------
 	@RequestMapping(path= {"/Blog/BlogIndex.controller"})
 	public String forSubmit(//String傳入使用
@@ -242,29 +269,27 @@ public class BlogPage1Controller {
 		@RequestMapping(path= {"/Blog/BlogNew.controller"},method={RequestMethod.POST})
 		public String forNewBlog(
 				Model model,
-				@ModelAttribute(name="form")BlogBean blogBean,BindingResult bindingResult
+				@ModelAttribute(name="form")BlogBean blogBean,BindingResult bindingResult,
 //				@SessionAttribute(name="memberID")BlogBean memberID,
-//				@RequestParam(value="memberID",required = false)Integer memberID,
-//				@RequestParam("memberID")String memberID,
-//				@RequestParam("blogCover") MultipartFile blogCover,
-//				@RequestParam("summernote") String summernote,
-//				@RequestParam("blogSNum")Integer blogSNum
+				@RequestParam("memberID")Integer memberID,
+				@RequestParam("blogCover") MultipartFile blogCover,
+				@RequestParam("summernote") String summernote,
+				@RequestParam("blogSNum")Integer blogSNum
 				) {
-//				Integer mID = Integer.valueOf(memberID);
+
 				System.out.println("run controller NEW~~");
-//				System.out.println("memberID = "+memberID);
-				System.out.println("blogBean now = "+blogBean);
-//				System.out.println("summernote = "+summernote);
+				System.out.println("memberID = "+memberID);
+				System.out.println("blogBean = "+blogBean);
+				System.out.println("summernote = "+summernote);
+				try {
+					System.out.println("blogCover = "+blogCover.getBytes());
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
-//				try {
-//					System.out.println("blogCover = "+blogCover.getBytes());
-//				} catch (IOException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-				
-				if(blogBean.getBlogSNum()!=null && !"".equals(blogBean.getBlogSNum())) {
-					blogBean.setBlogSNum(blogBean.getBlogSNum());
+				if(blogSNum!=null && !"".equals(blogSNum)) {
+					blogBean.setBlogSNum(blogSNum);
 				}
 				
 				if(blogBean.getBlogReleaseTime()==null||"".equals(blogBean.getBlogReleaseTime())) {
@@ -274,20 +299,18 @@ public class BlogPage1Controller {
 				blogBean.setUpdateTime(new java.util.Date());
 				blogBean.setBlogVisibility(1);
 //				blogBean.setBlogCity(blogBean.getBlogCity());
-				blogBean.setBlogContext(blogBean.getBlogContext());
-				System.out.println("Cover = "+blogBean.getBlogCover());
-//				System.out.println("Cover = "+blogBean.getBlogCover().length);
+				blogBean.setBlogContext(summernote);
 				if(blogBean.getBlogCover().length==0) {
-					BlogBean pic = blogService.selectByPk(blogBean.getBlogSNum());
+					BlogBean pic = blogService.selectByPk(blogSNum);
 					blogBean.setBlogCover(pic.getBlogCover());
 					blogBean.setBlogCover(blogBean.getBlogCover());			
 				}
 				
 //				blogBean.setBlogTitle(blogBean.getBlogTitle());
 				System.out.println("BlogTitle = "+blogBean.getBlogTitle());
-				blogBean.setBlogView(0);
-				blogBean.setMemberID(blogBean.getMemberID());
-				model.addAttribute("summernote", blogBean.getBlogContext());
+				blogBean.setBlogView(10000000);
+				blogBean.setMemberID(memberID);
+				model.addAttribute("summernote", summernote);
 //				blogService.insert(blogBean);
 				blogService.saveUpdate(blogBean);
 //				System.out.println("AAA = "+AAA);

@@ -833,6 +833,91 @@ hr {
 .edit1:hover {
 	opacity: 0.5;
 }
+
+
+/* 留言板 */
+/* ActComment */
+	.form-group textarea{
+      width: 700px;
+      height: 150px;
+      margin-left: 20px;
+  
+    }
+    .messOut{
+      border: 1px solid rgb(119, 119, 119) ;
+      width: 770px;
+      margin: auto;
+      margin-top: 50px;
+    }
+    .form-control{
+      width: 450px;
+      margin: auto;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    .mess2{
+      border: 1px solid rgb(119, 119, 119) ; 
+      background-color: rgb(197, 197, 197);
+    }
+    .mess3{
+      /* border: 1px solid rgb(95, 2, 133) ; */
+    }
+    .mess4{
+      /* border: 1px solid rgb(192, 189, 0) ; */
+    }
+    .mess1{
+      /* border: 1px solid rgb(2, 0, 136) ; */
+      background-color: rgb(223, 223, 223);
+      height: 50px;
+    }
+    .mess1 img{
+      width: 35px;
+      height: 35px;
+      margin-left: 10px;
+    }
+    .messUser{
+      /* border: 1px solid rgb(255, 208, 0); */
+      display: inline-block;
+      margin-top: 7px;
+    }
+    .messName{
+      /* border: 1px solid rgb(56, 255, 82); */
+      display: inline-block;
+      margin-left: 20px;
+      margin-top: 7px;
+    }
+    .buttonT{
+      /* border: 1px solid rgb(234, 0, 255); */
+    }
+    .btn-primary{
+/*     margin-left: 540px; */
+/*     margin-bottom: 20px; */
+    }
+    .selectUser{
+      /* border: 1px solid red; */
+    }
+    #messA img{
+     width: 30px;
+     height: 30px;
+     display: inline-block;
+     margin-top: 6px;
+     /* border: 1px solid red; */
+     margin-left: 20px;
+    }
+    #messA h6{
+    margin-left: 8px;
+    margin-top: 15px;
+/*     border: 1px solid red; */
+    display: inline-block;
+    }
+    .messB{
+    display: inline-block;
+    margin-left: 20px;
+/*     border: 1px solid purple; */
+    }	
+    .uuu{
+/*     border:1px solid green; */
+    }
 </style>
 </head>
 
@@ -1427,7 +1512,67 @@ hr {
 					</h3>
 				</div>
 
+<!-- 留言板 -->
+<div class="messOut">
+      <div class="mess1">
+        <div class="messUser"><img src="${pageContext.request.contextPath}/Images/Index/user.png"/></div>
+        <div class="messName">John</div>
+      </div>
+      <form action="<c:url value="/Blog/BlogMember.comment"/>" method="get">
+<%--         <form action="<c:url value="/Act/ACCommentInsertController?actSNum=?" />" method="get"> --%>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Leave Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="commentContent"></textarea>
+                  </div>
+                  <div class="buttonT">
+                      <button type="submit" class="btn-primary" style="background-color:rgb(120, 120, 120); 
+                      margin-left: 650px; margin-bottom: 20px; id="sendbuttom";/">Send out</button>
+<!--                           <input type="hidden" name="commentContent" value="1"> -->
+                          <input type="hidden" name="memberID" value="${user.member}">
+                          <input type="hidden" name="blogSNum" value="${param.blogSNum}">
+                          
+                  </div>
+                  </form>
+                  <div class="mess2">
+                    <!-- <div class="mess3"></div>
+                    <div class="mess4"></div> -->
+                  <div class="form-group">
+                      <label for="exampleFormControlInput1">All Message</label>
+                      
+                      <div class="uuu">
+                      <c:forEach var="obj" items="${select}">
+                      <form action="<c:url value="/ACCommentUpdate.Controller"/>" method="get">
+                      <div id="messA">
+                          <img src="data:image/png;base64,${obj[1].memberPicToBase64}"/>
+                          <h6>${obj[1].memberName} </h6>
+<%--                           <h6>${obj[0].ACCommentID}</h6> --%>
 
+                          <div class="messB">
+                          <input type="text" class="form-control" id="exampleFormControlInput1" disabled value="${obj[0].commentContent}"
+                          name="commentContent">
+                        </div>
+                        
+                        <c:if test= "${param.memberID == obj[1].memberID}"> 
+                        <div class="update"> 
+                        <span class="updatebutton" style="width:70px;height:25px">修改</span>            
+                        <input  type="hidden" value="送出">
+                        <input type="hidden" name="BGCommentID" value="${obj[0].BGCommentID}">
+                        <input type="hidden" name="blogSNum" value="${param.blogSNum}">
+                         <input type="hidden" name="memberID" value="${user.memberID}">
+                        </div>
+                        </c:if>
+<%--                           <input type="text" name="testmember" value="${param.actSNum}"> --%>    
+                      </div>
+                        </form>    
+                      </c:forEach>
+                      </div>
+                      <div >
+                          <p class="flip">顯示更多留言</p>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                  
 			</article>
 			<aside class="col-sm-4">
 				<div class="d2">

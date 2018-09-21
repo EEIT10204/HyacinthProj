@@ -9,27 +9,16 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name="Act")
-public class ActBean {
-
-	/*
-	 * memberID int references member(memberID) NOT NULL, actSNum int primary key
-	 * IDENTITY NOT NULL, actID AS 'AC'+RIGHT('0000'+convert(varchar,actSNum),5)
-	 * PERSISTED NOT NULL, actPhoto varbinary(max), actTitle nvarchar(50) NOT NULL,
-	 * actCity nvarchar(50) references city(cityName), actIntro nvarchar(1000),
-	 * actCreateDate datetime, actStartTime datetime, actEndTime datetime,
-	 * actJoinDeadLine date, actStatus nvarchar(20), minParticipants int,
-	 * maxParticipants int, participantsNow int, budget decimal(10,2), payment
-	 * nvarchar(20), actView int, actDuration int, actVisibility int
-	 */
-
-	private Integer memberID;
+public class ActBean{
+//java.sql.Timestamp
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(insertable=false, updatable=false)
 	private Integer actSNum;
-	@Column(insertable = false, updatable = false)
+	private Integer memberID;
+	@Column(insertable=false, updatable=false)
 	private String actID;
 	private byte[] actPhoto;
 	private String actTitle;
@@ -39,185 +28,148 @@ public class ActBean {
 	private java.sql.Timestamp actStartTime;
 	private java.sql.Timestamp actEndTime;
 	private java.sql.Timestamp actJoinDeadLine;
-	private String actStatus;
+	private String  actStatus;
 	private Integer minParticipants;
 	private Integer maxParticipants;
 	private Integer participantsNow;
-	private Double budget;
-	private String payment;
+	private Double  budget;
+	private String  payment;
 	private Integer actView;
 	private Integer actDuration;
 	private Integer actVisibility;
-
+	
 	@Override
 	public String toString() {
-		return "ActBean [actSNum=" + actSNum + ", memberID=" + memberID + ", actID=" + actID + ", actPhoto="
-				+ Arrays.toString(actPhoto) + ", actTitle=" + actTitle + ", actCity=" + actCity + ", actIntro="
-				+ actIntro + ", actCreateDate=" + actCreateDate + ", actStartTime=" + actStartTime + ", actEndTime="
+		return "ActBean [memberID=" + memberID + ", actSNum=" + actSNum + ", actID=" + actID + ", actPhoto="
+				+ Arrays.toString(actPhoto) + ", actTitle=" + actTitle + ", actCity=" + actCity + ", actintro="
+				+ actIntro + ", actCreateTimestamp=" + actCreateDate + ", actStartTime=" + actStartTime + ", actEndTime="
 				+ actEndTime + ", actJoinDeadLine=" + actJoinDeadLine + ", actStatus=" + actStatus
 				+ ", minParticipants=" + minParticipants + ", maxParticipants=" + maxParticipants + ", participantsNow="
 				+ participantsNow + ", budget=" + budget + ", payment=" + payment + ", actView=" + actView
-				+ ", actDuration=" + actDuration + ", actVisibility=" + actVisibility + "]";
+				+ ", actDuration=" + actDuration + ", actVisbility=" + actVisibility + "]";
 	}
-
-	public Integer getActSNum() {
-		return actSNum;
-	}
-
-	public void setActSNum(Integer actSNum) {
-		this.actSNum = actSNum;
-	}
-
 	public Integer getMemberID() {
 		return memberID;
 	}
-
 	public void setMemberID(Integer memberID) {
 		this.memberID = memberID;
 	}
-
+	public Integer getActSNum() {
+		return actSNum;
+	}
+	public void setActSNum(Integer actSNum) {
+		this.actSNum = actSNum;
+	}
 	public String getActID() {
 		return actID;
 	}
-
 	public void setActID(String actID) {
 		this.actID = actID;
 	}
-
 	public byte[] getActPhoto() {
 		return actPhoto;
 	}
-
 	public void setActPhoto(byte[] actPhoto) {
 		this.actPhoto = actPhoto;
 	}
-
 	public String getActTitle() {
 		return actTitle;
 	}
-
 	public void setActTitle(String actTitle) {
 		this.actTitle = actTitle;
 	}
-
 	public String getActCity() {
 		return actCity;
 	}
-
 	public void setActCity(String actCity) {
 		this.actCity = actCity;
 	}
-
-	public String getActIntro() {
+	public String getActintro() {
 		return actIntro;
 	}
-
-	public void setActIntro(String actIntro) {
-		this.actIntro = actIntro;
+	public void setActintro(String actintro) {
+		this.actIntro = actintro;
 	}
-
 	public java.sql.Timestamp getActCreateDate() {
 		return actCreateDate;
 	}
-
-	public void setActCreateDate(java.sql.Timestamp actCreateDate) {
+	public void setActCreateTimestamp(java.sql.Timestamp actCreateDate) {
 		this.actCreateDate = actCreateDate;
 	}
-
 	public java.sql.Timestamp getActStartTime() {
 		return actStartTime;
 	}
-
 	public void setActStartTime(java.sql.Timestamp actStartTime) {
 		this.actStartTime = actStartTime;
 	}
-
 	public java.sql.Timestamp getActEndTime() {
 		return actEndTime;
 	}
-
 	public void setActEndTime(java.sql.Timestamp actEndTime) {
 		this.actEndTime = actEndTime;
 	}
-
 	public java.sql.Timestamp getActJoinDeadLine() {
 		return actJoinDeadLine;
 	}
-
 	public void setActJoinDeadLine(java.sql.Timestamp actJoinDeadLine) {
 		this.actJoinDeadLine = actJoinDeadLine;
 	}
-
 	public String getActStatus() {
 		return actStatus;
 	}
-
 	public void setActStatus(String actStatus) {
 		this.actStatus = actStatus;
 	}
-
 	public Integer getMinParticipants() {
 		return minParticipants;
 	}
-
 	public void setMinParticipants(Integer minParticipants) {
 		this.minParticipants = minParticipants;
 	}
-
 	public Integer getMaxParticipants() {
 		return maxParticipants;
 	}
-
 	public void setMaxParticipants(Integer maxParticipants) {
 		this.maxParticipants = maxParticipants;
 	}
-
 	public Integer getParticipantsNow() {
 		return participantsNow;
 	}
-
 	public void setParticipantsNow(Integer participantsNow) {
 		this.participantsNow = participantsNow;
 	}
-
 	public Double getBudget() {
 		return budget;
 	}
-
 	public void setBudget(Double budget) {
 		this.budget = budget;
 	}
-
 	public String getPayment() {
 		return payment;
 	}
-
 	public void setPayment(String payment) {
 		this.payment = payment;
 	}
-
 	public Integer getActView() {
 		return actView;
 	}
-
 	public void setActView(Integer actView) {
 		this.actView = actView;
 	}
-
 	public Integer getActDuration() {
 		return actDuration;
 	}
-
 	public void setActDuration(Integer actDuration) {
 		this.actDuration = actDuration;
 	}
-
 	public Integer getActVisibility() {
 		return actVisibility;
 	}
-
 	public void setActVisibility(Integer actVisibility) {
 		this.actVisibility = actVisibility;
 	}
+	
+	
 
+	
 }
