@@ -130,7 +130,7 @@ $(document).ready(function() {
   var scrollPageHist=1;
   function reqHist(){
 
-	  $.post('${pageContext.request.contextPath}/readMyHist.do',{"memberID":memberId,"page":scrollPageHist},function(datas){
+      $.post('${pageContext.request.contextPath}/readMyHist.do',{"memberID":memberId,"page":scrollPageHist},function(datas){
            //外殼
            var fragment = $(document.createDocumentFragment());
            
@@ -274,8 +274,9 @@ $(document).ready(function() {
           $(input).attr("name",parseInt(myPage)+5);
 
       }).fail(function(){
-//			alert("已無更舊留言!!");
+// 			alert("已無更舊留言!!");
           $(input).parent().next().append('<div style="color:#D12C84; text-align:center; font-size:16px;">No other comments.</div>');
+          $(input).attr("name",1001);
       }).always(function(){
           $('#loadersmall').remove();
       });
