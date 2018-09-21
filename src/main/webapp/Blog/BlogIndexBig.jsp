@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>page1</title>
+<title>網誌首頁</title>
 <jsp:include page="../Index/NewHeader.jsp" />
 <%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css"> --%>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/jumbotron.css">
@@ -28,43 +28,9 @@ body{
 	padding-top:0;
 }
 /* ALL */
-.container{
-	padding-top:20px;
-}
 img{
 border-radius: 10px;
 }
-.border001{
-			border-top: 5px #378e70 ridge ;
-            border-bottom: 5px #50c49b groove; 
-            border-right: 5px #50c49b groove; 
-            border-left: 5px #378e70 ridge;
-}
-.border002{
-border-top: 5px #378e70 ridge ;
-            border-bottom: 5px #50c49b groove; 
-            border-right: 5px #50c49b groove; 
-            border-left: 5px #378e70 ridge;
-}
-.border0034{
-border-top: 5px #378e70 ridge ;
-            border-bottom: 5px #50c49b groove; 
-            border-right: 5px #50c49b groove; 
-            border-left: 5px #378e70 ridge;
-}
-.border005{
-border-top: 5px #378e70 ridge ;
-            border-bottom: 5px #50c49b groove; 
-            border-right: 5px #50c49b groove; 
-            border-left: 5px #378e70 ridge;
-}
-.border006{
-border-top: 5px #378e70 ridge ;
-            border-bottom: 5px #50c49b groove; 
-            border-right: 5px #50c49b groove; 
-            border-left: 5px #378e70 ridge;
-}
-
 
 a {
     text-decoration:none;
@@ -210,20 +176,19 @@ hr.style-two {
 }
 
 #d4 {
-/* 	border:2px rgb(90, 32, 228) solid;  */
-	display:flex;
+	/* border: 1px rgb(90, 32, 228) solid; */
 	overflow: auto;
 }
 
 .hr1 {
 	height: 1px;
 	border: none;
-/* 	border-top: 1px dashed #0066CC; */
+	border-top: 1px dashed #0066CC;
 }
 
 /* article */
 .divHeight {
-/*  	border: 2px solid green;  */
+	/*             border: 1px solid red; */
 	height: 480px;
 }
 
@@ -234,7 +199,7 @@ hr.style-two {
 
 .hot0 {
 	display: inline-block;
- 	padding-left: 20px; 
+	padding-left: 20px;
 }
 
 .hot0 button {
@@ -256,45 +221,44 @@ hr.style-two {
 }
 
 article {
-/* 	border: 1px red solid; */
-/* 	width: 65%; */
-/* 	float: left; */
+	/* border: 1px red solid; */
+	width: 65%;
+	float: left;
 }
 
 #d5 {
-/* 	 border: 3px rgb(15, 73, 10) dashed;  */
-	 display:flex;
-
+	/* border: 3px rgb(15, 73, 10) dashed; */
+	overflow: auto;
 }
 
 .divAS1 {
-/* 	border: crimson solid 1px;  */
-/* 	margin-top: 2px; */
-	flex:0.5;
-  	margin-right: 10px;  
+	/* border: crimson solid 1px; */
+	float: left;
+	display: inline-block;
+	margin-top: 10px;
+	margin-left: 20px;
 }
 
 .divAS2 {
 	/* border: crimson solid 1px; */
-	flex:0.5;
-/* 	margin-top: 10px; */
-
+	float: right;
+	display: inline-block;
+	margin-top: 10px;
+	margin-right: 20px;
 }
 
 .divAS11 {
-/* 	margin-top: 5px; */
-    width: 100%;
-	height: 250px;
-/*  	border:2px solid;  */
+	margin-top: 5px;
+	width: 450px;
+	height: 300px;
 }
 
 .divAS12 {
 	margin: auto;
 	margin-top: 5px;
+	width: 450px;
 	text-align: center;
-	font-size: 90%;
-	height: 20px;
-/* 	border:2px solid;  */
+	font-size: 80%;
 }
 
 .distance {
@@ -309,31 +273,24 @@ article {
 }
 
 .divAS13 {
-	margin-top: 15px;
-/* 	margin-bottom: 20px; */
-/* 	width: 450px; */
+	margin-top: 5px;
+	width: 450px;
 	text-align: center;
 	font-size: 120%;
-/* 	border:2px solid;  */
-	height: 60px;
 }
 
 .divAS14 {
-/* 	padding-top: 10px; */
-	padding-bottom: 5px;
-/* 	width: 450px; */
+	margin-top: 5px;
+	width: 450px;
 	text-align: center;
 	font-size: 80%;
-/* 	border:2px solid;  */
-	height: 40px;
 }
 
 .divAS15 {
-/* 	padding-top: 10px; */
-/* 	width: 450px; */
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width: 450px;
 	text-align: center;
-/* 	border:2px solid;  */
-	height: 60px;
 }
 
 .a2 {
@@ -378,22 +335,21 @@ article {
 
 /* aside */
 aside {
-/* 	width: 33%; */
-/* 	float: right; */
-/* 	border: 1px rgb(119, 94, 94) solid;  */
+	width: 33%;
+	float: right;
+	/* border: 1px rgb(119, 94, 94) solid; */
 }
 
 hr {
 	text-align: right;
 }
 
-/* .d2 { */
-/* 	padding-right: 100px; */
-/* } */
+.d2 {
+	padding-right: 100px;
+}
 
 .form-inline input {
 	border-radius: 20px;
-	display:flex;
 }
 
 .title-text span {
@@ -402,7 +358,6 @@ hr {
 	color: #0d2335;
 	text-align: center;
 	font-family: 'Noto Sans TC';
-
 }
 
 .title-text span:before, .title-text span:after {
@@ -410,7 +365,7 @@ hr {
 	position: absolute;
 	top: 50%;
 	background: #8c8c8c;
-	width: 33%;
+	width: 35%;
 	height: 3px;
 }
 
@@ -423,8 +378,10 @@ hr {
 }
 
 .divborder {
- 	margin-top: 35px; 
- 	margin-bottom: 35px; 
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding-bottom: 15px;
+	padding-top: 15px;
 }
 
 .transition1:hover {
@@ -436,52 +393,60 @@ hr {
 }
 
 
-/* .btnt1 { */
-/* 	margin-right: 40px; */
-/* } */
+.btnt1 {
+	margin-right: 40px;
+}
 
 .divT1 {
-/* 	border: 2px red solid;  */
+	/* border: 2px red solid; */
 	margin-top: 20px;
 	margin-bottom: 10px;
-	height: 850px;
+	height: 800px;
 	text-align: center;
 }
 
 .divT2 {
-/*  border: 3px rgb(201, 92, 92) solid;   */
-	margin-top: 40px;
+	/* border: 1px rgb(201, 92, 92) solid; */
+	margin-top: 20px;
 	padding-top: 5px;
+	height: 180px;
 	text-align: center;
-	display:flex;
-
+	overflow: auto;
 }
 
 .divT3 {
-/* 	 border: 1px rgb(71, 28, 28) solid;  */
+	/* border: 1px rgb(71, 28, 28) solid; */
+	padding-top: 5px;
+	float: left;
+	margin: auto;
+	display: inline-block;
+	width: 140px;
+	height: 140px;
 	background-size: contain;
-	flex:0.5;
 }
 
 .divT4 {
-/* 	border: 3px rgb(31, 4, 4) solid;  */
+	/* border: 1px rgb(31, 4, 4) solid; */
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-top: 8px;
+	display: inline-block;
 	text-align: center;
-	flex:0.5;
-	position:relative;
-
+	width: 240px;
+	height: 145px;
+	float: right;
 }
 
 .divText {
-/* 	border: 3px green solid;  */
-	font-size:90%;
+	padding-top: 90px;
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-top: 3px;
+	height: 25px;
+	float: right;
+	font-size: 90%;
 	font-family: 'Noto Sans TC';
 	color: grey;
-	width:160px; 
-	position: absolute;
-	bottom:0;
-	right:0;
-	padding-left:7px;
-	
 }
 
 .divText:hover {
@@ -493,11 +458,9 @@ hr {
 }
 
 .divT31 {
-/* border: 1px green solid; */
 	margin: auto;
-	width: 150px;
-	height: 150px;
-	margin-right:5px;
+	width: 130px;
+	height: 130px;
 }
 
 #top1 {
@@ -515,6 +478,7 @@ hr {
 </head>
 
 <body>
+<!-- <div class="container-fluid"> -->
 	<nav id="n1">
 		<ul class="nav justify-content-center">
 			<li class="nav-item"><a class="nav-link" href="#" >台灣</a>
@@ -896,19 +860,19 @@ hr {
 		</ul>
 	</nav>
 
-<div class="container">
+
 	<div id="d4">
-		<article class="col-sm-8">
+		<article>
 			<div class="hot">
 				<div class="hot0 ">
-					<button type="button" class="btn btn-info "><a class="a3" href="<c:url value="/Blog/BlogIndex.controller">
+					<button type="button" class="btn btn-info "><a class="a3" href="<c:url value="../Blog/BlogIndex.controller">
 																			  <c:param name="page" value="1"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="new"/>
 																			  </c:url>">最新文章</a></button>
 				</div>
 				<div class="hot1">
-					<button type="button" class="btn btn-info "><a class="a3" href="<c:url value="/Blog/BlogIndex.controller">
+					<button type="button" class="btn btn-info "><a class="a3" href="<c:url value="../Blog/BlogIndex.controller">
     																		  <c:param name="page" value="1"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="hot"/>
@@ -926,7 +890,10 @@ hr {
 
 			<div id="d5">
 				<div class="divAS1">
-					<div class="divHeight border01">
+				
+				
+				
+					<div class="divHeight">
 						<div>
 							<a class="url1" href="#"> 
 							<img id="changePic1" class="divAS11" alt="">
@@ -951,7 +918,7 @@ hr {
 					</div>
 					
 					
-					<div class="divHeight border034">
+					<div class="divHeight">
 						<div>
 							<a class="url3" href="#"> <img id="changePic3" class="divAS11" alt="">
 							</a>
@@ -974,7 +941,7 @@ hr {
 						</div>
 					</div>
 					
-					<div class="divHeight border05">
+					<div class="divHeight">
 						<div>
 							<a class="url5" href="#"> <img id="changePic5" class="divAS11" alt="">
 							</a>
@@ -999,7 +966,7 @@ hr {
 					</div>
 				</div>
 				<div class="divAS2">
-					<div class="divHeight border02">
+					<div class="divHeight">
 						<div>
 							<a class="url2" href="#"> <img id="changePic2" class="divAS11" alt="">
 							</a>
@@ -1022,7 +989,7 @@ hr {
 							<a class="url2" href="#"><button type="button" class="btn btn-info a2">閱讀全文</button></a>
 						</div>
 					</div>
-					<div class="divHeight border034">
+					<div class="divHeight">
 						<div>
 							<a class="url4" href="#"> <img id="changePic4" class="divAS11"alt="">
 							</a>
@@ -1046,7 +1013,7 @@ hr {
 						</div>
 					</div>
 					
-					<div class="divHeight border06">
+					<div class="divHeight">
 						<div>
 							<a class="url6" href="#"> <img id="changePic6" class="divAS11" alt="">
 							</a>
@@ -1075,7 +1042,7 @@ hr {
 			<div class="divAS16">
 				<nav aria-label="Page navigation example ">
 					<ul class="pagination justify-content-center pagination-lg">
-						<li class="page-item" id="page0"><a  class="page-link liBG2" href="<c:url value="/Blog/BlogIndex.controller">
+						<li class="page-item" id="page0"><a  class="page-link liBG2" href="<c:url value="../Blog/BlogIndex.controller">
     																		  <c:param name="page" value="replaced"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="${newhot}"/>
@@ -1083,32 +1050,32 @@ hr {
 							aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
 								<span class="sr-only ">Previous</span>
 						</a></li>
-						<li class="page-item" id="page1"><a class="page-link liBG" href="<c:url value="/Blog/BlogIndex.controller">
+						<li class="page-item" id="page1"><a class="page-link liBG" href="<c:url value="../Blog/BlogIndex.controller">
     																		   <c:param name="page" value="1"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="${newhot}"/>
 																			  </c:url>">1</a></li>
-						<li class="page-item" id="page2"><a class="page-link liBG" href="<c:url value="/Blog/BlogIndex.controller">
+						<li class="page-item" id="page2"><a class="page-link liBG" href="<c:url value="../Blog/BlogIndex.controller">
     																		  <c:param name="page" value="2"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="${newhot}"/>
 																			  </c:url>">2</a></li>
-						<li class="page-item"id="page3"><a class="page-link liBG" href="<c:url value="/Blog/BlogIndex.controller">
+						<li class="page-item"id="page3"><a class="page-link liBG" href="<c:url value="../Blog/BlogIndex.controller">
     																		  <c:param name="page" value="3"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="${newhot}"/>
 																			  </c:url>">3</a></li>
-						<li class="page-item" id="page4"><a class="page-link liBG" href="<c:url value="/Blog/BlogIndex.controller">
+						<li class="page-item" id="page4"><a class="page-link liBG" href="<c:url value="../Blog/BlogIndex.controller">
     																		  <c:param name="page" value="4"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="${newhot}"/>
 																			  </c:url>">4</a></li>
-						<li class="page-item " id="page5"><a class="page-link liBG" href="<c:url value="/Blog/BlogIndex.controller">
+						<li class="page-item " id="page5"><a class="page-link liBG" href="<c:url value="../Blog/BlogIndex.controller">
     																		  <c:param name="page" value="5"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="${newhot}"/>
 																			  </c:url>">5</a></li>
-						<li class="page-item" id="page6"><a   tabindex="-1" class="page-link liBG2" href="<c:url value="/Blog/BlogIndex.controller">
+						<li class="page-item" id="page6"><a   tabindex="-1" class="page-link liBG2" href="<c:url value="../Blog/BlogIndex.controller">
     																		  <c:param name="page" value="replaced"/>
     																		  <c:param name="search" value="${search}"/>
     																		  <c:param name="newhot" value="${newhot}"/>
@@ -1120,7 +1087,7 @@ hr {
 				</nav>
 			</div>
 		</article>
-		<aside class="col-sm-4">
+		<aside>
 			<div class="d2">
 				<div class="title">
 					<h5 class="title-text">
@@ -1131,13 +1098,17 @@ hr {
 					<div id="toggle0">
 						<div class="divborder">
 							<div>
+								<nav class="nav justify-content-end navbar navbar-dark bg-white"
+									style="background-color: #5ea0cf">
+									
 									<form class="form-inline" method="get"
 										action="<c:url value="/Blog/BlogIndex.controller"/>">
-										<input id="keyword" maxlength="6"  name="search" class="form-control mr-sm-2 transition1 " type="search"
+										<input id="keyword" name="search" class="form-control mr-sm-2 transition1 " type="search"
 											placeholder="國家，城市及關鍵字" aria-label="Search" required>
 										<button id="keyword1" class="btn btn-outline-success my-2 my-sm-0 btnt1 "
 											type="submit">Search</button>
 									</form>
+								</nav>
 							</div>
 						</div>
 					</div>
@@ -1293,19 +1264,17 @@ hr {
 		<i id="top1" class="fas fa-chevron-circle-up fa-2x btn btn-info"></i>
 
 	</div>
-	</div>
-		
 	<script>
 		$(document).ready(function() {
 							//NAV 	
 							
 							var member = "${user.memberID}"; 
-// 							alert('member= ' +  member);
+							alert('member= ' +  member);
 							
 							var nav = ["台北","台中","台南","高雄","東京","大阪","沖繩","北海道","首爾","釜山","大邱","濟州島","紐約","洛杉磯","舊金山","邁阿密","柏林","漢堡","慕尼黑","法蘭克福"]; 
-							var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
-							var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
-							 $.getJSON('${pageContext.request.contextPath}/Blog/BlogIndexNav.controller',function(jsonNav){
+							var path2 = "<c:url value='../Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
+							var path = "<c:url value='../Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
+							 $.getJSON('../Blog/BlogIndexNav.controller',function(jsonNav){
 									 $.each(jsonNav,function(idx,navProduct){
 										 for(var i = 1;i<=20;i++){
 										 if(navProduct.blogCity==nav[i-1]){
@@ -1322,8 +1291,8 @@ hr {
 							//Change 6FORM
 							if ('${result}' != "") {
 // 								alert('${result}');
-								var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
-								var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
+								var path2 = "<c:url value='../Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
+								var path = "<c:url value='../Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
 // 								 alert(path);
 								//FIRST
 								<c:forEach var="i" begin="0" end="5" step="1">
@@ -1337,8 +1306,6 @@ hr {
 						         $('#changeCity${i+1}').html('${result[i][0].blogCity}').attr("href",path2+"${result[i][0].blogCity}");
 						         $('#changeTitle${i+1}').html('${result[i][0].blogTitle}');
 						         $('#changeDate${i+1}').html('${result[i][0].updateTime}'.substring(0, 10));
-						         $('#changeMember${i+1}').html('${result[i][2].memberNickName}');
-						         
 						        </c:forEach>
 								
 						        <c:forEach var="i" begin="0" end="3" step="1">
@@ -1362,11 +1329,11 @@ hr {
 }
 							else if ('${result}' == ""){
 								
-								 $.getJSON('${pageContext.request.contextPath}/Blog/BlogIndexFirstOnload2.controller',function(json){
+								 $.getJSON('../Blog/BlogIndexFirstOnload2.controller',function(json){
 									 
-									 var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
+									 var path = "<c:url value='../Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
 // 										alert(path);
-									 var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
+									 var path2 = "<c:url value='../Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
 
 									 $.each(json,function(i,product){
 // 										 alert(product[0].blogSNum);    .attr("href",path2+"${result[i][0].blogCity}");
@@ -1471,7 +1438,6 @@ hr {
 			return false;
 	
 		});
-		
 	</script>
 <!-- 	</div> -->
 </body>

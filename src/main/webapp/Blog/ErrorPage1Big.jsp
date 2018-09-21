@@ -354,7 +354,7 @@ hr {
 	position: absolute;
 	top: 50%;
 	background: #8c8c8c;
-	width: 20%;
+	width: 25%;
 	height: 3px;
 }
 
@@ -469,7 +469,7 @@ hr {
 
 <body>
 
-			<div class="d2 container">
+			<div class="d2">
 				<div class="title">
 					<h2 class="title-text">
 						<span><input type="button" value="Oops! It Looks Like Nothing Was Found!" id="buttonFade0"
