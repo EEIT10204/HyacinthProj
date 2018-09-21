@@ -35,8 +35,11 @@ public class OpenSessionInViewFilter implements Filter {
 			e.printStackTrace();
 			sessionFactory.getCurrentSession().getTransaction().rollback();
 			chain.doFilter(request, response);
+<<<<<<< HEAD
 		} finally {
 			sessionFactory.getCurrentSession().close();
+=======
+>>>>>>> c89f0141882deea9b6670f84845d38c26d69ae3c
 		}
 	}
 	

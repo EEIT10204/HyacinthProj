@@ -14,11 +14,17 @@ public interface  ActDAO {
 			
 	public abstract boolean deleteByPK(int ActSNum);
 
+<<<<<<< HEAD
 	public abstract ActBean selectByActID(ActBean bean);
 	
 	public abstract List<ActBean> selectTopSix();
 	
 	public abstract List<ActBean> Newset();
+=======
+	public abstract ActBean selectBymemberIDandcreateDate(ActBean bean);
+	
+	
+>>>>>>> c89f0141882deea9b6670f84845d38c26d69ae3c
 
 
 	

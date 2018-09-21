@@ -33,7 +33,7 @@ html, body {
 </script>
 
 <nav class="navbar navbar-expand-md bg-light navbar-light" style="border-radius:10px;">
-    <img class="navbar-brand" src='<c:url value="/Images/Index/Logo.png"/>' width="250px" height="70px"/>
+<%--     <img class="navbar-brand" src='<c:url value="/Images/Index/Logo.png"/>' width="250px" height="70px"/> --%>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav ml-auto">
         <form class="form-inline" action="">

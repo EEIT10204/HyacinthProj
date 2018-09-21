@@ -20,7 +20,11 @@ public class MemberBean {
 	private String memberName;//
 	private String memberTel;//
 	private String memberMail;//
+<<<<<<< HEAD
 	private byte[] memberPic;//
+=======
+	private byte[] memberPic;// 
+>>>>>>> c89f0141882deea9b6670f84845d38c26d69ae3c
 	private String memberNickName;//
 	private String memberGender;//
 	private Date memberBirthDay;//
@@ -30,7 +34,11 @@ public class MemberBean {
 	
 //-------------------------------------------
 	@Override
+<<<<<<< HEAD
 	public String toString() {
+=======
+	public String toString() { 
+>>>>>>> c89f0141882deea9b6670f84845d38c26d69ae3c
 		return "[memberID=" + memberID + ", memberAccount=" + memberAccount + ", memberPwd=" + memberPwd
 				+ ", memberName=" + memberName + ", memberTel=" + memberTel + ", memberMail=" + memberMail
 				+ ", memberPic=" +memberPic + ", memberNickName=" + memberNickName + ", memberGender="

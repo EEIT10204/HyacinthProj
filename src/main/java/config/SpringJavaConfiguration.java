@@ -14,8 +14,8 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.jndi.JndiObjectFactoryBean;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 
-import model.ACCommentBean;
 import model.ActBean;
+<<<<<<< HEAD
 import model.BGCommentBean;
 import model.BlogBean;
 import model.CityBean;
@@ -25,21 +25,38 @@ import model.MembershipBean;
 import model.NoticeBean;
 <<<<<<< HEAD
 import model.ReportBean;
+=======
+import model.MemberActBean;
+import model.MemberBean;
+import model.MembershipBean;
+import model.NoticeBean;
+<<<<<<< HEAD
+import model.TripBean;
+>>>>>>> c89f0141882deea9b6670f84845d38c26d69ae3c
 import model.ViewPointBean;
 =======
 import model.SubMemberBean;
 >>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
+
 
 @Configuration
 @ComponentScan(basePackages={"model"})
 public class SpringJavaConfiguration {
 	@Bean
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> c89f0141882deea9b6670f84845d38c26d69ae3c
 	public MessageSource messageSource() {
 		ResourceBundleMessageSource bundle = new ResourceBundleMessageSource();
 		bundle.setBasename("controller.Errors");
 		return bundle;
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> c89f0141882deea9b6670f84845d38c26d69ae3c
 	public SessionFactory sessionFactory() {
 		LocalSessionFactoryBuilder builder = new LocalSessionFactoryBuilder(dataSource());
 
@@ -60,8 +77,7 @@ public class SpringJavaConfiguration {
 		
 		
 		Properties properties = new Properties();
-//		properties.put("hibernate.dialect", "org.hibernate.dialect.SQLServerDialect");
-		//Hibernate 分頁需更換SQLServer版本
+
 		properties.put("hibernate.dialect", "org.hibernate.dialect.SQLServer2005Dialect");
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.current_session_context_class", "thread");
@@ -69,6 +85,7 @@ public class SpringJavaConfiguration {
 		builder.addProperties(properties);
 		
 		return builder.buildSessionFactory();
+<<<<<<< HEAD
 >>>>>>> 5e9c1901954e65d5053af8c3ed94f3bd2d2b9ef9
 	}
 	@Bean
@@ -108,6 +125,8 @@ public class SpringJavaConfiguration {
 		properties.put("hibernate.current_session_context_class", "thread");
 		properties.put("hibernate.show_sql", "true");
 		builder.addProperties(properties);
+=======
+>>>>>>> c89f0141882deea9b6670f84845d38c26d69ae3c
 
 		return builder.buildSessionFactory();
 	}

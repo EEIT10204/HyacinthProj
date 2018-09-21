@@ -3,6 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+<<<<<<< HEAD
 <bean id="viewPoint.select" class="org.springframework.web.servlet.view.InternalResourceView">
 	<property name="url" value="/Console/ViewPointManage.jsp"></property>
 </bean>
@@ -51,4 +52,20 @@
 		<property name="url" value="/index.jsp"></property>
 	</bean>
 
+=======
+	<bean id="act.display" class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/event/ActDisplay.jsp"></property>
+	</bean>
+<!-- 	<bean id="login.success" class="org.springframework.web.servlet.view.RedirectView"> -->
+<!-- 		<property name="contextRelative" value="true"></property> -->
+<!-- 		<property name="url" value="/index.jsp"></property> -->
+<!-- 	</bean> -->
+	
+	<bean id="act.create" class="org.springframework.web.servlet.view.InternalResourceView">
+		<property name="url" value="/event/ActCreate.jsp"></property>
+	</bean>
+<!-- <bean id="act.action" class="org.springframework.web.servlet.view.InternalResourceView"> -->
+<!-- 		<property name="url" value="/event/ActDisplay.jsp"></property> -->
+<!-- 	</bean> -->
+>>>>>>> c89f0141882deea9b6670f84845d38c26d69ae3c
 </beans>

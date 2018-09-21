@@ -15,7 +15,7 @@ import model.NoticeBean;
 import model.NoticeService;
 
 @Controller
-public class MemberController {
+public class MemberController { 
 	
 	@Autowired
 	private MemberDAO memberDAO;

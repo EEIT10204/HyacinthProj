@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Arrays;
+import java.util.Base64;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +24,7 @@ public class ActBean{
 	private byte[] actPhoto;
 	private String actTitle;
 	private String actCity;
-	private String actIntro;
+	private String actintro;
 	private java.sql.Timestamp actCreateDate;
 	private java.sql.Timestamp actStartTime;
 	private java.sql.Timestamp actEndTime;
@@ -42,7 +43,11 @@ public class ActBean{
 	public String toString() {
 		return "ActBean [memberID=" + memberID + ", actSNum=" + actSNum + ", actID=" + actID + ", actPhoto="
 				+ Arrays.toString(actPhoto) + ", actTitle=" + actTitle + ", actCity=" + actCity + ", actintro="
+<<<<<<< HEAD
 				+ actIntro + ", actCreateTimestamp=" + actCreateDate + ", actStartTime=" + actStartTime + ", actEndTime="
+=======
+				+ actintro + ", actCreateTimestamp=" + actCreateDate + ", actStartTime=" + actStartTime + ", actEndTime="
+>>>>>>> c89f0141882deea9b6670f84845d38c26d69ae3c
 				+ actEndTime + ", actJoinDeadLine=" + actJoinDeadLine + ", actStatus=" + actStatus
 				+ ", minParticipants=" + minParticipants + ", maxParticipants=" + maxParticipants + ", participantsNow="
 				+ participantsNow + ", budget=" + budget + ", payment=" + payment + ", actView=" + actView
@@ -85,15 +90,26 @@ public class ActBean{
 		this.actCity = actCity;
 	}
 	public String getActintro() {
+<<<<<<< HEAD
 		return actIntro;
 	}
 	public void setActintro(String actintro) {
 		this.actIntro = actintro;
+=======
+		return actintro;
+	}
+	public void setActintro(String actintro) {
+		this.actintro = actintro;
+>>>>>>> c89f0141882deea9b6670f84845d38c26d69ae3c
 	}
 	public java.sql.Timestamp getActCreateDate() {
 		return actCreateDate;
 	}
+<<<<<<< HEAD
 	public void setActCreateTimestamp(java.sql.Timestamp actCreateDate) {
+=======
+	public void setActCreateDate(java.sql.Timestamp actCreateDate) {
+>>>>>>> c89f0141882deea9b6670f84845d38c26d69ae3c
 		this.actCreateDate = actCreateDate;
 	}
 	public java.sql.Timestamp getActStartTime() {
@@ -168,7 +184,16 @@ public class ActBean{
 	public void setActVisibility(Integer actVisibility) {
 		this.actVisibility = actVisibility;
 	}
+<<<<<<< HEAD
 	
+=======
+	public String getActPhotoToBase64() {
+	    if(actPhoto!=null) {
+	     return Base64.getEncoder().encodeToString(actPhoto);
+	    }
+	    return null;
+	   }
+>>>>>>> c89f0141882deea9b6670f84845d38c26d69ae3c
 	
 
 	
