@@ -1,0 +1,149 @@
+#v-pills-activities a{
+    text-decoration: none;
+    color: #212529;
+}
+.carousel-inner{
+    background-image: url("../Images/Member/texture_01_dark.jpg");
+}
+.carousel-control-prev-icon{
+    background-color: black ;
+    height: 50px;
+    width:30px;
+}
+.carousel-control-next-icon{
+    background-color: black ;
+    height: 50px;
+    width:30px;
+}
+.carousel-control-prev{
+  left: -50px;
+  top:50px;
+}
+.carousel-control-next{
+  right: -50px;
+  top:50px;
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+  left: 0; 
+}
+.carousel-indicators{
+    /* background-color: rgba(0, 0, 0,0.2) ; */
+    bottom:-15px;
+}
+.carousel-indicators li {
+    /* background-color: #0000ff; */
+    box-shadow: inset 1px 1px 1px 1px rgba(0,0,0,0.5); 
+        /* display: inline-block; */
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    cursor: pointer;
+    /* border: none; */
+
+}
+.carousel-indicators .active {
+    background-color: rgba(0, 0, 0,0.5) ;
+}
+
+.theAuthor2{
+    position: absolute;
+    background-color: black;
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: white;
+    top: 100px;
+    right: 0;
+    /* width: 100%; */
+    padding: 5px 10px;
+}
+.theAuthor2:hover{
+    color: #007BFF;
+}
+.theAuthor2 .avatar {
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.cardRow{
+    /* border: 1px solid red; */
+    /* margin-top:10px;  */
+    margin-bottom:15px; 
+    margin-left: 10px; 
+    margin-right: 10px; 
+}
+.cardCol{
+    /* border: 1px solid green; */
+    padding: 10px 10px;
+}
+.actStatusOn{
+    background-color:#4CAF50; 
+    color:#FFFFFF; 
+    padding:0 5px; 
+    border-radius:3px; 
+    float:right;
+}
+.actStatusOff{
+    background-color:#D9534F; 
+    color:#FFFFFF; 
+    padding:0 5px; 
+    border-radius:3px; 
+    float:right;
+}
+.actStatusPre{
+    background-color:#FF7F00; 
+    color:#FFFFFF; 
+    padding:0 5px; 
+    border-radius:3px; 
+    float:right;
+}
+
+.card-body{
+	padding: 20px 10px 10px 10px;
+}
+.card-img-top{
+	height: 145px;
+}
+.card-title{
+	height: 80px;
+/* 	background-color:#212529; */
+/* 	color:#007BFF; */
+    display: -webkit-box;
+    max-height: 3.2rem;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    -webkit-line-clamp: 2;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+}
+.card{
+/* 	 overflow : hidden; */
+	 box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+/*    	 text-overflow : ellipsis; */
+/*  	 white-space : nowrap; */
+}
+.card:hover{
+	 background-color: #FFFFE0;
+	 border:0.5px solid black;
+}
+.actType{
+	 background-image: url("../Images/Member/blackboard2.jpg");
+	 margin-bottom: 0 !important;
+	 margin-top: 16px;
+	 color: silver;
+}
+
+#v-pills-blogs a{
+    text-decoration: none;
+    color: #212529;
+}
+
+.blogViews{
+    background-color:#121212; 
+    color:#888888; 
+    padding:0 5px; 
+    border-radius:3px; 
+    float:right;
+}

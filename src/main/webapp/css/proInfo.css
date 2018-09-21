@@ -1,0 +1,22 @@
+.profileRow{
+    /* background-color: whitesmoke; */
+    /* border: 1px solid red; */
+    padding: 15px;
+}
+
+.profileRow .nav-tabs .active{
+    background-color: rgba(42, 141, 207, 0.795);
+    color:navy;
+    font-weight: bolder;
+}
+
+.profileRow .avatarP{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.avatarC{
+    width: 500px;
+    border-radius: 8px;
+}
