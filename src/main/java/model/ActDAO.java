@@ -20,6 +20,8 @@ public interface  ActDAO {
 	
 	public abstract List<ActBean> Newset();
 
-
+	public abstract ActBean findByPK(Integer actSNum);
+	
+	public abstract List<ActBean> findHostedByOne(Integer memberID,String sorting,int p,int num);
 	
 }

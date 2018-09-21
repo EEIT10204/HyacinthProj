@@ -83,4 +83,21 @@ public class ActDAOHibernate implements ActDAO {
 		query.setMaxResults(6);
 		return query.getResultList();
 	}
+	
+	//CRUD--------------------------	
+		@Override    //H.C.Chen
+		public ActBean findByPK(Integer actSNum) {
+			return this.getSession().get(ActBean.class, actSNum);
+		}
+		
+		@Override   //H.C.Chen
+		public List<ActBean> findHostedByOne(Integer memberID,String sorting,int p,int num) {
+			return this.getSession().createQuery("from ActBean where memberID=:var1 AND actVisibility=1 "
+												+"order by "+sorting+" desc",ActBean.class)
+									.setParameter("var1", memberID)
+//									.setParameter("var2", sorting)
+//									.setFirstResult((p-1)*num)
+//									.setMaxResults(num)
+									.list();
+		}
 }
