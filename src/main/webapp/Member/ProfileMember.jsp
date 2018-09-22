@@ -57,17 +57,17 @@
                       </div>
                      </li>
                     </ul>
-                    <div class="nav flex-column nav-pills list-group">
-                     	<a class="nav-link text-right list-group-item">
-                            <span class="float-left"><i class="fa fa-globe"></i>&nbsp;&nbsp;<strong>About Me</strong></span><button id="showAboutMe"class="clickMe"><i class="fa fa-chevron-down" style="margin-top:5px"></i></button>
+                    <div class="nav flex-column nav-pills list-group" >
+                     	<a class="nav-link text-right list-group-item clickMe"  style="cursor: pointer;" role="tab" aria-controls="" aria-selected="true">
+                            <span class="float-left"><i class="fa fa-globe"></i>&nbsp;&nbsp;<strong >About Me</strong></span><button id="showAboutMe"class="clickMe"><i class="fa fa-chevron-down" style="margin-top:5px"></i></button>
                         </a>
                          <div id="aboutMe" class="panel" >
 							  <ul style="text-align: left;">
-							  	<li><i class="fa fa-calendar left-none"></i> ${userInfo.memberBirthDay}</li>
+							  	<li><i class="fa fa-calendar left-none" style="margin-right: 10px"></i> ${userInfo.memberBirthdayToString}</li>
 							  	<hr>
-	                            <li><i class="fa fa-envelope" ></i> ${userInfo.memberMail}</li>
+	                            <li><i class="fa fa-envelope" style="margin-right: 10px"></i> ${userInfo.memberMail}</li>
 	                            <hr>
-	                            <li><i class="fa fa-phone" ></i> ${userInfo.memberTel} </li>
+	                            <li><i class="fa fa-phone" style="margin-right: 10px"></i> ${userInfo.memberTel} </li>
                         		</ul>
                         </div>
                         <a class="nav-link active text-right list-group-item" id="v-pills-history-tab" data-toggle="pill" href="#v-pills-history" role="tab" aria-controls="v-pills-history" aria-selected="true">
@@ -234,8 +234,10 @@
         to highlight the button that controls the panel */
        var orginalDisplay=$('#aboutMe').css('display');
        if(orginalDisplay=="none"){
+    	   $('#aboutMe').slideToggle(500);
     	   $('#aboutMe').css("display","block");
        }else{
+    	   $('#aboutMe').slideUp(500);
     	   $('#aboutMe').css("display","none");
        }
      

@@ -318,17 +318,10 @@ a {
  margin: 10px;
  float: left;
 }
-.clickMe {
-    background-color: white;
-    color: black;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-}
+
 .panel {
     padding: 15px 30px 5px 30px;
-    background-color: white;
+    background-color: #5DADE2;
     overflow: hidden;
     display:none;
     border-bottom: 1px solid #E5E7E9 ;

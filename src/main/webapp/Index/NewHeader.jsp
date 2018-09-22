@@ -107,10 +107,10 @@ html, body {
 					    	<div style="text-align: center;">
 					        <img class="mb-4 ml-auto" src='<c:url value="/Images/Index/Logo.png"/>' alt="" width="400" height="120px">
 					        </div>
-						    <label for="inputAccount">帳號:</label>
+						    <label for="inputAccount">帳號:</label><br>
 					        <input style="margin-bottom: 1rem" type="text" id="inputAccount" name="memberAccount" 
-					      	class="form-control" placeholder="Account" autofocus/>
-					        <label for="inputPassword">密碼:</label>
+					      	class="form-control" placeholder="Account" autofocus/><br>
+					        <label for="inputPassword">密碼:</label><br>
 					        <label for="inputPassword" class="sr-only">Password</label>
 					        <input type="password" id="inputPassword" name="memberPwd"
 					      		   class="form-control" placeholder="Password" >
@@ -137,22 +137,22 @@ html, body {
 					    	<h2>註冊會員</h2>
 							<form class="form-signin" action="<c:url value="/RegistController" />" method="post" enctype="multipart/form-data">
 							    <div class="form-group">
-							      <label for="memberAccount">帳號*:</label>
+							      <label for="memberAccount">帳號*:</label><br>
 							      <input type="text" class="form-control" id="memberAccount" name="memberAccount" required="">
 							      <span id="AccountStatus"></span>
 							    </div>
 							    <div class="form-group">
-							      <label for="memberPwd">密碼*:  rule:英數混合且六位以上</label>
-							      <input type="password" class="form-control" id="memberPwd" name="memberPwd" required="">
+							      <label for="memberPwd">密碼*:  rule:英數混合且六位以上</label><br>
+							      <input type="password" class="form-control" id="memberPwd" name="memberPwd" required="" >
 							      <span id="PasswordStatus"></span>
 							    </div>
 							    <div class="form-group">
-							      <label for="memberMail">電子郵件*:</label>
+							      <label for="memberMail">電子郵件*:</label><br>
 							      <input type="email" class="form-control" id="memberMail" name="memberMail" required="">
 							      <span id="MailStatus"></span>
 							    </div>
 							    <div class="form-group">
-							      <label for="memberName">用戶名稱*:</label>
+							      <label for="memberName">用戶名稱*:</label><br>
 							      <input type="text" class="form-control" id="memberName" name="memberName" required="" >
 							    </div>
 							    <div class="form-group" style="display: none;">
@@ -160,17 +160,17 @@ html, body {
 							      <input type="text" class="form-control" id="memberHierachy" name="memberHierachy" value="Uncertified">
 							    </div>
 							    <a id="moreInfo" href="#hideInfo"  data-toggle="collapse">選填資訊<i class="fas fa-angle-down"></i></a>
-							    <div id="hideInfo" class="collapse">
+							    <div id="hideInfo" class="collapse" style="margin-top:20px;">
 							    	<div class="form-group">
-								      <label for="memberNickName">暱稱:</label>
+								      <label for="memberNickName">暱稱:</label><br>
 								      <input type="text" class="form-control" id="memberNickName" name="memberNickName">
 								    </div>
 								    <div class="form-group">
-								      <label for="memberTel">電話:</label>
+								      <label for="memberTel">電話:</label><br>
 								      <input type="tel" class="form-control" id="memberTel" name="memberTel">
 								    </div>
 								    <div class="form-group">
-										<label for="">性別: </label>
+										<label for="">性別: </label><br>
 									    <div class="form-check-inline">
 									     	 <label class="form-check-label" for="male">
 										        <input type="radio" class="form-check-input" id="male" name="memberGender" value="M" >男
@@ -181,9 +181,14 @@ html, body {
 										        <input type="radio" class="form-check-input" id="female" name="memberGender" value="F">女
 										      </label>
 										 	</div>
+										 	 <div class="form-check-inline">
+										      <label class="form-check-label" for="secret">
+										        <input type="radio" class="form-check-input" id="secret" name="memberGender" value="S">Secret
+										      </label>
+										 	</div>
 									 </div>
 										 <div class="form-group">
-											<label for="memberBirthDay">生日:</label>
+											<label for="memberBirthDay">生日:</label><br>
 											 <div id="sandbox-container">
 												 <div class="input-group date" data-provide="datepicker">
 													    <input type="text" class="form-control inline"  width="15px;" size="15px" id="memberBirthDay" name="memberBirthDay">
@@ -193,15 +198,13 @@ html, body {
 												</div>
 										</div>
 									</div>
-<!-- 								    <div class="form-group date"> -->
-<!-- 								      <label for="memberBirthDay">生日:</label> -->
-<!-- 								      <input type="text" class="form-control" id="memberBirthDay" name="memberBirthDay"> -->
-<!-- 								      <span class="input-group-addon"> -->
-<!-- 								      <i class="far fa-calendar-alt"></i></span> -->
-<!-- 								    </div> -->
+
 								    <div class="form-group">
-								      <label for="memberPic">照片:</label>
-								      <input type="file" class="form-control-file border" id="memberPic" name="memberPic">
+								      <label for="memberPic">個人照片:</label>
+								     <div class="text-center">
+                                          <img class="avatarP img-circle img-thumbnail" src="<c:url value="/Images/Member/memberPic_default.png" />" style="border-radius: 50% ; width: 200px; height: 200px" alt="avatar"><br>
+                                          <input type="file" name="memberPic" accept="image/*" class="text-center center-block file-upload">
+                                      </div>
 								    </div>
 							    </div>
 							    
@@ -348,5 +351,19 @@ html, body {
 		    language: "zh-TW",
 		});
 	</script>
+	<script> //註冊區域預覽圖顯示
+	 var readURL = function(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $(input).prev().prev().attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }   
+    $(".file-upload").on('change', function(){
+        readURL(this);
+    });
+    </script>
 </body>
 </html>
