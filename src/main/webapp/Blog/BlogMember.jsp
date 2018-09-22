@@ -1346,7 +1346,7 @@ hr {
 				
 								<div class="divblog22">
 								<div class="input-group-prepend hiddeninfo1 divblog2222 pad1">
-								<label class="input-group-text a1" name="blogNation">檢舉</label>
+								<label class="input-group-text a1" name="blogNation" data-toggle="modal" data-target="#reportModal">檢舉</label>
 								</div>
 								<div class="divblog2230 hiddeninfo1">
 								<a id="" href="#"> <i class="edit fas fa-bug fa-3x"
@@ -1520,7 +1520,31 @@ hr {
 						</span>
 					</h3>
 				</div>
-
+<!-- Report Model Start -->
+  <div class="modal fade" id="reportModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+        <img src="${pageContext.request.contextPath}/Images/Index/warning.png" style="height:20px;margin-top:10px;">
+        <h4 class="modal-title" style="margin-left:12px;">檢舉</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>          
+        </div>
+        <div class="modal-body">
+        	<form>
+       		<span style="margin-left:5px;font-size:16px;">理由:</span> <br>
+       		<textArea style="vertical-align:top; width:400px;margin-left:55px;margin-top:10px;height:200px;" id="reportReason" ></textArea>
+       		<input type="text" id="reportMember" value="" style="display:none"/> <input type="text" id="reportReferID" style="display:none" value="${BeanSNum[0][0].blogID}"/>
+       		</form>
+        </div>
+        <div class="modal-footer">
+        	<button onclick="sendReport()" type="button" class="btn btn-primary" data-dismiss="modal" style="color:white;">送出</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" style="color:white;">取消</button>
+        </div>
+      </div>   
+    </div>
+  </div> <!-- Report Modal end -->
 
 			</article>
 			<aside class="col-sm-4">
@@ -1938,8 +1962,7 @@ hr {
 							 $('#changeBlogDate').html('${BeanSNum[0][0].updateTime}'.substring(0, 10));
 							 $('#changeMemberName2').html('${BeanSNum[0][2].memberNickName}');
 							 $('#changeCityContent').html('${BeanSNum[0][0].blogContext}');
-		
-							
+							 $('#reportMember').val(member);
 							
 							//NAV 	
 							var nav = ["台北","台中","台南","高雄","東京","大阪","沖繩","北海道","首爾","釜山","大邱","濟州島","紐約","洛杉磯","舊金山","邁阿密","柏林","漢堡","慕尼黑","法蘭克福"]; 
@@ -2154,6 +2177,41 @@ hr {
 				$('#toggle2').toggle(1000);
 			})
 	//-----------------------------------------------------------
+	//-----------Report Ajax --------
+		function sendReport(){
+		var reportReason = $('#reportReason').val();
+		var reportMember = $('#reportMember').val();
+		var referID = $('#reportReferID').val();
+// 		alert(reportReason + '-' + reportMember + '-' + referID);
+		
+		$.ajax({
+			type : "get",
+			url : "${pageContext.request.contextPath}/report.Send",
+			data: {"reportMember":reportMember, "referID":referID,"reportReason":reportReason},
+			contentType: "application/json; charset=utf-8",
+			dataType: "text",
+			success: function (data) {
+// 					alert(data);
+			swal({
+			  type: 'success',
+			  title: '檢舉成功',
+			  showConfirmButton: false,
+			  timer: 1500
+			})
+				},
+			error: function (response) {
+				$('#detailReason').empty();
+				alert("detail error");
+				
+				swal({
+					  type: 'error',
+					  title: '檢舉有誤',
+					  text: '請重新發送檢舉',
+					})
+				},				
+		});	
+	}
+	
 	
 	</script>
 

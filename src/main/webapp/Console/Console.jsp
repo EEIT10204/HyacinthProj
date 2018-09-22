@@ -255,7 +255,6 @@
 // 	}
 	
 	function sendReport(){
-// 		alert('send report');
 		var reportReason = $('#reportReason').text();
 		var reportMember = $('#reportMember').val();
 		var referID = $('#referID').val();
@@ -305,7 +304,7 @@
 				},
 			error: function (response) {
 				$('#detailReason').empty();
-				alert("detail error");
+// 				alert("detail error");
 				},				
 		});	
 		
@@ -334,153 +333,244 @@
 			contentType: "application/json; charset=utf-8",
 			dataType: "json",
 			success: function (data) {
-					alert(data);
-				},
-			error: function (response) {
-				$('#detailReason').empty();
-				alert("detail error");
-				},				
-		});	
-	}
-	
-	function insertDetail(referID,caseID,reporterName,reportedTime,reason){
+// 					alert(data);
 
-		if(referID.match('ACC') || referID.match('BGC')){
-			$('#cmtDetailCaseID').empty().html(caseID);
-			$('#cmtDetailReporter').empty().html(reporterName);
-			$('#cmtDetailReportedTime').empty().html(reportedTime);
-			$('#cmtDetailReason').empty().html(reason);
-			$('#detailCommentID').val(referID);
-		}
-		else if(referID.match('AC')){
-			$('#actDetailCaseID').empty().html(caseID);
-			$('#actDetailMember').empty().html(reporterName);
-			$('#actDetailReportedTime').empty().html(reportedTime);
-			$('#actDetailReason').empty().html(reason);
-			$('#detailActID').val(referID);
-		}
-		else if (referID.match('BG')){
-			$('#blogDetailCaseID').empty().html(caseID);
-			$('#blogDetailMember').empty().html(reporterName);
-			$('#blogDetailReportedTime').empty().html(reportedTime);
-			$('#blogDetailReason').empty().html(reason);
-			$('#detailBlogID').val(referID);
-		}
-		
-	}
-		
-	function showCommentDetail(referID, caseID, reporterName, reportedTime,reason){	
-		$.ajax({
-			type : "get",
-			url : "${pageContext.request.contextPath}/report.ShowDetail",
-			data: {"referID":referID},
-			contentType: "application/json; charset=utf-8",
-			dataType: "json",
-			success: function (data) {
-//--------------Pop up different div to display different case type (blog,act,comment)
-// 				alert(data['referID']);
-// 				$('#modal-body').empty();
-				if(data['commentContent']!= null){
-				insertDetail(referID,caseID,reporterName,reportedTime,reason);
-				$('#detailCommentMember').empty().text(data['memberName']);
-				$('#detailComment').empty().text(data['commentContent']);
-				}  //comment div content
-				else{
-					alert('not comment');
-				}			
+				swal({
+						type : 'success',
+						title : '檢舉成功!',
+						showConfirmButton : false,
+						timer : 1500
+					})
 				},
-			error: function (response) {
-				$('#detailReason').empty();
-				alert("detail error");
-				},				
-		});	
-	}
-	
-	function showActDetail(referID, caseID, reporterName, reportedTime,reason){
-// 		alert(referID);		
-		insertDetail(referID,caseID,reporterName,reportedTime,reason);
-		$.ajax({
-			type : "get",
-			url : "${pageContext.request.contextPath}/report.ShowDetail",
-			data: {"referID":referID},
-			contentType: "application/json; charset=utf-8",
-			dataType: "json",
-			success: function (data) {
-//--------------Pop up different div to display different case type (blog,act,comment)
-				$('#actOwner').empty().text(data['memberName']);
-				$('#actTitle').empty().text(data['actTitle']);
-				var picStr = String.fromCharCode.apply(null, new Uint8Array(data['actPhoto']));
-				$('#actCover').empty().attr("src","data:image/jpg;base64," + btoa(picStr));
-				$('#actContent').empty().html(data['actIntro']);
+				error : function(response) {
+					$('#detailReason').empty();
+// 					alert("detail error");
 				},
-			error: function (response) {
-				$('#detailReason').empty();
-				alert("act detail error");
-				},				
-		});	
-	}
-	
-	function showBlogDetail(referID, caseID, reporterName, reportedTime,reason){
-// 		alert(referID);		
-		insertDetail(referID,caseID,reporterName,reportedTime,reason);
-		$.ajax({
-			type : "get",
-			url : "${pageContext.request.contextPath}/report.ShowDetail",
-			data: {"referID":referID},
-			contentType: "application/json; charset=utf-8",
-			dataType: "json",
-			success: function (data) {
-				$('#blogOwner').empty().text(data['memberName']);
-				$('#blogTitle').empty().text(data['blogTitle']);
-// 				alert(data['blogCover']);
-				var picStr = String.fromCharCode.apply(null, new Uint8Array(data['blogCover']));
-// 				alert(picStr);
-				$('#blogCover').attr("src","data:image/jpg;base64," + btoa(picStr));
-				$('#blogContext').empty().html(data['blogContext']);
-		
-				},
-			error: function (response) {
-				$('#detailReason').empty();
-				alert("blog detail error");
-				},				
-		});	
-	}
-	function clearForm() {
-	    document.getElementById("reportForm").reset();
-	    $('#reportDisplay').empty();
-	}
-	
-	$('#testAjax').click(function SearchResult(){
-		
-		$('#reportDisplay').empty();
-		
-		 $.ajax({
-				type : "get",
-				url : "${pageContext.request.contextPath}/report.Controller",
-				data:	{
-						 "type":document.getElementById("type").value, 
-						 "process":document.getElementById("process").value
-						},
-				contentType: "application/json; charset=utf-8",
-				dataType: "json",
-				success: function (data) {
-//                     alert(data[0]["caseID"]); 
-//                     $('#testArea').text(data[1]["caseID"]);
-					for(var i = 0; i < data.length; i++){
-						if(data[i]["referID"].match('ACC') || data[i]["referID"].match('BGC'))
-							$('#reportDisplay').append('<tr data-toggle="modal" data-target="#commentModal" class="caseRow" onclick="showCommentDetail(\'' +data[i]["referID"]+'\',\''+ data[i]["caseID"]+ '\',\''+ data[i]["memberName"]+ '\',\''+ data[i]["reportedTime"] + '\',\''+ data[i]["reason"]+'\')"><td>'+ data[i]["caseID"] + '</td><td>' + data[i]["referID"] + '</td><td>' + data[i]["reason"] + '</td><td>' + data[i]["memberName"] + '</td><td>' + data[i]["process"] + '</td></tr>');
-						else if (data[i]["referID"].match('AC'))
-							$('#reportDisplay').append('<tr data-toggle="modal" data-target="#actModal" class="caseRow" onclick="showActDetail(\'' +data[i]["referID"]+'\',\''+ data[i]["caseID"]+ '\',\''+ data[i]["memberName"]+ '\',\''+ data[i]["reportedTime"] + '\',\''+ data[i]["reason"]+'\')"><td>'+ data[i]["caseID"] + '</td><td>' + data[i]["referID"] + '</td><td>' + data[i]["reason"] + '</td><td>' + data[i]["memberName"] + '</td><td>' + data[i]["process"] + '</td></tr>');
-						else if (data[i]["referID"].match('BG'))
-							$('#reportDisplay').append('<tr data-toggle="modal" data-target="#blogModal" class="caseRow" onclick="showBlogDetail(\'' +data[i]["referID"]+'\',\''+ data[i]["caseID"]+ '\',\''+ data[i]["memberName"]+ '\',\''+ data[i]["reportedTime"] + '\',\''+ data[i]["reason"]+'\')"><td>'+ data[i]["caseID"] + '</td><td>' + data[i]["referID"] + '</td><td>' + data[i]["reason"] + '</td><td>' + data[i]["memberName"] + '</td><td>' + data[i]["process"] + '</td></tr>');
-					
-					}
-					},
-				error: function (response) {
-					alert("search error");
-					},				
 			});
-	});
+		}
+
+		function insertDetail(referID, caseID, reporterName, reportedTime,
+				reason) {
+
+			if (referID.match('ACC') || referID.match('BGC')) {
+				$('#cmtDetailCaseID').empty().html(caseID);
+				$('#cmtDetailReporter').empty().html(reporterName);
+				$('#cmtDetailReportedTime').empty().html(reportedTime);
+				$('#cmtDetailReason').empty().html(reason);
+				$('#detailCommentID').val(referID);
+			} else if (referID.match('AC')) {
+				$('#actDetailCaseID').empty().html(caseID);
+				$('#actDetailMember').empty().html(reporterName);
+				$('#actDetailReportedTime').empty().html(reportedTime);
+				$('#actDetailReason').empty().html(reason);
+				$('#detailActID').val(referID);
+			} else if (referID.match('BG')) {
+				$('#blogDetailCaseID').empty().html(caseID);
+				$('#blogDetailMember').empty().html(reporterName);
+				$('#blogDetailReportedTime').empty().html(reportedTime);
+				$('#blogDetailReason').empty().html(reason);
+				$('#detailBlogID').val(referID);
+			}
+
+		}
+
+		function showCommentDetail(referID, caseID, reporterName, reportedTime,
+				reason) {
+			$.ajax({
+				type : "get",
+				url : "${pageContext.request.contextPath}/report.ShowDetail",
+				data : {
+					"referID" : referID
+				},
+				contentType : "application/json; charset=utf-8",
+				dataType : "json",
+				success : function(data) {
+					//--------------Pop up different div to display different case type (blog,act,comment)
+					// 				alert(data['referID']);
+					// 				$('#modal-body').empty();
+					if (data['commentContent'] != null) {
+						insertDetail(referID, caseID, reporterName,
+								reportedTime, reason);
+						$('#detailCommentMember').empty().text(
+								data['memberName']);
+						$('#detailComment').empty()
+								.text(data['commentContent']);
+					} //comment div content
+					else {
+						alert('not comment');
+					}
+				},
+				error : function(response) {
+					$('#detailReason').empty();
+					alert("detail error");
+				},
+			});
+		}
+
+		function showActDetail(referID, caseID, reporterName, reportedTime,
+				reason) {
+			// 		alert(referID);		
+			insertDetail(referID, caseID, reporterName, reportedTime, reason);
+			$.ajax({
+				type : "get",
+				url : "${pageContext.request.contextPath}/report.ShowDetail",
+				data : {
+					"referID" : referID
+				},
+				contentType : "application/json; charset=utf-8",
+				dataType : "json",
+				success : function(data) {
+					//--------------Pop up different div to display different case type (blog,act,comment)
+					$('#actOwner').empty().text(data['memberName']);
+					$('#actTitle').empty().text(data['actTitle']);
+					$('#actCover').empty().attr("src","data:image/jpg;base64," + data['getActPhotoToBase64']);
+					$('#actContent').empty().html(data['actIntro']);
+				},
+				error : function(response) {
+					$('#detailReason').empty();
+// 					alert("act detail error");
+				},
+			});
+		}
+
+		function showBlogDetail(referID, caseID, reporterName, reportedTime,
+				reason) {
+			// 		alert(referID);		
+			insertDetail(referID, caseID, reporterName, reportedTime, reason);
+			$.ajax({
+				type : "get",
+				url : "${pageContext.request.contextPath}/report.ShowDetail",
+				data : {
+					"referID" : referID
+				},
+				contentType : "application/json; charset=utf-8",
+				dataType : "json",
+				success : function(data) {
+					$('#blogOwner').empty().text(data['memberName']);
+					$('#blogTitle').empty().text(data['blogTitle']);
+					$('#blogContext').empty().html(data['blogContext']);
+					$('#blogCover').attr("src","").attr("src","data:image/jpg;base64,"+ data['blogCoverToBase64']);
+
+
+				},
+				error : function(response) {
+					$('#detailReason').empty();
+// 					alert("blog detail error");
+				},
+			});
+		}
+		function clearForm() {
+			document.getElementById("reportForm").reset();
+			$('#reportDisplay').empty();
+		}
+
+		$('#testAjax')
+				.click(
+						function SearchResult() {
+
+							$('#reportDisplay').empty();
+
+							$
+									.ajax({
+										type : "get",
+										url : "${pageContext.request.contextPath}/report.Controller",
+										data : {
+											"type" : document
+													.getElementById("type").value,
+											"process" : document
+													.getElementById("process").value
+										},
+										contentType : "application/json; charset=utf-8",
+										dataType : "json",
+										success : function(data) {
+											//                     alert(data[0]["caseID"]); 
+											//                     $('#testArea').text(data[1]["caseID"]);
+											for (var i = 0; i < data.length; i++) {
+												if (data[i]["referID"]
+														.match('ACC')
+														|| data[i]["referID"]
+																.match('BGC'))
+													$('#reportDisplay')
+															.append(
+																	'<tr data-toggle="modal" data-target="#commentModal" class="caseRow" onclick="showCommentDetail(\''
+																			+ data[i]["referID"]
+																			+ '\',\''
+																			+ data[i]["caseID"]
+																			+ '\',\''
+																			+ data[i]["memberName"]
+																			+ '\',\''
+																			+ data[i]["reportedTime"]
+																			+ '\',\''
+																			+ data[i]["reason"]
+																			+ '\')"><td>'
+																			+ data[i]["caseID"]
+																			+ '</td><td>'
+																			+ data[i]["referID"]
+																			+ '</td><td>'
+																			+ data[i]["reason"]
+																			+ '</td><td>'
+																			+ data[i]["memberName"]
+																			+ '</td><td>'
+																			+ data[i]["process"]
+																			+ '</td></tr>');
+												else if (data[i]["referID"]
+														.match('AC'))
+													$('#reportDisplay')
+															.append(
+																	'<tr data-toggle="modal" data-target="#actModal" class="caseRow" onclick="showActDetail(\''
+																			+ data[i]["referID"]
+																			+ '\',\''
+																			+ data[i]["caseID"]
+																			+ '\',\''
+																			+ data[i]["memberName"]
+																			+ '\',\''
+																			+ data[i]["reportedTime"]
+																			+ '\',\''
+																			+ data[i]["reason"]
+																			+ '\')"><td>'
+																			+ data[i]["caseID"]
+																			+ '</td><td>'
+																			+ data[i]["referID"]
+																			+ '</td><td>'
+																			+ data[i]["reason"]
+																			+ '</td><td>'
+																			+ data[i]["memberName"]
+																			+ '</td><td>'
+																			+ data[i]["process"]
+																			+ '</td></tr>');
+												else if (data[i]["referID"]
+														.match('BG'))
+													$('#reportDisplay')
+															.append(
+																	'<tr data-toggle="modal" data-target="#blogModal" class="caseRow" onclick="showBlogDetail(\''
+																			+ data[i]["referID"]
+																			+ '\',\''
+																			+ data[i]["caseID"]
+																			+ '\',\''
+																			+ data[i]["memberName"]
+																			+ '\',\''
+																			+ data[i]["reportedTime"]
+																			+ '\',\''
+																			+ data[i]["reason"]
+																			+ '\')"><td>'
+																			+ data[i]["caseID"]
+																			+ '</td><td>'
+																			+ data[i]["referID"]
+																			+ '</td><td>'
+																			+ data[i]["reason"]
+																			+ '</td><td>'
+																			+ data[i]["memberName"]
+																			+ '</td><td>'
+																			+ data[i]["process"]
+																			+ '</td></tr>');
+
+											}
+										},
+										error : function(response) {
+											alert("search error");
+										},
+									});
+						});
 	</script>
 </body>
 </html>

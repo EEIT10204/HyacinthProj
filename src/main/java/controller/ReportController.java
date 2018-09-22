@@ -54,6 +54,7 @@ public class ReportController {
 		if("".equals(type) && "".equals(process)){  // no setting condition, select all
 			System.out.println("select all");
 			List<ReportBean> results = reportService.selectAll();
+//			System.out.println("console controller result: " + results.size());
 			Gson beanToJson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 			String json = beanToJson.toJson(results);
 			return json;
@@ -153,10 +154,10 @@ public class ReportController {
 			BlogBean blogResult = blogService.selectByBlogID(blog);
 			System.out.println(blogResult.toString());
 			MemberBean memberResult = memberDAO.findByPK(blogResult.getMemberID());
-			
 			Gson beanToJson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 			JsonElement jsonTree = beanToJson.toJsonTree(blogResult);
 			jsonTree.getAsJsonObject().addProperty("memberName", memberResult.getMemberName());
+			jsonTree.getAsJsonObject().addProperty("blogCoverToBase64",blogResult.getBlogCoverToBase64());
 			String json = beanToJson.toJson(jsonTree);
 //			System.out.println("bgComment json: " + json);
 			return json;		
@@ -171,6 +172,7 @@ public class ReportController {
 			Gson beanToJson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 			JsonElement jsonTree = beanToJson.toJsonTree(actResult);
 			jsonTree.getAsJsonObject().addProperty("memberName", memberResult.getMemberName());
+			jsonTree.getAsJsonObject().addProperty("getActPhotoToBase64",actResult.getActPhotoToBase64());
 			String json = beanToJson.toJson(jsonTree);
 			return json;
 			
