@@ -25,14 +25,8 @@
 <body onload="reloadOnce()">
 
     <div id="idTop" class="container">
-        <c:if test="${empty subInfo.memberCoverToBase64}">
-            <img id="idCover" src="<c:url value="/Images/Member/nature-design.jpg"/>" alt="Cover">
-        </c:if>
-        <c:if test="${not empty subInfo.memberCoverToBase64}">
-			<img id="idCover" src="<c:url value="data:image/png;base64,${subInfo.memberCoverToBase64}"/>" alt="Cover">
-	  	</c:if>    
-        <c:if test="${not empty user.memberPicToBase64}"><img id="idProPic" class="img-thumbnail" src="data:image/png;base64,${user.memberPicToBase64}" alt="Profile image"/></c:if>       
-        <c:if test="${empty user.memberPicToBase64}"><img id="idProPic" class="img-thumbnail" src="<c:url value="/Images/Member/fb_user.jpg"/>" alt="Profile image"/></c:if>
+		<img id="idCover" src="<c:url value="data:image/png;base64,${subInfo.memberCoverToBase64}"/>" alt="Cover">  
+        <img id="idProPic" class="img-thumbnail" src="data:image/png;base64,${user.memberPicToBase64}" alt="Profile image"/>       
         <div id="idUserBasic">
                 <h2><i>${user.memberName}</i></h2>
                 <h3><small><i class="fas fa-map-marker-alt"></i>${subInfo.memberLocation}</small></h3>
@@ -46,28 +40,28 @@
                 <div class="row">
                     <div class="nav flex-column nav-pills list-group" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link text-right list-group-item <c:if test="${page eq 'main'}"> <c:out value="active"/> </c:if>" id="v-pills-news-tab" data-toggle="pill" href="#v-pills-news" role="tab" aria-controls="v-pills-news" aria-selected="true">
-                            <span class="float-left"><i class="far fa-newspaper"></i>&nbsp;&nbsp;<strong>News Feed</strong></span> 125 
+                            <span class="float-left"><i class="far fa-newspaper"></i>&nbsp;&nbsp;<strong>News Feed</strong></span>  
                         </a>
                         <a class="nav-link text-right list-group-item" id="v-pills-activities-tab" data-toggle="pill" href="#v-pills-activities" role="tab" aria-controls="v-pills-activities" aria-selected="false">
-                            <span class="float-left"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;<strong>My Activities</strong></span> 37
+                            <span class="float-left"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;<strong>My Activities</strong></span> 
                         </a>
                         <a class="nav-link text-right list-group-item" id="v-pills-blogs-tab" data-toggle="pill" href="#v-pills-blogs" role="tab" aria-controls="v-pills-blogs" aria-selected="false">
-                            <span class="float-left"><i class="fas fa-edit"></i>&nbsp;&nbsp;<strong>My Blogs</strong></span> 37
+                            <span class="float-left"><i class="fas fa-edit"></i>&nbsp;&nbsp;<strong>My Blogs</strong></span> 
                         </a>
                         <a class="nav-link text-right list-group-item" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">
-                            <span class="float-left"><i class="fas fa-user-circle"></i>&nbsp;&nbsp;<strong>Profile</strong></span> 13
+                            <span class="float-left"><i class="fas fa-user-circle"></i>&nbsp;&nbsp;<strong>Profile</strong></span> 
                         </a>
                         <a class="nav-link text-right list-group-item" id="v-pills-privacy-tab" data-toggle="pill" href="#v-pills-privacy" role="tab" aria-controls="v-pills-privacy" aria-selected="false">
-                            <span class="float-left"><i class="fas fa-key"></i>&nbsp;&nbsp;<strong>Privacy</strong></span> 37
+                            <span class="float-left"><i class="fas fa-key"></i>&nbsp;&nbsp;<strong>Privacy</strong></span> 
                         </a>
                         <a class="nav-link text-right list-group-item" id="v-pills-social-tab" data-toggle="pill" href="#v-pills-social" role="tab" aria-controls="v-pills-social" aria-selected="false">
-                            <span class="float-left"><i class="fas fa-user-friends"></i>&nbsp;&nbsp;<strong>Social</strong></span> 125
+                            <span class="float-left"><i class="fas fa-user-friends"></i>&nbsp;&nbsp;<strong>Social</strong></span> ${friendCount}
                         </a>
                         <a class="nav-link text-right list-group-item <c:if test="${page eq 'notice'}"> <c:out value="active"/>  </c:if>" id="v-pills-notification-tab" data-toggle="pill" href="#v-pills-notification" role="tab" aria-controls="v-pills-notification" aria-selected="false">
                             <span class="float-left"><i class="far fa-envelope"></i>&nbsp;&nbsp;<strong>Notification</strong></span> <span id="spanNoticeCount1"></span>
                         </a>
                         <a class="nav-link text-right list-group-item" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
-                            <span class="float-left"><i class="fab fa-facebook-messenger"></i>&nbsp;&nbsp;<strong>Messages</strong></span> 78
+                            <span class="float-left"><i class="fab fa-facebook-messenger"></i>&nbsp;&nbsp;<strong>Messages</strong></span> (暫無)
                         </a>
                     </div>
                </div>

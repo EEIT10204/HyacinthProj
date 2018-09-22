@@ -26,7 +26,8 @@
 </head>
 <body>
     <div id="idTop" class="container">
-       	<img id="idCover" src='<c:url value="/Images/Member/nature-design.jpg"/>' alt="Cover">
+        <img id="idCover" src="<c:url value="/Images/Member/memberCover_default.jpg"/>" alt="Cover">
+		<img id="idCover" src="<c:url value="data:image/png;base64,${subInfo.memberCoverToBase64}"/>" alt="Cover">
         <img id="idProPic" class="img-thumbnail" src='data:image/png;base64,${userInfo.memberPicToBase64}' alt="Profile image"/>
         <div id="idFollow">
             <button id="FriendButton" class="btn-o"><i class="fa fa-user-plus"></i>   加入好友 </button> 
@@ -34,8 +35,8 @@
         </div>
         <div id="idUserBasic">
                 <h2><i>${userInfo.memberName}&nbsp;&nbsp;&nbsp;&nbsp;<small>${userInfo.memberNickName}</small></i></h2>
-                <h3><small><i class="fas fa-map-marker-alt"></i> California, USA</small></h3>
-                <h3><small><i class="fas fa-briefcase"></i> Actress</small></h3>
+                <h3><small><i class="fas fa-map-marker-alt"></i> ${subInfo.memberLocation}</small></h3>
+                <h3><small><i class="fas fa-briefcase"></i>${subInfo.memberJob}</small></h3>
         </div>
     </div>
 
@@ -48,8 +49,8 @@
                       <div id="idSocialBar" class="col col_4">
                          <div class="edit-pic">
                               <a href="https://web.facebook.com/" target="_blank" class="fab fa-facebook" style="color: #3b5998; border: 1px solid #3b5998;"></a>
-                              <a href="https://www.instagram.com/elizabetholsenofficial/" target="_blank" class="fab fa-instagram"  style="color: #833ab4;border: 1px solid #833ab4;"></a>
-                              <a href="https://twitter.com/elizabetholsenn" target="_blank" class="fab fa-twitter"  style="color: #1da1f2;border: 1px solid #1da1f2;"></a>
+                              <a href="https://www.instagram.com/" target="_blank" class="fab fa-instagram"  style="color: #833ab4;border: 1px solid #833ab4;"></a>
+                              <a href="https://twitter.com/" target="_blank" class="fab fa-twitter"  style="color: #1da1f2;border: 1px solid #1da1f2;"></a>
                               <a href="https://plus.google.com/" target="_blank" class="fab fa-google"  style="color: #dd4b39; border: 1px solid #dd4b39;"></a>
                               <a href="https://www.youtube.com/" target="_blank" class="fab fa-youtube"  style="color: #ff0000; border: 1px solid #ff0000;"></a>
                          </div>
@@ -59,7 +60,7 @@
                     </ul>
                     <div class="nav flex-column nav-pills list-group" >
                      	<a class="nav-link text-right list-group-item clickMe"  style="cursor: pointer;" role="tab" aria-controls="" aria-selected="true">
-                            <span class="float-left"><i class="fa fa-globe"></i>&nbsp;&nbsp;<strong >About Me</strong></span><button id="showAboutMe"class="clickMe"><i class="fa fa-chevron-down" style="margin-top:5px"></i></button>
+                            <span class="float-left"><i class="fa fa-globe"></i>&nbsp;&nbsp;<strong >About Me</strong></span><i id="up" class="fa fa-chevron-down" style="margin-top:5px"></i>
                         </a>
                          <div id="aboutMe" class="panel" >
 							  <ul style="text-align: left;">
@@ -235,9 +236,10 @@
        var orginalDisplay=$('#aboutMe').css('display');
        if(orginalDisplay=="none"){
     	   $('#aboutMe').slideToggle(500);
+    	   $("#up").attr("class", "fa fa-chevron-up");
     	   $('#aboutMe').css("display","block");
        }else{
-    	   $('#aboutMe').slideUp(500);
+    	   $("#up").attr("class", "fa fa-chevron-down");
     	   $('#aboutMe').css("display","none");
        }
      

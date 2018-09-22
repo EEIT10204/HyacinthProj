@@ -17,14 +17,18 @@ import model.MemberBean;
 import model.MemberService;
 import model.NoticeBean;
 import model.NoticeService;
+import model.SubMemberBean;
+import model.SubMemberDAO;
 
 @RestController
-@SessionAttributes(names = { "user"})
+@SessionAttributes(names = { "user","subInfo"})
 public class LoginController {
 	@Autowired
 	private MemberService memberService;
 	@Autowired
 	NoticeService noticeService;
+	@Autowired
+	SubMemberDAO subMemberDAO;
 	
 	@RequestMapping(path = { "LoginController" })
 	public String login(Model model, String memberAccount, String memberPwd) {
@@ -36,7 +40,10 @@ public class LoginController {
 		if(result==null) {
 			errors.put("action", "login fail");		
 		} else {
+			Integer memberId = result.getMemberID();
+			SubMemberBean subInfo = subMemberDAO.findByPK(memberId);
 			model.addAttribute("user",result);
+			model.addAttribute("subInfo",subInfo);
 //			List<NoticeBean> noticeList = noticeService.selectMyNotice(result.getMemberID());
 //				if(noticeList!=null) {
 //					int noticeCount = noticeList.size();

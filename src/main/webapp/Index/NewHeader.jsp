@@ -239,7 +239,7 @@ html, body {
 		    	if(data.status=="findNoticeList"){
 		    		alert("有新訊息")	
 					if('${user.memberHierachy}'=='Admin'){
-						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
+						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a style='text-decoration:none;color:black' href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
 						);
 						$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&page=notice'/>'  style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='spanNoticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>"+data.count+"</span></a></li>")
 						$('#blogNav').html("<a class='dropdown-item' href='<c:url value='/Blog/BlogIndex.jsp'/>'>網誌首頁</a><a class='dropdown-item' href='<c:url value='/Blog/BlogNew.jsp'/>'>新增網誌</a>")
@@ -248,7 +248,7 @@ html, body {
 						$('#spanNoticeCount1').text(data.count);
 					}else if( '${user.memberID}' != ""){
 
-						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}//ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID}&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
+						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}//ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID}&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a style='text-decoration:none;color:black' href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
 						);
 						$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&page=notice'/>'  style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='noticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>"+data.count+"</span></a></li>");
 						$('#blogNav').html("<a class='dropdown-item' href='<c:url value='/Blog/BlogIndex.jsp'/>'>網誌首頁</a><a class='dropdown-item' href='<c:url value='/Blog/BlogNew.jsp'/>'>新增網誌</a>")
@@ -258,7 +258,7 @@ html, body {
 		    	}else if (data.status=="NoNewNoticeList"){
 		    		alert("無新訊息")
 		    		if('${user.memberHierachy}'=='Admin'){
-						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
+						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a style='text-decoration:none;color:black' href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
 						);
 						$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&page=notice'/>' style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='spanNoticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>"+data.count+"</span></a></li>")
 						$('#blogNav').html("<a class='dropdown-item' href='<c:url value='/Blog/BlogIndex.jsp'/>'>網誌首頁</a><a class='dropdown-item' href='<c:url value='/Blog/BlogNew.jsp'/>'>新增網誌</a>")
@@ -267,7 +267,7 @@ html, body {
 						$('#spanNoticeCount1').text(data.count);
 					}else if( '${user.memberID}' != ""){
 
-						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}//ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
+						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}//ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a style='text-decoration:none;color:black' href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
 						);
 						$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&page=notice'/>'  style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='noticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>"+data.count+"</span></a></li>");
 						$('#blogNav').html("<a class='dropdown-item' href='<c:url value='/Blog/BlogIndex.jsp'/>'>網誌首頁</a><a class='dropdown-item' href='<c:url value='/Blog/BlogNew.jsp'/>'>新增網誌</a>")
