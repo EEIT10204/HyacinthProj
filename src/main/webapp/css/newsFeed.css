@@ -218,4 +218,26 @@ a{
   height: 50px;
 }
 
+/*---------modal----------*/
+.modalAvatar {
+    vertical-align: middle;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #212529;
+}
+.modalName{
+    font-size: 20px; 
+    font-weight: 500;
+    padding-left: 15px;
+}
+.memberList {
+    margin: 20px 0 20px 15px;
+/*     text-align: center; */
+}
+#myModalBody{
+    height: 320px;
+    overflow-y: auto;
+}
+
 

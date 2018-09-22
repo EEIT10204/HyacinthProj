@@ -78,6 +78,21 @@
                     <div id="loader"></div>
                     <div id="newsEnd" style="margin:50px 0;color:#1DA1F2; text-align:center; font-size:30px; font-weight:bolder;">
 					</div>
+					<div class="modal" id="listModalCenter" tabindex="-1" role="dialog" aria-labelledby="listModalCenterTitle" aria-hidden="true">
+				        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+				            <div class="modal-content">
+				                <div class="modal-header">
+				                    <h5 class="modal-title" id="listModalLongTitle">Modal List</h5>
+				                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				                        <span aria-hidden="true">&times;</span>
+				                    </button>
+				                </div>
+				                <div class="modal-body" id="myModalBody">
+				                	<!-- modal-list generated here-->
+				                </div>
+				            </div>
+				        </div>
+				    </div> <!--  modal list end -->
                 </div> <!--v-pills-news end-->
                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                     <div class="row">

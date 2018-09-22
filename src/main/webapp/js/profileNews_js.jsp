@@ -3,6 +3,29 @@
 <script>
 $(document).ready(function() {	
 	
+	//Follows,Joins,Saves按鈕點選出現Modal List
+	 $('#showNews').on("click",".postButton button:nth-child(2)",function(){
+//			alert(this.name+" is page!");
+//			alert($(this).parents(".content").attr("name")+" is ID");
+		var newsId=$(this).parents(".content").attr("name");
+       if(this.name=="follows"){	
+//        	alert("showdo1");
+          showModalList(newsId,"follows");
+       }else if(this.name=="saves"){
+//        	alert("showdo2");
+          showModalList(newsId,"saves");
+       }
+	});
+	$('#showNews').on("click",".postButton button:nth-child(3)",function(){
+//		alert(this.name+" is page!");
+//		alert($(this).parents(".content").attr("name")+" is ID");
+		var newsId=$(this).parents(".content").attr("name");
+  		if(this.name=="joins"){		
+//   			alert("showdo3");
+       	showModalList(newsId,"joins");
+    	}
+	});	
+
    //按留言按鈕長出留言
   $('#showNews').on("click",".postButton button:nth-child(1)",function(){
 //			alert(this.name+" is page!");
@@ -192,11 +215,11 @@ $(document).ready(function() {
                
                if(getObj.actSNum){//是活動
                    butA.attr("name","1");
-                   var butB=$('<button style="margin-left:5px;margin-right:5px;"><i class="far fa-heart"></i></button>').append(getObj.followsNum," Follows");
-                   var butC=$('<button><i class="far fa-plus-square"></i></button>').append(getObj.joinsNum," Joins");
+                   var butB=$('<button name="follows" style="margin-left:5px;margin-right:5px;"><i class="far fa-heart"></i></button>').append(getObj.followsNum," Follows");
+                   var butC=$('<button name="joins"><i class="far fa-plus-square"></i></button>').append(getObj.joinsNum," Joins");
                }else if(getObj.blogSNum){   			//是網誌
                    butA.attr("name","1");
-                   var butB=$('<button style="margin-left:5px;margin-right:5px;"><i class="far fa-heart"></i></button>').append(getObj.savesNum," Saves");
+                   var butB=$('<button name="saves" style="margin-left:5px;margin-right:5px;"><i class="far fa-heart"></i></button>').append(getObj.savesNum," Saves");
                    var butC=$('<button><i class="far fa-eye"></i></button>').append(getObj.viewsNum," Views");
                }
                
@@ -303,6 +326,29 @@ $(document).ready(function() {
 //           }
 		  var oldIdx = $(input).parents(".content").find(".fa-comment").parent().attr('name');
 		  $(input).parents(".content").find(".fa-comment").parent().attr('name',parseInt(oldIdx)+1);
+  }
+  
+  //產生Modal List 內容
+  function showModalList(newsId,type){
+// 	  alert("newsId="+newsId);
+	  $('#myModalBody').empty();
+	  $('#listModalLongTitle').text(type+" list");
+	  $.getJSON('${pageContext.request.contextPath}/readBelongList.do',{"news":newsId,"type":type},function(datas){
+// 		  alert(JSON.stringify(datas));
+// 		  alert(datas.length);
+		  var fragment = $(document.createDocumentFragment());
+          $.each(datas,function(idx,getObj){
+        	 var imgModalAvatar = $('<img>').addClass("modalAvatar").attr("src","data:image/png;base64,"+getObj[2]);
+        	 var spanModalName = $('<span></span>').addClass("modalName").text(getObj[1]);
+        	 var divMemberList = $('<div></div>').addClass("memberList").append(imgModalAvatar,spanModalName);
+        	 var aListHref = $('<a></a>').attr('href',memberPath+getObj[0]+userPath).attr('target','_blank').append(divMemberList);
+        	 fragment.append(aListHref);
+          });
+          $('#myModalBody').append(fragment);
+          $('#listModalCenter').modal('show')
+	  }).fail(function(){
+		  alert("no one present");
+      });
   }
   
   $(window).scroll(function(){

@@ -75,6 +75,16 @@ public class MemberBlogDAOHibernate implements MemberBlogDAO {
 				.list();
 	}
 	
+	@Override  //H.C.Chen
+	public List<Object[]> findWhoSaved(Integer blogSNum) {
+		return this.getSession().createQuery(
+				"select m.memberID,m.memberName,m.memberPic,mb.blogSNum from MemberBlogBean as mb "
+				+"join MemberBean as m on m.memberID=mb.memberID AND mb.blogSNum=:var1 AND mb.isLike=1" 
+				, Object[].class)
+				.setParameter("var1", blogSNum)
+				.list();
+	}
+	
 	//selectScore--------------------------
 		@Override
 		public Double selectScore(Integer memberID, Integer blogSNum) {

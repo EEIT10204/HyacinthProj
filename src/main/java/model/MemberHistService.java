@@ -258,4 +258,17 @@ public class MemberHistService {
 		}
 		return null;
 	}
+	
+	public List<Object[]> fetchWhoBelongToNews(int newsId,String type){
+		if(type!=null) {
+			if("follows".equals(type)) {
+				return memberActDAO.findWhoFollowed(newsId);
+			}else if("joins".equals(type)) {
+				return memberActDAO.findWhoJoined(newsId);
+			}else if("saves".equals(type)){
+				return memberBlogDAO.findWhoSaved(newsId);
+			}
+		}
+		return null;
+	}
 }

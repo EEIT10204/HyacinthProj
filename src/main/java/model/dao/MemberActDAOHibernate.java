@@ -85,6 +85,26 @@ public class MemberActDAOHibernate implements MemberActDAO {
 //				.setMaxResults(num)
 				.list();
 	}
+
+	@Override  //H.C.Chen
+	public List<Object[]> findWhoJoined(Integer actSNum) {
+		return this.getSession().createQuery(
+				"select m.memberID,m.memberName,m.memberPic,ma.actSNum from MemberActBean as ma "
+				+"join MemberBean as m on m.memberID=ma.memberID AND ma.actSNum=:var1 AND ma.isAttend=1" 
+				, Object[].class)
+				.setParameter("var1", actSNum)
+				.list();
+	}
+	
+	@Override  //H.C.Chen
+	public List<Object[]> findWhoFollowed(Integer actSNum) {
+		return this.getSession().createQuery(
+				"select m.memberID,m.memberName,m.memberPic,ma.actSNum from MemberActBean as ma "
+				+"join MemberBean as m on m.memberID=ma.memberID AND ma.actSNum=:var1 AND ma.isLike=1" 
+				, Object[].class)
+				.setParameter("var1", actSNum)
+				.list();
+	}
 	
 	@Override
 	public MemberActBean insert(MemberActBean bean) {

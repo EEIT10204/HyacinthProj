@@ -189,4 +189,25 @@ public class MemberHistController {
 			}
 		}
 		
+		@RequestMapping(path={"/readBelongList.do"},method= {RequestMethod.GET})
+		@ResponseBody
+		public List<Object[]> readBelongList(String news,String type) {
+			System.out.println("readBelongList called~");
+			System.out.println("news="+news+",type="+type);
+			if(news!=null && type!=null) {
+				String[] tokens = news.split("_");
+				int id =0;
+				try {
+					id = Integer.valueOf(tokens[1]);
+				} catch (NumberFormatException e) {
+					e.printStackTrace();
+					return null;
+				}
+				List<Object[]> result = memberHistService.fetchWhoBelongToNews(id, type);
+				if(!result.isEmpty()) {
+					return result;
+				}
+			}
+			return null;
+		}
 }
