@@ -447,19 +447,19 @@ text-overflow:ellipsis;
 		
 /* ActComment */
 	.form-group textarea{
-      width: 700px;
+      width: 650px;
       height: 150px;
       margin-left: 20px;
   
     }
     .messOut{
       border: 1px solid rgb(119, 119, 119) ;
-      width: 750px;
+      width: 680px;
       margin: auto;
       margin-top: 50px;
     }
     .form-control{
-      width: 450px;
+      width: 400px;
       margin: auto;
       margin-top: 10px;
       display: inline-block;

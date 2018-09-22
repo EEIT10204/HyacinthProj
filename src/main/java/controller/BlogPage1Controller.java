@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 
+import model.BGCommentBean;
+import model.BGCommentService;
 import model.BlogBean;
 import model.BlogService;
 import model.CityBean;
@@ -32,6 +34,8 @@ public class BlogPage1Controller {
 	private BlogService blogService;
 	@Autowired
 	private MemberBlogService memberBlogService;
+	@Autowired
+	private BGCommentService bGCommentService;
 	
 	@InitBinder
 	 public void registerPropertyEditor(WebDataBinder webDataBinder) {
@@ -156,20 +160,63 @@ public class BlogPage1Controller {
 	@RequestMapping(path= {"/Blog/BlogMember.controller"})
 	public String BlogEditor(
 			@RequestParam("blogSNum")Integer blogSNum,
-			Model model
+			Model model,BGCommentBean bean,BindingResult bindingResult
 			) {
 		System.out.println("run controller  Editor");
 		
 		List<Object[]> BeanSNum = blogService.selectByBlogNewPage(blogSNum);
-		model.addAttribute("BeanSNum", BeanSNum);
+		
 		
 		for(Object[] BeanSNum1:BeanSNum) {
 			System.out.println(((CityBean)BeanSNum1[1]).getNation());
 		}
-		
+		List<Object[]> catchAllComment = bGCommentService.selectBlogCommMemberJoin(blogSNum);
+		model.addAttribute("BGComment",catchAllComment);
+		model.addAttribute("BeanSNum", BeanSNum);
 		return "BlogMember";
 		
 	}
+		
+		//Blog留言新增功能
+		@RequestMapping(path= {"/Blog/BlogMember.comment"})
+		public String BlogCommentInsert(
+				@RequestParam("blogSNum")Integer blogSNum,
+				Model model,BGCommentBean bean,BindingResult bindingResult
+				) {
+			System.out.println("run commet: " + bean.toString());
+			BGCommentBean result = bGCommentService.insert(bean);
+			List<Object[]> InsertComment = bGCommentService.selectBlogCommMemberJoin(blogSNum);
+			System.out.println("comment catch reply: " + InsertComment.size());
+			List<Object[]> BeanSNum = blogService.selectByBlogNewPage(blogSNum);
+
+			
+			model.addAttribute("BGComment",InsertComment);
+			model.addAttribute("BeanSNum", BeanSNum);
+			return "BlogMember";
+			
+		}
+		
+		//Blog留言修改功能
+		@RequestMapping(path = {"/BGCommentUpdate.Controller"})
+		public String method2(Integer blogSNum,Integer memberID,Model model,
+				BGCommentBean bean,BindingResult bindingResult) {
+			BGCommentBean result = bGCommentService.update(bean);
+			System.out.println("beanid="+bean.getBGCommentID());
+//			System.out.println("bean="+bean);
+			System.out.println("blogSNum="+blogSNum);
+			System.out.println("memberID="+memberID);
+			System.out.println("result="+result);
+//			model.addAttribute("update",result);
+			
+			List<Object[]> beans = bGCommentService.selectBlogCommMemberJoin(blogSNum);
+			System.out.println("beans="+beans);
+			
+			List<Object[]> BeanSNum = blogService.selectByBlogNewPage(blogSNum);
+			model.addAttribute("BeanSNum", BeanSNum);
+			model.addAttribute("BGComment",beans);
+			return "BlogMember";	
+		}
+		
 	//BlogIndex用-----------------------------------------------------------
 	@RequestMapping(path= {"/Blog/BlogIndex.controller"})
 	public String forSubmit(//String傳入使用

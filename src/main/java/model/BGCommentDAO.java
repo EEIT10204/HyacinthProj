@@ -20,5 +20,5 @@ public interface BGCommentDAO {
 	
 	public abstract BGCommentBean insertCommRow(BGCommentBean bean);
 	
-	
+	public abstract List<Object[]> selectBlogCommMemberJoin(Integer blogSNum);
 }

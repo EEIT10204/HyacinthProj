@@ -26,12 +26,15 @@ public class BGCommentService {
 	}
 	
 	public BGCommentBean insert(BGCommentBean bean) {
-		bGCommentDAO.insert(bean);
-		return bean;
+		return bGCommentDAO.insert(bean);
 	}
 	
 	public BGCommentBean update(BGCommentBean bean) {
-		bGCommentDAO.update(bean);
-		return bean;
+		return bGCommentDAO.update(bean);
+	}
+	
+	public List<Object[]> selectBlogCommMemberJoin(Integer blogSNum){
+		List<Object[]> results = bGCommentDAO.selectBlogCommMemberJoin(blogSNum);		
+		return results;
 	}
 }

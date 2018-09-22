@@ -28,8 +28,10 @@
 <%-- <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.js"></script> --%>
 <%-- 	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script> --%>
 <script type="text/javascript"
-	src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b8e2eafee0a0c7c"></script>
+	src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b8e2eafee0a0c7c"></script>	
 <!-- 務必使用 -->
+<script src="${pageContext.request.contextPath}/js/blogInsertMessage.js"></script>
+<script src="${pageContext.request.contextPath}/js/blogUpdateMessage.js"></script>
 <style>
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
@@ -927,6 +929,48 @@ hr {
     .uuu{
 /*     border:1px solid green; */
     }
+    
+    
+      .flip{
+  margin:0px;
+padding:5px;
+text-align:center;
+background:#e5eecc;
+/* border:solid 1px #c3c3c3; */
+margin-top:10px;
+}
+ .update{ 
+ background-color:e5eecc; 
+/*  width:35px;  */
+/*  height:25px;  */
+ margin-left:5px; 
+/*   border:solid 1px red;  */
+  display: inline-block;  
+ } 
+.updatebutton {
+   display: inline-block; 
+/*   padding: 15px 25px; */
+  font-size: 15px;
+  cursor: pointer; 
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #808080;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.updatebutton:hover {background-color: #575757}
+
+.updatebutton:active {
+  background-color: #494949;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+  }
 </style>
 </head>
 
@@ -1413,11 +1457,6 @@ hr {
 
 
 	
-
-
-
-
-
 						<div class="divblog22333" style="display: none" id="hide2">
 							登入即可評分</div>
 
@@ -1545,6 +1584,68 @@ hr {
       </div>   
     </div>
   </div> <!-- Report Modal end -->
+  
+  
+  <!-- 留言板 -->
+<div class="messOut">
+      <div class="mess1">
+        <div class="messUser"><img src="${pageContext.request.contextPath}/Images/Index/user.png"/></div>
+        <div class="messName">John</div>
+      </div>
+      <form action="<c:url value="/Blog/BlogMember.comment"/>" method="get">
+<%--         <form action="<c:url value="/Act/ACCommentInsertController?actSNum=?" />" method="get"> --%>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Leave Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="commentContent"></textarea>
+                  </div>
+                  <div class="buttonT">
+                      <button type="submit" class="btn-primary" style="background-color:rgb(120, 120, 120); 
+                      margin-left: 650px; margin-bottom: 20px; id="sendbuttom";/">Send out</button>
+<!--                           <input type="hidden" name="commentContent" value="1"> -->
+                          <input type="hidden" name="memberID" value="${user.memberID}">
+                          <input type="hidden" name="blogSNum" value="${param.blogSNum}">
+                          
+                  </div>
+                  </form>
+                  <div class="mess2">
+                    <!-- <div class="mess3"></div>
+                    <div class="mess4"></div> -->
+                  <div class="form-group">
+                      <label for="exampleFormControlInput1">All Message</label>
+                      
+                      <div class="uuu">
+                      <c:forEach var="obj" items="${BGComment}">
+                      <form action="<c:url value="/BGCommentUpdate.Controller"/>" method="get">
+                      <div id="messA">
+                          <img src="data:image/png;base64,${obj[1].memberPicToBase64}"/>
+                          <h6>${obj[1].memberName} </h6>
+<%--                           <h6>${obj[0].ACCommentID}</h6> --%>
+
+                          <div class="messB">
+                          <input type="text" class="form-control" disabled value="${obj[0].commentContent}"
+                          name="commentContent">
+                        </div>
+                        
+                        <c:if test= "${user.memberID == obj[1].memberID}"> 
+                        <div class="update"> 
+                        <span class="updatebutton" style="width:70px;height:25px">修改</span>            
+                        <input class="updatebutton" style="width:70px;height:25px" type="hidden" value="送出">
+                        <input type="hidden" name="BGCommentID" value="${obj[0].BGCommentID}">
+                        <input type="hidden" name="blogSNum" value="${param.blogSNum}">
+                         <input type="hidden" name="memberID" value="${user.memberID}">
+                        </div>
+                        </c:if>
+<%--                           <input type="text" name="testmember" value="${param.actSNum}"> --%>    
+                      </div>
+                        </form>    
+                      </c:forEach>
+                      </div>
+                      <div >
+                          <p class="flip">顯示更多留言</p>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
 
 			</article>
 			<aside class="col-sm-4">

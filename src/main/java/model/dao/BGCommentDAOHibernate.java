@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import model.BGCommentBean;
 import model.BGCommentDAO;
+import model.MemberBean;
 
 @Repository
 public class BGCommentDAOHibernate implements BGCommentDAO {
@@ -35,20 +37,42 @@ public class BGCommentDAOHibernate implements BGCommentDAO {
 
 	@Override
 	public BGCommentBean insert(BGCommentBean bean) {
+		java.sql.Timestamp sqlTimestamp = new java.sql.Timestamp(System.currentTimeMillis());
+		bean.setReplyTime(sqlTimestamp);
+		bean.setCommentVisibility(1);
 		this.getSession().save(bean);
 		return bean;
 	}
 
 	@Override
 	public BGCommentBean update(BGCommentBean bean) {
-		this.getSession().saveOrUpdate(bean);
-		return bean;
+		java.sql.Timestamp sqlTimestamp = new java.sql.Timestamp(System.currentTimeMillis());
+		BGCommentBean temp = this.getSession().get(BGCommentBean.class, bean.getBGCommentID());
+		if(temp!=null) {
+			temp.setCommentContent(bean.getCommentContent());
+			temp.setReplyTime(sqlTimestamp);
+			return temp;
+		}
+		return null;
 	}
 
 	@Override
 	public BGCommentBean delete(BGCommentBean bean) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public List<Object[]> selectBlogCommMemberJoin(Integer blogSNum) {
+		System.out.println("DAO BGC before query");
+		String sql = " select * from Blog_Comment as blogs left join Member as m on blogs.memberID = m.memberID where blogs.blogSNum = '"+blogSNum+ "' and commentVisibility = '1' order by blogs.replyTime Desc";
+		Session session = getSession();
+		Query<Object[]> query = session.createNativeQuery(sql)
+				.addEntity("blogs", BGCommentBean.class)
+				.addEntity("m", MemberBean.class);
+		List<Object[]> results = query.list();
+//		System.out.println("DAO BGC: " + results.size());
+		return results;
 	}
 	
 	@Override  //H.C.Chen
