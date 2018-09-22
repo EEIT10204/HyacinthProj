@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <jsp:include page="../Index/NewHeader.jsp" />
+<%--     <jsp:include page="../Index/NewHeader.jsp" /> --%>
     
 <!--     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"> -->
 <!--     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script> -->
@@ -27,26 +27,10 @@
 	margin: 0;
 	padding: 0;
 }
-.btnbor{
-			border-radius: 10px;
-/*             opacity: 0.5; */
-}
-h4{
-	padding-top:5px;
-}
 .a5 {
 	font-family: 'Noto Sans TC';
-	font-size: 200%;
-	color: #252009;
+	color: rgb(48, 43, 43);
 }
-.a5:hover {
-	transition-property: all;
-	transition-duration: 0.7s;
-	transition-delay: 0s;
-	transition-timing-function: linear;
-	color: rgb(255, 0, 0);
-}
-
 .a1 {
 	font-family: 'Noto Sans TC';
 	color: rgb(48, 43, 43);
@@ -138,7 +122,7 @@ p {
 	max-width:600px;
 }
 .divAS1 {
-            border: 15px groove rgb(0, 179, 149);
+            border: 10px solid rgb(0, 179, 149);
 /*             margin:auto; */
         }
 .divAS12 {
@@ -160,15 +144,14 @@ p {
             text-align: center; 
             margin: auto;
             margin-top: 5px;
-/*             width: 500px; */
-/*             height: 400px; */
-/*             border: 5px solid rgb(0, 179, 149); */
+            width: 500px;
+            border: 5px solid rgb(0, 179, 149);
         }
 .divAS11 img{
-            width: 500px;
-            height: 350px;
+            max-width: 500px;
+            max-height: 350px;
             margin: auto;
-         border: 5px solid rgb(0, 179, 149); 
+            border: 5px solid rgb(0, 179, 149);
         }
 .imguse {
             width: 490px;
@@ -188,7 +171,7 @@ p {
         
         
 .divAS15 {
-			border: 2px solid rgb(0, 179, 149); 
+			border: 5px dashed rgb(0, 179, 149);
             text-align: center;
             font-size: 120%;
             margin: auto;
@@ -214,8 +197,8 @@ p {
 		</h2>
 
 		<p class="p1">*以下為必填資訊</p>
-				
-		<form id="form" action="<c:url value="/Blog/BlogNew.controller"/>" method="POST"
+
+		<form action="<c:url value="/Blog/BlogNew.controller"/>" method="POST"
 			enctype="multipart/form-data">
 			<input name="memberID" type="hidden" value="${user.memberID}">
 			<input name="blogReleaseTime" type="hidden" value="${BeanSNum[0][0].blogReleaseTime}">
@@ -276,7 +259,7 @@ p {
 			
 			<div class="sub0">
 				<div class="sub2">
-					<button id="preview" type="button" class="btn btn-warning btn-lg a5" data-toggle="modal" data-target=".bd-example-modal-lg">預覽</button>
+					<button id="preview" type="button" class="btn btn-outline-warning btn-lg a1" data-toggle="modal" data-target=".bd-example-modal-lg">預覽</button>
 					
 					
 					<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -286,10 +269,6 @@ p {
 					      
 					      
 			<div class="divAS1">
-			<h4 class="title-text">
-						<span><button id="changeKeyword" type="button"
-								class="btn btn-info fa-1x hot2">預覽</span>
-				</h4>
                 <div class="divAS12">
                     <span id="changeNation" href="#" class="a1 border1 distance">亞洲</span>
                     <span class="a1 border1 distance">瀏覽次數(<span id="changeBlogViews" href="#"> 999</span>)</span> 
@@ -309,10 +288,7 @@ p {
                     <span class="distance a1">by</span>
                     <span id="changeMemberName2" href="#" class="a1 ">Kobe</span>
                 </div>
-				<h4 class="title-text">
-						<span><button id="changeKeyword" type="button"
-								class="btn btn-info fa-1x hot2">Article</span>
-				</h4>
+
                 <div class="divAS15">
                     <div id="changeCityContent">一、奧蘭多迪士尼簡介 Source：KKday 奧蘭多迪士尼是全球最大的迪士尼度假區，總共有魔幻王國（Magic Kingdom）、未來世界（Epcot）、好萊塢影城（Hollywood studios）和動物王國（Animal
                         Kingdom）四大主題樂園，因此也被稱為Disney World。而這次編輯會以魔幻王國為主來介紹唷～ 二、怎麼前往奧蘭多迪士尼？ 美國大眾交通工具並不發達，一般以自駕或搭計程車為主，如果你預計在奧蘭多住宿，奧蘭多的飯店幾乎都有往返奧蘭多各大遊樂園的接駁車服務。
@@ -341,7 +317,7 @@ p {
 				</div>
 
 				<div class="sub1">
-					<span id="go" class="btn btn-info a5 btn-lg btnbor" >送出</span>
+					<button id="go" type="submit" class="btn btn-outline-success a5 btn-lg" >送出</button>
 				</div>
 			</div>
 			
@@ -390,13 +366,17 @@ p {
 		
 		
 		$(document).ready(function() {
-
-		
-				$('body').on('click','#confirmBB',function(){
-	 				$("#form").submit();
-				})
 			
-			
+// 			var flagjumppage=false;
+			$('body').on('click','#confirmBu',function(){
+				alert("AAAAAA");
+// 				
+// 				if(flagjumppage == true){
+					window.location.href = "BlogIndex.jsp";
+// 				}
+// 				flagjumppage = !flagjumppage;
+				
+			})
 			//preview---------------------------
 				$("#preview").click(function(){
 					$("#changeNation").text($('#inputGroupSelect01').val());
@@ -406,6 +386,11 @@ p {
 					$("#changeCityContent").html($('#summernote').summernote('code'));
 				})
 				
+			
+			
+			
+			
+			
 			//--------------------------
 			var readURL = function(input) {
 		        if (input.files && input.files[0]) {
@@ -461,49 +446,12 @@ p {
 	    	if(!$("#go").hasClass("disabled")){
 // 	    		alert('更新成功!!!');
 // 	    		swal("資料更新成功", "將導向網誌首頁", "error");
-// 	    		swal({
-// 	    			  title: "成功!",
-// 	    			  text: "將導向網誌首頁",
-// 	    			  type: "success",
-// 	    			  confirmButtonText: "<span id='confirmBu'>GO<span>"
-// 	    			});
-	    		
-	    		//---------------------------test
-	    		 //自訂預設值
-	            swal.setDefaults({
-	                confirmButtonText: "確定",
-	                cancelButtonText: "取消"
-	            });
-	            //swal.resetDefaults();//清空自訂預設值
-	            $(function () {
-// 	                $("#go").click(function () {
-	                    //confirm dialog範例
-	                    swal({
-	                        title: "確定送出？",
-	                        html: "按下確定後資料會自動存檔",
-	                        type: "question",
-	                        showCancelButton: true,//顯示取消按鈕
-	                        confirmButtonText:"<span id='confirmB'>回至首頁</span>"
-	                    }).then(
-	                        function (result) {
-	                            if (result.value) {
-	                                //使用者按下「確定」要做的事
-// 	                                swal("完成!", "資料已經送出將回到首頁", "success");
-// 	                                window.location.href = "${pageContext.request.contextPath}/Blog/BlogIndex.jsp";
-									 swal({
-					                    title: "完成!",
-					                    html: "資料已經送出將回到首頁",
-					                    type: "success",
-						    			confirmButtonText:"<span id='confirmBB'>回至首頁</span>"
-					                })
-	                            } else if (result.dismiss === "cancel")
-	                            {
-	                                 //使用者按下「取消」要做的事
-	                                swal("取消", "您可重新輸入資料", "error");
-	                            }//end else  
-	                        });//end then 
-// 	                });
-	            });
+	    		swal({
+	    			  title: "成功!",
+	    			  text: "將導向網誌首頁",
+	    			  type: "success",
+	    			  confirmButtonText: "<span id='confirmBu'>GO<span>"
+	    			});
 	    	}
 		   }))
     	
@@ -513,7 +461,7 @@ p {
         }
     	
     })
-//     alert('user before if = ' + ${user.memberID});
+    
     </script>
 </body>
 

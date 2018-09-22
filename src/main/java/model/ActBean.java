@@ -94,7 +94,7 @@ public class ActBean{
 	public java.sql.Timestamp getActCreateDate() {
 		return actCreateDate;
 	}
-	public void setActCreateTimestamp(java.sql.Timestamp actCreateDate) {
+	public void setActCreateDate(java.sql.Timestamp actCreateDate) {
 		this.actCreateDate = actCreateDate;
 	}
 	public java.sql.Timestamp getActStartTime() {

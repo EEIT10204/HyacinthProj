@@ -11,7 +11,7 @@
 </head>
 <body>
 	<form method="post" action="<c:url value="/before.act.controller"/>">
-		<input type="hidden" value="1" name="memberID">
+<!-- 		<input type="hidden" value="1" name="memberID"> -->
 		<input type="submit" value="newAct">
 		
 	</form>

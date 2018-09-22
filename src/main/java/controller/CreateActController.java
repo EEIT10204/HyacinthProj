@@ -84,6 +84,8 @@ public class CreateActController {
         	actbean.setActStatus("prepared");
         }
 //		
+        
+        
         actbean.setActCity(abean.getActCity());
         actbean.setActIntro(abean.getActIntro());
         actbean.setActPhoto(abean.getActPhoto());

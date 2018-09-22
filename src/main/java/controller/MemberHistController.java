@@ -26,7 +26,7 @@ public class MemberHistController {
 		@Autowired
 		private MemberHistService memberHistService;
 		
-		@RequestMapping(path={"/readMyHist.do"},method= {RequestMethod.GET})
+		@RequestMapping(path={"/readMyHist.do"},method= {RequestMethod.POST})
 		@ResponseBody
 		public List<NewsFeed> readMyHist(String memberID,String page) {	
 			System.out.println("memberID="+memberID);

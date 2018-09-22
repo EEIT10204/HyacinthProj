@@ -45,11 +45,11 @@ body {
 img {
 	border-radius: 10px;
 }
-
 /* star */
 	.ccc{
 	float:right;
 	font-family: 'Noto Sans TC';
+	padding-right:10px;
 	size:120%;
 }
 .vvv{
@@ -101,6 +101,9 @@ img {
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	width: 200px;
+}
+.buttonFade0{
+	padding-top: 18px;
 }
 /* ALL */
 a {
@@ -180,8 +183,10 @@ hr.style-two {
 	color: rgb(59, 54, 54);
 }
 
-.nav-link:hover {
-	background-color: rgb(210, 205, 247);
+.nav-linkmy:hover {
+ 	background-color: rgb(210, 205, 247); 
+ 	border:1px solid;
+	border-radius: 5px;
 }
 
 #carouselExampleIndicators {
@@ -451,8 +456,10 @@ article {
 }
 
 .divAS1 {
-	border: 15px inset rgb(0, 179, 149);
-	width: 95%;
+	border: 15px outset rgb(0, 179, 149);
+	border-bottom-right-radius: 50px;
+	border-bottom-left-radius: 50px;
+/* 	width: 95%; */
 	margin: auto;
 }
 
@@ -506,7 +513,7 @@ article {
 }
 
 .comment {
-	border: 10px rgb(0, 160, 54) solid;
+	border: 2px rgb(0, 160, 54) solid;
 	width: 800px;
 	margin: auto;
 	margin-top: 10px;
@@ -658,7 +665,9 @@ article {
 }
 
 .borderA {
-	border: 15px outset rgb(0, 179, 149);
+	border: 15px inset rgb(0, 179, 149);
+	border-top-left-radius: 50px;
+	border-top-right-radius: 50px;
 	overflow: auto;
 	margin: auto;
 /* 	width: 95%; */
@@ -687,7 +696,6 @@ article {
 /* aside */
 aside {
 	/* border: 1px rgb(119, 94, 94) solid; */
-	
 }
 
 hr {
@@ -699,7 +707,7 @@ hr {
 }
 
 .form-inline {
-/* 	border: 5px rgb(119, 94, 94) solid; */
+/* 	border: 5px rgb(119, 94, 94) solid;  */
 }
 
 .form-inline input {
@@ -746,7 +754,8 @@ hr {
 }
 
 .btnt1 {
-	
+	 position: relative;
+     top: 5px;
 }
 
 .divT1 {
@@ -925,7 +934,7 @@ hr {
 
 	<nav id="n1">
 		<ul class="nav justify-content-center">
-			<li class="nav-item"><a class="nav-link" href="#">台灣</a>
+			<li class="nav-item"><a class="nav-link nav-linkmy" href="#">台灣</a>
 
 				<div class="x2">
 					<div class="div1">
@@ -984,13 +993,13 @@ hr {
 								style="color: rgb(53, 135, 243);"></i> <i
 								class="fas fa-shoe-prints " style="color: rgb(89, 113, 253);"></i>
 							</span>
-							<li class="nav-item "><a class="nav-link link1" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link1" href="#"
 								name="台北">台北</a></li>
-							<li class="nav-item "><a class="nav-link link2" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link2" href="#"
 								name="台中">台中</a></li>
-							<li class="nav-item "><a class="nav-link link3" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link3" href="#"
 								name="台南">台南</a></li>
-							<li class="nav-item "><a class="nav-link link4" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link4" href="#"
 								name="高雄">高雄</a></li>
 							<span> <i class="fas fa-shoe-prints"
 								style="color: rgb(161, 253, 161);"></i> <i
@@ -1007,7 +1016,7 @@ hr {
 
 
 				</div></li>
-			<li class="nav-item"><a class="nav-link" href="#">日本</a>
+			<li class="nav-item"><a class="nav-link nav-linkmy" href="#">日本</a>
 				<div class="x2">
 					<div class="div1">
 						<div class="div2">
@@ -1064,13 +1073,13 @@ hr {
 								style="color: rgb(250, 44, 222);"></i> <i
 								class="fas fa-shoe-prints " style="color: rgb(247, 1, 214);"></i>
 							</span>
-							<li class="nav-item "><a class="nav-link link5" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link5" href="#"
 								name="東京">東京</a></li>
-							<li class="nav-item "><a class="nav-link link6" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link6" href="#"
 								name="大阪">大阪</a></li>
-							<li class="nav-item "><a class="nav-link link7" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link7" href="#"
 								name="沖繩">沖繩</a></li>
-							<li class="nav-item "><a class="nav-link link8" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link8" href="#"
 								name="北海道">北海道</a></li>
 							<span> <i class="fas fa-shoe-prints"
 								style="color: rgb(250, 216, 152);"></i> <i
@@ -1086,7 +1095,7 @@ hr {
 					</nav>
 
 				</div></li>
-			<li class="nav-item"><a class="nav-link" href="#">韓國</a>
+			<li class="nav-item"><a class="nav-link nav-linkmy" href="#">韓國</a>
 				<div class="x2">
 					<div class="div1">
 						<div class="div2">
@@ -1143,13 +1152,13 @@ hr {
 								style="color: rgb(255, 59, 52);"></i> <i
 								class="fas fa-shoe-prints " style="color: rgb(252, 16, 8);"></i>
 							</span>
-							<li class="nav-item "><a class="nav-link link9" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link9" href="#"
 								name="首爾">首爾</a></li>
-							<li class="nav-item "><a class="nav-link link10" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link10" href="#"
 								name="釜山">釜山</a></li>
-							<li class="nav-item "><a class="nav-link link11" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link11" href="#"
 								name="大邱">大邱</a></li>
-							<li class="nav-item "><a class="nav-link link12" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link12" href="#"
 								name="濟州島">濟州島</a></li>
 							<span> <i class="fas fa-shoe-prints"
 								style="color: rgb(9, 163, 252);"></i> <i
@@ -1165,7 +1174,7 @@ hr {
 					</nav>
 
 				</div></li>
-			<li class="nav-item"><a class="nav-link" href="#">美國</a>
+			<li class="nav-item"><a class="nav-link nav-linkmy" href="#">美國</a>
 				<div class="x2">
 					<div class="div1">
 						<div class="div2">
@@ -1222,13 +1231,13 @@ hr {
 								style="color: rgb(27, 100, 51);"></i> <i
 								class="fas fa-shoe-prints " style="color: rgb(1, 104, 36);"></i>
 							</span>
-							<li class="nav-item "><a class="nav-link link13" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link13" href="#"
 								name="紐約">紐約</a></li>
-							<li class="nav-item "><a class="nav-link link14" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link14" href="#"
 								name="洛杉磯">洛杉磯</a></li>
-							<li class="nav-item "><a class="nav-link link15" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link15" href="#"
 								name="舊金山">舊金山</a></li>
-							<li class="nav-item "><a class="nav-link link16" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link16" href="#"
 								name="邁阿密">邁阿密</a></li>
 							<span> <i class="fas fa-shoe-prints"
 								style="color: rgb(116, 178, 180);"></i> <i
@@ -1243,7 +1252,7 @@ hr {
 						</ul>
 					</nav>
 				</div></li>
-			<li class="nav-item"><a class="nav-link " href="#">德國</a>
+			<li class="nav-item"><a class="nav-link nav-linkmy" href="#">德國</a>
 				<div class="x2">
 					<div class="div1">
 						<div class="div2">
@@ -1300,13 +1309,13 @@ hr {
 								style="color: rgb(230, 41, 119);"></i> <i
 								class="fas fa-shoe-prints " style="color: rgb(241, 12, 108);"></i>
 							</span>
-							<li class="nav-item "><a class="nav-link link17" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link17" href="#"
 								name="柏林">柏林</a></li>
-							<li class="nav-item "><a class="nav-link link18" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link18" href="#"
 								name="漢堡">漢堡</a></li>
-							<li class="nav-item "><a class="nav-link link19" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link19" href="#"
 								name="慕尼黑">慕尼黑</a></li>
-							<li class="nav-item "><a class="nav-link link20" href="#"
+							<li class="nav-item "><a class="nav-link nav-linkmy link20" href="#"
 								name="法蘭克福">法蘭克福</a></li>
 							<span> <i class="fas fa-shoe-prints"
 								style="color: rgb(233, 133, 133);"></i> <i
@@ -1368,7 +1377,7 @@ hr {
 				<div class="divblog20">
 					<div class="borderA">
 						<div class="divblog21">
-							<a href="#"> <img id="changeMemberPic" class="divblog210"
+							<a href="#" id="changeMemberPichref">  <img id="changeMemberPic" class="divblog210"
 								src="${pageContext.request.contextPath}/Images/Blog/member1.jpg"
 								alt="member">
 							</a>
@@ -1517,7 +1526,7 @@ hr {
 			<aside class="col-sm-4">
 				<div class="d2">
 					<div class="title">
-						<h5 class="title-text">
+						<h5 class="title-text buttonFade0">
 							<span><input type="button" value="搜尋" id="buttonFade0"
 								class="btn btn-info"></span>
 						</h5>
@@ -1526,10 +1535,11 @@ hr {
 							<div class="divborder">
 								<div>
 
-									<form class="form-inline" method="get"
-										action="<c:url value="/Blog/BlogIndex.controller"/>">
-										<input name="blogSNum" type="hidden" value=""> <input
-											id="member" name="memberID" type="hidden" value=""> <input
+									<form class="form-inline" method="get" action="<c:url value="/Blog/BlogIndex.controller"/>">
+										<input name="blogSNum" type="hidden" value=""> 
+										<input
+											id="member" name="memberID" type="hidden" value=""> 
+										<input
 											id="keyword" name="search"
 											class="form-control mr-sm-2 transition1 " maxlength="6"  type="search"
 											placeholder="國家，城市及關鍵字" aria-label="Search" required>
@@ -1724,6 +1734,7 @@ hr {
 			
 			$('body').on('click','#confirmB',function(){
 					window.location.href = "${pageContext.request.contextPath}/Blog/BlogIndex.jsp";
+					
 // 					window.event.returnValue = false; 
 				})
 				
@@ -1757,6 +1768,7 @@ hr {
 						    			confirmButtonText:"<span id='confirmB' class='btn btn-outline-dark' style='size:110%;'>回至首頁</span>"
 //style='width:100px;height:40px;border:3px orange double'
 					                })
+					                 $('.swal2-styled').css("padding","0");
 // 								 window.location.href = "BlogIndex.jsp";
 							 }).fail(function(){
 								 swal("完成!",jsonNav.result, "success");
@@ -1768,6 +1780,9 @@ hr {
                             swal("取消", "網誌未被刪除", "error");
                         }//end else  
                     });//end then 
+                
+//                     	padding:0 !important;
+                    
 			});
 			//like star-----------------------------------------------------------------------
 				 $.getJSON('${pageContext.request.contextPath}/Blog/MemberBloglike.controller',{'blogSNum':URL},function(json){
@@ -1908,11 +1923,13 @@ hr {
 							var pathUpdate = "<c:url value='/Blog/BlogUpdate.controller'><c:param name='blogSNum' value=""/></c:url>";
 							$('#blogUpdate').attr("href",pathUpdate+"${BeanSNum[0][0].blogSNum}");
 // 							alert('${BeanSNum[0][0].blogSNum}');
+							var path3 = "<c:url value='/ProfilePageGet'><c:param name='memberID' value=""/></c:url>";
 							var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
 							var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
 // 							 $('.url${i+1}')..attr("href",path2+"${result[i][1].nation}");
 							 $('#changeMemberPic').attr("src","data:image/png;base64,${BeanSNum[0][2].memberPicToBase64}");
-							 $('#changeMemberName').html('${BeanSNum[0][2].memberNickName}');
+							 $('#changeMemberPichref').attr("href",path3+"${BeanSNum[0][0].memberID}"+"&lmi="+"${user.memberID}"+"&page=main");
+							 $('#changeMemberName').html('${BeanSNum[0][2].memberNickName}').attr("href",path3+"${BeanSNum[0][0].memberID}"+"&lmi="+"${user.memberID}"+"&page=main");
 							 $('#changeNation').html('${BeanSNum[0][1].nation}').attr("href",path2+"${BeanSNum[0][1].nation}");
 							 $('#changeBlogViews').html('${BeanSNum[0][0].blogView}');
 							 $('#changeBlogCity').html('${BeanSNum[0][0].blogCity}').attr("href",path2+"${BeanSNum[0][0].blogCity}");
@@ -1944,6 +1961,7 @@ hr {
 
 							//Change 6FORM
 							if ('${result}' != "") {
+								var path3 = "<c:url value='/ProfilePageGet'><c:param name='memberID' value=""/></c:url>";
 								var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
 								var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
 // 								 alert(path);
@@ -1953,7 +1971,7 @@ hr {
 								 $('.url${i+1}').attr("href",path+"${result[i][0].blogSNum}");
 // 								 $('.urlA${i+1}').attr("href",path+"${result[i][0].blogSNum}");
 // 								 $('.urlB${i+1}').attr("href",path+"${result[i][0].blogSNum}");
-						         $('#changePic${i+1}').attr("src","data:image/png;base64,${result[i][0].blogCoverToBase64}");
+						         $('#changePic${i+1}').attr("src","data:image/png;base64,${result[i][0].blogCoverToBase64}").attr("href",path3+"${result[i][0].memberID}"+"&lmi="+"${user.memberID}"+"&page=main");;
 						         $('#changeNation${i+1}').html('${result[i][1].nation}').attr("href",path2+"${result[i][1].nation}");
 						         $('#changeViews${i+1}').html('${result[i][0].blogView}');
 						         $('#changeCity${i+1}').html('${result[i][0].blogCity}').attr("href",path2+"${result[i][0].blogCity}");
