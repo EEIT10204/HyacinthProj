@@ -26,7 +26,6 @@
 </head>
 <body>
     <div id="idTop" class="container">
-        <img id="idCover" src="<c:url value="/Images/Member/memberCover_default.jpg"/>" alt="Cover">
 		<img id="idCover" src="<c:url value="data:image/png;base64,${subInfo.memberCoverToBase64}"/>" alt="Cover">
         <img id="idProPic" class="img-thumbnail" src='data:image/png;base64,${userInfo.memberPicToBase64}' alt="Profile image"/>
         <div id="idFollow">
