@@ -11,9 +11,7 @@
 
     
      <link rel="stylesheet" href="${pageContext.request.contextPath}/css/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-<%--   <script type="text/javascript" src='<c:url value="/js/jquery-3.3.1.min.js"/>'></script> --%>
-<!--     <script src="http://code.jquery.com/jquery-1.8.3.js"></script> -->
+     <link rel="stylesheet" href="/resources/demos/style.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-ui.js"></script> 
  
 
@@ -169,31 +167,19 @@
 		   <td><textarea rows="4" cols="50" name="actintro" value="${param.actintro}"></textarea></td>
 		   <td>${errors.eventinfo}</td>
 		</tr>
-	<tr>
-			<td></td>
-			<td><input type="submit" value="build" id="submit"></td>
-			<td></td>
-		</tr>
-		
-	</table>
+	
+	
+			<tr><td><input type="submit" value="build" id="build"></td></tr>
+			</table>
 </form>
 </div>
    
-    
-    <div class="left-panel"> 
-          <div>
-          <input type="button" id="route" value="route">
-          <input type="button" id="btn" value="addItem">
-          </div>
-      
-      
-     
-      <input type="button" id="save" value="儲存" name="insert">
-<!--       <span id="actSNum"></span> -->
-      
-     <div id="select"><div>
-      <div class = "right-panel">
-         
+   
+<div class="card" style="width: 18rem;">
+   <div  id="map"></div>
+  <div class="card-body">
+    <p class="card-text">
+    <div class = "right-panel">         
          <input id ="find-viewpoint" type="text" name="find-viewpoint" placeholder="景點">
          <select id ="find-city" name="city">
   				<option></option>
@@ -211,12 +197,48 @@
   				<option value="購物">購物</option>
 		</select>
 		 <input type="button" id="search" value="search" >
+</p>
+   
+  </div>
+</div>
+    
+    <div class="left-panel"> 
+          <div>
+          <input type="button" class="btn btn-danger" id="route" value="route">
+          <input type="button" class="btn btn-warning" id="btn" value="addItem">
+          </div>
+      
+      
+     
+<!--       <input type="button" id="save" class="btn btn-dark" value="save" name="insert"> -->
+<!--       <span id="actSNum"></span> -->
+      
+     <div id="select"><div>
+<!--       <div class = "right-panel"> -->
+         
+<!--          <input id ="find-viewpoint" type="text" name="find-viewpoint" placeholder="景點"> -->
+<!--          <select id ="find-city" name="city"> -->
+<!--   				<option></option> -->
+<!--   				<option value="台北">台北</option> -->
+<!--   				<option value="台中">台中</option> -->
+<!--   				<option value="宜蘭">宜蘭</option> -->
+<!--  				<option value="中壢">中壢</option> -->
+<!--  			    <option value="拉死為狗斯">拉死為狗斯</option> -->
+<!--  				<option value="三凡希死狗">三凡希死狗</option> -->
+<!-- 		</select> -->
+<!--          <select id ="find-type" name="type"> -->
+<!--   				<option></option> -->
+<!--   				<option value="美食">美食</option> -->
+<!--   				<option value="景點">景點</option> -->
+<!--   				<option value="購物">購物</option> -->
+<!-- 		</select> -->
+<!-- 		 <input type="button" id="search" value="search" > -->
 	   
 	    <ul id="sortable1" class="connectedSortable"></ul> 
 	   
 	   
 	   
-        <div class = "right-panel" id="map"></div>
+       
 	    </div>
 	     
   </div>
@@ -227,7 +249,7 @@
         	
          $.ajax({
         	    type : "post",
-        	    url : "${pageContext.request.contextPath}/viewPoint.Controller",
+        	    url : "${pageContext.request.contextPath}/searchViewPoint.Controller",
         	    data:JSON.stringify(
         	    		{
         	    		 "viewPointName":document.getElementById("find-viewpoint").value, 
@@ -253,7 +275,7 @@
         
          <script>
          
-         $("#save").on('click',function () {
+         $("#build").on('click',function () {
      	 
         	 var array =$("#select li");
 

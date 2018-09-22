@@ -273,8 +273,7 @@ $( document ).ready(function() {
 		    type : "post",
 		    url : "${pageContext.request.contextPath}/invitefriends.controller",
 		    data:JSON.stringify({
-// 		    	"actSNum":document.getElementById("actSNum").value,
-		    	"memberID":2
+		    	"memberID":document.getElementById("mem").value,
 		    }),
 		    
 		    contentType: "application/json; charset=utf-8",
