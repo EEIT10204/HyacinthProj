@@ -23,10 +23,9 @@ public class BeforeActCreateController {
 	ActDAOHibernate actDAOHibernate;
 
 	@RequestMapping(path = { "/before.act.controller" })
-	public String method(String actCreate, Model model, ActBean abean,@SessionAttribute(name="user") MemberBean memberBean, BindingResult bindingResult)
+	public String method(String actCreate, Model model, ActBean abean,@SessionAttribute(name="user",required=false) MemberBean memberBean, BindingResult bindingResult)
 			throws ParseException, IOException {
-		
-		
+	
 		
 		SimpleDateFormat nowdate = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
         nowdate.setTimeZone(TimeZone.getTimeZone("GMT+8"));
@@ -35,8 +34,14 @@ public class BeforeActCreateController {
 		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		 Timestamp Date1 = new java.sql.Timestamp(sdf1.parse(actCreate).getTime());
 		
+		 
+			
+			if(memberBean.getMemberID()!= null) {
+				abean.setMemberID(memberBean.getMemberID());
+				
+			}
 		 abean.setActCreateDate(Date1);
-		 abean.setMemberID(memberBean.getMemberID());
+		 
 		
 		ActBean result = actDAOHibernate.insert(abean);
 		

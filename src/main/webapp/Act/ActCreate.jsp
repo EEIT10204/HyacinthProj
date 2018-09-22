@@ -19,6 +19,31 @@
 
 </head>
  <style>
+ <!-------------------------------------------------------------------------------->
+ .visible-scrollbar, .sortable1, .mostly-customized-scrollbar {
+  display: block;
+  width: 10em;
+  overflow: auto;
+  height: 2em;
+}
+.sortable1::-webkit-scrollbar {
+  display: none;
+}
+
+/* Demonstrate a "mostly customized" scrollbar
+ * (won't be visible otherwise if width/height is specified) */
+.mostly-customized-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background-color: #aaa; /* or add it to the track */
+}
+/* Add a thumb */
+.mostly-customized-scrollbar::-webkit-scrollbar-thumb {
+    background: #000; 
+}
+ 
+ 
+ <!-------------------------------------------------------------------------------->
       *{
         padding:0%;
         margin:0%;
@@ -71,8 +96,7 @@
         }
       #map {
 	height: 400px;
-	float: right;
-	width: 400px;
+	width:400px;
 	
 }
       
@@ -164,22 +188,23 @@
 		</tr>
 		<tr>
 		   <td>詳細內容</td>
-		   <td><textarea rows="4" cols="50" name="actintro" value="${param.actintro}"></textarea></td>
+		   <td><textarea style="width: 250px" rows="4" cols="50" name="actintro" value="${param.actintro}"></textarea></td>
 		   <td>${errors.eventinfo}</td>
 		</tr>
 	
 	
-			<tr><td><input type="submit" value="build" id="build"></td></tr>
+			<tr><td><input type="submit" class="btn btn-primary" value="build" id="build"></td></tr>
 			</table>
 </form>
 </div>
    
    
-<div class="card" style="width: 18rem;">
-   <div  id="map"></div>
+<div class="card" style="width: 400px;  padding-right: 40px; height: 360px ">
+
   <div class="card-body">
     <p class="card-text">
-    <div class = "right-panel">         
+    <div class = "right-panel">
+           
          <input id ="find-viewpoint" type="text" name="find-viewpoint" placeholder="景點">
          <select id ="find-city" name="city">
   				<option></option>
@@ -187,8 +212,8 @@
   				<option value="台中">台中</option>
   				<option value="宜蘭">宜蘭</option>
  				<option value="中壢">中壢</option>
- 			    <option value="拉死為狗斯">拉死為狗斯</option>
- 				<option value="三凡希死狗">三凡希死狗</option>
+ 			    <option value="拉斯維加斯">拉斯維加斯</option>
+ 				<option value="舊金山">舊金山</option>
 		</select>
          <select id ="find-type" name="type">
   				<option></option>
@@ -196,49 +221,20 @@
   				<option value="景點">景點</option>
   				<option value="購物">購物</option>
 		</select>
-		 <input type="button" id="search" value="search" >
+		 <input type="button" id="search" class="btn btn-primary" value="search" >
+		 <input type="button" class="btn btn-warning" id="btn" value="addItem"> 
+		 <div style="height: 100px; display: none" id="sortable1" class="connectedSortable" ></div>
+		 <div id="select"><div>
+		     
 </p>
    
   </div>
 </div>
-    
-    <div class="left-panel"> 
-          <div>
-          <input type="button" class="btn btn-danger" id="route" value="route">
-          <input type="button" class="btn btn-warning" id="btn" value="addItem">
-          </div>
-      
-      
-     
-<!--       <input type="button" id="save" class="btn btn-dark" value="save" name="insert"> -->
-<!--       <span id="actSNum"></span> -->
-      
-     <div id="select"><div>
-<!--       <div class = "right-panel"> -->
-         
-<!--          <input id ="find-viewpoint" type="text" name="find-viewpoint" placeholder="景點"> -->
-<!--          <select id ="find-city" name="city"> -->
-<!--   				<option></option> -->
-<!--   				<option value="台北">台北</option> -->
-<!--   				<option value="台中">台中</option> -->
-<!--   				<option value="宜蘭">宜蘭</option> -->
-<!--  				<option value="中壢">中壢</option> -->
-<!--  			    <option value="拉死為狗斯">拉死為狗斯</option> -->
-<!--  				<option value="三凡希死狗">三凡希死狗</option> -->
-<!-- 		</select> -->
-<!--          <select id ="find-type" name="type"> -->
-<!--   				<option></option> -->
-<!--   				<option value="美食">美食</option> -->
-<!--   				<option value="景點">景點</option> -->
-<!--   				<option value="購物">購物</option> -->
-<!-- 		</select> -->
-<!-- 		 <input type="button" id="search" value="search" > -->
-	   
-	    <ul id="sortable1" class="connectedSortable"></ul> 
-	   
-	   
-	   
-       
+      <a class="btn btn-dark" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">How to go</a>
+     <input type="button" class="btn btn-danger" id="route" value="route">
+     <input type="button" id="save"  class="btn btn-primary" value="save" name="insert">
+     <div p class="collapse" id="collapseExample" style="height: 100px;  float:right; padding-left:60px; width: 400px; "><div  id="map"></div></div>
+
 	    </div>
 	     
   </div>
@@ -246,6 +242,7 @@
          <script>
 //          connection DataBase by Ajax
          $("#search").on('click',function () {
+        	 document.getElementById('sortable1').style.display='';
         	
          $.ajax({
         	    type : "post",
@@ -275,7 +272,7 @@
         
          <script>
          
-         $("#build").on('click',function () {
+         $("#save").on('click',function () {
      	 
         	 var array =$("#select li");
 
@@ -293,7 +290,7 @@
         		 });
         		 count++;
 //         		 alert(data);
-        		 alert(data[0].actSNum)
+//         		 alert(data[0].actSNum)
         	 } 
               $.ajax({
                      type : "post",
@@ -323,7 +320,7 @@
     var testId =1;
     // add draggable DIV 
     $("#btn").on('click',function () {
-        $("#select").append('<div id="select'+ testId +'" class="connectedSortable" ><input type="datetime-local" id="startTime'+ testId +'"><input type="datetime-local" id="endTime'+ testId +'"><input type="button" value="del" onclick="deltest('+testId+')"></div>'
+        $("#select").append('<div style=" border:solid black 1px;" id="select'+ testId +'" class="connectedSortable" ><input type="datetime-local" id="startTime'+ testId +'"><input type="datetime-local" id="endTime'+ testId +'"><input type="button"  class="btn btn-outline-danger"  value="del" onclick="deltest('+testId+')"></div>'
         		);
         testId++;
 
