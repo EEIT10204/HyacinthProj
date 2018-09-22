@@ -12,6 +12,8 @@ import model.MemberBean;
 import model.MemberDAO;
 import model.MembershipDAO;
 import model.NoticeService;
+import model.SubMemberBean;
+import model.SubMemberDAO;
 
 @Controller
 public class MemberController {
@@ -22,6 +24,8 @@ public class MemberController {
 	private MembershipDAO membershipDAO;
 	@Autowired
 	private NoticeService noticeService;
+	@Autowired
+	private SubMemberDAO subMemberDAO;
 	
 	
 	@RequestMapping(path = { "/ProfilePageGet"})
@@ -36,6 +40,8 @@ public class MemberController {
 		
 		if(!memberID.equals(lmi)) {
 		MemberBean bean = memberDAO.findByPK(memberID);
+		SubMemberBean subBean = subMemberDAO.findByPK(memberID);
+		model.addAttribute("subUserInfo",subBean);
 		model.addAttribute("userInfo",bean);
 		List<MemberBean> friendList = membershipDAO.selectWhoIsMyFriend(memberID);
 		int friendCount = friendList.size();

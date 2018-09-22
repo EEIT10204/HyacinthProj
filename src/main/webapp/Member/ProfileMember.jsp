@@ -26,7 +26,7 @@
 </head>
 <body>
     <div id="idTop" class="container">
-		<img id="idCover" src="<c:url value="data:image/png;base64,${subInfo.memberCoverToBase64}"/>" alt="Cover">
+		<img id="idCover" src="<c:url value="data:image/png;base64,${subUserInfo.memberCoverToBase64}"/>" alt="Cover">
         <img id="idProPic" class="img-thumbnail" src='data:image/png;base64,${userInfo.memberPicToBase64}' alt="Profile image"/>
         <div id="idFollow">
             <button id="FriendButton" class="btn-o"><i class="fa fa-user-plus"></i>   加入好友 </button> 
@@ -34,8 +34,8 @@
         </div>
         <div id="idUserBasic">
                 <h2><i>${userInfo.memberName}&nbsp;&nbsp;&nbsp;&nbsp;<small>${userInfo.memberNickName}</small></i></h2>
-                <h3><small><i class="fas fa-map-marker-alt"></i> ${subInfo.memberLocation}</small></h3>
-                <h3><small><i class="fas fa-briefcase"></i>${subInfo.memberJob}</small></h3>
+                <h3><small><i class="fas fa-map-marker-alt"></i> ${subUserInfo.memberLocation}</small></h3>
+                <h3><small><i class="fas fa-briefcase"></i>${subUserInfo.memberJob}</small></h3>
         </div>
     </div>
 
