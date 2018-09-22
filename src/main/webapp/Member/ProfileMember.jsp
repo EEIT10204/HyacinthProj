@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="<c:url value="/css/newsFeed.css"/>">
 <link rel="stylesheet" href="<c:url value="/css/profileActBlog.css"/>">
 <script src='<c:url value="/js/memberDetail.js"/>'></script>
+<script src='<c:url value="/js/profileShared.js"/>'></script>
 <c:import url="/js/profileHist_js.jsp"/>
 <c:import url="/js/profileActBlog_js.jsp"/>
 
@@ -158,7 +159,7 @@
             </div><!--asideRight end-->
         </div>
     </div> 
-
+	<a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="back-to-top" data-toggle="tooltip" data-placement="left"><i class="fas fa-chevron-up"></i></a>
 
 
 <script > //判斷好友狀況

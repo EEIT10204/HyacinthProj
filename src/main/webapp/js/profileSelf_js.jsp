@@ -2,16 +2,6 @@
 <script>
 $(document).ready(function() {
 	
-	var url = document.location.toString();
-//	alert(url.split('#')[1]);
-	if (url.match('#')) {
-//		alert("hhh");
-//		alert(url.split('#')[1]);
-//		alert(('.nav-pills a[href="#' + url.split('#')[1] + '"]'));
-	    $('.nav-pills a[href="#' + url.split('#')[1] + '"]').tab('show');
-//	    $("#' + url.split('#')[1] + '").removeClass('active');
-	} 
-	
 	//切換使用者上傳圖片
     var readURL = function(input) {
         if (input.files && input.files[0]) {
@@ -29,9 +19,9 @@ $(document).ready(function() {
     
     //寄發驗證信
 	$('#sendMail').click(function(){
-	 	alert("click");
+	 	alert("驗證信已寄出，請稍後~");
 		$.getJSON('${pageContext.request.contextPath}/sendMail.do',function(datas){
-			alert("sendMail.do");
+// 			alert("sendMail.do");
 			alert(datas.result);
 		});
 	});

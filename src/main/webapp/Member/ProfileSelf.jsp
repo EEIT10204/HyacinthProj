@@ -18,6 +18,7 @@
 <link rel="stylesheet" href="<c:url value="/css/newsFeed.css"/>">
 <link rel="stylesheet" href="<c:url value="/css/proInfo.css"/>">
 <link rel="stylesheet" href="<c:url value="/css/profileActBlog.css"/>">
+<script src='<c:url value="/js/profileShared.js"/>'></script>
 <c:import url="/js/profileNews_js.jsp"/>
 <c:import url="/js/profileActBlog_js.jsp"/>
 <c:import url="/js/profileSelf_js.jsp"/>
@@ -398,7 +399,8 @@
                     </div> <!--v-pills-social end-->               
             </div><!--asideRight end-->
         </div>
-    </div> 
+    </div>
+    <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="back-to-top" data-toggle="tooltip" data-placement="left"><i class="fas fa-chevron-up"></i></a>
 <script type="text/javascript">
 function reloadOnce() {
     if(!window.location.hash) {

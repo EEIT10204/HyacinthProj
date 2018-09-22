@@ -21,7 +21,7 @@ $(document).ready(function(){
 	});
 	
 	$('#v-pills-records-tab').click(function(){
-		alert("CCC");
+// 		alert("CCC");
 		$('.carousel-item').remove();
 		$('.carousel-indicators').empty();
 		getHosts(memberId);

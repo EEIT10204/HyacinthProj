@@ -43,7 +43,7 @@ $(document).ready(function() {
 		   alert('請先登入');
 		   $('#memberNav button').click();
 	  }else{
-	       alert('我來留言了');
+// 	       alert('我來留言了');
 	       var textC = $(this).prev().val();
 	       var articleTypeId = $(this).parents(".content").attr("name");
 	       var newComm = $(this).parents(".newComment");
@@ -111,7 +111,7 @@ $(document).ready(function() {
   var memberId = 0;
 
    memberId =  GetQueryString("memberID");
-   alert(memberId);
+//    alert(memberId);
    
    function GetQueryString(name){
        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
