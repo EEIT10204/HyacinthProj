@@ -30,7 +30,8 @@
 
 #bodyContent{
 	width:100%;
-	height:45em;
+	height:790px;
+	border:1px solid red;
 }
 .ulcolor{
 	background-color: rgb(85, 134, 180);
@@ -114,6 +115,132 @@
    /* border: 1px solid green; */
 }
 
+/* 留言板 */
+/* ActComment */
+	.form-group textarea{
+      width: 700px;
+      height: 150px;
+      margin-left: 20px;
+  
+    }
+    .messOut{
+      border: 1px solid rgb(119, 119, 119) ;
+      width: 770px;
+      margin: auto;
+      margin-top: 50px;
+    }
+    .form-control{
+      width: 450px;
+      margin: auto;
+      margin-top: 10px;
+      display: inline-block;
+    }
+    .mess2{
+      border: 1px solid rgb(119, 119, 119) ; 
+      background-color: rgb(197, 197, 197);
+    }
+    .mess3{
+      /* border: 1px solid rgb(95, 2, 133) ; */
+    }
+    .mess4{
+      /* border: 1px solid rgb(192, 189, 0) ; */
+    }
+    .mess1{
+      /* border: 1px solid rgb(2, 0, 136) ; */
+      background-color: rgb(223, 223, 223);
+      height: 50px;
+    }
+    .mess1 img{
+      width: 35px;
+      height: 35px;
+      margin-left: 10px;
+    }
+    .messUser{
+      /* border: 1px solid rgb(255, 208, 0); */
+      display: inline-block;
+      margin-top: 7px;
+    }
+    .messName{
+      /* border: 1px solid rgb(56, 255, 82); */
+      display: inline-block;
+      margin-left: 20px;
+      margin-top: 7px;
+    }
+    .buttonT{
+      /* border: 1px solid rgb(234, 0, 255); */
+    }
+    .btn-primary{
+/*     margin-left: 540px; */
+/*     margin-bottom: 20px; */
+    }
+    .selectUser{
+      /* border: 1px solid red; */
+    }
+    #messA img{
+     width: 30px;
+     height: 30px;
+     display: inline-block;
+     margin-top: 6px;
+     /* border: 1px solid red; */
+     margin-left: 20px;
+    }
+    #messA h6{
+    margin-left: 8px;
+    margin-top: 15px;
+/*     border: 1px solid red; */
+    display: inline-block;
+    }
+    .messB{
+    display: inline-block;
+    margin-left: 20px;
+/*     border: 1px solid purple; */
+    }	
+    .uuu{
+/*     border:1px solid green; */
+    }
+    
+    
+      .flip{
+  margin:0px;
+padding:5px;
+text-align:center;
+background:#e5eecc;
+/* border:solid 1px #c3c3c3; */
+margin-top:10px;
+}
+ .update{ 
+ background-color:e5eecc; 
+/*  width:35px;  */
+/*  height:25px;  */
+ margin-left:5px; 
+/*   border:solid 1px red;  */
+  display: inline-block;  
+ } 
+.updatebutton {
+   display: inline-block; 
+/*   padding: 15px 25px; */
+  font-size: 15px;
+  cursor: pointer; 
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #808080;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.updatebutton:hover {background-color: #575757}
+
+.updatebutton:active {
+  background-color: #494949;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+  }
+
 </style>
 
 <title>Insert title here</title>
@@ -195,7 +322,6 @@ $( function() {
 								</div>
 </div>
 
-
 <!--2-->
 
 <div id="tabs-2">
@@ -260,6 +386,8 @@ $( function() {
 </div>
 </div>
 </div>
+
+
  <script src="${pageContext.request.contextPath}/js/zoomify.min.js"></script>
  <script type="text/javascript">
 	 $('.A1').zoomify({scale:0.8});

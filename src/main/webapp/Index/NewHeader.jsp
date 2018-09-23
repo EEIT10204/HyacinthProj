@@ -262,7 +262,7 @@ html, body {
 						);
 						$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&page=notice'/>' style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='spanNoticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>"+data.count+"</span></a></li>")
 						$('#blogNav').html("<a class='dropdown-item' href='<c:url value='/Blog/BlogIndex.jsp'/>'>網誌首頁</a><a class='dropdown-item' href='<c:url value='/Blog/BlogNew.jsp'/>'>新增網誌</a>")
-						$('#ActNav').html("<a class='dropdown-item' href='<c:url value='/Act/ActIndex.jsp'/>'>活動首頁</a><a class='dropdown-item' href='<c:url value='/Act/ActCreate.jsp'/>'>新增活動</a>")
+						$('#ActNav').html("<a class='dropdown-item' href='<c:url value='/Act/ActMain.jsp'/>'>活動首頁</a><a class='dropdown-item' href='<c:url value='/Act/ActCreate.jsp'/>'>新增活動</a>")
 						$('#HomeNav').html("<a class='dropdown-item' href='<c:url value='/Index/Index.jsp'/>'>回首頁</a><a class='dropdown-item' href='<c:url value='/Console/ViewPointManage.jsp'/>'>景點管理</a><a class='dropdown-item' href='<c:url value='/Console/Console.jsp'/>'>檢舉管理</a>");
 						$('#spanNoticeCount1').text(data.count);
 					}else if( '${user.memberID}' != ""){
@@ -271,7 +271,7 @@ html, body {
 						);
 						$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&page=notice'/>'  style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='noticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>"+data.count+"</span></a></li>");
 						$('#blogNav').html("<a class='dropdown-item' href='<c:url value='/Blog/BlogIndex.jsp'/>'>網誌首頁</a><a class='dropdown-item' href='<c:url value='/Blog/BlogNew.jsp'/>'>新增網誌</a>")
-						$('#ActNav').html("<a class='dropdown-item' href='<c:url value='/Act/ActIndex.jsp'/>'>活動首頁</a><a class='dropdown-item' href='<c:url value='/Act/ActCreate.jsp'/>'>新增活動</a>")
+						$('#ActNav').html("<a class='dropdown-item' href='<c:url value='/Act/ActMain.jsp'/>'>活動首頁</a><a class='dropdown-item' href='<c:url value='/Act/ActCreate.jsp'/>'>新增活動</a>")
 						$('#spanNoticeCount1').text(data.count);
 					}
 		    	}
