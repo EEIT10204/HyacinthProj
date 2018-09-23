@@ -28,8 +28,10 @@ body{
 	padding-top:0;
 }
 /* ALL */
-.container{
+.containerMY{
 	padding-top:20px;
+	border-radius: 50px;
+	background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
 img{
 border-radius: 10px;
@@ -79,7 +81,7 @@ a {
 	transition-duration: 0.8s;
 	transition-delay: 0s;
 	transition-timing-function: linear;
-	color: rgb(48, 43, 43);
+	color: rgb(0, 90, 126);
 }
 .a1 {
 	font-family: 'Noto Sans TC';
@@ -898,7 +900,7 @@ hr {
 		</ul>
 	</nav>
 
-<div class="container">
+<div class="container containerMY">
 	<div id="d4">
 		<article class="col-sm-8">
 			<div class="hot">

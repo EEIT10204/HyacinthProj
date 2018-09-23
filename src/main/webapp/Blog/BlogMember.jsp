@@ -28,7 +28,7 @@
 <%-- <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.js"></script> --%>
 <%-- 	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script> --%>
 <script type="text/javascript"
-	src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b8e2eafee0a0c7c"></script>	
+	src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b8e2eafee0a0c7c"></script>
 <!-- 務必使用 -->
 <script src="${pageContext.request.contextPath}/js/blogInsertMessage.js"></script>
 <script src="${pageContext.request.contextPath}/js/blogUpdateMessage.js"></script>
@@ -46,6 +46,10 @@ body {
 
 img {
 	border-radius: 10px;
+}
+.containerMY{
+	border-radius: 50px;
+	background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
 /* star */
 	.ccc{
@@ -124,7 +128,7 @@ a {
 	transition-duration: 0.8s;
 	transition-delay: 0s;
 	transition-timing-function: linear;
-	color: rgb(0, 206, 221);
+	color: rgb(0, 90, 126);
 }
 
 .a11 {
@@ -157,7 +161,7 @@ a {
 	transition-duration: 0.8s;
 	transition-delay: 0s;
 	transition-timing-function: linear;
-	color: rgb(13, 145, 155);
+	color: rgb(0, 90, 126);
 }
 
 img:hover {
@@ -459,6 +463,7 @@ article {
 
 .divAS1 {
 	border: 15px outset rgb(0, 179, 149);
+/* 	background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%); */
 	border-bottom-right-radius: 50px;
 	border-bottom-left-radius: 50px;
 /* 	width: 95%; */
@@ -667,6 +672,7 @@ article {
 }
 
 .borderA {
+	background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 	border: 15px inset rgb(0, 179, 149);
 	border-top-left-radius: 50px;
 	border-top-right-radius: 50px;
@@ -849,16 +855,17 @@ hr {
 /* 留言板 */
 /* ActComment */
 	.form-group textarea{
-      width: 700px;
+      width: 600px;
       height: 150px;
-      margin-left: 20px;
+      margin-left: 35px;
   
     }
     .messOut{
-      border: 1px solid rgb(119, 119, 119) ;
-      width: 770px;
+      border: 15px groove rgb(0, 179, 149);
+      width: 700px;
       margin: auto;
       margin-top: 50px;
+      border-radius: 10px;
     }
     .form-control{
       width: 450px;
@@ -900,9 +907,14 @@ hr {
     .buttonT{
       /* border: 1px solid rgb(234, 0, 255); */
     }
-    .btn-primary{
-/*     margin-left: 540px; */
+    .btn-primaryMY{
+/*    		margin-right: 200px; */
 /*     margin-bottom: 20px; */
+		position: relative;
+        right: 80px;
+/*         background-color:rgb(120, 120, 120);  */
+         margin-left: 650px;  
+         margin-bottom: 20px; 
     }
     .selectUser{
       /* border: 1px solid red; */
@@ -929,8 +941,6 @@ hr {
     .uuu{
 /*     border:1px solid green; */
     }
-    
-    
       .flip{
   margin:0px;
 padding:5px;
@@ -1378,7 +1388,7 @@ margin-top:10px;
 		</ul>
 	</nav>
 
-	<div class="container">
+	<div class="container containerMY">
 		<div id="d4">
 			<article class="col-sm-8">
 
@@ -1456,7 +1466,9 @@ margin-top:10px;
 						</div>
 
 
-	
+
+
+
 						<div class="divblog22333" style="display: none" id="hide2">
 							登入即可評分</div>
 
@@ -1559,7 +1571,8 @@ margin-top:10px;
 						</span>
 					</h3>
 				</div>
-<!-- Report Model Start -->
+				
+				<!-- Report Model Start -->
   <div class="modal fade" id="reportModal" role="dialog">
     <div class="modal-dialog">
     
@@ -1578,7 +1591,7 @@ margin-top:10px;
        		</form>
         </div>
         <div class="modal-footer">
-        	<button onclick="sendReport()" type="button" class="btn btn-primary" data-dismiss="modal" style="color:white;">送出</button>
+        	<button onclick="sendReport()" type="button" class="btn btn-primary " data-dismiss="modal" style="color:white;">送出</button>
           <button type="button" class="btn btn-primary" data-dismiss="modal" style="color:white;">取消</button>
         </div>
       </div>   
@@ -1599,8 +1612,7 @@ margin-top:10px;
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="commentContent"></textarea>
                   </div>
                   <div class="buttonT">
-                      <button type="submit" class="btn-primary" style="background-color:rgb(120, 120, 120); 
-                      margin-left: 650px; margin-bottom: 20px; id="sendbuttom";/">Send out</button>
+                      <button type="submit" class="btn btn-info btn-primaryMY" id="sendbuttom";/">Send out</button>
 <!--                           <input type="hidden" name="commentContent" value="1"> -->
                           <input type="hidden" name="memberID" value="${user.memberID}">
                           <input type="hidden" name="blogSNum" value="${param.blogSNum}">
@@ -1915,7 +1927,7 @@ margin-top:10px;
 // 					 $.each(json,function(i,product){
 // 						 alert(product);
 						$('#likepoint').html(json[0]);
-						$('#starpoint').html(json[1]);						
+						$('#starpoint').html(json[1].toFixed(1));						
 						if(json[1]==null){
 							$('#starpoint').text("尚未有人評分");
 						}
@@ -1932,8 +1944,6 @@ margin-top:10px;
 					}
 				 })
 				 
-
-			 
 					 //STAR--------------------------------------------------------------
 
 		            var ratingOptions = {
@@ -1962,11 +1972,12 @@ margin-top:10px;
 				            $.getJSON('${pageContext.request.contextPath}/Blog/MemberBlogScoreUpdate.controller',{'memberID':member,'blogSNum':URL,'score':score},function(json){
 // 								 alert(JSON.stringify(json));
 // 								 alert("評分成功");
-								 
+								 $('#rating-stars-value').attr("placeholder","您給了("+$('#rating-stars-value').val()+")分");
 // 								 alert("評分成功");
 								 $.getJSON('${pageContext.request.contextPath}/Blog/MemberBloglike.controller',{'blogSNum':URL},function(json){
+									 
 									 $.each(json,function(i,product){
-// 										$('#rating-stars-value').attr("placeholder","您給了("+json[1]+")分");
+// 										 alert($('#rating-stars-value').attr("placeholder"));
 										$('#starpoint').html(json[1]);
 									 })
 								 })
@@ -2064,6 +2075,7 @@ margin-top:10px;
 							 $('#changeMemberName2').html('${BeanSNum[0][2].memberNickName}');
 							 $('#changeCityContent').html('${BeanSNum[0][0].blogContext}');
 							 $('#reportMember').val(member);
+							
 							
 							//NAV 	
 							var nav = ["台北","台中","台南","高雄","東京","大阪","沖繩","北海道","首爾","釜山","大邱","濟州島","紐約","洛杉磯","舊金山","邁阿密","柏林","漢堡","慕尼黑","法蘭克福"]; 
@@ -2312,8 +2324,6 @@ margin-top:10px;
 				},				
 		});	
 	}
-	
-	
 	</script>
 
 </body>

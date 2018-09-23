@@ -67,6 +67,10 @@ h4{
 	margin-left: -550px;
 	/* 760 除以 -2 */
 	width: 1100px;
+	background: #C9CCD3;
+	background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+	background-blend-mode: lighten;
+	border-radius: 50px;
 }
 
 .title-text span {
@@ -139,6 +143,9 @@ p {
 }
 .divAS1 {
             border: 15px groove rgb(0, 179, 149);
+            background: #C9CCD3;
+ background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+ background-blend-mode: lighten;
 /*             margin:auto; */
         }
 .divAS12 {
