@@ -117,17 +117,40 @@ vertical-align: middle;
     <div style="background-color: #f5f5f5; margin:auto; text-align: center; margin-right: ">
 			<button type="button" id="LikeOrDisLike"class="btn btn-primary"  value="${likebottuntype}">${likebottuntype}</button>
 		<button type="button" class="btn btn-success" id="AttendOrNot"  value="${attendbottuntype}">${attendbottuntype}</button> <!-- ${attendStatus} -->
-		<button type="button" class="btn btn-danger"  id="sendReport" value="sendReport">Report</button>
+		<button type="button" class="btn btn-danger"  id="sendReport" value="sendReport" data-toggle="modal" data-target="#reportModal">Report</button>
 		<button type="button" class="btn btn-warning" id="invite" value="invite">Invite</button>
 		<input type="hidden" id= "num" value="${useractSNum}">
 		<input type="hidden" id= "mem" value="${userid}">
 	</div>
 		<div id = "friends"></div>
 	</div>
+	
+		<!-- Report Model Start -->
+  <div class="modal fade" id="reportModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+        <img src="${pageContext.request.contextPath}/Images/Index/warning.png" style="height:20px;margin-top:10px;">
+        <h4 class="modal-title" style="margin-left:12px;">檢舉</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>          
+        </div>
+        <div class="modal-body">
+        	<form>
+       		<span style="margin-left:5px;font-size:16px;">理由:</span> <br>
+       		<textArea style="vertical-align:top; width:400px;margin-left:55px;margin-top:10px;height:200px;" id="reportReason" ></textArea>
+       		<input type="text" id="reportMember" value="<c:if test="${user != null}">${user.memberID}</c:if>" style="display:""/> <input type="text" id="reportReferID" style="display:"" value="${event.actID}"/>
+       		</form>
+        </div>
+        <div class="modal-footer">
+        	<button onclick="sendReport()" type="button" class="btn btn-primary " data-dismiss="modal" style="color:white;">送出</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" style="color:white;">取消</button>
+        </div>
+      </div>   
+    </div>
+  </div> <!-- Report Modal end -->
 		
-		
-		
-
 <script>
 $( document ).ready(function() {
 	
@@ -302,6 +325,41 @@ $( document ).ready(function() {
 	 }); 
 	 
 })
+
+	//-----------Report Ajax --------
+		function sendReport(){
+		var reportReason = $('#reportReason').val();
+		var reportMember = $('#reportMember').val();
+		var referID = $('#reportReferID').val();
+// 		alert(reportReason + '-' + reportMember + '-' + referID);
+		
+		$.ajax({
+			type : "get",
+			url : "${pageContext.request.contextPath}/report.Send",
+			data: {"reportMember":reportMember, "referID":referID,"reportReason":reportReason},
+			contentType: "application/json; charset=utf-8",
+			dataType: "text",
+			success: function (data) {
+// 					alert(data);
+			swal({
+			  type: 'success',
+			  title: '檢舉成功',
+			  showConfirmButton: false,
+			  timer: 1500
+			})
+				},
+			error: function (response) {
+				$('#detailReason').empty();
+				alert("detail error");
+				
+				swal({
+					  type: 'error',
+					  title: '檢舉有誤',
+					  text: '請重新發送檢舉',
+					})
+				},				
+		});	
+	}
 </script>
 </body>
 <jsp:include page="../Index/Footer.jsp" />
