@@ -65,7 +65,7 @@ public class ViewPointController {
 				}
 				if(bean.getViewPointInfo() == null || bean.getViewPointInfo().length() == 0) {
 					errors.put("info", "請輸入介紹");
-				}
+				} 
 				if(bean.getViewPointType() == null) {
 					errors.put("type", "請選擇類型");
 				}
@@ -78,7 +78,7 @@ public class ViewPointController {
 				else {  //輸入資料完整
 					ViewPointBean result = viewPointService.insert(bean);  //試著insert資料
 					
-					if(result.equals(null)) {  //沒回傳值，已有重複資料，回傳錯誤訊息
+					if(result == null) {  //沒回傳值，已有重複資料，回傳錯誤訊息
 						errors.put("name", "已有此筆資料");
 						model.addAttribute("errors",errors);
 						return "viewPoint.insert";				
@@ -111,13 +111,13 @@ public class ViewPointController {
 			
 			if(!errors.isEmpty()) {  //輸入資料有誤，回傳錯誤訊息
 				model.addAttribute("errors",errors);
-				System.out.println("hass errors: " + errors.size());
+				System.out.println("has errors: " + errors.size());
 				return "viewPoint.insert";	
 			}
 			else {  //輸入資料完整
-				ViewPointBean result = viewPointService.update(bean);  //試著insert資料
+				ViewPointBean result = viewPointService.update(bean);  //試著update資料
 				
-				if(!result.equals(null)) {  //有回傳值，有找到該筆資料，嘗試update					
+				if(result != null) {  //有回傳值，有找到該筆資料，嘗試update					
 					errors.put("name", "資料更新成功");
 					model.addAttribute("errors",errors);
 					return "viewPoint.insert";							
@@ -156,11 +156,5 @@ public class ViewPointController {
 			
 		}
 		return null;
-		
-
-
-	}
-	
-	
-	
+	}	
 }

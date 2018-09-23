@@ -39,7 +39,14 @@ public class ViewPointService {
 	
 	public ViewPointBean update(ViewPointBean bean) {
 		
-		ViewPointBean temp = viewPointDAO.update(bean);
-		return temp;
-	}
+		ViewPointBean viewPointResult = viewPointDAO.selectByName(bean);
+		
+		if(viewPointResult == null) {
+			return null;
+		}else {
+			ViewPointBean temp = viewPointDAO.update(bean);
+			return temp;
+		}
+		
+}
 }

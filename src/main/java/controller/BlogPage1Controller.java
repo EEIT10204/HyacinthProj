@@ -289,12 +289,12 @@ public class BlogPage1Controller {
 		@RequestMapping(path= {"/Blog/BlogNew.controller"},method={RequestMethod.POST})
 		public String forNewBlog(
 				Model model,
-				@ModelAttribute(name="form")BlogBean blogBean,BindingResult bindingResult
+				@ModelAttribute(name="form")BlogBean blogBean,BindingResult bindingResult,
 //				@SessionAttribute(name="memberID")BlogBean memberID,
 //				@RequestParam(value="memberID",required = false)Integer memberID,
 //				@RequestParam("memberID")String memberID,
 //				@RequestParam("blogCover") MultipartFile blogCover,
-//				@RequestParam("summernote") String summernote,
+				@RequestParam("summernote") String summernote
 //				@RequestParam("blogSNum")Integer blogSNum
 				) {
 //				Integer mID = Integer.valueOf(memberID);
@@ -321,7 +321,7 @@ public class BlogPage1Controller {
 				blogBean.setUpdateTime(new java.util.Date());
 				blogBean.setBlogVisibility(1);
 //				blogBean.setBlogCity(blogBean.getBlogCity());
-				blogBean.setBlogContext(blogBean.getBlogContext());
+				blogBean.setBlogContext(summernote);
 				System.out.println("Cover = "+blogBean.getBlogCover());
 //				System.out.println("Cover = "+blogBean.getBlogCover().length);
 				if(blogBean.getBlogCover().length==0) {
@@ -331,10 +331,12 @@ public class BlogPage1Controller {
 				}
 				
 //				blogBean.setBlogTitle(blogBean.getBlogTitle());
-				System.out.println("BlogTitle = "+blogBean.getBlogTitle());
+//				System.out.println("BlogTitle = "+blogBean.getBlogTitle());
 				blogBean.setBlogView(0);
 				blogBean.setMemberID(blogBean.getMemberID());
-				model.addAttribute("summernote", blogBean.getBlogContext());
+				
+//				System.out.println("getBlogContext = "+);
+				model.addAttribute("summernote", summernote);
 //				blogService.insert(blogBean);
 				blogService.saveUpdate(blogBean);
 //				System.out.println("AAA = "+AAA);
