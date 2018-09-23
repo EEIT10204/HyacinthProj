@@ -1875,6 +1875,18 @@ margin-top:10px;
 		</div>
 	</div>
 
+
+<script type="text/javascript">
+$(document).ready(function(){
+	alert("run button check");
+if('${user.memberID}'==""){
+$("#sendbuttom").html("<button type='submit' class='btn-secondary style='margin-left: 650px; margin-bottom: 20px; border-radius:20px' id='sendbuttom' disabled='disabled'>請先登入</button>")
+$(".messUser").html("<div class='messUsers'><img src='${pageContext.request.contextPath}/Images/Index/user.png'/></div>")
+};
+});
+
+</script>
+
 	<script>
 	        
 			var member = "${user.memberID}"; 
