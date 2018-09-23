@@ -10,9 +10,9 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="${pageContext.request.contextPath}/js/blogInsertMessage.js"></script>
-<script src="${pageContext.request.contextPath}/js/blogUpdateMessage.js"></script>
-
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/actcomment.css">
+<script src="${pageContext.request.contextPath}/js/actInsertMessage.js"></script>
+<script src="${pageContext.request.contextPath}/js/actUpdateMessage.js"></script>
 
 <style>
 #left-panel {
@@ -50,131 +50,7 @@ vertical-align: middle;
     width:1110px;
 }
 
-/* 留言板 */
-/* ActComment */
-	.form-group textarea{
-      width: 700px;
-      height: 150px;
-      margin-left: 20px;
-  
-    }
-    .messOut{
-      border: 1px solid rgb(119, 119, 119) ;
-      width: 800px;
-      margin:auto;
-      margin-top: 200px;
-    }
-    .form-control{
-      width: 450px;
-      margin: auto;
-      margin-top: 10px;
-      display: inline-block;
-    }
-    .mess2{
-      border: 1px solid rgb(119, 119, 119) ; 
-      background-color: rgb(197, 197, 197);
-    }
-    .mess3{
-      /* border: 1px solid rgb(95, 2, 133) ; */
-    }
-    .mess4{
-      /* border: 1px solid rgb(192, 189, 0) ; */
-    }
-    .mess1{
-      /* border: 1px solid rgb(2, 0, 136) ; */
-      background-color: rgb(223, 223, 223);
-      height: 50px;
-    }
-    .mess1 img{
-      width: 35px;
-      height: 35px;
-      margin-left: 10px;
-    }
-    .messUser{
-      /* border: 1px solid rgb(255, 208, 0); */
-      display: inline-block;
-      margin-top: 7px;
-    }
-    .messName{
-      /* border: 1px solid rgb(56, 255, 82); */
-      display: inline-block;
-      margin-left: 20px;
-      margin-top: 7px;
-    }
-    .buttonT{
-      /* border: 1px solid rgb(234, 0, 255); */
-    }
-    .btn-primary{
-/*     margin-left: 540px; */
-/*     margin-bottom: 20px; */
-    }
-    .selectUser{
-      /* border: 1px solid red; */
-    }
-    #messA img{
-     width: 30px;
-     height: 30px;
-     display: inline-block;
-     margin-top: 6px;
-     /* border: 1px solid red; */
-     margin-left: 20px;
-    }
-    #messA h6{
-    margin-left: 8px;
-    margin-top: 15px;
-/*     border: 1px solid red; */
-    display: inline-block;
-    }
-    .messB{
-    display: inline-block;
-    margin-left: 20px;
-/*     border: 1px solid purple; */
-    }	
-    .uuu{
-/*     border:1px solid green; */
-    }
-    
-    
-      .flip{
-  margin:0px;
-padding:5px;
-text-align:center;
-background:#e5eecc;
-/* border:solid 1px #c3c3c3; */
-margin-top:10px;
-}
- .update{ 
- background-color:e5eecc; 
-/*  width:35px;  */
-/*  height:25px;  */
- margin-left:5px; 
-/*   border:solid 1px red;  */
-  display: inline-block;  
- } 
-.updatebutton {
-   display: inline-block; 
-/*   padding: 15px 25px; */
-  font-size: 15px;
-  cursor: pointer; 
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #808080;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-}
 
-.updatebutton:hover {background-color: #575757}
-
-.updatebutton:active {
-  background-color: #494949;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
-  }
 </style>
 </head>
 <body>
@@ -253,11 +129,16 @@ margin-top:10px;
 		<div id = "friends"></div>
 	</div>
 	
+<div class="textboadrss">	
+<button class="button button4">
+<h2>留言板</h2>
+</button>
+</div>
 	<!-- 留言板 -->
-<div class="messOut">
-      <div class="mess1">
-        <div class="messUser"><img src="data:image/png;base64,${user.memberPicToBase64}"/></div>
-        <div class="messName">${user.memberName}</div>
+<div class="messOuts">
+      <div class="mess1s">
+        <div class="messUsers"><img src="data:image/png;base64,${user.memberPicToBase64}"/></div>
+        <div class="messNames">${user.memberName}</div>
       </div>
       <form action="<c:url value="/Act/ActDisplay.comment"/>" method="get">
 <%--         <form action="<c:url value="/Act/ACCommentInsertController?actSNum=?" />" method="get"> --%>
@@ -265,38 +146,37 @@ margin-top:10px;
                     <label for="exampleFormControlTextarea1">Leave Message</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="commentContent"></textarea>
                   </div>
-                  <div class="buttonT">
-                      <button type="submit" class="btn-primary" style="background-color:rgb(120, 120, 120); 
-                      margin-left: 650px; margin-bottom: 20px; id="sendbuttom";/">Send out</button>
+                  <div class="buttonTs">
+                      <button type="submit" class="btn-primary" style="margin-left: 650px; margin-bottom: 20px;" id="sendbuttom">Send out</button>
 <!--                           <input type="hidden" name="commentContent" value="1"> -->
                           <input type="hidden" name="memberID" value="${user.memberID}">
                           <input type="hidden" name="actSNum" value="${param.actSNum}">
                           
                   </div>
                   </form>
-                  <div class="mess2">
+                  <div class="mess2s">
                     <!-- <div class="mess3"></div>
                     <div class="mess4"></div> -->
                   <div class="form-group">
                       <label for="exampleFormControlInput1">All Message</label>
                       
-                      <div class="uuu">
+                      <div class="uuus">
                       <c:forEach var="obj" items="${ACComment}">
                       <form action="<c:url value="/ACCommentUpdate.Controller"/>" method="get">
-                      <div id="messA">
+                      <div id="messAs">
                           <img src="data:image/png;base64,${obj[1].memberPicToBase64}"/>
                           <h6>${obj[1].memberName} </h6>
 <%--                           <h6>${obj[0].ACCommentID}</h6> --%>
 
-                          <div class="messB">
+                          <div class="messBs">
                           <input type="text" class="form-control" disabled value="${obj[0].commentContent}"
                           name="commentContent">
                         </div>
                         
                         <c:if test= "${user.memberID == obj[1].memberID}"> 
-                        <div class="update"> 
-                        <span class="updatebutton" style="width:70px;height:25px">修改</span>            
-                        <input class="updatebutton" style="width:70px;height:25px" type="hidden" value="送出">
+                        <div class="updates"> 
+                        <span class="updatebuttons" style="width:70px;height:25px">修改</span>            
+                        <input class="updatebuttons" style="width:70px;height:25px" type="hidden" value="送出">
                         <input type="hidden" name="ACCommentID" value="${obj[0].ACCommentID}">
                         <input type="hidden" name="actSNum" value="${param.actSNum}">
                          <input type="hidden" name="memberID" value="${user.memberID}">
@@ -308,7 +188,7 @@ margin-top:10px;
                       </c:forEach>
                       </div>
                       <div >
-                          <p class="flip">顯示更多留言</p>
+                          <p class="flips">顯示更多留言</p>
                           </div>
                       </div>
                     </div>
@@ -397,7 +277,16 @@ $( document ).ready(function() {
 
 </script>
 
-			
+<script type="text/javascript">
+$(document).ready(function(){
+	alert("run button check");
+if('${user.memberID}'==""){
+$("#sendbuttom").html("<button type='submit' class='btn-secondary style='margin-left: 650px; margin-bottom: 20px; border-radius:20px' id='sendbuttom' disabled='disabled'>請先登入</button>")
+$(".messUsers").html("<div class='messUsers'><img src='${pageContext.request.contextPath}/Images/Index/user.png'/></div>")
+};
+});
+
+</script>			
 			
 <script> 
 			 function initMap() {
