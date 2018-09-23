@@ -61,7 +61,9 @@ public class MemberController {
 				}
 			}
 			MemberBean bean = memberDAO.findByPK(lmi);
+			SubMemberBean bean2 = subMemberDAO.findByPK(lmi);
 			model.addAttribute("userInfo",bean);
+			model.addAttribute("subInfo",bean2);
 			List<MemberBean> friendList = membershipDAO.selectWhoIsMyFriend(lmi);
 			int friendCount = friendList.size();
 			model.addAttribute("friendCount",friendCount);
