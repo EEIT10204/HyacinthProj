@@ -52,16 +52,8 @@ public class TripController {
 		for( TripBean index : tbean ) {
 		
 			System.out.println(index); 
-			
-			TripBean result1 = tripDAOHibernate.insert(index);
+			 tripDAOHibernate.insert(index);
 		}
-//		
-//		  tbean.setActSNum(actbean.getActSNum());
-//			TripBean result1 = tripDAOHibernate.select(tbean);
-//			System.out.println("result1=" + result1);
-			
-//			model.addAttribute("event", result );
-//	
 		
 		return  tbean;
 		}

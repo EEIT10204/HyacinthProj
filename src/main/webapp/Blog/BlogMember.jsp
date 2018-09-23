@@ -194,7 +194,7 @@ hr.style-two {
 
 .nav-linkmy:hover {
  	background-color: rgb(210, 205, 247); 
- 	border:1px solid;
+/*  	border:1px solid; */
 	border-radius: 5px;
 }
 
@@ -1087,42 +1087,42 @@ margin-top:10px;
 					<div class="div1">
 						<div class="div2">
 							<div class="div3">
-								<a class="urlC1" href="#"><img id="navA5" class="div3"
+								<a class="urlC5" href="#"><img id="navA5" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan1.jpg" --%>
 									alt="japan1">
 							</div>
 							<div class="div4">
-								<a id="navB5" href="#" class="a1 urlC1"></a>
+								<a id="navB5" href="#" class="a1 urlC5"></a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
-								<a class="urlC2" href="#"><img id="navA6" class="div3"
+								<a class="urlC6" href="#"><img id="navA6" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan2.jpg" --%>
 									alt="japan2">
 							</div>
 							<div class="div4">
-								<a id="navB6" href="#" class="a1 urlC2"></a>
+								<a id="navB6" href="#" class="a1 urlC6"></a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
-								<a class="urlC3" href="#"><img id="navA7" class="div3"
+								<a class="urlC7" href="#"><img id="navA7" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan3.jpg" --%>
 									alt="japan3">
 							</div>
 							<div class="div4">
-								<a id="navB7" href="#" class="a1 urlC3"></a>
+								<a id="navB7" href="#" class="a1 urlC7"></a>
 							</div>
 						</div>
 						<div class="div2">
-							<div class="urlC4" class="div3">
+							<div class="urlC8" class="div3">
 								<a href="#"><img id="navA8" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan4.jpg" --%>
 									alt="japan4">
 							</div>
 							<div class="div4">
-								<a id="navB8" href="#" class="a1 urlC4"></a>
+								<a id="navB8" href="#" class="a1 urlC8"></a>
 							</div>
 						</div>
 					</div>
@@ -1166,42 +1166,42 @@ margin-top:10px;
 					<div class="div1">
 						<div class="div2">
 							<div class="div3">
-								<a class="urlC1" href="#"><img id="navA9" class="div3"
+								<a class="urlC9" href="#"><img id="navA9" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea1.jpg" --%>
 									alt="korea1">
 							</div>
 							<div class="div4">
-								<a id="navB9" href="#" class="a1 urlC1"></a>
+								<a id="navB9" href="#" class="a1 urlC9"></a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
-								<a class="urlC2" href="#"><img id="navA10" class="div3"
+								<a class="urlC10" href="#"><img id="navA10" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea2.jpg" --%>
 									alt="korea2">
 							</div>
 							<div class="div4">
-								<a id="navB10" href="#" class="a1 urlC2"></a>
+								<a id="navB10" href="#" class="a1 urlC10"></a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
-								<a class="urlC3" href="#"><img id="navA11" class="div3"
+								<a class="urlC11" href="#"><img id="navA11" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea3.jpg" --%>
 									alt="korea3">
 							</div>
 							<div class="div4">
-								<a id="navB11" href="#" class="a1 urlC3"></a>
+								<a id="navB11" href="#" class="a1 urlC11"></a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
-								<a class="urlC4" href="#"><img id="navA12" class="div3"
+								<a class="urlC12" href="#"><img id="navA12" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea4.jpg" --%>
 									alt="korea4">
 							</div>
 							<div class="div4">
-								<a id="navB12" href="#" class="a1 urlC4 "></a>
+								<a id="navB12" href="#" class="a1 urlC12"></a>
 							</div>
 						</div>
 					</div>
@@ -1245,42 +1245,42 @@ margin-top:10px;
 					<div class="div1">
 						<div class="div2">
 							<div class="div3">
-								<a class="urlC1" href="#"><img id="navA13" class="div3"
+								<a class="urlC13" href="#"><img id="navA13" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/us1.jpg" --%>
 									alt="us1">
 							</div>
 							<div class="div4">
-								<a id="navB13" href="#" class="a1 urlC1"></a>
+								<a id="navB13" href="#" class="a1 urlC13"></a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
-								<a class="urlC2" href="#"><img id="navA14" class="div3"
+								<a class="urlC14" href="#"><img id="navA14" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/us2.jpg" --%>
 									alt="us2">
 							</div>
 							<div class="div4">
-								<a id="navB14" href="#" class="a1 urlC2"></a>
+								<a id="navB14" href="#" class="a1 urlC14"></a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
-								<a class="urlC3" href="#"><img id="navA15" class="div3"
+								<a class="urlC15" href="#"><img id="navA15" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/us3.jpg" --%>
 									alt="us3">
 							</div>
 							<div class="div4">
-								<a id="navB15" href="#" class="a1 urlC3"></a>
+								<a id="navB15" href="#" class="a1 urlC15"></a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
-								<a class="urlC4" href="#"><img id="navA16" class="div3"
+								<a class="urlC16" href="#"><img id="navA16" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/us4.jpg" --%>
 									alt="us4">
 							</div>
 							<div class="div4">
-								<a id="navB16" href="#" class="a1 urlC4"></a>
+								<a id="navB16" href="#" class="a1 urlC16"></a>
 							</div>
 						</div>
 					</div>
@@ -1323,42 +1323,42 @@ margin-top:10px;
 					<div class="div1">
 						<div class="div2">
 							<div class="div3">
-								<a class="urlC1" href="#"><img id="navA17" class="div3"
+								<a class="urlC17" href="#"><img id="navA17" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany1.jpg" --%>
 									alt="germany1">
 							</div>
 							<div class="div4">
-								<a id="navB17" href="#" class="a1 url1">【德國】迪士尼城堡的原型！慕尼黑郊區必去新天鵝堡攻略：交通、周邊景點整理推薦</a>
+								<a id="navB17" href="#" class="a1 url17">【德國】迪士尼城堡的原型！慕尼黑郊區必去新天鵝堡攻略：交通、周邊景點整理推薦</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
-								<a class="url2" href="#"><img id="navA18" class="div3"
+								<a class="url18" href="#"><img id="navA18" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany2.jpg" --%>
 									alt="germany2">
 							</div>
 							<div class="div4">
-								<a id="navB18" href="#" class="a1 urlC2">【德國】慕尼黑自由行全攻略，啤酒節、新天鵝堡、國王湖，四天三夜行程安排、交通、景點整理</a>
+								<a id="navB18" href="#" class="a1 urlC18">【德國】慕尼黑自由行全攻略，啤酒節、新天鵝堡、國王湖，四天三夜行程安排、交通、景點整理</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
-								<a class="urlC3" href="#"><img id="navA19" class="div3"
+								<a class="urlC19" href="#"><img id="navA19" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany3.jpg" --%>
 									alt="germany3">
 							</div>
 							<div class="div4">
-								<a id="navB19" href="#" class="a1 urlC3">【愛爾蘭】都柏林購物指南，必逛平價超市、特色市集、獨立書店整理</a>
+								<a id="navB19" href="#" class="a1 urlC19">【愛爾蘭】都柏林購物指南，必逛平價超市、特色市集、獨立書店整理</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
-								<a class="urlC4" href="#"><img id="navA20" class="div3"
+								<a class="urlC20" href="#"><img id="navA20" class="div3"
 <%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany4.jpg" --%>
 									alt="germany4">
 							</div>
 							<div class="div4">
-								<a id="navB20" href="#" class="a1 urlC4">【法國】巴黎藝術之旅，教你怎麼參觀三大美術館：羅浮宮、奧塞美術館、龐畢度藝術中心（附上票券整理和鎮店之寶）</a>
+								<a id="navB20" href="#" class="a1 urlC20">【法國】巴黎藝術之旅，教你怎麼參觀三大美術館：羅浮宮、奧塞美術館、龐畢度藝術中心（附上票券整理和鎮店之寶）</a>
 							</div>
 						</div>
 					</div>
@@ -1992,7 +1992,8 @@ margin-top:10px;
 				            $.getJSON('${pageContext.request.contextPath}/Blog/MemberBlogScoreUpdate.controller',{'memberID':member,'blogSNum':URL,'score':score},function(json){
 // 								 alert(JSON.stringify(json));
 // 								 alert("評分成功");
-								 $('#rating-stars-value').attr("placeholder","您給了("+$('#rating-stars-value').val()+")分");
+								 $('#rating-stars-value').val("您給了("+$('#rating-stars-value').val()+")分");
+// 								 $('#rating-stars-value').attr("placeholder","您給了("+$('#rating-stars-value').val()+")分");
 // 								 alert("評分成功");
 								 $.getJSON('${pageContext.request.contextPath}/Blog/MemberBloglike.controller',{'blogSNum':URL},function(json){
 									 
@@ -2106,10 +2107,10 @@ margin-top:10px;
 // 										 alert(navProduct.blogCity);
 										 for(var i = 1;i<=20;i++){
 										 if(navProduct.blogCity==nav[i-1]){
-// 											    $('.urlC'+(i)).attr("href",path+navProduct.blogSNum);
+											    $('.urlC'+(i)).attr("href",path+navProduct.blogSNum);
 												$('#navA'+(i)).attr("src","data:image/png;base64,"+navProduct.blogCover);
-// 												$('#navB'+(i)).html(navProduct.blogTitle);
-// 												$('.link'+(i)).attr("href",path2+navProduct.blogCity);
+												$('#navB'+(i)).html(navProduct.blogTitle);
+												$('.link'+(i)).attr("href",path2+navProduct.blogCity);
 										 }
 										 }
 										
@@ -2343,4 +2344,5 @@ margin-top:10px;
 	</script>
 
 </body>
+<jsp:include page="../Index/Footer.jsp" />
 </html>

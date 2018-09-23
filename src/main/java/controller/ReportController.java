@@ -181,7 +181,7 @@ public class ReportController {
 	}
 	
 	@RequestMapping(path= {"/report.Process"},
-			produces = {"application/json;charset=UTF-8"})
+			produces = {"text/html;charset=UTF-8"})
 	@ResponseBody
 	public String reportProcess(String referID, String type, String caseID, String process) {
 		
@@ -207,6 +207,7 @@ public class ReportController {
 			
 			reportService.caseAccept(reportBean, referID);
 		}
+			return "case accept success";
 		}
 		else if(process.equals("deny")) {
 			ReportBean reportBean = new ReportBean();
@@ -214,7 +215,8 @@ public class ReportController {
 			reportService.caseDeny(reportBean, referID);
 		}
 		
-		return "process success";
+		System.out.println("case deny");
+		return "process deny success";
 	}
 	
 	@RequestMapping(path= {"/report.Send"},

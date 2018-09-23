@@ -102,6 +102,22 @@ public class ActDAOHibernate implements ActDAO {
 	}
 	
 	@Override
+	public List<ActBean> findByMultiConditions(String keyword, String status, String sorting,int p,int num) {
+		return this.getSession().createQuery(
+				"from ActBean where (actTitle Like :var1 OR actCity Like :var1 OR actIntro Like :var1) "
+				+"AND actStatus= :var2 "
+				+"AND actVisibility=1 "
+				+"order by "+sorting+" desc"
+				,ActBean.class)
+		.setParameter("var1","%"+keyword+"%")
+		.setParameter("var2", status)
+		.setFirstResult((p-1)*num) 
+		.setMaxResults(num) 
+		.list();
+	}
+
+	
+	@Override
 	public ActBean selectBymemberIDandcreateDate(ActBean bean) {
 		System.out.println("DAO select by memberID and createDate access");
 		try {
@@ -111,4 +127,6 @@ public class ActDAOHibernate implements ActDAO {
 			return null;
 			}
 		}
+
+
 }

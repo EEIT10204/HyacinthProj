@@ -398,11 +398,19 @@ p {
 		
 		$(document).ready(function() {
 
-		
-				$('body').on('click','#confirmBB',function(){
-	 				$("#form").submit();
-				})
-			
+// 			for(var i=0;i<20;i++){
+// 				alert(i)
+// 				$('body').on('click','#confirmBB',function(){
+// 	 				$("#form").submit();
+// 				})
+// 			}
+				
+			$('body').on('click','#confirmBB',function(){
+ 				$("#form").submit();
+			})
+			$('body').on('click','#confirmBB',function(){
+ 				$("#form").submit();
+			})
 			
 			//preview---------------------------
 				$("#preview").click(function(){

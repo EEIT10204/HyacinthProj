@@ -42,7 +42,8 @@ public class ActBean{
 	@Override
 	public String toString() {
 		return "ActBean [memberID=" + memberID + ", actSNum=" + actSNum + ", actID=" + actID + ", actPhoto="
-				+ actPhoto.length + ", actTitle=" + actTitle + ", actCity=" + actCity + ", actintro="
+//				+ actPhoto.length 
+				+ ", actTitle=" + actTitle + ", actCity=" + actCity + ", actintro="
 				+ actIntro + ", actCreateTimestamp=" + actCreateDate + ", actStartTime=" + actStartTime + ", actEndTime="
 				+ actEndTime + ", actJoinDeadLine=" + actJoinDeadLine + ", actStatus=" + actStatus
 				+ ", minParticipants=" + minParticipants + ", maxParticipants=" + maxParticipants + ", participantsNow="

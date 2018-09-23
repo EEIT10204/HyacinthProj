@@ -34,13 +34,12 @@ html, body {
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav ml-auto">
         <form class="form-inline" action="">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <select class="form-control" id="sel1" style="margin-right: 10px">
-    		<option value="memberName">Member</option>
-		    <option value="blogTitle">Blog</option>
-		    <option value="actTitle">Activity</option>
+          <input id="condition"class="form-control mr-sm-2" type="text" placeholder="Search">
+          <select id="searchType" class="form-control" id="sel1" style="margin-right: 10px">
+		    <option value="blog">Blog</option>
+		    <option value="act">Activity</option>
   		  </select>
-          <button class="btn btn-success" type="submit">Search(還未做)</button>
+          <button id="navSerach" class="btn btn-success" type="submit">搜尋</button>
         </form>
         
         <li class="nav-item dropdown">
@@ -232,6 +231,16 @@ html, body {
 		     });
 		   });
 </script>
+<script type="text/javascript">	
+$('#navSerach').click(function(event) {
+	event.preventDefault();
+	   var condition = $("#condition").val();
+	   var searchType =$('#searchType').val();
+	   if($('#searchType').val()=='blog'){
+	    	location.href="${pageContext.request.contextPath}/Blog/BlogIndex.controller?search="+condition; 
+	   		}
+	    });
+</script>
 <script type="text/javascript"> //修改NavBar按鈕功能
 	$( document ).ready(function() {
 		if('${user}'!=""){
@@ -252,7 +261,7 @@ html, body {
 						);
 						$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&page=notice'/>'  style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='noticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>"+data.count+"</span></a></li>");
 						$('#blogNav').html("<a class='dropdown-item' href='<c:url value='/Blog/BlogIndex.jsp'/>'>網誌首頁</a><a class='dropdown-item' href='<c:url value='/Blog/BlogNew.jsp'/>'>新增網誌</a>")
-						$('#ActNav').html("<a class='dropdown-item' href='<c:url value='/Act/ActMain.jsp'/>'>活動首頁</a><a class='dropdown-item' href='<c:url value='/Act/ActCreate.jsp'/>'>新增活動</a>")
+						$('#ActNav').html("<a class='dropdown-item' href='<c:url value='/Act/ActMain.jsp'/>'>活動首頁</a><a class='dropdown-item' href='${pageContext.request.contextPath}/before.act.controller'>新增活動</a>")
 						$('#spanNoticeCount1').text(data.count);				
 		    		}
 		    	}else if (data.status=="NoNewNoticeList"){
@@ -272,7 +281,7 @@ html, body {
 						);
 						$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&page=notice'/>'  style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='noticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>"+data.count+"</span></a></li>");
 						$('#blogNav').html("<a class='dropdown-item' href='<c:url value='/Blog/BlogIndex.jsp'/>'>網誌首頁</a><a class='dropdown-item' href='<c:url value='/Blog/BlogNew.jsp'/>'>新增網誌</a>")
-						$('#ActNav').html("<a class='dropdown-item' href='<c:url value='/Act/ActMain.jsp'/>'>活動首頁</a><a class='dropdown-item' href='<c:url value='/Act/ActCreate.jsp'/>'>新增活動</a>")
+						$('#ActNav').html("<a class='dropdown-item' href='<c:url value='/Act/ActMain.jsp'/>'>活動首頁</a><a class='dropdown-item' href='${pageContext.request.contextPath}/before.act.controller'>新增活動</a>")
 						$('#spanNoticeCount1').text(data.count);
 					}
 		    	}

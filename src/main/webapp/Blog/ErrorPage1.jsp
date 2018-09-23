@@ -10,6 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>page1</title>
+<%@ include file="/Index/NewHeader.jsp"%>
 <%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/CssJs/page1.css" /> --%>
 
 <link rel="stylesheet"
@@ -26,6 +27,9 @@
 * {
 	margin: 0;
 	padding: 0;
+}
+body{
+	padding-top:0;
 }
 /* ALL */
 .containerMY{
@@ -71,7 +75,7 @@ hr.style-two {
 }
 
 .nav-link:hover {
-	background-color: rgb(210, 205, 247);
+/* 	background-color: rgb(210, 205, 247); */
 }
 
 #carouselExampleIndicators {
@@ -695,5 +699,5 @@ hr {
 	</script>
 
 </body>
-
+<jsp:include page="../Index/Footer.jsp" />
 </html>
