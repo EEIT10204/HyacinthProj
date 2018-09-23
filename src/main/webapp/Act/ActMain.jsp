@@ -28,7 +28,7 @@
 #bodyContent{
 	width:100%;
 	height:790px;
-	border:1px solid red;
+/* 	border:1px solid red; */
 }
 .ulcolor{
 	background-color: rgb(85, 134, 180);
@@ -110,22 +110,23 @@
 }
 
 
+/*----Search用CSS-----*/
 #bodyContent{
-	height:850px;
-	border: 1px solid green;
+	height:830px;
+/* 	border: 1px solid green; */
 }
-#tabs{
-	height:820px;
+#tabs,#tabs-1,#tabs-2,#tabs-3{
+	height:790px;
+	padding:0;
 }
 #myPageList{
-	position: absolute;
-	top:850px;
-	left:40%;
- 	border: 1px solid red;
-/* 	margin: 0 auto !important; */
+/*  	border: 1px solid red; */
+ 	margin: 0 auto;
+ 	padding: 0px;
 }
-
-
+#myPageList li>a{
+	font-size: 24px;
+}
 </style>
 </head>
 
@@ -136,7 +137,7 @@ $( function() {
 </script>
 
 <body>
-<div id ="bodyContent">
+<div id ="bodyContent" class="container-fluid">
 <div id="tabs">
   <ul class="ulcolor">
     <li><a href="#tabs-1">Newest</a></li>
@@ -161,8 +162,8 @@ $( function() {
   </form>
   </ul>
 
-	<!--1-->
-   <div id="tabs-1"  style="height: 100%; border:1px;">
+   <!--1-->
+   <div id="tabs-1">
 		<div class="A1" id="Titleout1">
 			<div class="A2" id="ActT1">【捷運遊台北】四天三夜台北旅遊</div>
 			<div class="A3" id="ActP1"><img src=""></div>
@@ -285,27 +286,12 @@ $( function() {
 	</div>
 
 	<div id="tabs-3">
-	
-
+		<!-- search results generated here. -->
 	</div>
 	<div id="myPageList">
 	  <nav aria-label="Page navigation example">
 		  <ul class="pagination justify-content-center">
-		    <li class="page-item disabled">
-		    	<a class="page-link" href="#" tabindex="-1">Previous</a>
-		    </li>
-		    <li class="page-item">
-		    	<a class="page-link" href="#">1</a>
-		    </li>
-		    <li class="page-item">
-		    	<a class="page-link" href="#">2</a>
-		    </li>
-		    <li class="page-item">
-		    	<a class="page-link" href="#">3</a>
-		    </li>
-		    <li class="page-item">
-		    	<a class="page-link" href="#">Next</a>
-		    </li>
+		  	  <!-- Pagination generated here. -->
 		  </ul>
 		</nav>
 	</div>
@@ -318,50 +304,90 @@ $( function() {
  </script>
 
 <script>
+var actPath = "${pageContext.request.contextPath}/actdisplay.controller?actSNum=";
+
 var keyword = $('#actKeyword').val();
 var status = $('#actType :selected').val();
 var sorting = $('#actSorting :selected').val();
+
+var searchPage = 1;
+var pageNum = 0 ;
+
+$("#bodyContent img").addClass("img-fluid");
 
 $('#actSearch').click(function(event) {
 	event.preventDefault();
 	$("#actResult").css("display","block");
 	$("#actResult").click();
-	$("#tabs-3").empty();
+
+// 	$("#tabs-3").empty();
 // 	alert($('#actKeyword').val());
 // 	alert($('#actType :selected').val());
 // 	alert($('#actSorting :selected').val());
     keyword = $('#actKeyword').val();
     status = $('#actType :selected').val();
     sorting = $('#actSorting :selected').val();
+
 	showSearch(keyword,status,sorting,searchPage);
+
 });
 
-$('#myPageList').on("click",".myPage",function(){
-	alert("頁數筆數"+$(this).text());
-	showSearch(keyword,status,sorting,$(this).text());
+$('#myPageList').on("click",".myPage,.myPrev,.myNext",function(){
+	var nowClick=$(this).text();
+	if(nowClick=="上一頁"){
+		searchPage=parseInt(searchPage)-1;
+		showSearch(keyword,status,sorting,searchPage);
+	}else if(nowClick=="下一頁"){
+		searchPage=parseInt(searchPage)+1;
+		showSearch(keyword,status,sorting,searchPage);
+	}else{
+		showSearch(keyword,status,sorting,nowClick);
+		searchPage=nowClick;
+	}	
+	
+	//索引值第幾個li,因為Prev為索引值0，所以之後li的索引值皆等於頁數。
+	$('#myPageList li').removeClass("active");
+	$('#myPageList li:eq('+searchPage+')').addClass("active");
+// 	alert($('li:eq('+searchPage+')').text());
+// 	alert(searchPage+","+pageNum);
+	if(parseInt(searchPage)==1){
+// 		alert('leftEnd');
+		$('.myPrev').css("visibility","hidden");
+		$('.myNext').css("visibility","visible");
+	}else if(parseInt(searchPage)==pageNum){
+// 		alert('rightEnd');
+		$('.myNext').css("visibility","hidden");
+		$('.myPrev').css("visibility","visible");
+	}else{
+// 		alert('else');
+		$('.myPrev').css("visibility","visible");
+		$('.myNext').css("visibility","visible");
+	}
+	
+	
 });
 
-   var actPath = "${pageContext.request.contextPath}/actdisplay.controller?actSNum=";
-   var searchPage = 1;
-   var pageNum = 0 ;
    function showSearch(keyword,status,sorting,page){
 	 $("#tabs-3").empty();
 
 	 $.getJSON('${pageContext.request.contextPath}/showSelectResults.do',{"keyword":keyword,"status":status,"sorting":sorting,"page":page},function(datas){
-		alert("page="+page);
-		 // 		alert(JSON.stringify(datas[0]));
+// 		alert("page="+page);
+// 		alert(JSON.stringify(datas[0]));
 // 		alert(JSON.stringify(datas.length));
 // 		alert(JSON.stringify(Math.ceil(datas.length/6)));
 		if(page == 1){
 			$('#myPageList ul').empty();
 			var fragment0 = $(document.createDocumentFragment());
-			var liPrev = $('<li class="page-item"><a class="page-link" tabindex="-1">Previous</a></li>').addClass("myPrev");
+			var liPrev = $('<li class="page-item"><a class="page-link" tabindex="-1">上一頁</a></li>').addClass("myPrev").css("visibility","hidden");
 			fragment0.append(liPrev);
-			var liNext = $('<li class="page-item"><a class="page-link">Next</a></li>').addClass("myNext");
+			var liNext = $('<li class="page-item"><a class="page-link">下一頁</a></li>').addClass("myNext");
 			pageNum = Math.ceil(datas[0]/6);
 			for(var i=1;i<=pageNum;i++){
 				var aPage = $('<a></a>').addClass("page-link").text(i);
 				var liItem = $('<li></li>').addClass("page-item myPage").append(aPage);
+				if(i==1){
+					liItem.addClass("active");
+				}
 				fragment0.append(liItem);
 			}
 			fragment0.append(liNext);
