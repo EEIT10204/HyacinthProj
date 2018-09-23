@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <jsp:include page="../Index/NewHeader.jsp" />
+<title>${event.actTitle}</title>
 <html>
 <head>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -192,7 +193,7 @@ margin-top:10px;
             <img class="actCover" style=" padding-bottom: 30px;" src="data:image/png;base64,${event.actPhotoToBase64}" name="actPhoto" id="actPhoto" alt="event">
 <!-- -------------------------------------------------------------------------------------------- --> 
 
-            <div id="map"></div>
+            <div style="width: 400px; height: 400px" id="map"></div>
     <div class="card" style="width: 600px;">
    <div class="card-body" style="background-color: gray;">
     <h5 class="card-title"> ${event.actTitle}</h5>
@@ -201,7 +202,7 @@ margin-top:10px;
                     </div>
                 <div class="speakers">
                     <strong>舉辦人</strong>
-                    <span><a href="XXXXXXXXXXXXX">${member.memberName}</a></span>
+                    <span><a href="${pageContext.request.contextPath}/ProfilePageGet?memberID=${member.memberID}">${member.memberName}</a></span>
                 </div>
                 <div class="event_date">
                 <td>
@@ -215,9 +216,13 @@ margin-top:10px;
                 <div class="event_word">
                                                          費用:${event.budget}                        
                 </div>
+                  <div class="event_word">
+                                                         多少人參加囉:${event.participantsNow}位
+            </div>
                 <div class="event_word">
                         ${event.actIntro}
             </div>
+          
             </div>
             
             </p>
@@ -226,7 +231,7 @@ margin-top:10px;
 </div>
 <!-- -------------------------------------------------------------------------------------------- -->
 <div class="collapse" id="collapseExample">
-  <div class="card card-body" style="padding-right: 5rem";>
+  <div class="card card-body" style="padding-right: 5rem">
       <table>
 	  <c:forEach var ="trip" items="${ trip }" varStatus="status">
 	  <tr><td>${trip.startTime} ~ ${trip.endTime} </td><td>${beanbean[status.count-1].viewPointName}</td></tr>
@@ -244,12 +249,7 @@ margin-top:10px;
 		<button type="button" class="btn btn-warning" id="invite" value="invite">Invite</button>
 		<input type="hidden" id= "num" value="${useractSNum}">
 		<input type="hidden" id= "mem" value="${userid}">
-		
-
-		
-	
- 
-     </div>
+	</div>
 		<div id = "friends"></div>
 	</div>
 	
@@ -331,7 +331,7 @@ $( document ).ready(function() {
 	    	$('#LikeOrDisLike').text("Like").attr("value","Like");
 	  }else if (this.value == 'none'){
 		 var process = 'none';
-	    	$('#allButton').html("<h3>please login !<h3>");
+	    	$('#LikeOrDisLike').html("<h3>please login !<h3>");
 	 }
 	 
     $.ajax({
@@ -363,10 +363,14 @@ $( document ).ready(function() {
 		 var process = true;
 	    	$('#AttendOrNot').text("disAttend").attr("value","disAttend");
 	 }
-	 else{
+	 else if (this.value == 'disLike'){
 		 var process = false;
 	    	$('#AttendOrNot').text("Attend").attr("value","Attend");
+	  } else if (this.value == 'none'){
+		 var process = 'none';
+	    	$('#AttendOrNot').html("<h3>please login !<h3>");
 	 }
+	 
 	 
     $.ajax({
 	    type : "post",
@@ -468,9 +472,14 @@ $( document ).ready(function() {
 		    contentType: "application/json; charset=utf-8",
 		    dataType: "json",
 		    success: function (data) {
-		    	 for(var i =0; i< data.length; i++){
+		    	$("#friends").html('<div></div>');
+		    if(data.length==0){
+		    	$("#friends").append("<div>你沒有朋友不要再按了</h3>");
+		    }else{
+		    	for(var i =0; i< data.length; i++){
 		    	  $("#friends").append( data[i].memberName +' <input type="button" value = "sendInvite" onclick="function()"><br>' );    
 	              }
+		    }
 		    },
 		    error: function (response) {
 	            alert("error");

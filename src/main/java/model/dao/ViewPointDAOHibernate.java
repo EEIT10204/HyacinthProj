@@ -22,32 +22,6 @@ import model.ViewPointDAO;
 @Repository
 public class ViewPointDAOHibernate implements ViewPointDAO {
 
-	public static void main(String[] args) {
-		ApplicationContext context = new AnnotationConfigApplicationContext(SpringJavaConfiguration.class);
-		SessionFactory sessionFactory = (SessionFactory) context.getBean("sessionFactory");
-		sessionFactory.getCurrentSession().beginTransaction();
-		
-		ViewPointDAO vDAO = (ViewPointDAO)context.getBean("viewPointDAOHibernate");
-
-		ViewPointBean vBean1 = new ViewPointBean();
-		
-//		vBean1 = vDAO.select(1);
-//		List<ViewPointBean> vBean2 = vDAO.select();
-		//----- Insert Test----
-		ViewPointBean vBean3 = new ViewPointBean();
-		
-		vBean3.setViewPointName("test name");
-		vBean3.setViewPointAddress("test address");
-		vBean3.setViewPointType("food");
-		vBean3.setViewPointInfo("test info");
-		
-		vDAO.insert(vBean3);
-		
-		System.out.println("single select: " + vBean1.toString());
-//		System.out.println("select all: " + vBean2.size());
-		
-	}
-	
 	@Autowired
 	private SessionFactory sessionFactory;
 	
@@ -90,7 +64,6 @@ public class ViewPointDAOHibernate implements ViewPointDAO {
 	    for (String str : mapKey)
         {
             hqy.setParameter( str, params.get(str));
-//            System.out.println("array for: "+ str + "  map: " + params.get(str));
         }
 		
 	    List<ViewPointBean> result = hqy.getResultList();
@@ -121,8 +94,7 @@ public class ViewPointDAOHibernate implements ViewPointDAO {
 	@Override
 	public ViewPointBean update(ViewPointBean bean) {
 		if(bean != null) {
-			this.getSession().saveOrUpdate(bean);
-			System.out.println(bean.toString());
+			this.getSession().merge(bean);
 			return bean;
 		}
 		return null;
@@ -130,14 +102,11 @@ public class ViewPointDAOHibernate implements ViewPointDAO {
 
 	@Override
 	public ViewPointBean delete(int viewPointID) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	
 	public ViewPointBean select(int viewPointID) {
 		return this.getSession().get(ViewPointBean.class, viewPointID);
 	}
-
-
 
 }

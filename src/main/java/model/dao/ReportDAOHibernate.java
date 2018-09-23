@@ -61,7 +61,6 @@ List temp = this.getSession().createNativeQuery("select R.caseID,R.memberID,R.re
             Object rows[] = (Object[])it.next();
 
             ReportBean tempBean = new ReportBean();
-            System.out.println("DAO caseID: " + (String)rows[0]);
             tempBean.setCaseID((String)rows[0]);
             tempBean.setMemberID((int)rows[1]);
             tempBean.setReferID((String)rows[2]);

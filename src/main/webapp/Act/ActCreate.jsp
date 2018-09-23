@@ -120,16 +120,14 @@
 	 <tr><input type="hidden" name="actSNum" value="${newEvent.actSNum}" id="actSNum" ></tr>
 	 <tr><input type="hidden" name="memberID" value="${newEvent.memberID}" id="memberID"></tr>
 	  <tr><input type="hidden" name="actCreateDate" value="${newEvent.actCreateDate}" id="memberID"></tr>
-	 <tr><input type="hidden" name="actView" value="3" id="actView"></tr>
+	 <tr><input type="hidden" name="actView" value="0" id="actView"></tr>
 	 <tr><input type="hidden" name="actVisibility" value="1" id="actVisibility"></tr>
-	 <tr><input type="hidden" name="participantsNow" value="2" id="participantsNow"></tr>
-
-
+	 <tr><input type="hidden" name="participantsNow" value="0" id="participantsNow"></tr>
 <!-- 	 hidden  -->
 	     <tr>
 		     <td>活動預覽圖(揪團封面):</td>
-             <td><input type="file" name="actPhoto" id="" value="${param.homepage}"></td>
-             <td>${errorMsgs["homepage"]}</td>
+             <td><input type="file" name="actPhoto" id="actPhoto"  accept="image/*" class="text-center center-block file-upload"></td>
+             
 		</tr>
 		<tr>
 			<td>活動主題:</td>
@@ -139,8 +137,40 @@
 		
 		<tr>
 			<td>選取城市:</td>
-			<td><input type="text" name="actCity" value="${param.actCity}"></td>
-			<td>${errors.actCity}</td>
+			
+			<td><select id ="factCity"  name="actCity" value="${param.actCity}">
+  				<option></option>
+  				<option value="台北">台北</option>
+  				<option value="台中">台中</option>
+  				<option value="宜蘭">宜蘭</option>
+ 				<option value="中壢">中壢</option>
+ 			    <option value="拉斯維加斯">拉斯維加斯</option>
+ 				<option value="大阪">大阪</option>
+ 				<option value="大邱">大邱</option>
+ 				<option value="仁川">仁川</option>
+ 				<option value="北海道">北海道</option>
+ 				<option value="克隆">克隆</option>
+ 				<option value="沖繩">沖繩</option>
+ 				<option value="京都">京都</option>
+ 				<option value="拉斯維加斯">拉斯維加斯</option>
+ 				<option value="東京">東京</option>
+ 				<option value="法蘭克福">法蘭克福</option>
+ 				<option value="花蓮">花蓮</option>
+ 				<option value="柏林">柏林</option>
+ 				<option value="洛杉磯">洛杉磯</option>
+ 				<option value="首爾">首爾</option>
+ 				<option value="紐約">紐約</option>
+ 				<option value="釜山">釜山</option>
+ 				<option value="漢堡">漢堡</option>
+ 				<option value="高雄">高雄</option>
+ 				<option value="釜山">釜山</option>
+ 				<option value="廣島">廣島</option>
+ 				<option value="慕尼黑">慕尼黑</option>
+ 				<option value="濟州島">濟州島</option>
+ 				<option value="邁阿密">邁阿密</option>
+ 				<option value="舊金山">舊金山</option>
+ 				
+		    </select></td>
 		</tr>
 		<tr>
 			<td>活動開始日期:</td>
@@ -151,7 +181,7 @@
 
 		<tr>
 		     <td>活動結束日期:</td>
-             <td><input type="datetime-local" name="EndTime" id="actEndTime" value="${param.actEndTime}"></td>
+             <td><input type="datetime-local" name="EndTime" id="actEndTime" value="${param.actEndTime}" onblur="checkTime()"></td>
              <td>${errors.actEndTime}</td>
 		</tr>
 		<tr>
@@ -223,8 +253,9 @@
 		</select>
 		 <input type="button" id="search" class="btn btn-primary" value="search" >
 		 <input type="button" class="btn btn-warning" id="btn" value="addItem"> 
-		 <div style="height: 100px; display: none" id="sortable1" class="connectedSortable" ></div>
 		 <div id="select"><div>
+		 <div style="height: 100px; display: none" id="sortable1" class="connectedSortable" ></div>
+		 
 		     
 </p>
    
@@ -238,7 +269,24 @@
 	    </div>
 	     
   </div>
+<script type="text/javascript">
 
+var startTime = document.getElementById("actStartTime").value;
+var endTime = document.getElementById("actEndTime").value;
+function checkTime(){              
+    if(startTime.length>0 && endTime.length>0){     
+        var startTmp=startTime.split("-");  
+        var endTmp=endTime.split("-");  
+        var sd=new Date(startTmp[0],startTmp[1],startTmp[2]);  
+        var ed=new Date(endTmp[0],endTmp[1],endTmp[2]);  
+        if(sd.getTime()>ed.getTime()){   
+            alert("開始日期不能大於結束日期");     
+            return false;     
+        }     
+    }     
+    return true;     
+}    
+</script>
          <script>
 //          connection DataBase by Ajax
          $("#search").on('click',function () {
@@ -258,8 +306,9 @@
         	    contentType: "application/json; charset=utf-8",
         	    dataType: "json",
         	    success: function (data) {
+        	    	$("#sortable1").html('<div></div>');
                          for(var i =0; i< data.length; i++){
-                     $("#sortable1").append('<li class="ui-state-default" id="'+ data[i].viewPointID + '" view ="'+ data[i].viewPointAddress + '">' + data[i].viewPointName + '</li>');                      
+                     $("#sortable1").append('<li style="list-style:none" class="ui-state-default" id="'+ data[i].viewPointID + '" view ="'+ data[i].viewPointAddress + '">' + data[i].viewPointName + '</li>');                      
                          }   
                       },
         	    error: function (response) {
@@ -320,6 +369,7 @@
     var testId =1;
     // add draggable DIV 
     $("#btn").on('click',function () {
+    	 document.getElementById('select').style.display='';
         $("#select").append('<div style=" border:solid black 1px;" id="select'+ testId +'" class="connectedSortable" ><input type="datetime-local" id="startTime'+ testId +'"><input type="datetime-local" id="endTime'+ testId +'"><input type="button"  class="btn btn-outline-danger"  value="del" onclick="deltest('+testId+')"></div>'
         		);
         testId++;

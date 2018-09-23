@@ -100,8 +100,14 @@ public class ActDisplayController {
 		model.addAttribute("useractSNum",actSNum);
 		
 		}
+		
+		   
 //		
         ActBean abean = actDAOHibernate.selectByPK(actSNum);
+        
+//        Object[] who = memberActDAOHibernate.findFollowsAttenders(abean.getActSNum());
+//        System.out.println("who=" + who.toString());
+        
 	    List<TripBean> trip = tripDAOHibernate.select(abean.getActSNum());		
          
      

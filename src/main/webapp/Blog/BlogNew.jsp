@@ -67,6 +67,10 @@ h4{
 	margin-left: -550px;
 	/* 760 除以 -2 */
 	width: 1100px;
+	background: #C9CCD3;
+	background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+	background-blend-mode: lighten;
+	border-radius: 50px;
 }
 
 .title-text span {
@@ -139,6 +143,9 @@ p {
 }
 .divAS1 {
             border: 15px groove rgb(0, 179, 149);
+            background: #C9CCD3;
+ background-image: linear-gradient(-180deg, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%);
+ background-blend-mode: lighten;
 /*             margin:auto; */
         }
 .divAS12 {
@@ -483,7 +490,7 @@ p {
 	                        html: "按下確定後資料會自動存檔",
 	                        type: "question",
 	                        showCancelButton: true,//顯示取消按鈕
-	                        confirmButtonText:"<span id='confirmB'>回至首頁</span>"
+	                        confirmButtonText:"<span id='confirmB'>確定</span>"
 	                    }).then(
 	                        function (result) {
 	                            if (result.value) {
@@ -494,8 +501,9 @@ p {
 					                    title: "完成!",
 					                    html: "資料已經送出將回到首頁",
 					                    type: "success",
-						    			confirmButtonText:"<span id='confirmBB'>回至首頁</span>"
+						    			confirmButtonText:"<span id='confirmBB' class='btn btn-outline-dark' style='size:110%;'>回至首頁</span>"
 					                })
+					                $('.swal2-styled').css("padding","0");
 	                            } else if (result.dismiss === "cancel")
 	                            {
 	                                 //使用者按下「取消」要做的事

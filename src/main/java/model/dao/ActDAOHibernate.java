@@ -41,7 +41,7 @@ public class ActDAOHibernate implements ActDAO {
 	public ActBean insert(ActBean bean) {
 		System.out.println("DAO insert access");
 		if(bean != null) {
-			this.getSession().save(bean);
+			 this.getSession().save(bean);
 		}
 		return null;
 	}

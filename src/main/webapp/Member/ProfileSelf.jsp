@@ -80,7 +80,7 @@
 					</div>
 					<div class="modal" id="listModalCenter" tabindex="-1" role="dialog" aria-labelledby="listModalCenterTitle" aria-hidden="true">
 				        <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
-				            <div class="modal-content">
+				            <div class="modal-content" style="border-radius: 15px;">
 				                <div class="modal-header">
 				                    <h5 class="modal-title" id="listModalLongTitle">Modal List</h5>
 				                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">

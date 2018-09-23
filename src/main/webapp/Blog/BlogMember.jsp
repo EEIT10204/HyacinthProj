@@ -29,7 +29,7 @@
 <%-- <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.js"></script> --%>
 <%-- 	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script> --%>
 <script type="text/javascript"
-	src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b8e2eafee0a0c7c"></script>	
+	src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b8e2eafee0a0c7c"></script>
 <!-- 務必使用 -->
 <script src="${pageContext.request.contextPath}/js/blogInsertMessage.js"></script>
 <script src="${pageContext.request.contextPath}/js/blogUpdateMessage.js"></script>
@@ -49,6 +49,10 @@ body {
 
 img {
 	border-radius: 10px;
+}
+.containerMY{
+	border-radius: 50px;
+	background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
 /* star */
 	.ccc{
@@ -127,7 +131,7 @@ a {
 	transition-duration: 0.8s;
 	transition-delay: 0s;
 	transition-timing-function: linear;
-	color: rgb(0, 206, 221);
+	color: rgb(0, 90, 126);
 }
 
 .a11 {
@@ -160,7 +164,7 @@ a {
 	transition-duration: 0.8s;
 	transition-delay: 0s;
 	transition-timing-function: linear;
-	color: rgb(13, 145, 155);
+	color: rgb(0, 90, 126);
 }
 
 img:hover {
@@ -462,6 +466,7 @@ article {
 
 .divAS1 {
 	border: 15px outset rgb(0, 179, 149);
+/* 	background-image: linear-gradient(to top, #feada6 0%, #f5efef 100%); */
 	border-bottom-right-radius: 50px;
 	border-bottom-left-radius: 50px;
 /* 	width: 95%; */
@@ -670,6 +675,7 @@ article {
 }
 
 .borderA {
+	background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
 	border: 15px inset rgb(0, 179, 149);
 	border-top-left-radius: 50px;
 	border-top-right-radius: 50px;
@@ -851,16 +857,19 @@ hr {
 /* 留言板 */
 /* ActComment */
 	.form-group textarea{
-      width: 700px;
+      width: 600px;
       height: 150px;
-      margin-left: 20px;
+      margin-left: 35px;
   
     }
     .messOut{
-      border: 1px solid rgb(119, 119, 119) ;
-      width: 800px;
+
+      border: 15px groove rgb(0, 179, 149);
+      width: 700px;
       margin: auto;
-      margin-top: 40px;
+      margin-top: 50px;
+      border-radius: 10px;
+
     }
     .form-control{
       width: 450px;
@@ -902,9 +911,14 @@ hr {
     .buttonT{
       /* border: 1px solid rgb(234, 0, 255); */
     }
-    .btn-primary{
-/*     margin-left: 540px; */
+    .btn-primaryMY{
+/*    		margin-right: 200px; */
 /*     margin-bottom: 20px; */
+		position: relative;
+        right: 80px;
+/*         background-color:rgb(120, 120, 120);  */
+         margin-left: 650px;  
+         margin-bottom: 20px; 
     }
     .selectUser{
       /* border: 1px solid red; */
@@ -937,12 +951,11 @@ hr {
 /*   border:1px solid red; */
   }
     
-    
       .flip{
   margin:0px;
 padding:5px;
 text-align:center;
-background:#e5eecc;
+background:rgb(0, 179, 149);
 /* border:solid 1px #c3c3c3; */
 margin-top:10px;
 }
@@ -994,7 +1007,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC1" href="#"><img id="navA1" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/taipei1.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/taipei1.jpg" --%>
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
@@ -1005,7 +1018,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC2" href="#"><img id="navA2" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/taipei1.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/taipei1.jpg" --%>
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
@@ -1015,7 +1028,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC3" href="#"><img id="navA3" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/taipei3.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/taipei3.jpg" --%>
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
@@ -1025,7 +1038,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC4" href="#"><img id="navA4" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/taipei4.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/taipei4.jpg" --%>
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
@@ -1075,7 +1088,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC1" href="#"><img id="navA5" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/japan1.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan1.jpg" --%>
 									alt="japan1">
 							</div>
 							<div class="div4">
@@ -1085,7 +1098,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC2" href="#"><img id="navA6" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/japan2.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan2.jpg" --%>
 									alt="japan2">
 							</div>
 							<div class="div4">
@@ -1095,7 +1108,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC3" href="#"><img id="navA7" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/japan3.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan3.jpg" --%>
 									alt="japan3">
 							</div>
 							<div class="div4">
@@ -1105,7 +1118,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="urlC4" class="div3">
 								<a href="#"><img id="navA8" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/japan4.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan4.jpg" --%>
 									alt="japan4">
 							</div>
 							<div class="div4">
@@ -1154,7 +1167,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC1" href="#"><img id="navA9" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/korea1.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea1.jpg" --%>
 									alt="korea1">
 							</div>
 							<div class="div4">
@@ -1164,7 +1177,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC2" href="#"><img id="navA10" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/korea2.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea2.jpg" --%>
 									alt="korea2">
 							</div>
 							<div class="div4">
@@ -1174,7 +1187,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC3" href="#"><img id="navA11" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/korea3.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea3.jpg" --%>
 									alt="korea3">
 							</div>
 							<div class="div4">
@@ -1184,7 +1197,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC4" href="#"><img id="navA12" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/korea4.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea4.jpg" --%>
 									alt="korea4">
 							</div>
 							<div class="div4">
@@ -1233,7 +1246,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC1" href="#"><img id="navA13" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/us1.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/us1.jpg" --%>
 									alt="us1">
 							</div>
 							<div class="div4">
@@ -1243,7 +1256,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC2" href="#"><img id="navA14" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/us2.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/us2.jpg" --%>
 									alt="us2">
 							</div>
 							<div class="div4">
@@ -1253,7 +1266,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC3" href="#"><img id="navA15" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/us3.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/us3.jpg" --%>
 									alt="us3">
 							</div>
 							<div class="div4">
@@ -1263,7 +1276,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC4" href="#"><img id="navA16" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/us4.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/us4.jpg" --%>
 									alt="us4">
 							</div>
 							<div class="div4">
@@ -1311,7 +1324,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC1" href="#"><img id="navA17" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/germany1.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany1.jpg" --%>
 									alt="germany1">
 							</div>
 							<div class="div4">
@@ -1321,7 +1334,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="url2" href="#"><img id="navA18" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/germany2.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany2.jpg" --%>
 									alt="germany2">
 							</div>
 							<div class="div4">
@@ -1331,7 +1344,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC3" href="#"><img id="navA19" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/germany3.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany3.jpg" --%>
 									alt="germany3">
 							</div>
 							<div class="div4">
@@ -1341,7 +1354,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC4" href="#"><img id="navA20" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/germany4.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany4.jpg" --%>
 									alt="germany4">
 							</div>
 							<div class="div4">
@@ -1387,7 +1400,7 @@ margin-top:10px;
 		</ul>
 	</nav>
 
-	<div class="container">
+	<div class="container containerMY">
 		<div id="d4">
 			<article class="col-sm-8">
 
@@ -1403,7 +1416,7 @@ margin-top:10px;
 								</div>
 								<div class="divblog2230 hiddeninfo1">
 								<a id="" href="#"> <i class="edit fas fa-bug fa-3x"
-									style="color: green"></i> <!-- <i class="edit fas fa-pen-square fa-3x" ></i> -->
+									style="color: green" data-toggle="modal" data-target="#reportModal"></i> <!-- <i class="edit fas fa-pen-square fa-3x" ></i> -->
 								</a>
 								</div>
 							
@@ -1431,7 +1444,7 @@ margin-top:10px;
 					<div class="borderA">
 						<div class="divblog21">
 							<a href="#" id="changeMemberPichref">  <img id="changeMemberPic" class="divblog210"
-								src="${pageContext.request.contextPath}/Images/Blog/member1.jpg"
+<%-- 								src="${pageContext.request.contextPath}/Images/Blog/member1.jpg" --%>
 								alt="member">
 							</a>
 						</div>
@@ -1465,7 +1478,9 @@ margin-top:10px;
 						</div>
 
 
-	
+
+
+
 						<div class="divblog22333" style="display: none" id="hide2">
 							登入即可評分</div>
 
@@ -1519,8 +1534,8 @@ margin-top:10px;
 						<span id="changeBlogTitle" class="a3">【香港】2018香港迪士尼終極攻略，交通、門票、事前準備、攻園須知整理，照著這篇玩就對了！</span>
 					</div>
 					<div class="divAS11">
-						<a href="#"> <img id="changeBlogPic" class="divAS11"
-							src="${pageContext.request.contextPath}/Images/Blog/articla1.jpg"
+						<a > <img id="changeBlogPic" class="divAS11"
+<%-- 							src="${pageContext.request.contextPath}/Images/Blog/articla1.jpg" --%>
 							alt="article">
 						</a>
 					</div>
@@ -1568,7 +1583,8 @@ margin-top:10px;
 						</span>
 					</h3>
 				</div>
-<!-- Report Model Start -->
+				
+				<!-- Report Model Start -->
   <div class="modal fade" id="reportModal" role="dialog">
     <div class="modal-dialog">
     
@@ -1587,7 +1603,7 @@ margin-top:10px;
        		</form>
         </div>
         <div class="modal-footer">
-        	<button onclick="sendReport()" type="button" class="btn btn-primary" data-dismiss="modal" style="color:white;">送出</button>
+        	<button onclick="sendReport()" type="button" class="btn btn-primary " data-dismiss="modal" style="color:white;">送出</button>
           <button type="button" class="btn btn-primary" data-dismiss="modal" style="color:white;">取消</button>
         </div>
       </div>   
@@ -1613,8 +1629,7 @@ margin-top:10px;
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="commentContent"></textarea>
                   </div>
                   <div class="buttonT">
-                      <button type="submit" class="btn-primary" style="background-color:rgb(120, 120, 120); 
-                      margin-left: 650px; margin-bottom: 20px; id="sendbuttom";/">Send out</button>
+                      <button type="submit" class="btn btn-info btn-primaryMY" id="sendbuttom";/">Send out</button>
 <!--                           <input type="hidden" name="commentContent" value="1"> -->
                           <input type="hidden" name="memberID" value="${user.memberID}">
                           <input type="hidden" name="blogSNum" value="${param.blogSNum}">
@@ -1929,7 +1944,10 @@ margin-top:10px;
 // 					 $.each(json,function(i,product){
 // 						 alert(product);
 						$('#likepoint').html(json[0]);
-						$('#starpoint').html(json[1]);						
+						if(json[1]!=null){
+							$('#starpoint').html(json[1].toFixed(1));	
+						}
+											
 						if(json[1]==null){
 							$('#starpoint').text("尚未有人評分");
 						}
@@ -1946,8 +1964,6 @@ margin-top:10px;
 					}
 				 })
 				 
-
-			 
 					 //STAR--------------------------------------------------------------
 
 		            var ratingOptions = {
@@ -1976,11 +1992,12 @@ margin-top:10px;
 				            $.getJSON('${pageContext.request.contextPath}/Blog/MemberBlogScoreUpdate.controller',{'memberID':member,'blogSNum':URL,'score':score},function(json){
 // 								 alert(JSON.stringify(json));
 // 								 alert("評分成功");
-								 
+								 $('#rating-stars-value').attr("placeholder","您給了("+$('#rating-stars-value').val()+")分");
 // 								 alert("評分成功");
 								 $.getJSON('${pageContext.request.contextPath}/Blog/MemberBloglike.controller',{'blogSNum':URL},function(json){
+									 
 									 $.each(json,function(i,product){
-// 										$('#rating-stars-value').attr("placeholder","您給了("+json[1]+")分");
+// 										 alert($('#rating-stars-value').attr("placeholder"));
 										$('#starpoint').html(json[1]);
 									 })
 								 })
@@ -2079,18 +2096,20 @@ margin-top:10px;
 							 $('#changeCityContent').html('${BeanSNum[0][0].blogContext}');
 							 $('#reportMember').val(member);
 							
+							
 							//NAV 	
 							var nav = ["台北","台中","台南","高雄","東京","大阪","沖繩","北海道","首爾","釜山","大邱","濟州島","紐約","洛杉磯","舊金山","邁阿密","柏林","漢堡","慕尼黑","法蘭克福"]; 
 							var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
 							var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
 							 $.getJSON('${pageContext.request.contextPath}/Blog/BlogIndexNav.controller',function(jsonNav){
 									 $.each(jsonNav,function(idx,navProduct){
+// 										 alert(navProduct.blogCity);
 										 for(var i = 1;i<=20;i++){
 										 if(navProduct.blogCity==nav[i-1]){
-											    $('.urlC'+(i)).attr("href",path+navProduct.blogSNum);
+// 											    $('.urlC'+(i)).attr("href",path+navProduct.blogSNum);
 												$('#navA'+(i)).attr("src","data:image/png;base64,"+navProduct.blogCover);
-												$('#navB'+(i)).html(navProduct.blogTitle);
-												$('.link'+(i)).attr("href",path2+navProduct.blogCity);
+// 												$('#navB'+(i)).html(navProduct.blogTitle);
+// 												$('.link'+(i)).attr("href",path2+navProduct.blogCity);
 										 }
 										 }
 										
@@ -2243,12 +2262,7 @@ margin-top:10px;
 				         $(".hiddeninfo1").css("display","none");
 				         $(".hiddeninfo2").css("display","block");
 				         </c:if>
-				         
-				         <c:if test="${!empty user && user.memberID == BeanSNum[0][2].memberID}">
-// 				         alert('owner = ' + ${user.memberID});
-				         $(".hiddeninfo1").css("display","none");
-				         $(".hiddeninfo2").css("display","block");
-				         </c:if>
+				        
 				         
 		 })  //ready end
 	</script>
@@ -2326,8 +2340,6 @@ margin-top:10px;
 				},				
 		});	
 	}
-	
-	
 	</script>
 
 </body>

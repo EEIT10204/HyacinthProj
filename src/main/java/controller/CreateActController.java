@@ -32,6 +32,7 @@ import model.MemberBean;
 import model.TripBean;
 import model.ViewPointBean;
 import model.dao.ActDAOHibernate;
+import model.dao.MemberActDAOHibernate;
 import model.dao.TripDAOHibernate;
 import model.dao.ViewPointDAOHibernate;
 @Controller
@@ -43,14 +44,41 @@ public class CreateActController {
 	private TripDAOHibernate tripDAOHibernate;
 	@Autowired
 	private ViewPointDAOHibernate  vPointDAOHibernate;
+	@Autowired
+	private MemberActDAOHibernate memberActDAOHibernate;
+	
+	@RequestMapping(path = { "/before.act.controller" })
+	public String method(String actCreate, Model model, @SessionAttribute(name="user", required=false)MemberBean memberBean)
+			throws ParseException, IOException {
+		
+	
+		
+		SimpleDateFormat nowdate = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+        nowdate.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+        actCreate = nowdate.format(new java.util.Date()); 
+	
+		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		 Timestamp Date1 = new java.sql.Timestamp(sdf1.parse(actCreate).getTime());
+		
+ 
+		 ActBean abean = new ActBean();
+		 abean.setMemberID(memberBean.getMemberID());
+		 abean.setActCreateDate(Date1);		 
+		
+		 actDAOHibernate.insert(abean);	model.addAttribute("newEvent", abean);
+		
+		return "act.create";
+	}
 	 
 
 	@RequestMapping(
 			path={"/create.act.controller"}
 			)	
-	public String method( String actSTime, String EndTime, String DeadLine, Model model, ActBean abean, 
+	public String method(byte[] actPhoto, String actSTime, String EndTime, String DeadLine, Model model, ActBean abean, 
 			TripBean tbean, BindingResult bindingResult, @SessionAttribute(name="user") MemberBean memberBean) throws ParseException, IOException {
-
+		
+		System.out.println("actPhoto=" + actPhoto.toString());
+		model.addAttribute("member",memberBean);
  
 	
 		ActBean actbean = actDAOHibernate.selectBymemberIDandcreateDate(abean);
@@ -84,8 +112,9 @@ public class CreateActController {
         	actbean.setActStatus("prepared");
         }
 //		
+      
         
-        
+//        actbean.setParticipantsNow();
         actbean.setActCity(abean.getActCity());
         actbean.setActIntro(abean.getActIntro());
         actbean.setActPhoto(abean.getActPhoto());
@@ -102,7 +131,9 @@ public class CreateActController {
         actbean.setActJoinDeadLine(Date3);
         actbean.setActDuration(dur);
 	     
-	        ActBean result = actDAOHibernate.insert(actbean);
+	    actDAOHibernate.insert(actbean);
+	    
+	    ActBean result = actDAOHibernate.selectByActID(actbean);
 			System.out.println("result="+result);
 			//TripBean tbean
 
@@ -133,7 +164,7 @@ public class CreateActController {
 			model.addAttribute("trip", trip );
 			
 					
-			return "act.display";
+			return "act.display"; 
 			
 
 	}

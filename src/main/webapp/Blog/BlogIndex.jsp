@@ -28,8 +28,10 @@ body{
 	padding-top:0;
 }
 /* ALL */
-.container{
+.containerMY{
 	padding-top:20px;
+	border-radius: 50px;
+	background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
 }
 img{
 border-radius: 10px;
@@ -79,7 +81,7 @@ a {
 	transition-duration: 0.8s;
 	transition-delay: 0s;
 	transition-timing-function: linear;
-	color: rgb(48, 43, 43);
+	color: rgb(0, 90, 126);
 }
 .a1 {
 	font-family: 'Noto Sans TC';
@@ -526,7 +528,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC1" href="#"><img id="navA1" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/taipei1.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/taipei1.jpg" --%>
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
@@ -536,7 +538,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a  class="urlC2" href="#"><img id="navA2" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/taipei1.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/taipei1.jpg" --%>
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
@@ -546,7 +548,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC3" href="#"><img id="navA3" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/taipei3.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/taipei3.jpg" --%>
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
@@ -556,7 +558,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC4" href="#"><img id="navA4" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/taipei4.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/taipei4.jpg" --%>
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
@@ -602,7 +604,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC1" href="#"><img id="navA5" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/japan1.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan1.jpg" --%>
 									alt="japan1">
 							</div>
 							<div class="div4">
@@ -612,7 +614,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC2" href="#"><img id="navA6" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/japan2.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan2.jpg" --%>
 									alt="japan2">
 							</div>
 							<div class="div4">
@@ -622,7 +624,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC3" href="#"><img id="navA7" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/japan3.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan3.jpg" --%>
 									alt="japan3">
 							</div>
 							<div class="div4">
@@ -632,7 +634,7 @@ hr {
 						<div class="div2">
 							<div class="urlC4" class="div3">
 								<a href="#"><img id="navA8" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/japan4.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan4.jpg" --%>
 									alt="japan4">
 							</div>
 							<div class="div4">
@@ -677,7 +679,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC1" href="#"><img id="navA9" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/korea1.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea1.jpg" --%>
 									alt="korea1">
 							</div>
 							<div class="div4">
@@ -687,7 +689,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC2" href="#"><img id="navA10" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/korea2.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea2.jpg" --%>
 									alt="korea2">
 							</div>
 							<div class="div4">
@@ -697,7 +699,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC3" href="#"><img id="navA11" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/korea3.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea3.jpg" --%>
 									alt="korea3">
 							</div>
 							<div class="div4">
@@ -707,7 +709,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC4" href="#"><img id="navA12" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/korea4.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea4.jpg" --%>
 									alt="korea4">
 							</div>
 							<div class="div4">
@@ -752,7 +754,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC1" href="#"><img id="navA13" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/us1.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/us1.jpg" --%>
 									alt="us1">
 							</div>
 							<div class="div4">
@@ -762,7 +764,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a  class="urlC2" href="#"><img id="navA14" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/us2.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/us2.jpg" --%>
 									alt="us2">
 							</div>
 							<div class="div4">
@@ -772,7 +774,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC3" href="#"><img id="navA15" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/us3.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/us3.jpg" --%>
 									alt="us3">
 							</div>
 							<div class="div4">
@@ -782,7 +784,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC4" href="#"><img id="navA16" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/us4.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/us4.jpg" --%>
 									alt="us4">
 							</div>
 							<div class="div4">
@@ -826,7 +828,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC1" href="#"><img id="navA17" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/germany1.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany1.jpg" --%>
 									alt="germany1">
 							</div>
 							<div class="div4">
@@ -836,7 +838,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC2" href="#"><img id="navA18" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/germany2.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany2.jpg" --%>
 									alt="germany2">
 							</div>
 							<div class="div4">
@@ -846,7 +848,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC3" href="#"><img id="navA19" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/germany3.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany3.jpg" --%>
 									alt="germany3">
 							</div>
 							<div class="div4">
@@ -856,7 +858,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC4" href="#"><img id="navA20" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/germany4.jpg"
+<%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany4.jpg" --%>
 									alt="germany4">
 							</div>
 							<div class="div4">
@@ -898,7 +900,7 @@ hr {
 		</ul>
 	</nav>
 
-<div class="container">
+<div class="container containerMY">
 	<div id="d4">
 		<article class="col-sm-8">
 			<div class="hot">
@@ -1158,7 +1160,7 @@ hr {
 							<div class="divT3">
 								<div class="divT31">
 									<a class="urlA1" href="#"> <img id="changeAsidePicDate1" class="divT31"
-										src="${pageContext.request.contextPath}/Images/Blog/asideP1.jpg"
+<%-- 										src="${pageContext.request.contextPath}/Images/Blog/asideP1.jpg" --%>
 										alt="taipei1">
 									</a>
 								</div>
@@ -1308,13 +1310,16 @@ hr {
 							var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
 							var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
 							 $.getJSON('${pageContext.request.contextPath}/Blog/BlogIndexNav.controller',function(jsonNav){
+// 								 		alert(JSON.stringify(jsonNav));
 									 $.each(jsonNav,function(idx,navProduct){
+// 										 alert(idx+"====="+navProduct.blogTitle);
 										 for(var i = 1;i<=20;i++){
+// 											 alert(i);
 										 if(navProduct.blogCity==nav[i-1]){
-											    $('.urlC'+(i)).attr("href",path+navProduct.blogSNum);
-												$('#navA'+(i)).attr("src","data:image/png;base64,"+navProduct.blogCover);
+// 											    $('.urlC'+(i)).attr("href",path+navProduct.blogSNum);
+// 												$('#navA'+(i)).attr("src","data:image/png;base64,"+navProduct.blogCover);
 												$('#navB'+(i)).html(navProduct.blogTitle);
-												$('.link'+(i)).attr("href",path2+navProduct.blogCity);
+// 												$('.link'+(i)).attr("href",path2+navProduct.blogCity);
 										 }
 										 }
 										

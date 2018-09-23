@@ -63,7 +63,7 @@ public class RegisterController {
 			SubMemberBean sub = new SubMemberBean();
 			sub.setMemberID(bean.getMemberID());
 			String contexPath = request.getSession().getServletContext().getRealPath("/");
-			File img = new File(contexPath + "/Images/Member/memberCover_default.png");
+			File img = new File(contexPath+"/Images/Member/memberCover_default.jpg");
 			byte[] CoverToDB = fileToByte(img);
 			sub.setMemberCover(CoverToDB);
 			subMemberDAO.insert(sub);
@@ -71,12 +71,10 @@ public class RegisterController {
 		
 		System.out.println("Controller" + bean);
 		model.addAttribute("user", bean);
+		
 		return "redirectIndex";
-
 	}
-
 	static byte[] bytes;
-
 	public static byte[] fileToByte(File img) throws Exception {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		try {
