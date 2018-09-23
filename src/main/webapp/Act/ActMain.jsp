@@ -131,6 +131,16 @@ $( function() {
   <ul class="ulcolor">
     <li><a href="#tabs-1">Newest</a></li>
     <li><a href="#tabs-2">Popular</a></li>
+    <li><a id="searchResult" style="display: none;" href="#tabs-3">SearchResult</a></li>
+    <form class="form-inline" action="" style="float:right">
+    <input id="condition"class="form-control mr-sm-2" type="text" placeholder="輸入地點 or關鍵字" style="margin-bottom:10px">
+    <select id="searchType" class="form-control" id="sel1" style="margin-right: 10px">
+		    <option value="blog">揪團中</option>
+		    <option value="act">進行中</option>
+		    <option value="act">已結束</option>
+  		  </select>
+    <button id="actSearch" class="btn btn-info" type="submit">搜尋</button>
+</form>
   </ul>
 
 <!--1-->
@@ -265,6 +275,13 @@ $( function() {
 	 $('.A1').zoomify({scale:0.8});
  </script>
 
+<script>
+$('#actSearch').click(function(event) {
+	event.preventDefault();
+	$("#searchResult").css("display","block");
+	$("#searchResult").click();
+})
+</script>
 
 </body>
 <%--  <jsp:include page="${pageContext.request.contextPath}/Index/Footer.jsp"></jsp:include> --%>

@@ -34,13 +34,12 @@ html, body {
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav ml-auto">
         <form class="form-inline" action="">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <select class="form-control" id="sel1" style="margin-right: 10px">
-    		<option value="memberName">Member</option>
-		    <option value="blogTitle">Blog</option>
-		    <option value="actTitle">Activity</option>
+          <input id="condition"class="form-control mr-sm-2" type="text" placeholder="Search">
+          <select id="searchType" class="form-control" id="sel1" style="margin-right: 10px">
+		    <option value="blog">Blog</option>
+		    <option value="act">Activity</option>
   		  </select>
-          <button class="btn btn-success" type="submit">Search(還未做)</button>
+          <button id="navSerach" class="btn btn-success" type="submit">搜尋</button>
         </form>
         
         <li class="nav-item dropdown">
@@ -231,6 +230,16 @@ html, body {
 		      }  
 		     });
 		   });
+</script>
+<script type="text/javascript">	
+$('#navSerach').click(function(event) {
+	event.preventDefault();
+	   var condition = $("#condition").val();
+	   var searchType =$('#searchType').val();
+	   if($('#searchType').val()=='blog'){
+	    	location.href="${pageContext.request.contextPath}/Blog/BlogIndex.controller?search="+condition; 
+	   		}
+	    });
 </script>
 <script type="text/javascript"> //修改NavBar按鈕功能
 	$( document ).ready(function() {
