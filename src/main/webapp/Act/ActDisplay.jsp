@@ -114,8 +114,8 @@ vertical-align: middle;
   </div>
 </div>
 
-    <div style="background-color: #f5f5f5; margin:auto; text-align: center; margin-right: ">
-			<button type="button" id="LikeOrDisLike"class="btn btn-primary"  value="${likebottuntype}">${likebottuntype}</button>
+    <div id="btns" style="background-color: #f5f5f5; margin:auto; text-align: center; margin-right:; ">
+		<button type="button" id="LikeOrDisLike"class="btn btn-primary"  value="${likebottuntype}">${likebottuntype}</button>
 		<button type="button" class="btn btn-success" id="AttendOrNot"  value="${attendbottuntype}">${attendbottuntype}</button> <!-- ${attendStatus} -->
 		<button type="button" class="btn btn-danger"  id="sendReport" value="sendReport">Report</button>
 		<button type="button" class="btn btn-warning" id="invite" value="invite">Invite</button>
@@ -131,9 +131,24 @@ vertical-align: middle;
 <script>
 $( document ).ready(function() {
 	
+	if( ${ user == null }){
+		$('#btns').html("<div></div>");
+	}
+	if(${user.memberID}==${event.memberID}){
+		$('#LikeOrDisLike').attr('style', 'display:none');
+		$('#AttendOrNot').attr('style', 'display:none');
+		
+	}
+	
+	
  $('#LikeOrDisLike').on('click',this.value ,function () {
 	 
-	 alert(this.value);
+// 	 alert(this.value);
+// if( ${ user != null })
+// 		  var loginMemberID = ${user.memberID};
+	
+
+
 	 if(this.value == 'Like'){
 		 var process = true;
 	    	$('#LikeOrDisLike').text("disLike").attr("value","disLike");
@@ -151,7 +166,7 @@ $( document ).ready(function() {
 	    data:JSON.stringify({
 	    	"actSNum":document.getElementById("num").value,
 	    	"memberID":document.getElementById("mem").value,
-	    	"isLike":process,    	
+	    	"isLike":process    	
 	    }),
 	    
 	    contentType: "application/json; charset=utf-8",

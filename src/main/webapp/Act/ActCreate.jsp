@@ -112,9 +112,12 @@
    
 <div style="margin-left: 80px">
 
-<form style="width: 500px; margin-right:0px;" action="<c:url value="/create.act.controller"/>" method="post">
+<form style="width: 500px; margin-right:0px;" name ="createActBean" action="<c:url value="/create.act.controller"/>" method="post" enctype="multipart/form-data">
 	<table >
-	 
+	  <tr>
+		     <td>活動預覽圖(揪團封面):</td>
+             <td><input type="file" name="actPhoto" id="actPhoto" ></td>
+             </tr>
 	 
 <!-- 	 hidden  -->
 	 <tr><input type="hidden" name="actSNum" value="${newEvent.actSNum}" id="actSNum" ></tr>
@@ -124,11 +127,7 @@
 	 <tr><input type="hidden" name="actVisibility" value="1" id="actVisibility"></tr>
 	 <tr><input type="hidden" name="participantsNow" value="0" id="participantsNow"></tr>
 <!-- 	 hidden  -->
-	     <tr>
-		     <td>活動預覽圖(揪團封面):</td>
-             <td><input type="file" name="actPhoto" id="actPhoto"  accept="image/*" class="text-center center-block file-upload"></td>
-             
-		</tr>
+	
 		<tr>
 			<td>活動主題:</td>
 			<td><input type="text" name="actTitle" value="${param.eventname}"></td>
@@ -181,7 +180,7 @@
 
 		<tr>
 		     <td>活動結束日期:</td>
-             <td><input type="datetime-local" name="EndTime" id="actEndTime" value="${param.actEndTime}" onblur="checkTime()"></td>
+             <td><input type="datetime-local" name="EndTime" id="actEndTime" value="${param.actEndTime}" ></td>
              <td>${errors.actEndTime}</td>
 		</tr>
 		<tr>
@@ -251,42 +250,58 @@
   				<option value="景點">景點</option>
   				<option value="購物">購物</option>
 		</select>
+		 
+         <input type="button" id="save"  class="btn btn-primary" value="save" name="save">
 		 <input type="button" id="search" class="btn btn-primary" value="search" >
 		 <input type="button" class="btn btn-warning" id="btn" value="addItem"> 
-		 <div id="select"><div>
-		 <div style="height: 100px; display: none" id="sortable1" class="connectedSortable" ></div>
+		 <div style="padding-top: 25px" id="select"></div>
+		 <div style="height: 100px; padding-top: 50px; display: none" id="sortable1" class="connectedSortable" ></div>
 		 
 		     
 </p>
    
   </div>
 </div>
-      <a class="btn btn-dark" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">How to go</a>
-     <input type="button" class="btn btn-danger" id="route" value="route">
-     <input type="button" id="save"  class="btn btn-primary" value="save" name="insert">
-     <div p class="collapse" id="collapseExample" style="height: 100px;  float:right; padding-left:60px; width: 400px; "><div  id="map"></div></div>
+      <a style="width: 400px;" class="btn btn-dark" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">How to go</a>
+    
+     <div p class="collapse" id="collapseExample" style="height: 100px;  float:right; width: 400px; "><div  id="map"></div><input style="margin: 0 ,auto;" type="button" class="btn btn-danger" id="route" value="route"></div>
 
 	    </div>
-	     
+	      
   </div>
-<script type="text/javascript">
+<script>
 
-var startTime = document.getElementById("actStartTime").value;
-var endTime = document.getElementById("actEndTime").value;
-function checkTime(){              
-    if(startTime.length>0 && endTime.length>0){     
-        var startTmp=startTime.split("-");  
-        var endTmp=endTime.split("-");  
-        var sd=new Date(startTmp[0],startTmp[1],startTmp[2]);  
-        var ed=new Date(endTmp[0],endTmp[1],endTmp[2]);  
-        if(sd.getTime()>ed.getTime()){   
-            alert("開始日期不能大於結束日期");     
-            return false;     
-        }     
-    }     
-    return true;     
-}    
-</script>
+    var txtId = 1;
+    var testId =1;
+    // add draggable DIV 
+    $("#btn").on('click',function () {
+    	 document.getElementById('select').style.display='';
+        $("#select").append('<div style=" border:solid black 1px;" id="select'+ testId +'" class="connectedSortable" ><input type="datetime-local" id="startTime'+ testId +'"><input type="datetime-local" id="endTime'+ testId +'"><input type="button"  class="btn btn-outline-danger"  value="del" onclick="deltest('+testId+')"></div>'
+        		);
+        testId++;
+
+    $( "#sortable1, #sortable2, .connectedSortable" ).sortable({
+        connectWith: ".connectedSortable"
+        }).disableSelection();
+});
+      
+         // #sortable1 scoll
+         $("#sortable1").on("mouseenter mouseleave", function (event) { 
+          if (event.type == "mouseenter") {
+            $(this).css({"overflow-y": "scroll"}); 
+          } else {
+            $(this).scrollTop(0).css({"overflow-y": "hidden"}); 
+          }
+    });
+
+//delete added div
+    function deltxt(id) {
+        $("#div"+id).remove();
+    } 
+    function deltest(testId) {
+        $("#select"+ testId ).remove();
+    }
+  </script> 
          <script>
 //          connection DataBase by Ajax
          $("#search").on('click',function () {
@@ -317,29 +332,36 @@ function checkTime(){
         	    
         	});
         	  });
-         </script>
         
+         </script>
+      
          <script>
          
          $("#save").on('click',function () {
      	 
-        	 var array =$("#select li");
+        	 var array =$("#select>div>li");
 
         	
         	 var data = [];
         	 var count = 1;
+//         	    alert(document.getElementById("startTime"+count).value)
                 for(i=0; i< array.length; i++){
+//                 	alert(count);
+                	var startedTime = document.getElementById("startTime"+count).value;
+//                 	alert(document.getElementById("startTime1").value)
+                	var endedTime = document.getElementById("endTime"+count).value
+                	
+                	
         		 data.push
         		 ({
     				 "actSNum":document.getElementById("actSNum").value,
-        			 "startTime":document.getElementById("startTime"+count).value,
-    				 "endTime":document.getElementById("endTime"+count).value,
+        			 "startTime":startedTime,
+    				 "endTime":endedTime,
     				 "viewPointID":array[i].getAttribute("id"),
     				 "markerID":count
         		 });
         		 count++;
-//         		 alert(data);
-//         		 alert(data[0].actSNum)
+//    
         	 } 
               $.ajax({
                      type : "post",
@@ -362,47 +384,7 @@ function checkTime(){
          
         </div>
         </div>
-        
-<script>
 
-    var txtId = 1;
-    var testId =1;
-    // add draggable DIV 
-    $("#btn").on('click',function () {
-    	 document.getElementById('select').style.display='';
-        $("#select").append('<div style=" border:solid black 1px;" id="select'+ testId +'" class="connectedSortable" ><input type="datetime-local" id="startTime'+ testId +'"><input type="datetime-local" id="endTime'+ testId +'"><input type="button"  class="btn btn-outline-danger"  value="del" onclick="deltest('+testId+')"></div>'
-        		);
-        testId++;
-
-    $( "#sortable1, #sortable2, .connectedSortable" ).sortable({
-        connectWith: ".connectedSortable"
-        }).disableSelection();
-});
-       // #select scoll
-//              $("#select").on("mouseenter mouseleave", function (event) { 
-//           if (event.type == "mouseenter") {
-//             $(this).css({"overflow-y": "scroll"}); 
-//           } else {
-//             $(this).scrollTop(0).css({"overflow-y": "hidden"}); 
-//           }
-//     });
-         // #sortable1 scoll
-         $("#sortable1").on("mouseenter mouseleave", function (event) { 
-          if (event.type == "mouseenter") {
-            $(this).css({"overflow-y": "scroll"}); 
-          } else {
-            $(this).scrollTop(0).css({"overflow-y": "hidden"}); 
-          }
-    });
-
-//delete added div
-    function deltxt(id) {
-        $("#div"+id).remove();
-    } 
-    function deltest(testId) {
-        $("#select"+ testId ).remove();
-    }
-  </script> 
 
 <script>
 //google api

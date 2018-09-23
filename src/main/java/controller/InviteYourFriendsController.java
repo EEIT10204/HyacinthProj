@@ -37,7 +37,7 @@ public class InviteYourFriendsController {
  
 	@RequestMapping(path = { "/invitefriends.controller" })
 	@ResponseBody
-	public  List<MemberBean> method(@RequestBody String json, Model model, MembershipBean msBbean,  BindingResult bindingResult, String select) {
+	public  List<MemberBean> method(@RequestBody String json, Model model,  BindingResult bindingResult) {
 		Gson BeanToJson = new Gson();
 		Gson JsonToBean = new GsonBuilder().create(); 
 		
