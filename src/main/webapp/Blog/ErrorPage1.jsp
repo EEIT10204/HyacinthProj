@@ -28,6 +28,10 @@
 	padding: 0;
 }
 /* ALL */
+.containerMY{
+	border-radius: 50px;
+	background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
 .a1 {
 	font-family: 'Noto Sans TC';
 	color: rgb(48, 43, 43);
@@ -469,7 +473,7 @@ hr {
 
 <body>
 
-			<div class="d2 container">
+			<div class="d2 container containerMY">
 				<div class="title">
 					<h2 class="title-text">
 						<span><input type="button" value="Oops! It Looks Like Nothing Was Found!" id="buttonFade0"
