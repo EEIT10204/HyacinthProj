@@ -18,7 +18,7 @@
 <%--     <script src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script> --%>
 <%--     <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.js"></script> --%>
 <%-- 	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script> --%>
-	<script src="${pageContext.request.contextPath}/js/IndexOnload2.js"></script>
+	<script src="${pageContext.request.contextPath}/js/IndexOnload.js"></script>
 
 	
 <%-- 	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script> --%>
@@ -326,7 +326,7 @@ background-color: rgb(235, 235, 235);
 				<div class="A4" id="ActBpu1">
 				<div class="aa1"><img src="${pageContext.request.contextPath}/Images/Act/viewpoint.png" style="width: 30px;height: 30px;"></div>
 				<div class="aa2" id="views1">129</div> 
-				<div class="aa3"><button type="button" class="btn btn-primary btn-sm" style="margin-top:3px;background-color:rgb(70, 70, 70);">More</button></div>    
+				<div class="aa3"><a id="ActMpu1" href=""><button type="button" class="btn btn-primary btn-sm" style="margin-top:3px;background-color:rgb(70, 70, 70);">More</button></a></div>    
 				</div>
 			</div>
 			<div class="A1" id="Titleout2">
@@ -335,7 +335,7 @@ background-color: rgb(235, 235, 235);
 					<div class="A4" id="ActBpu2">
 					<div class="aa1"><img src="${pageContext.request.contextPath}/Images/Act/viewpoint.png" style="width: 30px;height: 30px;"></div>
 					<div class="aa2" id="views2">129</div> 
-					<div class="aa3"><button type="button" class="btn btn-primary btn-sm" style="margin-top:3px;background-color:rgb(70, 70, 70);">More</button></div>     
+					<div class="aa3"><a id="ActMpu2" href=""><button type="button" class="btn btn-primary btn-sm" style="margin-top:3px;background-color:rgb(70, 70, 70);">More</button></a></div>     
 					</div>
 				</div>
 				<div class="A1" id="Titleout3">
@@ -344,7 +344,7 @@ background-color: rgb(235, 235, 235);
 						<div class="A4" id="ActBpu3">
 						<div class="aa1"><img src="${pageContext.request.contextPath}/Images/Act/viewpoint.png" style="width: 30px;height: 30px;"></div>
 						<div class="aa2" id="views3">129</div> 
-						<div class="aa3"><button type="button" class="btn btn-primary btn-sm" style="margin-top:3px;background-color:rgb(70, 70, 70);">More</button></div>     
+						<div class="aa3"><a id="ActMpu3" href=""><button type="button" class="btn btn-primary btn-sm" style="margin-top:3px;background-color:rgb(70, 70, 70);">More</button></a></div>     
 						</div>
 					</div>
 		
@@ -356,7 +356,7 @@ background-color: rgb(235, 235, 235);
 							<div class="A4" id="ActBpu4">
 							<div class="aa1"><img src="${pageContext.request.contextPath}/Images/Act/viewpoint.png" style="width: 30px;height: 30px;"></div>
 							<div class="aa2" id="views4">129</div> 
-							<div class="aa3"><button type="button" class="btn btn-primary btn-sm" style="margin-top:3px;background-color:rgb(70, 70, 70);">More</button></div>    
+							<div class="aa3"><a id="ActMpu4" href=""><button type="button" class="btn btn-primary btn-sm" style="margin-top:3px;background-color:rgb(70, 70, 70);">More</button></a></div>    
 							</div>
 						</div>
 						<div class="A1" id="Titleout5">
@@ -365,7 +365,7 @@ background-color: rgb(235, 235, 235);
 								<div class="A4" id="ActBpu5">
 								<div class="aa1"><img src="${pageContext.request.contextPath}/Images/Act/viewpoint.png" style="width: 30px;height: 30px;"></div>
 								<div class="aa2" id="views5">129</div> 
-								<div class="aa3"><button type="button" class="btn btn-primary btn-sm" style="margin-top:3px;background-color:rgb(70, 70, 70);">More</button></div>     
+								<div class="aa3"><a id="ActMpu5" href=""><button type="button" class="btn btn-primary btn-sm" style="margin-top:3px;background-color:rgb(70, 70, 70);">More</button></a></div>     
 								</div>
 							</div>
 							<div class="A1" id="Titleout6">
@@ -374,7 +374,7 @@ background-color: rgb(235, 235, 235);
 									<div class="A4" id="ActBpu6">
 									<div class="aa1"><img src="${pageContext.request.contextPath}/Images/Act/viewpoint.png" style="width: 30px;height: 30px;"></div>
 									<div class="aa2" id="views6">129</div> 
-									<div class="aa3"><button type="button" class="btn btn-primary btn-sm" style="margin-top:3px;background-color:rgb(70, 70, 70);">More</button></div>    
+									<div class="aa3"><a id="ActMpu6" href=""><button type="button" class="btn btn-primary btn-sm" style="margin-top:3px;background-color:rgb(70, 70, 70);">More</button></a></div>    
 									</div>
 								</div>
  </div>
