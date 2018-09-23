@@ -123,7 +123,7 @@ hr.style-two {
 
 .nav-linkmy:hover {
  	background-color: rgb(210, 205, 247); 
- 	border:1px solid;
+/*  	border:1px solid; */
 	border-radius: 5px;
 }
 
@@ -222,7 +222,7 @@ hr.style-two {
 .hr1 {
 	height: 1px;
 	border: none;
-/* 	border-top: 1px dashed #0066CC; */
+ 	border-top: 1px dashed #0066CC; 
 }
 
 /* article */
@@ -1453,33 +1453,35 @@ hr {
 					          var newTempNext = tempNext.attr('href').replace("replaced", (page+1));
 					          tempNext.attr('href',newTempNext);
 
-		$('#buttonFade0').click(function() {
-			$('#toggle0').toggle(1000);
-		})
-		$('#buttonFade1').click(function() {
-			$('#toggle1').toggle(1000);
-		})
-		$('#buttonFade2').click(function() {
-			$('#toggle2').toggle(1000);
-		})
-		$('#top1').click(function() {
-		})
-		$(window).scroll(function() {
-			if ($(this).scrollTop() > 100) {
-				$('.scrollToTop').fadeIn();
-			} else {
-				$('.scrollToTop').fadeOut();
-			}
-		});
-		$('#top1').click(function() {
-			$('html, body').animate({
-				scrollTop : 0
-			}, 400);
-			return false;
-	
-		});
+								$('#buttonFade0').click(function() {
+									$('#toggle0').toggle(1000);
+								})
+								$('#buttonFade1').click(function() {
+									$('#toggle1').toggle(1000);
+								})
+								$('#buttonFade2').click(function() {
+									$('#toggle2').toggle(1000);
+								})
+								$('#top1').click(function() {
+								})
+								$(window).scroll(function() {
+									if ($(this).scrollTop() > 100) {
+										$('.scrollToTop').fadeIn();
+									} else {
+										$('.scrollToTop').fadeOut();
+									}
+								});
+								$('#top1').click(function() {
+									$('html, body').animate({
+										scrollTop : 0
+									}, 400);
+									return false;
+							
+								});
 		
 	</script>
 <!-- 	</div> -->
+
 </body>
+<jsp:include page="../Index/Footer.jsp" />
 </html>

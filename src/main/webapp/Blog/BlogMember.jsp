@@ -191,7 +191,7 @@ hr.style-two {
 
 .nav-linkmy:hover {
  	background-color: rgb(210, 205, 247); 
- 	border:1px solid;
+/*  	border:1px solid; */
 	border-radius: 5px;
 }
 
@@ -2327,4 +2327,5 @@ margin-top:10px;
 	</script>
 
 </body>
+<jsp:include page="../Index/Footer.jsp" />
 </html>
