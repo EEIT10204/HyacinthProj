@@ -33,10 +33,11 @@
 <!-- 務必使用 -->
 <script src="${pageContext.request.contextPath}/js/blogInsertMessage.js"></script>
 <script src="${pageContext.request.contextPath}/js/blogUpdateMessage.js"></script>
+
 <style>
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
-<script src="${pageContext.request.contextPath}/css/blogcomment.css"></script>
+/* test */
 
 * {
 	margin: 0;
@@ -863,13 +864,11 @@ hr {
   
     }
     .messOut{
-
-      border: 15px groove rgb(0, 179, 149);
       width: 700px;
       margin: auto;
       margin-top: 50px;
       border-radius: 10px;
-
+      
     }
     .form-control{
       width: 450px;
@@ -878,18 +877,15 @@ hr {
       display: inline-block;
     }
     .mess2{
-      border: 1px solid rgb(119, 119, 119) ; 
+       border: 1px solid rgb(119, 119, 119) ;  
       background-color: rgb(197, 197, 197);
     }
     .mess3{
-      /* border: 1px solid rgb(95, 2, 133) ; */
     }
     .mess4{
-      /* border: 1px solid rgb(192, 189, 0) ; */
     }
     .mess1{
-      /* border: 1px solid rgb(2, 0, 136) ; */
-      background-color: rgb(197, 197, 197);
+       background-color: rgb(197, 197, 197); 
       height: 50px;
     }
     .mess1 img{
@@ -898,57 +894,45 @@ hr {
       margin-left: 10px;
     }
     .messUser{
-      /* border: 1px solid rgb(255, 208, 0); */
       display: inline-block;
       margin-top: 7px;
     }
     .messName{
-      /* border: 1px solid rgb(56, 255, 82); */
       display: inline-block;
       margin-left: 20px;
       margin-top: 7px;
     }
     .buttonT{
-      /* border: 1px solid rgb(234, 0, 255); */
     }
     .btn-primaryMY{
-/*    		margin-right: 200px; */
-/*     margin-bottom: 20px; */
 		position: relative;
         right: 80px;
-/*         background-color:rgb(120, 120, 120);  */
          margin-left: 650px;  
          margin-bottom: 20px; 
     }
     .selectUser{
-      /* border: 1px solid red; */
     }
-    #messA img{
+    #messAt img{
      width: 30px;
      height: 30px;
      display: inline-block;
      margin-top: 6px;
-     /* border: 1px solid red; */
      margin-left: 20px;
     }
-    #messA h6{
+    #messAt h6{
     margin-left: 8px;
     margin-top: 15px;
-/*     border: 1px solid red; */
     display: inline-block;
     }
-    .messB{
+    .messBt{
     display: inline-block;
     margin-left: 20px;
-/*     border: 1px solid purple; */
     }	
-    .uuu{
-/*     border:1px solid green; */
+    .uuut{
     }
     
       .messageboard{
   margin-top:150px;
-/*   border:1px solid red; */
   }
     
       .flip{
@@ -956,7 +940,6 @@ hr {
 padding:5px;
 text-align:center;
 background:rgb(0, 179, 149);
-/* border:solid 1px #c3c3c3; */
 margin-top:10px;
 }
  .update{ 
@@ -964,12 +947,10 @@ margin-top:10px;
 /*  width:35px;  */
 /*  height:25px;  */
  margin-left:5px; 
-/*   border:solid 1px red;  */
   display: inline-block;  
  } 
 .updatebutton {
    display: inline-block; 
-/*   padding: 15px 25px; */
   font-size: 15px;
   cursor: pointer; 
   text-align: center;
@@ -1617,7 +1598,7 @@ margin-top:10px;
 				</h5>
 </div>				
   <!-- 留言板 -->
-<div class="messOut">
+<div class="messOut" style="border: 10px groove rgb(0, 179, 149);width: 700px;">
       <div class="mess1">
         <div class="messUser"><img src="data:image/png;base64,${user.memberPicToBase64}"/></div>
         <div class="messName">${user.memberName}</div>
@@ -1625,7 +1606,7 @@ margin-top:10px;
       <form action="<c:url value="/Blog/BlogMember.comment"/>" method="get">
 <%--         <form action="<c:url value="/Act/ACCommentInsertController?actSNum=?" />" method="get"> --%>
                   <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Leave Message</label>
+                    <label for="exampleFormControlTextarea1" class="a1">Leave Message</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="commentContent"></textarea>
                   </div>
                   <div class="buttonT">
@@ -1640,17 +1621,17 @@ margin-top:10px;
                     <!-- <div class="mess3"></div>
                     <div class="mess4"></div> -->
                   <div class="form-group">
-                      <label for="exampleFormControlInput1">All Message</label>
+                      <label for="exampleFormControlInput1 a1">All Message</label>
                       
-                      <div class="uuu">
+                      <div class="uuut">
                       <c:forEach var="obj" items="${BGComment}">
                       <form action="<c:url value="/BGCommentUpdate.Controller"/>" method="get">
-                      <div id="messA">
+                      <div id="messAt">
                           <img src="data:image/png;base64,${obj[1].memberPicToBase64}"/>
                           <h6>${obj[1].memberName} </h6>
 <%--                           <h6>${obj[0].ACCommentID}</h6> --%>
 
-                          <div class="messB">
+                          <div class="messBt">
                           <input type="text" class="form-control" disabled value="${obj[0].commentContent}"
                           name="commentContent">
                         </div>
@@ -1880,7 +1861,8 @@ margin-top:10px;
 $(document).ready(function(){
 	alert("run button check");
 if('${user.memberID}'==""){
-$("#sendbuttom").html("<button type='submit' class='btn-secondary style='margin-left: 650px; margin-bottom: 20px; border-radius:20px' id='sendbuttom' disabled='disabled'>請先登入</button>")
+$("#sendbuttom").toggleClass('btn-secondary').toggleClass('btn-info');
+$("#sendbuttom").text("請先登入").prop("disabled",true);
 $(".messUser").html("<div class='messUsers'><img src='${pageContext.request.contextPath}/Images/Index/user.png'/></div>")
 };
 });
