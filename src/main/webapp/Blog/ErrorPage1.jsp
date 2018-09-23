@@ -10,6 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>page1</title>
+<%@ include file="/Index/NewHeader.jsp"%>
 <%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/CssJs/page1.css" /> --%>
 
 <link rel="stylesheet"
@@ -27,7 +28,14 @@
 	margin: 0;
 	padding: 0;
 }
+body{
+	padding-top:0;
+}
 /* ALL */
+.containerMY{
+	border-radius: 50px;
+	background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
 .a1 {
 	font-family: 'Noto Sans TC';
 	color: rgb(48, 43, 43);
@@ -67,7 +75,7 @@ hr.style-two {
 }
 
 .nav-link:hover {
-	background-color: rgb(210, 205, 247);
+/* 	background-color: rgb(210, 205, 247); */
 }
 
 #carouselExampleIndicators {
@@ -469,7 +477,7 @@ hr {
 
 <body>
 
-			<div class="d2 container">
+			<div class="d2 container containerMY">
 				<div class="title">
 					<h2 class="title-text">
 						<span><input type="button" value="Oops! It Looks Like Nothing Was Found!" id="buttonFade0"
@@ -691,5 +699,5 @@ hr {
 	</script>
 
 </body>
-
+<jsp:include page="../Index/Footer.jsp" />
 </html>

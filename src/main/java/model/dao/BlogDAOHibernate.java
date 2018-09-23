@@ -5,10 +5,12 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -28,14 +30,19 @@ public class BlogDAOHibernate implements BlogDAO {
 	}
 	@Override
 	public List<BlogBean> selectByCityNav() {
-		 String hql = "SELECT *"+
-				 	  "FROM Blog e1 "+
-				 	  "WHERE blogVisibility=1 and  (blogView >= "+
-				 	  "(SELECT MAX(blogView) FROM Blog e2 "+
-				 	  "WHERE e2.blogCity = e1.blogCity))";
-         Query<BlogBean> query = this.getSession().createNativeQuery(hql, BlogBean.class);
-			 return query.getResultList();
-
+		 String nav[] = {"台北","台中","台南","高雄","東京","大阪","沖繩","北海道","首爾","釜山","大邱","濟州島","紐約","洛杉磯","舊金山","邁阿密","柏林","漢堡","慕尼黑","法蘭克福"}; 
+		 ArrayList<BlogBean> list = new ArrayList<BlogBean>();
+		 
+		 for(int i=0;i<20;i++) {
+			 String hql = "select * from blog where blogCity='"+nav[i]+"' AND blogVisibility = 1 order by blogView";
+	         NativeQuery<BlogBean> query = this.getSession().createNativeQuery(hql, BlogBean.class);
+	         query.setFirstResult(0);
+			 query.setMaxResults(1);
+			 list.addAll(query.getResultList());
+		 }
+		
+		return list;
+		 
 	}
 	
 	
