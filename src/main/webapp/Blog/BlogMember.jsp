@@ -2069,14 +2069,14 @@ margin-top:10px;
 // 							 $('.url${i+1}')..attr("href",path2+"${result[i][1].nation}");
 							 $('#changeMemberPic').attr("src","data:image/png;base64,${BeanSNum[0][2].memberPicToBase64}");
 							 $('#changeMemberPichref').attr("href",path3+"${BeanSNum[0][0].memberID}"+"&lmi="+"${user.memberID}"+"&page=main");
-							 $('#changeMemberName').html('${BeanSNum[0][2].memberNickName}').attr("href",path3+"${BeanSNum[0][0].memberID}"+"&lmi="+"${user.memberID}"+"&page=main");
+							 $('#changeMemberName').html('${BeanSNum[0][2].memberName}').attr("href",path3+"${BeanSNum[0][0].memberID}"+"&lmi="+"${user.memberID}"+"&page=main");
 							 $('#changeNation').html('${BeanSNum[0][1].nation}').attr("href",path2+"${BeanSNum[0][1].nation}");
 							 $('#changeBlogViews').html('${BeanSNum[0][0].blogView}');
 							 $('#changeBlogCity').html('${BeanSNum[0][0].blogCity}').attr("href",path2+"${BeanSNum[0][0].blogCity}");
 							 $('#changeBlogTitle').html('${BeanSNum[0][0].blogTitle}');
 							 $('#changeBlogPic').attr("src","data:image/png;base64,${BeanSNum[0][0].blogCoverToBase64}");
 							 $('#changeBlogDate').html('${BeanSNum[0][0].updateTime}'.substring(0, 10));
-							 $('#changeMemberName2').html('${BeanSNum[0][2].memberNickName}');
+							 $('#changeMemberName2').html('${BeanSNum[0][2].memberName}');
 							 $('#changeCityContent').html('${BeanSNum[0][0].blogContext}');
 							 $('#reportMember').val(member);
 							
@@ -2156,7 +2156,7 @@ margin-top:10px;
 										$('#changeCity'+(i+1)).html(product[0].blogCity);
 										$('#changeTitle'+(i+1)).html(product[0].blogTitle);
 										$('#changeDate'+(i+1)).html(new Date(product[0].updateTime).toISOString().split('T')[0]);
-										$('#changeMember'+(i+1)).html(product[2].memberNickName);
+										$('#changeMember'+(i+1)).html(product[2].memberName);
 										}
 // 										aside
 										if(i >= 6 && i<10){
