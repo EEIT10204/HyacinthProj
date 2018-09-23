@@ -25,6 +25,11 @@ public class ReportDAOHibernate implements ReportDAO {
 	}
 	
 	@Override
+	public ReportBean selectByCaseSNum(Integer caseSNum) {
+		return this.getSession().get(ReportBean.class, caseSNum);
+	}
+	
+	@Override
 	public List<ReportBean> selectAll() {
 List temp = this.getSession().createNativeQuery("select R.caseID,R.memberID,R.referID,R.reason, R.reportedTime,R.process, m.memberName from Reported_Case R left join Member M on R.memberID = M.memberID ORDER BY R.caseSNum ASC").list();
 		
@@ -101,6 +106,8 @@ List temp = this.getSession().createNativeQuery("select R.caseID,R.memberID,R.re
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+
 
 	
 

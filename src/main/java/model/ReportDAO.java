@@ -4,6 +4,8 @@ import java.util.List;
 
 public interface ReportDAO {
 	
+	public abstract ReportBean selectByCaseSNum(Integer caseSNum);
+	
 	public abstract ReportBean selectByCase (String caseID);
 	
 	public abstract List<ReportBean> selectAll();
