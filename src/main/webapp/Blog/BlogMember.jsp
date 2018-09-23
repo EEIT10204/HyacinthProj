@@ -34,10 +34,10 @@
 <script src="${pageContext.request.contextPath}/js/blogInsertMessage.js"></script>
 <script src="${pageContext.request.contextPath}/js/blogUpdateMessage.js"></script>
 
+
+<script src="${pageContext.request.contextPath}/css/blogcomment.css"></script>
 <style>
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
-
-/* test */
 
 * {
 	margin: 0;
@@ -885,7 +885,8 @@ hr {
     .mess4{
     }
     .mess1{
-       background-color: rgb(197, 197, 197); 
+
+      background-color: rgb(197, 197, 197);
       height: 50px;
     }
     .mess1 img{
@@ -928,6 +929,7 @@ hr {
     display: inline-block;
     margin-left: 20px;
     }	
+
     .uuut{
     }
     
