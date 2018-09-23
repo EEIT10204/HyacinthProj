@@ -32,6 +32,7 @@ import model.MemberBean;
 import model.TripBean;
 import model.ViewPointBean;
 import model.dao.ActDAOHibernate;
+import model.dao.MemberActDAOHibernate;
 import model.dao.TripDAOHibernate;
 import model.dao.ViewPointDAOHibernate;
 @Controller
@@ -43,10 +44,13 @@ public class CreateActController {
 	private TripDAOHibernate tripDAOHibernate;
 	@Autowired
 	private ViewPointDAOHibernate  vPointDAOHibernate;
+	@Autowired
+	private MemberActDAOHibernate memberActDAOHibernate;
 	
 	@RequestMapping(path = { "/before.act.controller" })
 	public String method(String actCreate, Model model, @SessionAttribute(name="user", required=false)MemberBean memberBean)
 			throws ParseException, IOException {
+		
 	
 		
 		SimpleDateFormat nowdate = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
@@ -56,25 +60,12 @@ public class CreateActController {
 		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		 Timestamp Date1 = new java.sql.Timestamp(sdf1.parse(actCreate).getTime());
 		
-//		 System.out.println("memberID=" + memberID);
-			
-//			if(memberBean.getMemberID()!= null) {
-//				abean.setMemberID(memberBean.getMemberID());
-//				
-//			}
+
 		 ActBean abean = new ActBean();
 		 abean.setMemberID(memberBean.getMemberID());
-		 abean.setActCreateDate(Date1);
-//		 System.out.println("abean= " + abean);
-//		 
+		 abean.setActCreateDate(Date1);		 
 		
-		 actDAOHibernate.insert(abean);
-		 
-//		 ActBean result = actDAOHibernate.selectBymemberIDandcreateDate(abean);
-//		
-//		System.out.println("abean="+abean.toString());
-		
-		model.addAttribute("newEvent", abean);
+		 actDAOHibernate.insert(abean);	model.addAttribute("newEvent", abean);
 		
 		return "act.create";
 	}
@@ -121,8 +112,9 @@ public class CreateActController {
         	actbean.setActStatus("prepared");
         }
 //		
+      
         
-        
+//        actbean.setParticipantsNow();
         actbean.setActCity(abean.getActCity());
         actbean.setActIntro(abean.getActIntro());
         actbean.setActPhoto(abean.getActPhoto());

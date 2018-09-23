@@ -255,8 +255,9 @@
 		</select>
 		 <input type="button" id="search" class="btn btn-primary" value="search" >
 		 <input type="button" class="btn btn-warning" id="btn" value="addItem"> 
-		 <div style="height: 100px; display: none" id="sortable1" class="connectedSortable" ></div>
 		 <div id="select"><div>
+		 <div style="height: 100px; display: none" id="sortable1" class="connectedSortable" ></div>
+		 
 		     
 </p>
    
@@ -290,8 +291,9 @@
         	    contentType: "application/json; charset=utf-8",
         	    dataType: "json",
         	    success: function (data) {
+        	    	$("#sortable1").html('<div></div>');
                          for(var i =0; i< data.length; i++){
-                     $("#sortable1").append('<li class="ui-state-default" id="'+ data[i].viewPointID + '" view ="'+ data[i].viewPointAddress + '">' + data[i].viewPointName + '</li>');                      
+                     $("#sortable1").append('<li style="list-style:none" class="ui-state-default" id="'+ data[i].viewPointID + '" view ="'+ data[i].viewPointAddress + '">' + data[i].viewPointName + '</li>');                      
                          }   
                       },
         	    error: function (response) {
@@ -352,6 +354,7 @@
     var testId =1;
     // add draggable DIV 
     $("#btn").on('click',function () {
+    	 document.getElementById('select').style.display='';
         $("#select").append('<div style=" border:solid black 1px;" id="select'+ testId +'" class="connectedSortable" ><input type="datetime-local" id="startTime'+ testId +'"><input type="datetime-local" id="endTime'+ testId +'"><input type="button"  class="btn btn-outline-danger"  value="del" onclick="deltest('+testId+')"></div>'
         		);
         testId++;

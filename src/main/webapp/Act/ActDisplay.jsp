@@ -88,9 +88,13 @@ vertical-align: middle;
                 <div class="event_word">
                                                          費用:${event.budget}                        
                 </div>
+                  <div class="event_word">
+                                                         多少人參加囉:${event.participantsNow}位
+            </div>
                 <div class="event_word">
                         ${event.actIntro}
             </div>
+          
             </div>
             
             </p>
@@ -99,7 +103,7 @@ vertical-align: middle;
 </div>
 <!-- -------------------------------------------------------------------------------------------- -->
 <div class="collapse" id="collapseExample">
-  <div class="card card-body" style="padding-right: 5rem";>
+  <div class="card card-body" style="padding-right: 5rem">
       <table>
 	  <c:forEach var ="trip" items="${ trip }" varStatus="status">
 	  <tr><td>${trip.startTime} ~ ${trip.endTime} </td><td>${beanbean[status.count-1].viewPointName}</td></tr>
@@ -117,12 +121,7 @@ vertical-align: middle;
 		<button type="button" class="btn btn-warning" id="invite" value="invite">Invite</button>
 		<input type="hidden" id= "num" value="${useractSNum}">
 		<input type="hidden" id= "mem" value="${userid}">
-		
-
-		
-	
- 
-     </div>
+	</div>
 		<div id = "friends"></div>
 	</div>
 		
@@ -284,9 +283,14 @@ $( document ).ready(function() {
 		    contentType: "application/json; charset=utf-8",
 		    dataType: "json",
 		    success: function (data) {
-		    	 for(var i =0; i< data.length; i++){
+		    	$("#friends").html('<div></div>');
+		    if(data.length==0){
+		    	$("#friends").append("<div>你沒有朋友不要再按了</h3>");
+		    }else{
+		    	for(var i =0; i< data.length; i++){
 		    	  $("#friends").append( data[i].memberName +' <input type="button" value = "sendInvite" onclick="function()"><br>' );    
 	              }
+		    }
 		    },
 		    error: function (response) {
 	            alert("error");
