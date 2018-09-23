@@ -272,12 +272,14 @@ $( document ).ready(function() {
 	
 	 $('#invite').click(function () {
 		
+		 if( ${ user != null })
+		  var loginMemberID = ${user.memberID};
 		 
 	    $.ajax({
 		    type : "post",
 		    url : "${pageContext.request.contextPath}/invitefriends.controller",
 		    data:JSON.stringify({
-		    	"memberID":document.getElementById("mem").value,
+		    	"memberID": loginMemberID//document.getElementById("mem").value,
 		    }),
 		    
 		    contentType: "application/json; charset=utf-8",
