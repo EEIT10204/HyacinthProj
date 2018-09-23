@@ -10,7 +10,9 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/actcomment.css">
+<script src="${pageContext.request.contextPath}/js/actInsertMessage.js"></script>
+<script src="${pageContext.request.contextPath}/js/actUpdateMessage.js"></script>
 
 <style>
 #left-panel {
@@ -47,6 +49,8 @@ vertical-align: middle;
     height: 526px;
     width:1110px;
 }
+
+
 </style>
 </head>
 <body>
@@ -125,6 +129,72 @@ vertical-align: middle;
 		<div id = "friends"></div>
 	</div>
 	
+
+<div class="textboadrss">	
+<button class="button button4">
+<h2>留言板</h2>
+</button>
+</div>
+	<!-- 留言板 -->
+<div class="messOuts">
+      <div class="mess1s">
+        <div class="messUsers"><img src="data:image/png;base64,${user.memberPicToBase64}"/></div>
+        <div class="messNames">${user.memberName}</div>
+      </div>
+      <form action="<c:url value="/Act/ActDisplay.comment"/>" method="get">
+<%--         <form action="<c:url value="/Act/ACCommentInsertController?actSNum=?" />" method="get"> --%>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Leave Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="commentContent"></textarea>
+                  </div>
+                  <div class="buttonTs">
+                      <button type="submit" class="btn-primary" style="margin-left: 650px; margin-bottom: 20px;" id="sendbuttom">Send out</button>
+<!--                           <input type="hidden" name="commentContent" value="1"> -->
+                          <input type="hidden" name="memberID" value="${user.memberID}">
+                          <input type="hidden" name="actSNum" value="${param.actSNum}">
+                          
+                  </div>
+                  </form>
+                  <div class="mess2s">
+                    <!-- <div class="mess3"></div>
+                    <div class="mess4"></div> -->
+                  <div class="form-group">
+                      <label for="exampleFormControlInput1">All Message</label>
+                      
+                      <div class="uuus">
+                      <c:forEach var="obj" items="${ACComment}">
+                      <form action="<c:url value="/ACCommentUpdate.Controller"/>" method="get">
+                      <div id="messAs">
+                          <img src="data:image/png;base64,${obj[1].memberPicToBase64}"/>
+                          <h6>${obj[1].memberName} </h6>
+<%--                           <h6>${obj[0].ACCommentID}</h6> --%>
+
+                          <div class="messBs">
+                          <input type="text" class="form-control" disabled value="${obj[0].commentContent}"
+                          name="commentContent">
+                        </div>
+                        
+                        <c:if test= "${user.memberID == obj[1].memberID}"> 
+                        <div class="updates"> 
+                        <span class="updatebuttons" style="width:70px;height:25px">修改</span>            
+                        <input class="updatebuttons" style="width:70px;height:25px" type="hidden" value="送出">
+                        <input type="hidden" name="ACCommentID" value="${obj[0].ACCommentID}">
+                        <input type="hidden" name="actSNum" value="${param.actSNum}">
+                         <input type="hidden" name="memberID" value="${user.memberID}">
+                        </div>
+                        </c:if>
+<%--                           <input type="text" name="testmember" value="${param.actSNum}"> --%>    
+                      </div>
+                        </form>    
+                      </c:forEach>
+                      </div>
+                      <div >
+                          <p class="flips">顯示更多留言</p>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
 		<!-- Report Model Start -->
   <div class="modal fade" id="reportModal" role="dialog">
     <div class="modal-dialog">
@@ -150,6 +220,7 @@ vertical-align: middle;
       </div>   
     </div>
   </div> <!-- Report Modal end -->
+
 		
 <script>
 $( document ).ready(function() {
@@ -246,7 +317,16 @@ $( document ).ready(function() {
 
 </script>
 
-			
+<script type="text/javascript">
+$(document).ready(function(){
+	alert("run button check");
+if('${user.memberID}'==""){
+$("#sendbuttom").html("<button type='submit' class='btn-secondary style='margin-left: 650px; margin-bottom: 20px; border-radius:20px' id='sendbuttom' disabled='disabled'>請先登入</button>")
+$(".messUsers").html("<div class='messUsers'><img src='${pageContext.request.contextPath}/Images/Index/user.png'/></div>")
+};
+});
+
+</script>			
 			
 <script> 
 			 function initMap() {

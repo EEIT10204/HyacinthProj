@@ -21,7 +21,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import model.ACCommentBean;
+import model.ACCommentService;
 import model.ActBean;
+import model.BGCommentBean;
 import model.MemberActBean;
 import model.MemberBean;
 import model.TripBean;
@@ -46,6 +49,9 @@ public class ActDisplayController {
 	private MemberActDAOHibernate memberActDAOHibernate;	
 	@Autowired
 	private MemberDAOHibernate memberDAOHibernate;
+	
+	@Autowired
+	private ACCommentService aCCommentService;
 	
 	@RequestMapping(
 			path={"/actdisplay.controller"}
@@ -130,7 +136,45 @@ public class ActDisplayController {
 		
 			 model.addAttribute("member",mbean);
 			 
+//抓留言資料
+			 List<Object[]> catchAllComment = aCCommentService.selectActSNumMeberIdJoin(actSNum);
+				model.addAttribute("ACComment",catchAllComment);
+			 
 			 return "act.display"; 
 }
+	
+	//Act留言新增功能
+	@RequestMapping(path= {"/Act/ActDisplay.comment"})
+	public String ACCommentInsert(
+			@RequestParam("actSNum")Integer actSNum,
+			Model model,ACCommentBean bean,BindingResult bindingResult
+			) {
+		System.out.println("run commet: " + bean.toString());
+		ACCommentBean result = aCCommentService.insert(bean);
+		List<Object[]> InsertComment = aCCommentService.selectActSNumMeberIdJoin(actSNum);
+
+		
+		model.addAttribute("ACComment",InsertComment);
+		return "act.display";
+		
+	}
+	
+	//Blog留言修改功能
+	@RequestMapping(path = {"/ACCommentUpdate.Controller"})
+	public String method2(Integer actSNum,Integer memberID,Model model,
+			ACCommentBean bean,BindingResult bindingResult) {
+		ACCommentBean result = aCCommentService.update(bean);
+		System.out.println("beanid="+bean.getACCommentID());
+//		System.out.println("bean="+bean);
+		System.out.println("blogSNum="+actSNum);
+		System.out.println("memberID="+memberID);
+		System.out.println("result="+result);
+//		model.addAttribute("update",result);
+		
+		List<Object[]> beans = aCCommentService.selectActSNumMeberIdJoin(actSNum);
+		System.out.println("beans="+beans);
+		model.addAttribute("ACComment",beans);
+		return "act.display";	
+	}
 	
 }

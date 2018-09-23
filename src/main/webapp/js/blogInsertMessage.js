@@ -1,6 +1,6 @@
 $(document).ready(function(){
 		$(".flip").mouseenter(function(){
-			$(".flip").css("background-color","#d0d8ba");
+			$(".flip").css("background-color","#999e8a");
 		});	
 		$(".flip").mouseout(function(){
 			$(".flip").css("background-color","#e5eecc");

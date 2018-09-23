@@ -119,7 +119,6 @@ public class ActDAOHibernate implements ActDAO {
 		}else {
 			result [0] = -1;
 		}
-		
 		result [1] = temp.setFirstResult((p-1)*num) .setMaxResults(num) .list();
 		return result;
 //		return this.getSession().createQuery(
