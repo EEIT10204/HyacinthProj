@@ -60,7 +60,7 @@ public class CreateActController {
 		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		 Timestamp Date1 = new java.sql.Timestamp(sdf1.parse(actCreate).getTime());
 		
-
+ 
 		 ActBean abean = new ActBean();
 		 abean.setMemberID(memberBean.getMemberID());
 		 abean.setActCreateDate(Date1);		 
@@ -74,10 +74,10 @@ public class CreateActController {
 	@RequestMapping(
 			path={"/create.act.controller"}
 			)	
-	public String method( String actSTime, String EndTime, String DeadLine, Model model, ActBean abean, 
+	public String method(byte[] actPhoto, String actSTime, String EndTime, String DeadLine, Model model, ActBean abean, 
 			TripBean tbean, BindingResult bindingResult, @SessionAttribute(name="user") MemberBean memberBean) throws ParseException, IOException {
 		
-		
+		System.out.println("actPhoto=" + actPhoto.toString());
 		model.addAttribute("member",memberBean);
  
 	
@@ -164,7 +164,7 @@ public class CreateActController {
 			model.addAttribute("trip", trip );
 			
 					
-			return "act.display";
+			return "act.display"; 
 			
 
 	}

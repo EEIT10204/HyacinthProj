@@ -65,7 +65,7 @@ public class ViewPointController {
 				}
 				if(bean.getViewPointInfo() == null || bean.getViewPointInfo().length() == 0) {
 					errors.put("info", "請輸入介紹");
-				}
+				} 
 				if(bean.getViewPointType() == null) {
 					errors.put("type", "請選擇類型");
 				}
