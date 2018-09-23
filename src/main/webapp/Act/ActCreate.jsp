@@ -123,13 +123,11 @@
 	 <tr><input type="hidden" name="actView" value="0" id="actView"></tr>
 	 <tr><input type="hidden" name="actVisibility" value="1" id="actVisibility"></tr>
 	 <tr><input type="hidden" name="participantsNow" value="0" id="participantsNow"></tr>
-
-
 <!-- 	 hidden  -->
 	     <tr>
 		     <td>活動預覽圖(揪團封面):</td>
-             <td><input type="file" name="actPhoto" id="" value="${param.homepage}"></td>
-             <td>${errorMsgs["homepage"]}</td>
+             <td><input type="file" name="actPhoto" id="actPhoto"  accept="image/*" class="text-center center-block file-upload"></td>
+             
 		</tr>
 		<tr>
 			<td>活動主題:</td>
@@ -183,7 +181,7 @@
 
 		<tr>
 		     <td>活動結束日期:</td>
-             <td><input type="datetime-local" name="EndTime" id="actEndTime" value="${param.actEndTime}"></td>
+             <td><input type="datetime-local" name="EndTime" id="actEndTime" value="${param.actEndTime}" onblur="checkTime()"></td>
              <td>${errors.actEndTime}</td>
 		</tr>
 		<tr>
@@ -271,7 +269,24 @@
 	    </div>
 	     
   </div>
+<script type="text/javascript">
 
+var startTime = document.getElementById("actStartTime").value;
+var endTime = document.getElementById("actEndTime").value;
+function checkTime(){              
+    if(startTime.length>0 && endTime.length>0){     
+        var startTmp=startTime.split("-");  
+        var endTmp=endTime.split("-");  
+        var sd=new Date(startTmp[0],startTmp[1],startTmp[2]);  
+        var ed=new Date(endTmp[0],endTmp[1],endTmp[2]);  
+        if(sd.getTime()>ed.getTime()){   
+            alert("開始日期不能大於結束日期");     
+            return false;     
+        }     
+    }     
+    return true;     
+}    
+</script>
          <script>
 //          connection DataBase by Ajax
          $("#search").on('click',function () {

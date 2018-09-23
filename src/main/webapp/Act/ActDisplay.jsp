@@ -65,7 +65,7 @@ vertical-align: middle;
             <img class="actCover" style=" padding-bottom: 30px;" src="data:image/png;base64,${event.actPhotoToBase64}" name="actPhoto" id="actPhoto" alt="event">
 <!-- -------------------------------------------------------------------------------------------- --> 
 
-            <div id="map"></div>
+            <div style="width: 400px; height: 400px" id="map"></div>
     <div class="card" style="width: 600px;">
    <div class="card-body" style="background-color: gray;">
     <h5 class="card-title"> ${event.actTitle}</h5>
