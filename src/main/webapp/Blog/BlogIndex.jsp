@@ -532,7 +532,7 @@ hr {
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
-								<a id="navB1" href="#" class="a1 urlC1">2018 跨年哪兒過？ 六個台灣跨年景點大盤點</a>
+								<a id="navB1" href="#" class="a1 urlC1">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 						<div class="div2">
@@ -542,7 +542,7 @@ hr {
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
-								<a id="navB2" href="#" class="a1 urlC2">親子旅遊週末就出發！特色親子行程、住宿，看這篇就對了！</a>
+								<a id="navB2" href="#" class="a1 urlC2">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 						<div class="div2">
@@ -552,7 +552,7 @@ hr {
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
-								<a id="navB3" href="#" class="a1 urlC3">不一樣的台北之旅 台北公共單車一日遊攻略</a>
+								<a id="navB3" href="#" class="a1 urlC3">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 						<div class="div2">
@@ -562,7 +562,7 @@ hr {
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
-								<a id="navB4" href="#" class="a1 urlC4">【台灣】台北實用基本資訊，交通、必去、WIFI、電壓、旅遊須知一次搞定</a>
+								<a id="navB4" href="#" class="a1 urlC4">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 					</div>
@@ -608,7 +608,7 @@ hr {
 									alt="japan1">
 							</div>
 							<div class="div4">
-								<a id="navB5" href="#" class="a1 urlC1"></a>
+								<a id="navB5" href="#" class="a1 urlC1">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 						<div class="div2">
@@ -618,7 +618,7 @@ hr {
 									alt="japan2">
 							</div>
 							<div class="div4">
-								<a id="navB6" href="#" class="a1 urlC2"></a>
+								<a id="navB6" href="#" class="a1 urlC2">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 						<div class="div2">
@@ -628,7 +628,7 @@ hr {
 									alt="japan3">
 							</div>
 							<div class="div4">
-								<a id="navB7" href="#" class="a1 urlC3"></a>
+								<a id="navB7" href="#" class="a1 urlC3">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 						<div class="div2">
@@ -638,7 +638,7 @@ hr {
 									alt="japan4">
 							</div>
 							<div class="div4">
-								<a id="navB8" href="#" class="a1 urlC4"></a>
+								<a id="navB8" href="#" class="a1 urlC4">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 					</div>
@@ -683,7 +683,7 @@ hr {
 									alt="korea1">
 							</div>
 							<div class="div4">
-								<a id="navB9" href="#" class="a1 urlC1"></a>
+								<a id="navB9" href="#" class="a1 urlC1">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 						<div class="div2">
@@ -693,7 +693,7 @@ hr {
 									alt="korea2">
 							</div>
 							<div class="div4">
-								<a id="navB10" href="#" class="a1 urlC2" ></a>
+								<a id="navB10" href="#" class="a1 urlC2" >尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 						<div class="div2">
@@ -703,7 +703,7 @@ hr {
 									alt="korea3">
 							</div>
 							<div class="div4">
-								<a id="navB11" href="#" class="a1 urlC3"></a>
+								<a id="navB11" href="#" class="a1 urlC3">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 						<div class="div2">
@@ -713,7 +713,7 @@ hr {
 									alt="korea4">
 							</div>
 							<div class="div4">
-								<a id="navB12" href="#" class="a1 urlC4 "></a>
+								<a id="navB12" href="#" class="a1 urlC4 ">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 					</div>
@@ -758,7 +758,7 @@ hr {
 									alt="us1">
 							</div>
 							<div class="div4">
-								<a id="navB13" href="#" class="a1 urlC1"></a>
+								<a id="navB13" href="#" class="a1 urlC1">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 						<div class="div2">
@@ -768,7 +768,7 @@ hr {
 									alt="us2">
 							</div>
 							<div class="div4">
-								<a id="navB14" href="#" class="a1 urlC2"></a>
+								<a id="navB14" href="#" class="a1 urlC2">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 						<div class="div2">
@@ -778,7 +778,7 @@ hr {
 									alt="us3">
 							</div>
 							<div class="div4">
-								<a id="navB15" href="#" class="a1 urlC3"></a>
+								<a id="navB15" href="#" class="a1 urlC3">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 						<div class="div2">
@@ -788,7 +788,7 @@ hr {
 									alt="us4">
 							</div>
 							<div class="div4">
-								<a id="navB16" href="#" class="a1 urlC4"></a>
+								<a id="navB16" href="#" class="a1 urlC4">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 					</div>
@@ -832,7 +832,7 @@ hr {
 									alt="germany1">
 							</div>
 							<div class="div4">
-								<a id="navB17" href="#" class="a1 urlC1">【德國】迪士尼城堡的原型！慕尼黑郊區必去新天鵝堡攻略：交通、周邊景點整理推薦</a>
+								<a id="navB17" href="#" class="a1 urlC1">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 						<div class="div2">
@@ -842,7 +842,7 @@ hr {
 									alt="germany2">
 							</div>
 							<div class="div4">
-								<a id="navB18" href="#" class="a1 urlC2">【德國】慕尼黑自由行全攻略，啤酒節、新天鵝堡、國王湖，四天三夜行程安排、交通、景點整理</a>
+								<a id="navB18" href="#" class="a1 urlC2">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 						<div class="div2">
@@ -852,7 +852,7 @@ hr {
 									alt="germany3">
 							</div>
 							<div class="div4">
-								<a id="navB19" href="#" class="a1 urlC3">【愛爾蘭】都柏林購物指南，必逛平價超市、特色市集、獨立書店整理</a>
+								<a id="navB19" href="#" class="a1 urlC3">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 						<div class="div2">
@@ -862,7 +862,7 @@ hr {
 									alt="germany4">
 							</div>
 							<div class="div4">
-								<a id="navB20" href="#" class="a1 urlC4">【法國】巴黎藝術之旅，教你怎麼參觀三大美術館：羅浮宮、奧塞美術館、龐畢度藝術中心（附上票券整理和鎮店之寶）</a>
+								<a id="navB20" href="#" class="a1 urlC4">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 							</div>
 						</div>
 					</div>
@@ -937,15 +937,15 @@ hr {
 							</a>
 						</div>		
 						<div class="divAS12">
-							<a id="changeNation1" href="#" class="a1 border1 distance">中國</a>
+							<a id="changeNation1" href="#" class="a1 border1 distance">亞洲</a>
 							<span class="a1 border1 distance">瀏覽次數(<span id="changeViews1">999</span>)</span> 
-							<a id="changeCity1" href="#" class="a1 distance">香港</a>
+							<a id="changeCity1" href="#" class="a1 distance">台灣</a>
 						</div>
 						<div class="divAS13">
-							<a id="changeTitle1" href="#" class="a1 url1">【香港】2018香港迪士尼終極攻略，交通、門票、事前準備、攻園須知整理，照著這篇玩就對了！</a>
+							<a id="changeTitle1" href="#" class="a1 url1">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 						</div>
 						<div class="divAS14">
-							<span id="changeDate1" class="border1 distance">2018-08-08</span>
+							<span id="changeDate1" class="border1 distance">2018-09-28</span>
 							<span class="distance">by</span> 
 							<a id="changeMember1" href="#" class="a1 ">Kobe</a>
 						</div>
@@ -964,13 +964,13 @@ hr {
 							<a id="changeNation3" href="#" class="a1 border1 distance">亞洲</a>
 							<span class="a1 border1 distance">瀏覽次數(<span
 								id="changeViews3" href="#">999</span>)
-							</span> <a id="changeCity3" href="#" class="a1 distance">香港</a>
+							</span> <a id="changeCity3" href="#" class="a1 distance">台灣</a>
 						</div>
 						<div class="divAS13">
-							<a id="changeTitle3" href="#" class="a1 url3">【香港】2018香港迪士尼終極攻略，交通、門票、事前準備、攻園須知整理，照著這篇玩就對了！</a>
+							<a id="changeTitle3" href="#" class="a1 url3">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 						</div>
 						<div class="divAS14">
-							<span id="changeDate3" class="border1 distance">2018-08-08</span>
+							<span id="changeDate3" class="border1 distance">2018-09-28</span>
 							<span class="distance">by</span> <span id="changeMember3" class="a1 ">Kobe</span>
 						</div>
 						<div class="divAS15">
@@ -987,13 +987,13 @@ hr {
 							<a id="changeNation5" href="#" class="a1 border1 distance">亞洲</a>
 							<span class="a1 border1 distance">瀏覽次數(<span
 								id="changeViews5" href="#">999</span>)
-							</span> <a id="changeCity5" href="#" class="a1 distance">香港</a>
+							</span> <a id="changeCity5" href="#" class="a1 distance">台灣</a>
 						</div>
 						<div class="divAS13">
-							<a id="changeTitle5" href="#" class="a1 url5">【香港】2018香港迪士尼終極攻略，交通、門票、事前準備、攻園須知整理，照著這篇玩就對了！</a>
+							<a id="changeTitle5" href="#" class="a1 url5">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 						</div>
 						<div class="divAS14">
-							<span id="changeDate5" class="border1 distance">2018-08-08</span>
+							<span id="changeDate5" class="border1 distance">2018-09-28</span>
 							<span class="distance">by</span> <a id="changeMember5" href="#"
 								class="a1 ">Kobe</a>
 						</div>
@@ -1012,13 +1012,13 @@ hr {
 							<a id="changeNation2" href="#" class="a1 border1 distance">亞洲</a>
 							<span class="a1 border1 distance">瀏覽次數(<span
 								id="changeViews2" href="#">999</span>)
-							</span> <a id="changeCity2" href="#" class="a1 distance">香港</a>
+							</span> <a id="changeCity2" href="#" class="a1 distance">台灣</a>
 						</div>
 						<div class="divAS13">
-							<a id="changeTitle2" href="#" class="a1 url2">【香港】2018香港迪士尼終極攻略，交通、門票、事前準備、攻園須知整理，照著這篇玩就對了！</a>
+							<a id="changeTitle2" href="#" class="a1 url2">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 						</div>
 						<div class="divAS14">
-							<span id="changeDate2" class="border1 distance">2018-08-08</span>
+							<span id="changeDate2" class="border1 distance">2018-09-28</span>
 							<span class="distance">by</span> <a id="changeMember2" href="#"
 								class="a1 ">Kobe</a>
 						</div>
@@ -1035,13 +1035,13 @@ hr {
 							<a id="changeNation4" href="#" class="a1 border1 distance">亞洲</a>
 							<span class="a1 border1 distance">瀏覽次數(<span
 								id="changeViews4" href="#">999</span>)
-							</span> <a id="changeCity4" href="#" class="a1 distance">香港</a>
+							</span> <a id="changeCity4" href="#" class="a1 distance">台灣</a>
 						</div>
 						<div class="divAS13">
-							<a id="changeTitle4" href="#" class="a1 url4">【香港】2018香港迪士尼終極攻略，交通、門票、事前準備、攻園須知整理，照著這篇玩就對了！</a>
+							<a id="changeTitle4" href="#" class="a1 url4">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 						</div>
 						<div class="divAS14">
-							<span id="changeDate4" class="border1 distance">2018-08-08</span>
+							<span id="changeDate4" class="border1 distance">2018-09-28</span>
 							<span class="distance">by</span> <a id="changeMember4" href="#"
 								class="a1 ">Kobe</a>
 						</div>
@@ -1059,13 +1059,13 @@ hr {
 							<a id="changeNation6" href="#" class="a1 border1 distance">亞洲</a>
 							<span class="a1 border1 distance">瀏覽次數(<span
 								id="changeViews6" href="#">999</span>)
-							</span> <a id="changeCity6" href="#" class="a1 distance">香港</a>
+							</span> <a id="changeCity6" href="#" class="a1 distance">台灣</a>
 						</div>
 						<div class="divAS13">
-							<a id="changeTitle6" href="#" class="a1 url6">【香港】2018香港迪士尼終極攻略，交通、門票、事前準備、攻園須知整理，照著這篇玩就對了！</a>
+							<a id="changeTitle6" href="#" class="a1 url6">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
 						</div>
 						<div class="divAS14">
-							<span id="changeDate6" class="border1 distance">2018-08-08</span>
+							<span id="changeDate6" class="border1 distance">2018-09-28</span>
 							<span class="distance">by</span> <a id="changeMember6" href="#"
 								class="a1 ">Kobe</a>
 						</div>
@@ -1166,7 +1166,7 @@ hr {
 								</div>
 							</div>
 							<div class="divT4">
-								<a id="changeAsideTitleDate1" href="#" class="a1 urlA1">2018 跨年哪兒過？ 六個台灣跨年景點大盤點</a>
+								<a id="changeAsideTitleDate1" href="#" class="a1 urlA1"></a>
 								<div id="changeAsideViewsDate1" class="divText">2018-8-8</div>
 							</div>
 						</div>
@@ -1181,7 +1181,7 @@ hr {
 								</div>
 							</div>
 							<div class="divT4">
-								<a id="changeAsideTitleDate2" href="#" class="a1 urlA2">2018 跨年哪兒過？ 六個台灣跨年景點大盤點</a>
+								<a id="changeAsideTitleDate2" href="#" class="a1 urlA2"></a>
 								<div id="changeAsideViewsDate2" class="divText">2018-8-8</div>
 							</div>
 						</div>
@@ -1196,7 +1196,7 @@ hr {
 								</div>
 							</div>
 							<div class="divT4">
-								<a id="changeAsideTitleDate3" href="#" class="a1 urlA3">2018 跨年哪兒過？ 六個台灣跨年景點大盤點</a>
+								<a id="changeAsideTitleDate3" href="#" class="a1 urlA3"></a>
 								<div id="changeAsideViewsDate3" class="divText">2018-8-8</div>
 							</div>
 						</div>
@@ -1212,7 +1212,7 @@ hr {
 							</div>
 							<div class="divT4">
 							
-								<a id="changeAsideTitleDate4" href="#" class="a1 urlA4">2018 跨年哪兒過？ 六個台灣跨年景點大盤點</a>
+								<a id="changeAsideTitleDate4" href="#" class="a1 urlA4"></a>
 								<div id="changeAsideViewsDate4" class="divText">2018-8-8</div>
 							</div>
 						</div>
@@ -1239,7 +1239,7 @@ hr {
 								</div>
 							</div>
 							<div class="divT4">
-								<a id="changeAsideTitle1" href="#" class="a1 urlB1">2018 跨年哪兒過？ 六個台灣跨年景點大盤點</a>
+								<a id="changeAsideTitle1" href="#" class="a1 urlB1"></a>
 								<span class="divText a1">瀏覽次數(<span	id="changeAsideViews1">999</span>)
 							</div>
 						</div>
@@ -1254,7 +1254,7 @@ hr {
 								</div>
 							</div>
 							<div class="divT4">
-								<a id="changeAsideTitle2" href="#" class="a1 urlB2">2018 跨年哪兒過？ 六個台灣跨年景點大盤點</a>
+								<a id="changeAsideTitle2" href="#" class="a1 urlB2"></a>
 								<span class="divText a1">瀏覽次數(<span	id="changeAsideViews2">999</span>)
 							</div>
 						</div>
@@ -1269,7 +1269,7 @@ hr {
 								</div>
 							</div>
 							<div class="divT4">
-								<a id="changeAsideTitle3" href="#" class="a1 urlB3">2018 跨年哪兒過？ 六個台灣跨年景點大盤點</a>
+								<a id="changeAsideTitle3" href="#" class="a1 urlB3"></a>
 								<span class="divText a1">瀏覽次數(<span	id="changeAsideViews3">999</span>)
 							</div>
 						</div>
@@ -1284,7 +1284,7 @@ hr {
 								</div>
 							</div>
 							<div class="divT4">
-								<a  id="changeAsideTitle4" href="#" class="a1 urlB4">2018 跨年哪兒過？ 六個台灣跨年景點大盤點</a>
+								<a  id="changeAsideTitle4" href="#" class="a1 urlB4"></a>
 								<span class="divText a1">瀏覽次數(<span	id="changeAsideViews4">999</span>)
 							</div>
 						</div>
@@ -1314,12 +1314,11 @@ hr {
 									 $.each(jsonNav,function(idx,navProduct){
 // 										 alert(idx+"====="+navProduct.blogTitle);
 										 for(var i = 1;i<=20;i++){
-// 											 alert(i);
 										 if(navProduct.blogCity==nav[i-1]){
-// 											    $('.urlC'+(i)).attr("href",path+navProduct.blogSNum);
-// 												$('#navA'+(i)).attr("src","data:image/png;base64,"+navProduct.blogCover);
+											    $('.urlC'+(i)).attr("href",path+navProduct.blogSNum);
+												$('#navA'+(i)).attr("src","data:image/png;base64,"+navProduct.blogCover);
 												$('#navB'+(i)).html(navProduct.blogTitle);
-// 												$('.link'+(i)).attr("href",path2+navProduct.blogCity);
+												$('.link'+(i)).attr("href",path2+navProduct.blogCity);
 										 }
 										 }
 										

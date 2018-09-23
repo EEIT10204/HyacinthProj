@@ -1975,7 +1975,8 @@ margin-top:10px;
 				            $.getJSON('${pageContext.request.contextPath}/Blog/MemberBlogScoreUpdate.controller',{'memberID':member,'blogSNum':URL,'score':score},function(json){
 // 								 alert(JSON.stringify(json));
 // 								 alert("評分成功");
-								 $('#rating-stars-value').attr("placeholder","您給了("+$('#rating-stars-value').val()+")分");
+								 $('#rating-stars-value').val("您給了("+$('#rating-stars-value').val()+")分");
+// 								 $('#rating-stars-value').attr("placeholder","您給了("+$('#rating-stars-value').val()+")分");
 // 								 alert("評分成功");
 								 $.getJSON('${pageContext.request.contextPath}/Blog/MemberBloglike.controller',{'blogSNum':URL},function(json){
 									 
@@ -2089,10 +2090,10 @@ margin-top:10px;
 // 										 alert(navProduct.blogCity);
 										 for(var i = 1;i<=20;i++){
 										 if(navProduct.blogCity==nav[i-1]){
-// 											    $('.urlC'+(i)).attr("href",path+navProduct.blogSNum);
+											    $('.urlC'+(i)).attr("href",path+navProduct.blogSNum);
 												$('#navA'+(i)).attr("src","data:image/png;base64,"+navProduct.blogCover);
-// 												$('#navB'+(i)).html(navProduct.blogTitle);
-// 												$('.link'+(i)).attr("href",path2+navProduct.blogCity);
+												$('#navB'+(i)).html(navProduct.blogTitle);
+												$('.link'+(i)).attr("href",path2+navProduct.blogCity);
 										 }
 										 }
 										
