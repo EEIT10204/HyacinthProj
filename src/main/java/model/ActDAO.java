@@ -24,7 +24,7 @@ public interface  ActDAO {
 	
 	public abstract List<ActBean> findHostedByOne(Integer memberID,String sorting,int p,int num);
 	
-	public abstract List<ActBean> findByMultiConditions(String keyword,String status,String sorting,int p,int num);
+	public abstract Object[] findByMultiConditions(String keyword,String status,String sorting,int p,int num);
 	
 	public abstract ActBean selectBymemberIDandcreateDate(ActBean bean);
 }

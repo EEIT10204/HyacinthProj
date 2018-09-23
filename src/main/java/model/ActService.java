@@ -46,4 +46,12 @@ public class ActService {
 		result = actDAO.Newset();
 		return result;
 	}
+	
+	public Object[] fetchByMultiConditions(String keyword, String status, String sorting,int p,int num) {
+		Object[] result = actDAO.findByMultiConditions(keyword, status, sorting, p, num);
+		if((int)result[0]!=0) {
+			return result;
+		}
+		return null;
+	}
 }
