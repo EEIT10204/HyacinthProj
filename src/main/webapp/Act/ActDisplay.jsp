@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <jsp:include page="../Index/NewHeader.jsp" />
+<title>${event.actTitle}</title>
 <html>
 <head>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -73,7 +74,7 @@ vertical-align: middle;
                     </div>
                 <div class="speakers">
                     <strong>舉辦人</strong>
-                    <span><a href="XXXXXXXXXXXXX">${member.memberName}</a></span>
+                    <span><a href="${pageContext.request.contextPath}/ProfilePageGet?memberID=${member.memberID}">${member.memberName}</a></span>
                 </div>
                 <div class="event_date">
                 <td>
@@ -142,7 +143,7 @@ $( document ).ready(function() {
 	    	$('#LikeOrDisLike').text("Like").attr("value","Like");
 	  }else if (this.value == 'none'){
 		 var process = 'none';
-	    	$('#allButton').html("<h3>please login !<h3>");
+	    	$('#LikeOrDisLike').html("<h3>please login !<h3>");
 	 }
 	 
     $.ajax({
@@ -174,10 +175,14 @@ $( document ).ready(function() {
 		 var process = true;
 	    	$('#AttendOrNot').text("disAttend").attr("value","disAttend");
 	 }
-	 else{
+	 else if (this.value == 'disLike'){
 		 var process = false;
 	    	$('#AttendOrNot').text("Attend").attr("value","Attend");
+	  } else if (this.value == 'none'){
+		 var process = 'none';
+	    	$('#AttendOrNot').html("<h3>please login !<h3>");
 	 }
+	 
 	 
     $.ajax({
 	    type : "post",

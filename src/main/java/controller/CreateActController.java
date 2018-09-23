@@ -43,6 +43,41 @@ public class CreateActController {
 	private TripDAOHibernate tripDAOHibernate;
 	@Autowired
 	private ViewPointDAOHibernate  vPointDAOHibernate;
+	
+	@RequestMapping(path = { "/before.act.controller" })
+	public String method(String actCreate, Model model, @SessionAttribute(name="user", required=false)MemberBean memberBean)
+			throws ParseException, IOException {
+	
+		
+		SimpleDateFormat nowdate = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+        nowdate.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+        actCreate = nowdate.format(new java.util.Date()); 
+	
+		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		 Timestamp Date1 = new java.sql.Timestamp(sdf1.parse(actCreate).getTime());
+		
+//		 System.out.println("memberID=" + memberID);
+			
+//			if(memberBean.getMemberID()!= null) {
+//				abean.setMemberID(memberBean.getMemberID());
+//				
+//			}
+		 ActBean abean = new ActBean();
+		 abean.setMemberID(memberBean.getMemberID());
+		 abean.setActCreateDate(Date1);
+//		 System.out.println("abean= " + abean);
+//		 
+		
+		 actDAOHibernate.insert(abean);
+		 
+//		 ActBean result = actDAOHibernate.selectBymemberIDandcreateDate(abean);
+//		
+//		System.out.println("abean="+abean.toString());
+		
+		model.addAttribute("newEvent", abean);
+		
+		return "act.create";
+	}
 	 
 
 	@RequestMapping(
@@ -50,7 +85,9 @@ public class CreateActController {
 			)	
 	public String method( String actSTime, String EndTime, String DeadLine, Model model, ActBean abean, 
 			TripBean tbean, BindingResult bindingResult, @SessionAttribute(name="user") MemberBean memberBean) throws ParseException, IOException {
-
+		
+		
+		model.addAttribute("member",memberBean);
  
 	
 		ActBean actbean = actDAOHibernate.selectBymemberIDandcreateDate(abean);
@@ -102,7 +139,9 @@ public class CreateActController {
         actbean.setActJoinDeadLine(Date3);
         actbean.setActDuration(dur);
 	     
-	        ActBean result = actDAOHibernate.insert(actbean);
+	    actDAOHibernate.insert(actbean);
+	    
+	    ActBean result = actDAOHibernate.selectByActID(actbean);
 			System.out.println("result="+result);
 			//TripBean tbean
 
