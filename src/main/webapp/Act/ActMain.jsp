@@ -158,7 +158,7 @@ $( function() {
 		    <option value="budget">活動預算</option>
     </select>
     <button id="actSearch" class="btn btn-info">搜尋</button>
-</form>
+  </form>
   </ul>
 
 	<!--1-->
@@ -192,8 +192,7 @@ $( function() {
 		</div>
 		
 		<div style="width:1100px; height: 5px;" class="boxlong"></div>
-		
-<<<<<<< HEAD
+
 		<div class="A1" id="Titleout4">
 			<div class="A2" id="ActT4">【捷運遊台北】四天三夜台北旅遊</div>
 			<div class="A3" id="ActP4"><img src=""></div>
@@ -222,38 +221,6 @@ $( function() {
 			</div>
 		</div>
 	</div>
-=======
-					<div class="A1" id="Titleout4">
-							<div class="A2" id="ActT4">【捷運遊台北】四天三夜台北旅遊</div>
-							<div class="A3" id="ActP4"><img src=""></div>
-							<div class="A4" id="ActB4">
-							<div class="aa1"><img src="${pageContext.request.contextPath}/Images/Act/viewpoint.png" style="width: 35px;height: 35px;"></div>
-							<div class="aa2" id="view4">129</div> 
-							<div class="aa3"><a href="" id="ActM4"><button type="button" class="btn btn-primary btn-sm" style="margin-top: 3px">More</button></a></div>    
-							</div>
-						</div>
-						<div class="A1" id="Titleout5">
-								<div class="A2" id="ActT5">【捷運遊台北】四天三夜台北旅遊</div>
-								<div class="A3" id="ActP5"><img src=""></div>
-								<div class="A4" id="ActB5">
-								<div class="aa1"><img src="${pageContext.request.contextPath}/Images/Act/viewpoint.png" style="width: 35px;height: 35px;"></div>
-								<div class="aa2" id="view5">129</div> 
-								<div class="aa3"><a href="" id="ActM5"><button type="button" class="btn btn-primary btn-sm" style="margin-top: 3px">More</button></a></div>     
-								</div>
-							</div>
-							<div class="A1" id="Titleout6">
-									<div class="A2" id="ActT6">【捷運遊台北】四天三夜台北旅遊</div>
-									<div class="A3" id="ActP6"><img src=""></div>
-									<div class="A4" id="ActB6">
-									<div class="aa1"><img src="${pageContext.request.contextPath}/Images/Act/viewpoint.png" style="width: 35px;height: 35px;"></div>
-									<div class="aa2" id="view6">129</div> 
-									<div class="aa3"><a href="" id="ActM6"><button type="button" class="btn btn-primary btn-sm" style="margin-top: 3px">More</button></a></div>    
-									</div>
-								</div>
-</div>
-
-<!--2-->
->>>>>>> 98580314dc0c027b950146a7938d21e97b60ed1d
 
 	<!--2-->
 	<div id="tabs-2">
