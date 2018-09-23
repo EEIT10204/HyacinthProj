@@ -14,6 +14,7 @@
 <%-- 	href="${pageContext.request.contextPath}/css/bootstrap.min.css"> --%>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/jumbotron.css">
+	
 <!-- <link rel="stylesheet" -->
 <!-- 	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" -->
 <!-- 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" -->
@@ -34,6 +35,8 @@
 <script src="${pageContext.request.contextPath}/js/blogUpdateMessage.js"></script>
 <style>
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+<script src="${pageContext.request.contextPath}/css/blogcomment.css"></script>
 
 * {
 	margin: 0;
@@ -851,7 +854,6 @@ hr {
 	opacity: 0.5;
 }
 
-
 /* 留言板 */
 /* ActComment */
 	.form-group textarea{
@@ -861,11 +863,13 @@ hr {
   
     }
     .messOut{
+
       border: 15px groove rgb(0, 179, 149);
       width: 700px;
       margin: auto;
       margin-top: 50px;
       border-radius: 10px;
+
     }
     .form-control{
       width: 450px;
@@ -885,7 +889,7 @@ hr {
     }
     .mess1{
       /* border: 1px solid rgb(2, 0, 136) ; */
-      background-color: rgb(223, 223, 223);
+      background-color: rgb(197, 197, 197);
       height: 50px;
     }
     .mess1 img{
@@ -941,6 +945,12 @@ hr {
     .uuu{
 /*     border:1px solid green; */
     }
+    
+      .messageboard{
+  margin-top:150px;
+/*   border:1px solid red; */
+  }
+    
       .flip{
   margin:0px;
 padding:5px;
@@ -980,7 +990,9 @@ margin-top:10px;
   transform: translateY(4px);
 }
 
-  }
+  } 
+
+
 </style>
 </head>
 
@@ -1598,12 +1610,17 @@ margin-top:10px;
     </div>
   </div> <!-- Report Modal end -->
   
-  
+  <div class="messageboard">
+  <h5 class="title-text">
+					<span><button id="changeKeyword" type="button"
+							class="btn btn-info fa-2x hot2">留言板</span>
+				</h5>
+</div>				
   <!-- 留言板 -->
 <div class="messOut">
       <div class="mess1">
-        <div class="messUser"><img src="${pageContext.request.contextPath}/Images/Index/user.png"/></div>
-        <div class="messName">John</div>
+        <div class="messUser"><img src="data:image/png;base64,${user.memberPicToBase64}"/></div>
+        <div class="messName">${user.memberName}</div>
       </div>
       <form action="<c:url value="/Blog/BlogMember.comment"/>" method="get">
 <%--         <form action="<c:url value="/Act/ACCommentInsertController?actSNum=?" />" method="get"> --%>

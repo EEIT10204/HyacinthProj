@@ -30,7 +30,8 @@
 
 #bodyContent{
 	width:100%;
-	height:45em;
+	height:790px;
+	border:1px solid red;
 }
 .ulcolor{
 	background-color: rgb(85, 134, 180);
@@ -205,7 +206,6 @@ $( function() {
 								</div>
 </div>
 
-
 <!--2-->
 
 <div id="tabs-2">
@@ -270,6 +270,7 @@ $( function() {
 </div>
 </div>
 </div>
+
  <script src="${pageContext.request.contextPath}/js/zoomify.min.js"></script>
  <script type="text/javascript">
 	 $('.A1').zoomify({scale:0.8});

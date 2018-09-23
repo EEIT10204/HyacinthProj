@@ -12,11 +12,14 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Service;
 
 import config.SpringJavaConfiguration;
+import model.dao.ACCommentDAOHibernate;
 
 @Service
 public class ActService {
 	@Autowired
 	private ActDAO actDAO;
+	
+	private ACCommentDAOHibernate aCCommentDAO;
 
 	public List<ActBean> selectAll() {
 		List<ActBean> result = null;

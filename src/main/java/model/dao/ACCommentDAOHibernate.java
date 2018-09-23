@@ -4,11 +4,13 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import model.ACCommentBean;
 import model.ACCommentDAO;
+import model.MemberBean;
 import model.ViewPointBean;
 
 @Repository
@@ -37,20 +39,44 @@ public class ACCommentDAOHibernate implements ACCommentDAO {
 
 	@Override
 	public ACCommentBean insert(ACCommentBean bean) {
+		java.sql.Timestamp sqlTimestamp = new java.sql.Timestamp(System.currentTimeMillis());
+		bean.setReplyTime(sqlTimestamp);
+		bean.setCommentVisibility(1);
 		this.getSession().save(bean);
 		return bean;
 	}
 
 	@Override
 	public ACCommentBean update(ACCommentBean bean) {
-		this.getSession().saveOrUpdate(bean);
-		return bean;
+//		java.sql.Timestamp sqlTimestamp = new java.sql.Timestamp(System.currentTimeMillis());
+		ACCommentBean temp = this.getSession().get(ACCommentBean.class, bean.getACCommentID());
+		
+	if(temp!=null) {
+//	temp.setReplyTime(sqlTimestamp);
+	temp.setCommentContent(bean.getCommentContent());
+	return temp;
+	}
+	return null;
 	}
 
 	@Override
 	public ACCommentBean delete(ACCommentBean bean) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public List<Object[]> selectActSNumMeberIdJoin(Integer actSNum) {
+		
+//		return (List<ACCommentBean>) this.getSession().createQuery("from ACCommentBean act join MemberBean m on act.memberID = m.memberID where act.actSNum = 2 order by act.replyTime ASC").list();
+		
+		String sql = " select * from Act_Comment as acts left join Member as m on acts.memberID = m.memberID where acts.actSNum = '"+ actSNum +"'and acts.commentVisibility='1' order by acts.replyTime DESC";
+		Session session = getSession();
+		Query<Object[]> query = session.createNativeQuery(sql)
+				.addEntity("acts", ACCommentBean.class)
+				.addEntity("m", MemberBean.class);
+		List<Object[]> results = query.list();
+		return results;
 	}
 	
 	//CRUD--------------------------

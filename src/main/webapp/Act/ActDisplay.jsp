@@ -10,7 +10,9 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/actcomment.css">
+<script src="${pageContext.request.contextPath}/js/actInsertMessage.js"></script>
+<script src="${pageContext.request.contextPath}/js/actUpdateMessage.js"></script>
 
 <style>
 #left-panel {
@@ -47,6 +49,8 @@ vertical-align: middle;
     height: 526px;
     width:1110px;
 }
+
+
 </style>
 </head>
 <body>
@@ -114,26 +118,131 @@ vertical-align: middle;
   </div>
 </div>
 
-    <div style="background-color: #f5f5f5; margin:auto; text-align: center; margin-right: ">
-			<button type="button" id="LikeOrDisLike"class="btn btn-primary"  value="${likebottuntype}">${likebottuntype}</button>
+    <div id="btns" style="background-color: #f5f5f5; margin:auto; text-align: center; margin-right:; ">
+		<button type="button" id="LikeOrDisLike"class="btn btn-primary"  value="${likebottuntype}">${likebottuntype}</button>
 		<button type="button" class="btn btn-success" id="AttendOrNot"  value="${attendbottuntype}">${attendbottuntype}</button> <!-- ${attendStatus} -->
-		<button type="button" class="btn btn-danger"  id="sendReport" value="sendReport">Report</button>
+		<button type="button" class="btn btn-danger"  id="sendReport" value="sendReport" data-toggle="modal" data-target="#reportModal">Report</button>
 		<button type="button" class="btn btn-warning" id="invite" value="invite">Invite</button>
 		<input type="hidden" id= "num" value="${useractSNum}">
 		<input type="hidden" id= "mem" value="${userid}">
 	</div>
 		<div id = "friends"></div>
 	</div>
-		
-		
-		
+	
 
+<div class="textboadrss">	
+<button class="button button4">
+<h2>留言板</h2>
+</button>
+</div>
+	<!-- 留言板 -->
+<div class="messOuts">
+      <div class="mess1s">
+        <div class="messUsers"><img src="data:image/png;base64,${user.memberPicToBase64}"/></div>
+        <div class="messNames">${user.memberName}</div>
+      </div>
+      <form action="<c:url value="/Act/ActDisplay.comment"/>" method="get">
+<%--         <form action="<c:url value="/Act/ACCommentInsertController?actSNum=?" />" method="get"> --%>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Leave Message</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="commentContent"></textarea>
+                  </div>
+                  <div class="buttonTs">
+                      <button type="submit" class="btn-primary" style="margin-left: 650px; margin-bottom: 20px;" id="sendbuttom">Send out</button>
+<!--                           <input type="hidden" name="commentContent" value="1"> -->
+                          <input type="hidden" name="memberID" value="${user.memberID}">
+                          <input type="hidden" name="actSNum" value="${param.actSNum}">
+                          
+                  </div>
+                  </form>
+                  <div class="mess2s">
+                    <!-- <div class="mess3"></div>
+                    <div class="mess4"></div> -->
+                  <div class="form-group">
+                      <label for="exampleFormControlInput1">All Message</label>
+                      
+                      <div class="uuus">
+                      <c:forEach var="obj" items="${ACComment}">
+                      <form action="<c:url value="/ACCommentUpdate.Controller"/>" method="get">
+                      <div id="messAs">
+                          <img src="data:image/png;base64,${obj[1].memberPicToBase64}"/>
+                          <h6>${obj[1].memberName} </h6>
+<%--                           <h6>${obj[0].ACCommentID}</h6> --%>
+
+                          <div class="messBs">
+                          <input type="text" class="form-control" disabled value="${obj[0].commentContent}"
+                          name="commentContent">
+                        </div>
+                        
+                        <c:if test= "${user.memberID == obj[1].memberID}"> 
+                        <div class="updates"> 
+                        <span class="updatebuttons" style="width:70px;height:25px">修改</span>            
+                        <input class="updatebuttons" style="width:70px;height:25px" type="hidden" value="送出">
+                        <input type="hidden" name="ACCommentID" value="${obj[0].ACCommentID}">
+                        <input type="hidden" name="actSNum" value="${param.actSNum}">
+                         <input type="hidden" name="memberID" value="${user.memberID}">
+                        </div>
+                        </c:if>
+<%--                           <input type="text" name="testmember" value="${param.actSNum}"> --%>    
+                      </div>
+                        </form>    
+                      </c:forEach>
+                      </div>
+                      <div >
+                          <p class="flips">顯示更多留言</p>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+
+		<!-- Report Model Start -->
+  <div class="modal fade" id="reportModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+        <img src="${pageContext.request.contextPath}/Images/Index/warning.png" style="height:20px;margin-top:10px;">
+        <h4 class="modal-title" style="margin-left:12px;">檢舉</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>          
+        </div>
+        <div class="modal-body">
+        	<form>
+       		<span style="margin-left:5px;font-size:16px;">理由:</span> <br>
+       		<textArea style="vertical-align:top; width:400px;margin-left:55px;margin-top:10px;height:200px;" id="reportReason" ></textArea>
+       		<input type="text" id="reportMember" value="<c:if test="${user != null}">${user.memberID}</c:if>" style="display:""/> <input type="text" id="reportReferID" style="display:"" value="${event.actID}"/>
+       		</form>
+        </div>
+        <div class="modal-footer">
+        	<button onclick="sendReport()" type="button" class="btn btn-primary " data-dismiss="modal" style="color:white;">送出</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" style="color:white;">取消</button>
+        </div>
+      </div>   
+    </div>
+  </div> <!-- Report Modal end -->
+
+		
 <script>
 $( document ).ready(function() {
 	
+	if( ${ user == null }){
+		$('#btns').html("<div></div>");
+	}
+	if(${user.memberID}==${event.memberID}){
+		$('#LikeOrDisLike').attr('style', 'display:none');
+		$('#AttendOrNot').attr('style', 'display:none');
+		
+	}
+	
+	
  $('#LikeOrDisLike').on('click',this.value ,function () {
 	 
-	 alert(this.value);
+// 	 alert(this.value);
+// if( ${ user != null })
+// 		  var loginMemberID = ${user.memberID};
+	
+
+
 	 if(this.value == 'Like'){
 		 var process = true;
 	    	$('#LikeOrDisLike').text("disLike").attr("value","disLike");
@@ -151,7 +260,7 @@ $( document ).ready(function() {
 	    data:JSON.stringify({
 	    	"actSNum":document.getElementById("num").value,
 	    	"memberID":document.getElementById("mem").value,
-	    	"isLike":process,    	
+	    	"isLike":process    	
 	    }),
 	    
 	    contentType: "application/json; charset=utf-8",
@@ -208,7 +317,16 @@ $( document ).ready(function() {
 
 </script>
 
-			
+<script type="text/javascript">
+$(document).ready(function(){
+	alert("run button check");
+if('${user.memberID}'==""){
+$("#sendbuttom").html("<button type='submit' class='btn-secondary style='margin-left: 650px; margin-bottom: 20px; border-radius:20px' id='sendbuttom' disabled='disabled'>請先登入</button>")
+$(".messUsers").html("<div class='messUsers'><img src='${pageContext.request.contextPath}/Images/Index/user.png'/></div>")
+};
+});
+
+</script>			
 			
 <script> 
 			 function initMap() {
@@ -302,6 +420,41 @@ $( document ).ready(function() {
 	 }); 
 	 
 })
+
+	//-----------Report Ajax --------
+		function sendReport(){
+		var reportReason = $('#reportReason').val();
+		var reportMember = $('#reportMember').val();
+		var referID = $('#reportReferID').val();
+// 		alert(reportReason + '-' + reportMember + '-' + referID);
+		
+		$.ajax({
+			type : "get",
+			url : "${pageContext.request.contextPath}/report.Send",
+			data: {"reportMember":reportMember, "referID":referID,"reportReason":reportReason},
+			contentType: "application/json; charset=utf-8",
+			dataType: "text",
+			success: function (data) {
+// 					alert(data);
+			swal({
+			  type: 'success',
+			  title: '檢舉成功',
+			  showConfirmButton: false,
+			  timer: 1500
+			})
+				},
+			error: function (response) {
+				$('#detailReason').empty();
+				alert("detail error");
+				
+				swal({
+					  type: 'error',
+					  title: '檢舉有誤',
+					  text: '請重新發送檢舉',
+					})
+				},				
+		});	
+	}
 </script>
 </body>
 <jsp:include page="../Index/Footer.jsp" />
