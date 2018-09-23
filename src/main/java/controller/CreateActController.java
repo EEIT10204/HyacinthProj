@@ -26,8 +26,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 
 import model.ActBean;
+import model.MemberActBean;
 import model.MemberBean;
 import model.TripBean;
 import model.ViewPointBean;
@@ -47,9 +50,15 @@ public class CreateActController {
 	@Autowired
 	private MemberActDAOHibernate memberActDAOHibernate;
 	
+	
+	@InitBinder
+	public void registerPropertyEditor(WebDataBinder webDataBinder) {
+		webDataBinder.registerCustomEditor(byte[].class,new ByteArrayMultipartFileEditor());
+	}
 	@RequestMapping(path = { "/before.act.controller" })
 	public String method(String actCreate, Model model, @SessionAttribute(name="user", required=false)MemberBean memberBean)
 			throws ParseException, IOException {
+		
 		
 	
 		
@@ -74,10 +83,12 @@ public class CreateActController {
 	@RequestMapping(
 			path={"/create.act.controller"}
 			)	
-	public String method(byte[] actPhoto, String actSTime, String EndTime, String DeadLine, Model model, ActBean abean, 
-			TripBean tbean, BindingResult bindingResult, @SessionAttribute(name="user") MemberBean memberBean) throws ParseException, IOException {
+	public String method(@RequestParam("actPhoto") MultipartFile actPhoto, String actSTime, String EndTime, String DeadLine, Model model, ActBean abean, 
+			 BindingResult bindingResult, @SessionAttribute(name="user") MemberBean memberBean) throws ParseException, IOException {
 		
-		System.out.println("actPhoto=" + actPhoto.toString());
+//		System.out.println("abean="+ abean);
+//		
+//		System.out.println("actPhoto=" + actPhoto);
 		model.addAttribute("member",memberBean);
  
 	
@@ -111,10 +122,7 @@ public class CreateActController {
         }else if(date.before(begin)){
         	actbean.setActStatus("prepared");
         }
-//		
-      
-        
-//        actbean.setParticipantsNow();
+
         actbean.setActCity(abean.getActCity());
         actbean.setActIntro(abean.getActIntro());
         actbean.setActPhoto(abean.getActPhoto());
@@ -134,10 +142,7 @@ public class CreateActController {
 	    actDAOHibernate.insert(actbean);
 	    
 	    ActBean result = actDAOHibernate.selectByActID(actbean);
-			System.out.println("result="+result);
-			//TripBean tbean
-
-//			
+			
             List<TripBean> trip = tripDAOHibernate.select(actbean.getActSNum());		
             
             System.out.println("trip=" +trip);
@@ -154,14 +159,57 @@ public class CreateActController {
                       	
             	beanbean.add(vbean);
 
-//            	System.out.println("beanbean=" + beanbean.toString());
             	model.addAttribute("beanbean", beanbean);
-//
-            }
+    }
             
 
 			model.addAttribute("event", result );
 			model.addAttribute("trip", trip );
+			/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			
+			if (memberBean==null) {
+				
+				model.addAttribute("likebottuntype","none");	
+				model.addAttribute("attendbottuntype","none");	
+			}else {
+		   MemberActBean temp1 = new MemberActBean();
+		    temp1.setMemberID(memberBean.getMemberID()); 
+			temp1.setActSNum(abean.getActSNum());
+			temp1.setIsLike(null);
+			temp1.setIsAttend(null);
+			MemberActBean NowYourAct = memberActDAOHibernate.select(temp1);
+//			model.addAttribute("NowYourAct", NowYourAct);
+			if(NowYourAct==null) {
+				model.addAttribute("likebottuntype","Like");
+				model.addAttribute("attendbottuntype","Attend");
+			}else {
+				
+			
+			if(NowYourAct.getIsLike()==null){
+				model.addAttribute("likebottuntype","Like");
+			}
+			else{
+				if(NowYourAct.getIsLike() == true)
+					model.addAttribute("likebottuntype","disLike");
+				else
+					model.addAttribute("likebottuntype","Like");
+			}// Like End
+			
+			if(NowYourAct.getIsAttend()==null){
+				model.addAttribute("attendbottuntype","Attend");
+			}else{
+			   if(NowYourAct.getIsAttend()==true){
+			       model.addAttribute("attendbottuntype","Attend");}
+			   else 
+				   model.addAttribute("attendbottuntype","disAttend");
+			   }
+			}
+			//////////////////////////////////////////////
+			Integer id = memberBean.getMemberID();
+			model.addAttribute("userid",id);
+			model.addAttribute("useractSNum",abean.getActSNum());
+			
+			}
 			
 					
 			return "act.display"; 
