@@ -29,7 +29,7 @@
     
     .messOuts{
       border: 1px solid rgb(119, 119, 119) ;
-      width: 780px;
+      width: 800px;
       margin:auto;
       margin-top: 40px;
     }
@@ -88,6 +88,12 @@
      /* border: 1px solid red; */
      margin-left: 20px;
     }
+    .outdouble{
+/*     border:1px solid red; */
+    }
+     #messAs{
+/*      border:1px solid blue; */
+     }
     #messAs h6{
     margin-left: 8px;
     margin-top: 15px;
@@ -144,3 +150,7 @@ margin-top:10px;
 }
 
   }
+  
+  
+/*  ²Ä¤G­Ó  */
+

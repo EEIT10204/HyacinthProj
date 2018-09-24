@@ -9,7 +9,7 @@ $(document).ready(function(){
 //		$(".messB input").prop("disabled","false");
 		
 		$(this).next().attr("type","submit");
-		var Comment = $(this).parent().prev().children().val();
+//		var Comment = $(this).parent().prev().children().val();
 		
 //		function(){
 //			$(this).parent().prev().children().prop("disabled","disabled");
