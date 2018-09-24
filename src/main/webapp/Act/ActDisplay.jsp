@@ -75,6 +75,7 @@ vertical-align: middle;
                 <div class="speakers">
                     <strong>舉辦人</strong>
                     <span><a href="${pageContext.request.contextPath}/ProfilePageGet?memberID=${member.memberID}">${member.memberName}</a></span>
+                    <span><a href="href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main'">${member.memberName}</a></span>
                 </div>
                 <div class="event_date">
                 <td>
@@ -114,11 +115,14 @@ vertical-align: middle;
   </div>
 </div>
 
-    <div id="btns" style="background-color: #f5f5f5; margin:auto; text-align: center; margin-right:; ">
+    <div id="btns" style="background-color:white; margin:auto; text-align: center; margin-right:; ">
+   
 		<button type="button" id="LikeOrDisLike"class="btn btn-primary"  value="${likebottuntype}">${likebottuntype}</button>
 		<button type="button" class="btn btn-success" id="AttendOrNot"  value="${attendbottuntype}">${attendbottuntype}</button> <!-- ${attendStatus} -->
+	
 		<button type="button" class="btn btn-danger"  id="sendReport" value="sendReport">Report</button>
 		<button type="button" class="btn btn-warning" id="invite" value="invite">Invite</button>
+		
 		<input type="hidden" id= "num" value="${useractSNum}">
 		<input type="hidden" id= "mem" value="${userid}">
 	</div>
@@ -130,11 +134,14 @@ vertical-align: middle;
 
 <script>
 $( document ).ready(function() {
-	
-	if( ${ user == null }){
-		$('#btns').html("<div></div>");
-	}
-	if(${user.memberID}==${event.memberID}){
+	<c:if test = "${user==null}">$('#btns').empty();</c:if>
+// 	alert("memberID=" + ${user.memberID});
+// 	alert("eventMemberID=" + ${event.memberID});
+	var memID=${user.memberID};
+	var eventMemID=${event.memberID}
+// 	<c:if test = " ${user.memberID == event.memberID}">$('#btns2').empty();</c:if>
+
+	if( memID == eventMemID ){
 		$('#LikeOrDisLike').attr('style', 'display:none');
 		$('#AttendOrNot').attr('style', 'display:none');
 		
@@ -287,7 +294,7 @@ $( document ).ready(function() {
 	
 	 $('#invite').click(function () {
 		
-		 if( ${ user != null })
+// 		 if( ${ user != null })
 		  var loginMemberID = ${user.memberID};
 		 
 	    $.ajax({
