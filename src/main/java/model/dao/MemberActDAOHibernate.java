@@ -151,5 +151,5 @@ public class MemberActDAOHibernate implements MemberActDAO {
 		return this.getSession().get(MemberActBean.class, memberID);
 		 
 	} 
-
+	
 }
