@@ -83,7 +83,7 @@ public class ActFollowOrlikeController {
 		MemberActBean bean = new MemberActBean();
 		bean.setActSNum(inactSNum);
 		bean.setIsAttend(true);
-		bean.setMemberID(intmemberID);
+		bean.setMemberID(intlmi);
 		bean.setIsLike(false);
 		memberActDAOHibernate.insert(bean);
 		status.put("status", "回覆活動邀請成功");

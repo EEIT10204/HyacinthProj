@@ -83,7 +83,7 @@ public class SubMemberBean {
 	
 	@Override
 	public String toString() {
-		return "SubMemberBean [memberID=" + memberID + ", memberCover=" + Arrays.toString(memberCover) + ", memberJob="
+		return "SubMemberBean [memberID=" + memberID + ",  memberJob="
 				+ memberJob + ", memberLocation=" + memberLocation + ", memberFB=" + memberFB + ", memberIG=" + memberIG
 				+ ", memberTwitter=" + memberTwitter + ", memberGooglePlus=" + memberGooglePlus + ", memberYT="
 				+ memberYT + "]";
