@@ -100,7 +100,7 @@ vertical-align: middle;
                                         最高參加人數:${event.maxParticipants}位
                 </div>
                   <div   id = "partNow" class="event_word">
-                     多少人參加囉:${event.participantsNow}位
+                                        多少人參加囉:${attendNum}位
             </div>
                 <div class="event_word">
                         ${event.actIntro}
