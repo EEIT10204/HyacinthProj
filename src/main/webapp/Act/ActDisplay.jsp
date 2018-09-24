@@ -505,7 +505,7 @@ $( document ).ready(function() {
 		});
 	 }); 
 	 
-})
+
 
 	//-----------Report Ajax --------
 		function sendReport(){
