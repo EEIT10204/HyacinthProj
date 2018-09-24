@@ -514,8 +514,9 @@ article {
 
 .divAS15 {
 	/*             width: 900px; */
-	text-align: center;
+/* 	text-align: center; */
 	font-size: 120%;
+	word-wrap:break-word;
 	/*             margin: auto; */
 }
 
@@ -1861,7 +1862,6 @@ margin-top:10px;
 
 <script type="text/javascript">
 $(document).ready(function(){
-	alert("run button check");
 if('${user.memberID}'==""){
 $("#sendbuttom").toggleClass('btn-secondary').toggleClass('btn-info');
 $("#sendbuttom").text("請先登入").prop("disabled",true);

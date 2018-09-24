@@ -201,7 +201,7 @@ p {
 /*             margin: auto; */
             width: 750px;
             margin-bottom: 15px;
-            word-wrap:break-word;
+             word-wrap:break-word; 
         }
 #changeCityContent img{
 /* 			width: 400px; */
