@@ -208,6 +208,21 @@ imageP.height="400px";
 background-color: rgb(235, 235, 235);
 }
 
+.words{
+width: 800px !important;
+height: 150px !important;
+background-color: rgba(44, 78, 73,0.7);
+border-radius: 30px !important;
+font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+.city{
+color: rgb(234, 244, 255) !important;
+font-size: 500% !important;
+bottom:350px;
+right:-950px;
+
+}
+
 </style>
 	</head>
 
