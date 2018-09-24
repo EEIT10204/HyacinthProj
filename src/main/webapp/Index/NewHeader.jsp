@@ -231,7 +231,7 @@ html, body {
 		     });
 		   });
 </script>
-<script type="text/javascript">	
+<script type="text/javascript"> //nav 搜尋
 $('#navSerach').click(function(event) {
 	event.preventDefault();
 	   var condition = $("#condition").val();
