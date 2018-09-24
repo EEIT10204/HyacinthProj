@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 
@@ -124,11 +125,12 @@ public class MemberUpdateController {
 	}
 	
 	@RequestMapping(path={"/verifyMail.do"},method= {RequestMethod.GET})
-	public String verifyMail(String account,String code,Model model) {
+	public String verifyMail(String account,String code,Model model,SessionStatus sessionStatus) {
 
 		boolean result = memberService.verifyMail(account, code);
 		System.out.println("account="+account+",code="+code+",result="+result+",time="+new java.util.Date());
 		model.addAttribute("msg","信箱驗證");
+		sessionStatus.setComplete();
 		if(result) {
 			return "verifySuccess.page";
 		}

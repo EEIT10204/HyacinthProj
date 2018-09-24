@@ -30,6 +30,6 @@ window.setInterval(setClock,1000);
 
 <body>
 
-<div class="msg">${msg}成功,<span id="sec">3</span>秒後將跳回首頁</div>
+<div class="msg">${msg}成功,<span id="sec">3</span>秒後將跳回首頁，請重新登入!</div>
 </body>
 </html>
