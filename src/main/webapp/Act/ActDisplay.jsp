@@ -230,17 +230,19 @@ vertical-align: middle;
 		
 <script>
 $( document ).ready(function() {
-	<c:if test = "${user==null}"></c:if>
+// 	<c:if test = "${user==null}"></c:if>
 // 	alert("memberID=" + ${user.memberID});
 // 	alert("eventMemberID=" + ${event.memberID});
 	
 	
-    var user = <c:choose><c:when test="${user != null}">${user};</c:when><c:otherwise>null;</c:otherwise></c:choose>
+//     var user = <c:choose><c:when test="${user != null}">${user};</c:when><c:otherwise>null;</c:otherwise></c:choose>
+    var memID = '${user.memberID}';
     
     var eventMemID=${event.memberID}
-    if(user!= null){
+    if(memID != ""){
+    	
     	if( memID == eventMemID ){
-    		var memID='${user.memberID}';
+    		
         	$('#LikeOrDisLike').attr('style', 'display:none');
     		$('#AttendOrNot').attr('style', 'display:none');
     		
@@ -365,6 +367,63 @@ function initMap() {
     });
     directionsDisplay.setMap(map);
 
+    <c:forEach var='beanbean' items='${beanbean}'>
+	
+	var lat = parseFloat(${beanbean.latitue});
+	var lng = parseFloat(${beanbean.longtitue});			
+
+	var positon = {}; 
+	var data = {};
+	positon.lat = lat;
+	positon.lng = lng;
+	
+				var marker = new google.maps.Marker({
+				
+					position: {lat: lat, lng: lng},
+					map: map, 
+				
+				});
+				var content =  '<span style="color:#003377;font-weight:bold"></span><br>';
+				var contentString ='<span style="font-weight:bold;font-size:15px;">${beanbean.viewPointName}</span><br>'+
+				'<span style="font-weight:bold;font-size:15px;">${beanbean.viewPointAddress}</span><br>';
+				
+				attachSecretMessage(marker,content,contentString) ;
+	</c:forEach>
+// 	 var infowindow = new google.maps.InfoWindow({
+//          content: contentString
+//        });
+	 
+// 	 marker.addListener('click', function() {
+//          infowindow.open(map, marker);
+//        });
+	
+		function attachSecretMessage(marker, content,contentString) {
+			var infowindow = new google.maps.InfoWindow({
+				content:contentString ,
+
+			});
+			 var a = -1;
+			infowindow.open(marker.get('map'), marker);
+			google.maps.event.addListener(marker, 'click', function() {
+				a= a*-1;
+				if (a > 0) {
+					infowindow.setContent(content);
+					infowindow.open(marker.get('map'), marker);
+				}else {
+					 
+					 infowindow.setContent(contentString);
+					 infowindow.open(marker.get('map'), marker);
+				}
+			
+			});
+			
+			
+			
+		
+		}
+				
+
+    
     document.getElementById('route').addEventListener('click', function() {
       calculateAndDisplayRoute(directionsService, directionsDisplay);
     });
@@ -418,7 +477,7 @@ $( document ).ready(function() {
 	 $('#invite').click(function () {
 		
 // 		 if( ${ user != null })
-		  var loginMemberID = ${user.memberID};
+		  var loginMemberID = '${user.memberID}';
 		 
 	    $.ajax({
 		    type : "post",

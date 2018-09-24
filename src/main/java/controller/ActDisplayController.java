@@ -104,7 +104,9 @@ public class ActDisplayController {
 		   
 //		
         ActBean abean = actDAOHibernate.selectByPK(actSNum);
-        
+        int NewAbeanNum = ((abean.getActView())+1);
+        abean.setActView(NewAbeanNum);
+        actDAOHibernate.insert(abean);
 //        Object[] who = memberActDAOHibernate.findFollowsAttenders(abean.getActSNum());
 //        System.out.println("who=" + who.toString());
         

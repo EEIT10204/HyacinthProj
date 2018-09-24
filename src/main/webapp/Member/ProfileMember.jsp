@@ -261,5 +261,4 @@
      })
     </script>
 </body>
-<jsp:include page="../Index/Footer.jsp" />
 </html>

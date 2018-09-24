@@ -160,7 +160,7 @@ $( function() {
   } ); 
 </script>
 
-<body>
+<body onload="forNavSearch()">
 <div id ="bodyContent">
 	<div class="row picRow">
 		<div id="tabs">
@@ -334,7 +334,16 @@ $( function() {
  <script type="text/javascript">
 	 $('.A1').zoomify({scale:0.8});
  </script>
-
+<script type="text/javascript">
+function forNavSearch() {
+	urlParams = new URLSearchParams(window.location.search);
+	myParam = urlParams.get('search');
+    if(myParam!="") {
+    	$('#actKeyword').attr("value",myParam);
+    	$('#actSearch').click();
+    }
+}
+</script>
 <script>
 var actPath = "${pageContext.request.contextPath}/actdisplay.controller?actSNum=";
 
