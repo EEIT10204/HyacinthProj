@@ -103,7 +103,7 @@ vertical-align: middle;
                                         最高參加人數:${event.maxParticipants}位
                 </div>
                   <div   id = "partNow" class="event_word">
-                     多少人參加囉:${event.participantsNow}位
+                                        多少人參加囉:${attendNum}位
             </div>
                 <div class="event_word">
                         ${event.actIntro}
@@ -580,10 +580,11 @@ $( document ).ready(function() {
 		    success: function (data) {
 		    	$("#friends").html('<div></div>');
 		    if(data.length==0){
-		    	$("#friends").append("<div>你沒有朋友不要再按了</h3>");
+		    	$("#friends").append("<div>目前沒有好友哦,趕緊去參加活動或瀏覽網誌交些朋友吧</h3>");
 		    }else{
 		    	for(var i =0; i< data.length; i++){
-		    	  $("#friends").append( data[i].memberName +' <input type="button" value = "sendInvite" onclick="function()"><br>' );    
+		    	  $("#friends").append( data[i].memberName +' <button id="button'+data[i].memberID+'" class="btn btn-success" type="button" onclick="inviteFriend()">邀請</button><br>' );
+		    	  
 	              }
 		    }
 		    },
@@ -630,6 +631,22 @@ $( document ).ready(function() {
 				},				
 		});	
 	}
+</script>
+<script type="text/javascript">
+function inviteFriend(){
+	alert(event.target.id);
+	var c = event.target.id
+    var d = c.substring(6);
+	var e ="button"+d
+	alert(d);
+	$.getJSON("${pageContext.request.contextPath}/sendActRequestController",{"memberID":d,"lmi":'${user.memberID}',"actSNum":'${event.actSNum}'},function(data){   
+	     if(data.status=="寄送活動邀請成功"){
+	    	 alert(data.status);  
+	      $("#"+e).text("已邀請").prop("disabled","disabled").removeClass("btn btn-success").addClass("btn btn-secondary");
+    	}
+	})
+}
+
 </script>
 </body>
 <jsp:include page="../Index/Footer.jsp" />

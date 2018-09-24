@@ -27,7 +27,7 @@ public class IndexController {
 	public List<ActBean> onloadA(){
 		System.out.println("logining sucess!");
 		List<ActBean> acts = actService.selectTopSix();
-		System.out.println("Index Controll acts: " + acts.toString());
+//		System.out.println("Index Controll acts: " + acts.toString());
 		return acts;
 	 }
 	
@@ -43,9 +43,9 @@ public class IndexController {
 	@ResponseBody
 	public List<BlogBean> onload(){
 		List<BlogBean> blogs = blogService.selectTopSix();
-		for(BlogBean temp: blogs) {
-			System.out.println("Index Blog access" + temp.toString());
-		}
+//		for(BlogBean temp: blogs) {
+//			System.out.println("Index Blog access" + temp.toString());
+//		}
 		
 		return blogs;
 	}

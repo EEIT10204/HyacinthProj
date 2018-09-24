@@ -124,22 +124,22 @@
                                                         <input type="file" name="memberPic" accept="image/*" class="text-center center-block file-upload">
                                                 </div>
                                                 <hr>
-                                                <input type="hidden" id="memberID" name="memberID" value="${user.memberID}">
+                                                <input type="hidden" name="memberID" id="mymemberID1" value="${user.memberID}">
                                                 <div class="form-group row">
                                                     <div class="col-sm-3"><label for="memberAccount"><h4>Account</h4></label></div>
-                                                    <div class="col-sm-8"><input type="text" class="form-control-plaintext" name="memberAccount" id="memberAccount" value="${user.memberAccount}" readonly></div>
+                                                    <div class="col-sm-8"><input type="text" class="form-control-plaintext" name="memberAccount" id="mymemberAccount" value="${user.memberAccount}" readonly></div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-3"><label for="memberHierarchy"><h4>Hierarchy</h4></label></div>
-                                                    <div class="col-sm-8"><input type="text" class="form-control-plaintext" name="memberHierachy" id="memberHierachy" value="${user.memberHierachy}" readonly></div>
+                                                    <div class="col-sm-8"><input type="text" class="form-control-plaintext" name="memberHierachy" id="mymemberHierachy" value="${user.memberHierachy}" readonly></div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-3"><label for="memberName"><h4>Name</h4></label></div>
-                                                    <div class="col-sm-8"><input type="text" class="form-control" name="memberName" id="memberName" value="${user.memberName}" required></div>
+                                                    <div class="col-sm-8"><input type="text" class="form-control" name="memberName" id="mymemberName" value="${user.memberName}" required></div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-3"><label for="memberNickName"><h4>NickName</h4></label></div>
-                                                    <div class="col-sm-8"><input type="text" class="form-control" name="memberNickName" id="memberNickName" value="${user.memberNickName}"></div>
+                                                    <div class="col-sm-8"><input type="text" class="form-control" name="memberNickName" id="mymemberNickName" value="${user.memberNickName}"></div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-3"><label for="memberGender"><h4>Sex</h4></label></div>
@@ -160,11 +160,11 @@
                                                 </div>
                                                 <div class="form-group row">
                                                         <div class="col-sm-3"><label for="memberTel"><h4>Phone</h4></label></div>
-                                                        <div class="col-sm-8"><input type="text" class="form-control" name="memberTel" id="memberTel" value="${user.memberTel}" pattern="\d{8,12}"></div>
+                                                        <div class="col-sm-8"><input type="text" class="form-control" name="memberTel" id="mymemberTel" value="${user.memberTel}" pattern="\d{8,12}"></div>
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-3"><label for="memberBirthday"><h4>Birthday</h4></label></div>
-                                                    <div class="col-sm-8"><input type="date" class="form-control" name="memberBirthDay" id="memberBirthDay" value="${user.memberBirthdayToString}"></div>
+                                                    <div class="col-sm-8"><input type="date" class="form-control" name="memberBirthDay" id="mymemberBirthDay" value="${user.memberBirthdayToString}"></div>
                                                 </div>
 
                                                 <div class="form-group"><div class="col-xs-12 text-center">
@@ -189,7 +189,7 @@
                                                         <input type="file" name="memberCover" accept="image/*" class="text-center center-block file-upload">
                                                     </div>
                                                     <hr>
-                                                    <input type="hidden" id="memberID" name="memberID" value="${user.memberID}">
+                                                    <input type="hidden" name="memberID" id="mymemberID2" value="${user.memberID}">
                                                     <div class="form-row">
                                                         <div class="form-group col-md-6">
                                                                 <label for="job"><h4>Job</h4></label>
@@ -244,11 +244,11 @@
                                 <div class="content">
                                         <form class="form" action="<c:url value="/updateMemberPrivacy.controller"/>" method="POST" id="privacyForm">
                                                 <hr>
-                                                <input type="hidden" id="memberID" name="memberID" value="sss">
+                                                <input type="hidden" name="memberID" id="mymemberID3" value="${user.memberID}">
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                             <label for="memberPwd"><h4>Password</h4></label>
-                                                            <input type="password" class="form-control" name="memberPwd" id="memberPwd" placeholder="New Password" >
+                                                            <input type="password" class="form-control" name="memberPwd" id="mymemberPwd" placeholder="New Password" >
                                                     </div>
                                                     <div class="form-group col-md-6">
                                                             <label for="password"><h4>Verify</h4></label>
@@ -257,7 +257,7 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-2"><label for="memberMail"><h4>Email</h4></label></div>
-                                                    <div class="col-sm-8"><input type="email" class="form-control" name="memberMail" id="memberMail" value="${user.memberMail}" placeholder="Email"></div>
+                                                    <div class="col-sm-8"><input type="email" class="form-control" name="memberMail" id="mymemberMail" value="${user.memberMail}" placeholder="Email"></div>
                                                		<div class="col-sm-2"><span id="sendMail">發送驗證信</sapn></div>
                                                 </div>
                                                 <div id="privacyMsg" style="text-align:center; margin-bottom:15px;" >&nbsp;</div>
@@ -384,7 +384,16 @@
 										            <button id="rejectButton${loop.count}" type="button" class="btn btn-danger btn-sm ">拒絕</button>
 	             								</div>
 	             							</div>
-	            						</c:if>
+	            							</c:if>
+	            							<c:if test="${noticeFirst.actSNum!='0'and noticeFirst.caseID=='0'}">
+									        	<div style="float: right">
+										            <span id="timeshow">${noticeFirst.noticeTime}</span>
+										            <div id="buttonStatus${loop.count}" style="display: inline-block;">
+										            <button id="confirmButton${loop.count}" type="button" onclick="ActAccept(${noticeFirst.memberID_Sender},${noticeFirst.memberID_Receiver},${noticeFirst.actSNum})" class="btn btn-success btn-sm">接受</button>
+										            <button id="rejectButton${loop.count}" type="button" class="btn btn-danger btn-sm ">拒絕</button>
+	             								</div>
+	             							</div>
+	            							</c:if>
 	         						</div>
                               </c:forEach>
                             </div><!--content-->
@@ -442,6 +451,24 @@ function reloadOnce() {
      alert("回覆失敗")
     })
    }
+function ActAccept(senderID, receiverID , actSNum){
+	    alert(senderID + ' - ' +receiverID);
+	    var buttonId = event.target.id; //當下按鈕ID
+	    var str = buttonId
+	    var laststr =str.substring(str.length-1,str.length)
+	    closeButtonId = 'closeButton' + laststr
+	    $.getJSON("${pageContext.request.contextPath}/answerActReqController",{"memberID":senderID,"lmi":receiverID,"actSNum":actSNum},function(data){
+	     alert(data.status)
+	     if(data.status=="回覆活動邀請成功"){
+	   var c = document.getElementById(buttonId).parentNode.id //當下按鈕找父層ID
+	   $("#"+c).html("<button type='button' class='btn btn-success btn-sm ' disabled>已接受</button>");
+	   setTimeout('clickClose(closeButtonId)',1000);
+	   
+	  }
+	    }).fail(function(){
+	     alert("回覆失敗")
+	    })
+	   }
 function clickClose(id){
  document.getElementById(id).click();
 }

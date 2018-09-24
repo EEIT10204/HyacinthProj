@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -17,6 +20,7 @@ import com.google.gson.GsonBuilder;
 
 import model.ActBean;
 import model.MemberActBean;
+import model.MembershipBean;
 import model.TripBean;
 import model.dao.ActDAOHibernate;
 import model.dao.MemberActDAOHibernate;
@@ -68,5 +72,23 @@ public class ActFollowOrlikeController {
 		}
 		return result;
 }
+	
+	@RequestMapping(path={"/answerActReqController"})
+	@ResponseBody
+	public Map<String, String> answerActReq(@RequestParam String memberID, @RequestParam String lmi,@RequestParam String actSNum){
+		Map<String, String> status = new HashMap<>();
+		int intmemberID = Integer.parseInt(memberID);
+		int intlmi = Integer.parseInt(lmi);
+		int inactSNum = Integer.parseInt(actSNum);
+		MemberActBean bean = new MemberActBean();
+		bean.setActSNum(inactSNum);
+		bean.setIsAttend(true);
+		bean.setMemberID(intlmi);
+		bean.setIsLike(false);
+		memberActDAOHibernate.insert(bean);
+		status.put("status", "回覆活動邀請成功");
+		return status;
+		
+	}
 	
 }

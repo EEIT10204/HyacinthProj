@@ -327,7 +327,7 @@
                          }   
                       },
         	    error: function (response) {
-                    alert("error");
+//                     alert("error");
                     },
         	    
         	});
@@ -370,11 +370,11 @@
  	                 contentType: "application/json; charset=utf-8",
  	                 dataType: "json",
  	                 success: function (data) {
-                     alert("success");
+                     alert("儲存成功");
                      	
                      },
                      error: function (response) {
-                     alert("error");
+//                      alert("error");
                      },
            
 });

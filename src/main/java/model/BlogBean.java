@@ -32,8 +32,7 @@ public class BlogBean {
 	@Override
 	public String toString() {
 		return "BlogBean [memberID=" + memberID + ", blogSNum=" + blogSNum + ", blogID=" + blogID + ", blogReleaseTime="
-				+ blogReleaseTime + ", blogTitle=" + blogTitle + ", blogCity=" + blogCity + ", blogContext="
-				+ blogContext + ", blogCover=" + !Arrays.toString(blogCover).isEmpty() + ", blogView=" + blogView + ", updateTime="
+				+ blogReleaseTime + ", blogTitle=" + blogTitle + ", blogCity=" + blogCity + ", blogView=" + blogView + ", updateTime="
 				+ updateTime + ", blogVisibility=" + blogVisibility + "]";
 	}
 

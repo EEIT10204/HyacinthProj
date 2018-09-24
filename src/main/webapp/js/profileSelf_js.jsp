@@ -34,17 +34,18 @@ $(document).ready(function() {
 // 		 if($('#memberPwd').val()==$('#verifyPwd').val()){
 // 			 $('#privacyForm').submit();
 // 		 }
-		 if($('#memberPwd').val()!="" && !re4.test($('#memberPwd').val())){
+		 if($('#mymemberPwd').val()!="" && !re4.test($('#mymemberPwd').val())){
 			 $('#privacyMsg').html('<img src="../Images/Member/error2.png">密碼須為六位數以上且英文數字至少一個');
 			 event.preventDefault();
 		 }
-		 if($('#memberPwd').val()!=$('#verifyPwd').val()){
+		 if($('#mymemberPwd').val()!=$('#verifyPwd').val()){
 			 $('#privacyMsg').html('<img src="../Images/Member/error2.png">密碼不一致');
 			 event.preventDefault();
 		 }
 	});
 	
-	$('#memberMail').on("change keyup",function(){
+	$('#mymemberMail').on("change keyup",function(){
+// 		alert('change');
 		 $('#privacyMsg').css("color","red");
 		 $('#privacyMsg').html('提醒您:更改E-mail必須重新驗證!');
 	});
