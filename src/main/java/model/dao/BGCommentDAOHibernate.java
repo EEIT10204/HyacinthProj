@@ -46,11 +46,11 @@ public class BGCommentDAOHibernate implements BGCommentDAO {
 
 	@Override
 	public BGCommentBean update(BGCommentBean bean) {
-		java.sql.Timestamp sqlTimestamp = new java.sql.Timestamp(System.currentTimeMillis());
+//		java.sql.Timestamp sqlTimestamp = new java.sql.Timestamp(System.currentTimeMillis());
 		BGCommentBean temp = this.getSession().get(BGCommentBean.class, bean.getBGCommentID());
 		if(temp!=null) {
 			temp.setCommentContent(bean.getCommentContent());
-			temp.setReplyTime(sqlTimestamp);
+//			temp.setReplyTime(sqlTimestamp);
 			return temp;
 		}
 		return null;
@@ -65,7 +65,7 @@ public class BGCommentDAOHibernate implements BGCommentDAO {
 	@Override
 	public List<Object[]> selectBlogCommMemberJoin(Integer blogSNum) {
 		System.out.println("DAO BGC before query");
-		String sql = " select * from Blog_Comment as blogs left join Member as m on blogs.memberID = m.memberID where blogs.blogSNum = '"+blogSNum+ "' and commentVisibility = '1' order by blogs.replyTime Desc";
+		String sql = " select * from Blog_Comment as blogs left join Member as m on blogs.memberID = m.memberID where blogs.blogSNum = '"+blogSNum+ "' and blogs.commentVisibility = '1' order by blogs.replyTime Desc";
 		Session session = getSession();
 		Query<Object[]> query = session.createNativeQuery(sql)
 				.addEntity("blogs", BGCommentBean.class)

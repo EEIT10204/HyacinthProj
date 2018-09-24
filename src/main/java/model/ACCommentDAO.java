@@ -13,6 +13,8 @@ public interface ACCommentDAO {
 	public abstract ACCommentBean update(ACCommentBean bean);
 	
 	public abstract ACCommentBean delete(ACCommentBean bean);
+	
+	public abstract List<Object[]> selectActSNumMeberIdJoin(Integer actSNum);
 
 	public abstract Integer findCommentsNum(Integer actSNum);
 	

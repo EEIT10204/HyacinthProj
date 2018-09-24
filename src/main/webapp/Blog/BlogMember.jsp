@@ -14,6 +14,7 @@
 <%-- 	href="${pageContext.request.contextPath}/css/bootstrap.min.css"> --%>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/jumbotron.css">
+	
 <!-- <link rel="stylesheet" -->
 <!-- 	href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" -->
 <!-- 	integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" -->
@@ -32,6 +33,9 @@
 <!-- 務必使用 -->
 <script src="${pageContext.request.contextPath}/js/blogInsertMessage.js"></script>
 <script src="${pageContext.request.contextPath}/js/blogUpdateMessage.js"></script>
+
+
+<script src="${pageContext.request.contextPath}/css/blogcomment.css"></script>
 <style>
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
@@ -851,7 +855,6 @@ hr {
 	opacity: 0.5;
 }
 
-
 /* 留言板 */
 /* ActComment */
 	.form-group textarea{
@@ -861,11 +864,11 @@ hr {
   
     }
     .messOut{
-      border: 15px groove rgb(0, 179, 149);
       width: 700px;
       margin: auto;
       margin-top: 50px;
       border-radius: 10px;
+      
     }
     .form-control{
       width: 450px;
@@ -874,18 +877,16 @@ hr {
       display: inline-block;
     }
     .mess2{
-      border: 1px solid rgb(119, 119, 119) ; 
+       border: 1px solid rgb(119, 119, 119) ;  
       background-color: rgb(197, 197, 197);
     }
     .mess3{
-      /* border: 1px solid rgb(95, 2, 133) ; */
     }
     .mess4{
-      /* border: 1px solid rgb(192, 189, 0) ; */
     }
     .mess1{
-      /* border: 1px solid rgb(2, 0, 136) ; */
-      background-color: rgb(223, 223, 223);
+
+      background-color: rgb(197, 197, 197);
       height: 50px;
     }
     .mess1 img{
@@ -894,59 +895,53 @@ hr {
       margin-left: 10px;
     }
     .messUser{
-      /* border: 1px solid rgb(255, 208, 0); */
       display: inline-block;
       margin-top: 7px;
     }
     .messName{
-      /* border: 1px solid rgb(56, 255, 82); */
       display: inline-block;
       margin-left: 20px;
       margin-top: 7px;
     }
     .buttonT{
-      /* border: 1px solid rgb(234, 0, 255); */
     }
     .btn-primaryMY{
-/*    		margin-right: 200px; */
-/*     margin-bottom: 20px; */
 		position: relative;
         right: 80px;
-/*         background-color:rgb(120, 120, 120);  */
          margin-left: 650px;  
          margin-bottom: 20px; 
     }
     .selectUser{
-      /* border: 1px solid red; */
     }
-    #messA img{
+    #messAt img{
      width: 30px;
      height: 30px;
      display: inline-block;
      margin-top: 6px;
-     /* border: 1px solid red; */
      margin-left: 20px;
     }
-    #messA h6{
+    #messAt h6{
     margin-left: 8px;
     margin-top: 15px;
-/*     border: 1px solid red; */
     display: inline-block;
     }
-    .messB{
+    .messBt{
     display: inline-block;
     margin-left: 20px;
-/*     border: 1px solid purple; */
     }	
-    .uuu{
-/*     border:1px solid green; */
+
+    .uuut{
     }
+    
+      .messageboard{
+  margin-top:150px;
+  }
+    
       .flip{
   margin:0px;
 padding:5px;
 text-align:center;
 background:rgb(0, 179, 149);
-/* border:solid 1px #c3c3c3; */
 margin-top:10px;
 }
  .update{ 
@@ -954,12 +949,10 @@ margin-top:10px;
 /*  width:35px;  */
 /*  height:25px;  */
  margin-left:5px; 
-/*   border:solid 1px red;  */
   display: inline-block;  
  } 
 .updatebutton {
    display: inline-block; 
-/*   padding: 15px 25px; */
   font-size: 15px;
   cursor: pointer; 
   text-align: center;
@@ -980,7 +973,9 @@ margin-top:10px;
   transform: translateY(4px);
 }
 
-  }
+  } 
+
+
 </style>
 </head>
 
@@ -1598,17 +1593,22 @@ margin-top:10px;
     </div>
   </div> <!-- Report Modal end -->
   
-  
+  <div class="messageboard">
+  <h5 class="title-text">
+					<span><button id="changeKeyword" type="button"
+							class="btn btn-info fa-2x hot2">留言板</span>
+				</h5>
+</div>				
   <!-- 留言板 -->
-<div class="messOut">
+<div class="messOut" style="border: 10px groove rgb(0, 179, 149);width: 700px;">
       <div class="mess1">
-        <div class="messUser"><img src="${pageContext.request.contextPath}/Images/Index/user.png"/></div>
-        <div class="messName">John</div>
+        <div class="messUser"><img src="data:image/png;base64,${user.memberPicToBase64}"/></div>
+        <div class="messName">${user.memberName}</div>
       </div>
       <form action="<c:url value="/Blog/BlogMember.comment"/>" method="get">
 <%--         <form action="<c:url value="/Act/ACCommentInsertController?actSNum=?" />" method="get"> --%>
                   <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Leave Message</label>
+                    <label for="exampleFormControlTextarea1" class="a1">Leave Message</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="commentContent"></textarea>
                   </div>
                   <div class="buttonT">
@@ -1623,17 +1623,17 @@ margin-top:10px;
                     <!-- <div class="mess3"></div>
                     <div class="mess4"></div> -->
                   <div class="form-group">
-                      <label for="exampleFormControlInput1">All Message</label>
+                      <label for="exampleFormControlInput1 a1">All Message</label>
                       
-                      <div class="uuu">
+                      <div class="uuut">
                       <c:forEach var="obj" items="${BGComment}">
                       <form action="<c:url value="/BGCommentUpdate.Controller"/>" method="get">
-                      <div id="messA">
+                      <div id="messAt">
                           <img src="data:image/png;base64,${obj[1].memberPicToBase64}"/>
                           <h6>${obj[1].memberName} </h6>
 <%--                           <h6>${obj[0].ACCommentID}</h6> --%>
 
-                          <div class="messB">
+                          <div class="messBt">
                           <input type="text" class="form-control" disabled value="${obj[0].commentContent}"
                           name="commentContent">
                         </div>
@@ -1858,6 +1858,19 @@ margin-top:10px;
 		</div>
 	</div>
 
+
+<script type="text/javascript">
+$(document).ready(function(){
+	alert("run button check");
+if('${user.memberID}'==""){
+$("#sendbuttom").toggleClass('btn-secondary').toggleClass('btn-info');
+$("#sendbuttom").text("請先登入").prop("disabled",true);
+$(".messUser").html("<div class='messUsers'><img src='${pageContext.request.contextPath}/Images/Index/user.png'/></div>")
+};
+});
+
+</script>
+
 	<script>
 	        
 			var member = "${user.memberID}"; 
@@ -2069,14 +2082,14 @@ margin-top:10px;
 // 							 $('.url${i+1}')..attr("href",path2+"${result[i][1].nation}");
 							 $('#changeMemberPic').attr("src","data:image/png;base64,${BeanSNum[0][2].memberPicToBase64}");
 							 $('#changeMemberPichref').attr("href",path3+"${BeanSNum[0][0].memberID}"+"&lmi="+"${user.memberID}"+"&page=main");
-							 $('#changeMemberName').html('${BeanSNum[0][2].memberNickName}').attr("href",path3+"${BeanSNum[0][0].memberID}"+"&lmi="+"${user.memberID}"+"&page=main");
+							 $('#changeMemberName').html('${BeanSNum[0][2].memberName}').attr("href",path3+"${BeanSNum[0][0].memberID}"+"&lmi="+"${user.memberID}"+"&page=main");
 							 $('#changeNation').html('${BeanSNum[0][1].nation}').attr("href",path2+"${BeanSNum[0][1].nation}");
 							 $('#changeBlogViews').html('${BeanSNum[0][0].blogView}');
 							 $('#changeBlogCity').html('${BeanSNum[0][0].blogCity}').attr("href",path2+"${BeanSNum[0][0].blogCity}");
 							 $('#changeBlogTitle').html('${BeanSNum[0][0].blogTitle}');
 							 $('#changeBlogPic').attr("src","data:image/png;base64,${BeanSNum[0][0].blogCoverToBase64}");
 							 $('#changeBlogDate').html('${BeanSNum[0][0].updateTime}'.substring(0, 10));
-							 $('#changeMemberName2').html('${BeanSNum[0][2].memberNickName}');
+							 $('#changeMemberName2').html('${BeanSNum[0][2].memberName}');
 							 $('#changeCityContent').html('${BeanSNum[0][0].blogContext}');
 							 $('#reportMember').val(member);
 							
@@ -2156,7 +2169,7 @@ margin-top:10px;
 										$('#changeCity'+(i+1)).html(product[0].blogCity);
 										$('#changeTitle'+(i+1)).html(product[0].blogTitle);
 										$('#changeDate'+(i+1)).html(new Date(product[0].updateTime).toISOString().split('T')[0]);
-										$('#changeMember'+(i+1)).html(product[2].memberNickName);
+										$('#changeMember'+(i+1)).html(product[2].memberName);
 										}
 // 										aside
 										if(i >= 6 && i<10){

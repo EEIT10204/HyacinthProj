@@ -12,11 +12,14 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.stereotype.Service;
 
 import config.SpringJavaConfiguration;
+import model.dao.ACCommentDAOHibernate;
 
 @Service
 public class ActService {
 	@Autowired
 	private ActDAO actDAO;
+	
+	private ACCommentDAOHibernate aCCommentDAO;
 
 	public List<ActBean> selectAll() {
 		List<ActBean> result = null;
@@ -45,5 +48,13 @@ public class ActService {
 		List<ActBean> result = null;
 		result = actDAO.Newset();
 		return result;
+	}
+	
+	public Object[] fetchByMultiConditions(String keyword, String status, String sorting,int p,int num) {
+		Object[] result = actDAO.findByMultiConditions(keyword, status, sorting, p, num);
+		if((int)result[0]!=0) {
+			return result;
+		}
+		return null;
 	}
 }

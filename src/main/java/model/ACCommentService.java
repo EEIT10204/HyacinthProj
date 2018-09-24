@@ -32,7 +32,11 @@ public class ACCommentService {
 	}
 	
 	public ACCommentBean update(ACCommentBean bean) {
-		aCCommentDAO.update(bean);
-		return bean;
+		return aCCommentDAO.update(bean);
+	}
+	
+	public List<Object[]> selectActSNumMeberIdJoin(Integer ActSNum) {
+		List<Object[]> result = aCCommentDAO.selectActSNumMeberIdJoin(ActSNum);
+		return result;	
 	}
 }

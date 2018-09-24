@@ -8,8 +8,8 @@
 <%-- <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.3.1.min.js"></script> --%>
 <%-- <script src="${pageContext.request.contextPath}/js/bootstrap.bundle.js"></script> --%>
 <%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css"> --%>
-<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.29/sweetalert2.min.css" /> -->
-<!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.29/sweetalert2.all.min.js" type="text/javascript"></script> -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.29/sweetalert2.min.css" />
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.29/sweetalert2.all.min.js" type="text/javascript"></script>
 <title>檢舉管理系統</title>
 
 <style>
@@ -54,7 +54,7 @@
 		<button type="button" class="btn  btn-xs" id="testAjax" value="search" style="height:32px;background-color: #46a3ff;color:white;text-align:center;">查詢</button>
 		
 
-				<button type="button" class="btn btn-xs" id="testAjax" value="Clear" onclick="clearForm()" style="height:32px;background-color: #46a3ff;color:white;text-align:center;">清除</button>
+				<button type="button" class="btn btn-xs" value="Clear" onclick="clearForm()" style="height:32px;background-color: #46a3ff;color:white;text-align:center;">清除</button>
 		</span>
 	</form>
 	
@@ -242,17 +242,19 @@
     </div>
   </div> <!-- Report Modal end -->
   
-  <input data-toggle="modal" data-target="#reportModal" type="button" value="欠檢舉"/> <intput type="button" onclick="testSwal()">Test SWAL</button>
+  <input style="display:none" data-toggle="modal" data-target="#reportModal" type="button" value="欠檢舉"/>
 
 	
 	<script>
+
+	$( document ).ready(function() {
+		
+		SearchResult(); // list all report case when enter page
 	
-// 	function testSwal(){
-// 		swal({
-// 			  title: '<span class="title">Title</span>',
-// 			  html: '<span class="text">HTML description</span>'
-// 			});
-// 	}
+		$('#testAjax').click(function (){
+			SearchResult();
+		});
+	});
 	
 	function sendReport(){
 		var reportReason = $('#reportReason').text();
@@ -277,7 +279,6 @@
 	}
 	
 	function caseAccept(type){
-		alert('檢舉成立');
 		
 		if(type.match('comment')){
 			var referID = $('#detailCommentID').val();
@@ -298,20 +299,23 @@
 			url : "${pageContext.request.contextPath}/report.Process",
 			data: {"referID":referID, "type":type, "caseID":caseID,"process":'accept'},
 			contentType: "application/json; charset=utf-8",
-			dataType: "json",
+			dataType: "text",
 			success: function (data) {
-					alert(data);
+					swal({
+						type : 'success',
+						title : '檢舉成立!',
+						showConfirmButton : false,
+						timer : 1500
+					})
 				},
 			error: function (response) {
 				$('#detailReason').empty();
-// 				alert("detail error");
 				},				
 		});	
 		
 	}
 	
 	function caseDeny(type){
-		alert('通過審核');
 		if(type.match('comment')){
 			var referID = $('#detailCommentID').val();
 			var caseID = $('#cmtDetailCaseID').text()
@@ -330,21 +334,18 @@
 			type : "get",
 			url : "${pageContext.request.contextPath}/report.Process",
 			data: {"referID":referID, "type":type, "caseID":caseID,"process":'deny'},
-			contentType: "application/json; charset=utf-8",
-			dataType: "json",
+			contentType: "application/json;charset=utf-8",
+			dataType: "text",
 			success: function (data) {
-// 					alert(data);
-
 				swal({
 						type : 'success',
-						title : '檢舉成功!',
+						title : '審核通過!',
 						showConfirmButton : false,
 						timer : 1500
 					})
 				},
 				error : function(response) {
 					$('#detailReason').empty();
-// 					alert("detail error");
 				},
 			});
 		}
@@ -463,114 +464,112 @@
 			document.getElementById("reportForm").reset();
 			$('#reportDisplay').empty();
 		}
+		
+		function SearchResult() {
+			$('#reportDisplay').empty();
+			$.ajax({
+						type : "get",
+						url : "${pageContext.request.contextPath}/report.Controller",
+						data : {
+							"type" : document
+									.getElementById("type").value,
+							"process" : document
+									.getElementById("process").value
+						},
+						contentType : "application/json; charset=utf-8",
+						dataType : "json",
+						success : function(data) {
+							//                     alert(data[0]["caseID"]); 
+							//                     $('#testArea').text(data[1]["caseID"]);
+							for (var i = 0; i < data.length; i++) {
+								if (data[i]["referID"]
+										.match('ACC')
+										|| data[i]["referID"]
+												.match('BGC'))
+									$('#reportDisplay')
+											.append(
+													'<tr data-toggle="modal" data-target="#commentModal" class="caseRow" onclick="showCommentDetail(\''
+															+ data[i]["referID"]
+															+ '\',\''
+															+ data[i]["caseID"]
+															+ '\',\''
+															+ data[i]["memberName"]
+															+ '\',\''
+															+ data[i]["reportedTime"]
+															+ '\',\''
+															+ data[i]["reason"]
+															+ '\')"><td>'
+															+ data[i]["caseID"]
+															+ '</td><td>'
+															+ data[i]["referID"]
+															+ '</td><td>'
+															+ data[i]["reason"]
+															+ '</td><td>'
+															+ data[i]["memberName"]
+															+ '</td><td>'
+															+ data[i]["process"]
+															+ '</td></tr>');
+								else if (data[i]["referID"]
+										.match('AC'))
+									$('#reportDisplay')
+											.append(
+													'<tr data-toggle="modal" data-target="#actModal" class="caseRow" onclick="showActDetail(\''
+															+ data[i]["referID"]
+															+ '\',\''
+															+ data[i]["caseID"]
+															+ '\',\''
+															+ data[i]["memberName"]
+															+ '\',\''
+															+ data[i]["reportedTime"]
+															+ '\',\''
+															+ data[i]["reason"]
+															+ '\')"><td>'
+															+ data[i]["caseID"]
+															+ '</td><td>'
+															+ data[i]["referID"]
+															+ '</td><td>'
+															+ data[i]["reason"]
+															+ '</td><td>'
+															+ data[i]["memberName"]
+															+ '</td><td>'
+															+ data[i]["process"]
+															+ '</td></tr>');
+								else if (data[i]["referID"]
+										.match('BG'))
+									$('#reportDisplay')
+											.append(
+													'<tr data-toggle="modal" data-target="#blogModal" class="caseRow" onclick="showBlogDetail(\''
+															+ data[i]["referID"]
+															+ '\',\''
+															+ data[i]["caseID"]
+															+ '\',\''
+															+ data[i]["memberName"]
+															+ '\',\''
+															+ data[i]["reportedTime"]
+															+ '\',\''
+															+ data[i]["reason"]
+															+ '\')"><td>'
+															+ data[i]["caseID"]
+															+ '</td><td>'
+															+ data[i]["referID"]
+															+ '</td><td>'
+															+ data[i]["reason"]
+															+ '</td><td>'
+															+ data[i]["memberName"]
+															+ '</td><td>'
+															+ data[i]["process"]
+															+ '</td></tr>');
 
-		$('#testAjax')
-				.click(
-						function SearchResult() {
+							}
+						},
+						error : function(response) {
+							alert("search error");
+						},
+					});
+		}
 
-							$('#reportDisplay').empty();
-
-							$
-									.ajax({
-										type : "get",
-										url : "${pageContext.request.contextPath}/report.Controller",
-										data : {
-											"type" : document
-													.getElementById("type").value,
-											"process" : document
-													.getElementById("process").value
-										},
-										contentType : "application/json; charset=utf-8",
-										dataType : "json",
-										success : function(data) {
-											//                     alert(data[0]["caseID"]); 
-											//                     $('#testArea').text(data[1]["caseID"]);
-											for (var i = 0; i < data.length; i++) {
-												if (data[i]["referID"]
-														.match('ACC')
-														|| data[i]["referID"]
-																.match('BGC'))
-													$('#reportDisplay')
-															.append(
-																	'<tr data-toggle="modal" data-target="#commentModal" class="caseRow" onclick="showCommentDetail(\''
-																			+ data[i]["referID"]
-																			+ '\',\''
-																			+ data[i]["caseID"]
-																			+ '\',\''
-																			+ data[i]["memberName"]
-																			+ '\',\''
-																			+ data[i]["reportedTime"]
-																			+ '\',\''
-																			+ data[i]["reason"]
-																			+ '\')"><td>'
-																			+ data[i]["caseID"]
-																			+ '</td><td>'
-																			+ data[i]["referID"]
-																			+ '</td><td>'
-																			+ data[i]["reason"]
-																			+ '</td><td>'
-																			+ data[i]["memberName"]
-																			+ '</td><td>'
-																			+ data[i]["process"]
-																			+ '</td></tr>');
-												else if (data[i]["referID"]
-														.match('AC'))
-													$('#reportDisplay')
-															.append(
-																	'<tr data-toggle="modal" data-target="#actModal" class="caseRow" onclick="showActDetail(\''
-																			+ data[i]["referID"]
-																			+ '\',\''
-																			+ data[i]["caseID"]
-																			+ '\',\''
-																			+ data[i]["memberName"]
-																			+ '\',\''
-																			+ data[i]["reportedTime"]
-																			+ '\',\''
-																			+ data[i]["reason"]
-																			+ '\')"><td>'
-																			+ data[i]["caseID"]
-																			+ '</td><td>'
-																			+ data[i]["referID"]
-																			+ '</td><td>'
-																			+ data[i]["reason"]
-																			+ '</td><td>'
-																			+ data[i]["memberName"]
-																			+ '</td><td>'
-																			+ data[i]["process"]
-																			+ '</td></tr>');
-												else if (data[i]["referID"]
-														.match('BG'))
-													$('#reportDisplay')
-															.append(
-																	'<tr data-toggle="modal" data-target="#blogModal" class="caseRow" onclick="showBlogDetail(\''
-																			+ data[i]["referID"]
-																			+ '\',\''
-																			+ data[i]["caseID"]
-																			+ '\',\''
-																			+ data[i]["memberName"]
-																			+ '\',\''
-																			+ data[i]["reportedTime"]
-																			+ '\',\''
-																			+ data[i]["reason"]
-																			+ '\')"><td>'
-																			+ data[i]["caseID"]
-																			+ '</td><td>'
-																			+ data[i]["referID"]
-																			+ '</td><td>'
-																			+ data[i]["reason"]
-																			+ '</td><td>'
-																			+ data[i]["memberName"]
-																			+ '</td><td>'
-																			+ data[i]["process"]
-																			+ '</td></tr>');
-
-											}
-										},
-										error : function(response) {
-											alert("search error");
-										},
-									});
-						});
+		
 	</script>
 </body>
+<jsp:include page="../Index/Footer.jsp" />
 </html>

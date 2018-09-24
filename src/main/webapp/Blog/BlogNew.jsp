@@ -408,9 +408,7 @@ p {
 			$('body').on('click','#confirmBB',function(){
  				$("#form").submit();
 			})
-			$('body').on('click','#confirmBB',function(){
- 				$("#form").submit();
-			})
+			
 			
 			//preview---------------------------
 				$("#preview").click(function(){

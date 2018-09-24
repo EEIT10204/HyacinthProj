@@ -4,10 +4,11 @@ import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.NoResultException;
-import javax.persistence.Query;
+//import javax.persistence.Query;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -102,18 +103,35 @@ public class ActDAOHibernate implements ActDAO {
 	}
 	
 	@Override
-	public List<ActBean> findByMultiConditions(String keyword, String status, String sorting,int p,int num) {
-		return this.getSession().createQuery(
+	public Object[] findByMultiConditions(String keyword, String status, String sorting,int p,int num) {
+		Object[] result = new Object[2];
+		Query<ActBean> temp = this.getSession().createQuery(
 				"from ActBean where (actTitle Like :var1 OR actCity Like :var1 OR actIntro Like :var1) "
 				+"AND actStatus= :var2 "
 				+"AND actVisibility=1 "
 				+"order by "+sorting+" desc"
 				,ActBean.class)
-		.setParameter("var1","%"+keyword+"%")
-		.setParameter("var2", status)
-		.setFirstResult((p-1)*num) 
-		.setMaxResults(num) 
-		.list();
+				.setParameter("var1","%"+keyword+"%")
+				.setParameter("var2", status);
+		
+		if(p==1) {
+			result [0] = temp.list().size();
+		}else {
+			result [0] = -1;
+		}
+		result [1] = temp.setFirstResult((p-1)*num) .setMaxResults(num) .list();
+		return result;
+//		return this.getSession().createQuery(
+//				"from ActBean where (actTitle Like :var1 OR actCity Like :var1 OR actIntro Like :var1) "
+//				+"AND actStatus= :var2 "
+//				+"AND actVisibility=1 "
+//				+"order by "+sorting+" desc"
+//				,ActBean.class)
+//		.setParameter("var1","%"+keyword+"%")
+//		.setParameter("var2", status)
+//		.setFirstResult((p-1)*num) 
+//		.setMaxResults(num) 
+//		.list();
 	}
 
 	
