@@ -79,7 +79,7 @@ vertical-align: middle;
                 <div class="speakers">
                     <strong>舉辦人</strong>
 <%--                     <span><a href="${pageContext.request.contextPath}/ProfilePageGet?memberID=${member.memberID}">${member.memberName}</a></span> --%>
-                    <span><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main' >${member.memberName}</a></span>
+                    <span><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${event.memberID }&lmi=${user.memberID }&page=main' >${member.memberName}</a></span>
                 </div>
                 <div class="event_date">
                 <td>
