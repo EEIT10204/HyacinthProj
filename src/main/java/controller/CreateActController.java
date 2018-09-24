@@ -71,10 +71,17 @@ public class CreateActController {
 		
  
 		 ActBean abean = new ActBean();
-		 abean.setMemberID(memberBean.getMemberID());
-		 abean.setActCreateDate(Date1);		 
+		 
+		 if(memberBean!=null) {
+			 abean.setMemberID(memberBean.getMemberID());
+			 abean.setActCreateDate(Date1);		 
+			 actDAOHibernate.insert(abean);	
+			 model.addAttribute("newEvent", abean);
+		 }
+//		 abean.setMemberID(memberBean.getMemberID());
+//		 abean.setActCreateDate(Date1);		 
 		
-		 actDAOHibernate.insert(abean);	model.addAttribute("newEvent", abean);
+//		 actDAOHibernate.insert(abean);	model.addAttribute("newEvent", abean);
 		
 		return "act.create";
 	}

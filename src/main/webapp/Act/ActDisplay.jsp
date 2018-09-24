@@ -541,6 +541,7 @@ $( document ).ready(function() {
 				},				
 		});	
 	}
+})
 </script>
 </body>
 <jsp:include page="../Index/Footer.jsp" />
