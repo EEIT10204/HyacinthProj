@@ -344,22 +344,24 @@ article {
 /* 	border: 1px solid red;  */
 	font-size: 120%;
 	display: inline-block;
-	width: 100px;
+	width: 180px;
 	height: 40px;
-	text-align: center;
+/* 	text-align: center; */
 }
 
 .divblog221 {
 	/*              border: 3px solid rgb(0, 179, 149); */
 	/*             display: inline-block; */
 	/*             height: 40px; */
+	 position: relative;
+     top: 4px;  
 	
 }
 
 .divblog22111 {
 /* border: 3px solid rgb(0, 179, 149);  */
 	width: 150px;
-	text-align: center;
+/* 	text-align: center; */
 	font-family: 'Noto Sans TC';
 	color: white;
 	font-size: 110%;
