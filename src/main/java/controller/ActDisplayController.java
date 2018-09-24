@@ -204,9 +204,9 @@ public class ActDisplayController {
 			model.addAttribute("attendbottuntype","Attend");
 		}else{
 		   if(NowYourAct.getIsAttend()==true){
-		       model.addAttribute("attendbottuntype","Attend");}
+		       model.addAttribute("attendbottuntype","disAttend");}
 		   else 
-			   model.addAttribute("attendbottuntype","disAttend");
+			   model.addAttribute("attendbottuntype","Attend");
 		   }
 		}
 		//////////////////////////////////////////////
