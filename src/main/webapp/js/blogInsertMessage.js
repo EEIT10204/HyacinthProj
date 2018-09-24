@@ -10,7 +10,8 @@ $(document).ready(function(){
 		});
 	
 $(".flip").click(function(){
-$(".uuu").slideToggle("fast");	
+//	alert('hello');
+$(".outdoubleSD").slideToggle("fast");	
 });	
 
 //$(".flip").click(function(){

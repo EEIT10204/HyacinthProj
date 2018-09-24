@@ -859,15 +859,23 @@ hr {
 }
 
 /* 留言板 */
-/* ActComment */
+/* BlogComment */
+.outdoubleSD{
+/* border:1px solid red; */
+}
+
+.outdoubleS{
+/* border:1px solid red; */
+}
+
 	.form-group textarea{
-      width: 600px;
+      width: 700px;
       height: 150px;
       margin-left: 35px;
   
     }
     .messOut{
-      width: 700px;
+      width: 820px;
       margin: auto;
       margin-top: 50px;
       border-radius: 10px;
@@ -944,7 +952,7 @@ hr {
   margin:0px;
 padding:5px;
 text-align:center;
-background:rgb(0, 179, 149);
+background:#e5eecc;
 margin-top:10px;
 }
  .update{ 
@@ -1603,7 +1611,7 @@ margin-top:10px;
 				</h5>
 </div>				
   <!-- 留言板 -->
-<div class="messOut" style="border: 10px groove rgb(0, 179, 149);width: 700px;">
+<div class="messOut" style="border: 10px groove rgb(0, 179, 149);">
       <div class="mess1">
         <div class="messUser"><img src="data:image/png;base64,${user.memberPicToBase64}"/></div>
         <div class="messName">${user.memberName}</div>
@@ -1615,7 +1623,7 @@ margin-top:10px;
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="commentContent"></textarea>
                   </div>
                   <div class="buttonT">
-                      <button type="submit" class="btn btn-info btn-primaryMY" id="sendbuttom";/">Send out</button>
+                      <button type="submit" class="btn btn-info btn-primaryMY" id="sendbuttom"/>Send out</button>
 <!--                           <input type="hidden" name="commentContent" value="1"> -->
                           <input type="hidden" name="memberID" value="${user.memberID}">
                           <input type="hidden" name="blogSNum" value="${param.blogSNum}">
@@ -1628,10 +1636,13 @@ margin-top:10px;
                   <div class="form-group">
                       <label for="exampleFormControlInput1 a1">All Message</label>
                       
-                      <div class="uuut">
-                      <c:forEach var="obj" items="${BGComment}">
-                      <form action="<c:url value="/BGCommentUpdate.Controller"/>" method="get">
+                      <div class="uuur">
+                      
+                      <div class="outdoubleS">
+                      <c:forEach var="obj" items="${BGComment}" varStatus="status">
+                      <c:if test="${status.count<4}">
                       <div id="messAt">
+                      <form action="<c:url value="/BGCommentUpdate.Controller"/>" method="get"> 
                           <img src="data:image/png;base64,${obj[1].memberPicToBase64}"/>
                           <h6>${obj[1].memberName} </h6>
 <%--                           <h6>${obj[0].ACCommentID}</h6> --%>
@@ -1650,13 +1661,47 @@ margin-top:10px;
                          <input type="hidden" name="memberID" value="${user.memberID}">
                         </div>
                         </c:if>
-<%--                           <input type="text" name="testmember" value="${param.actSNum}"> --%>    
-                      </div>
-                        </form>    
+<%--                           <input type="text" name="testmember" value="${param.actSNum}"> --%>
+                      </form>
+                      </div>  
+                        </c:if>    
                       </c:forEach>
                       </div>
+                      
+                      
+                      <div class="outdoubleSD">
+                      <c:forEach var="obj" items="${BGComment}" varStatus="status">
+                      <c:if test="${status.count>3}">
+                      <div id="messAt">
+                      <form action="<c:url value="/BGCommentUpdate.Controller"/>" method="get"> 
+                          <img src="data:image/png;base64,${obj[1].memberPicToBase64}"/>
+                          <h6>${obj[1].memberName} </h6>
+<%--                           <h6>${obj[0].ACCommentID}</h6> --%>
+
+                          <div class="messBt">
+                          <input type="text" class="form-control" disabled value="${obj[0].commentContent}"
+                          name="commentContent">
+                        </div>
+                        
+                        <c:if test= "${user.memberID == obj[1].memberID}"> 
+                        <div class="update"> 
+                        <span class="updatebutton" style="width:70px;height:25px">修改</span>            
+                        <input class="updatebutton" style="width:70px;height:25px" type="hidden" value="送出">
+                        <input type="hidden" name="BGCommentID" value="${obj[0].BGCommentID}">
+                        <input type="hidden" name="blogSNum" value="${param.blogSNum}">
+                         <input type="hidden" name="memberID" value="${user.memberID}">
+                        </div>
+                        </c:if>
+<%--                           <input type="text" name="testmember" value="${param.actSNum}"> --%>
+                      </form>
+                      </div>  
+                        </c:if>    
+                      </c:forEach>
+                      </div>
+                      
+                      </div>
                       <div >
-                          <p class="flip">顯示更多留言</p>
+                          <p class="flip" id="slides">顯示更多留言</p>
                           </div>
                       </div>
                     </div>

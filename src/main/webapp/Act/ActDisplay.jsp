@@ -168,9 +168,42 @@ vertical-align: middle;
                       <label for="exampleFormControlInput1">All Message</label>
                       
                       <div class="uuus">
-                      <c:forEach var="obj" items="${ACComment}">
-                      <form action="<c:url value="/ACCommentUpdate.Controller"/>" method="get">
+                      
+                      <div class="outdouble">
+                      <c:forEach var="obj" items="${ACComment}" varStatus="status">
+                     <c:if test="${status.count<4}">        
                       <div id="messAs">
+                      	<form action="<c:url value="/ACCommentUpdate.Controller"/>" method="get">
+                          <img src="data:image/png;base64,${obj[1].memberPicToBase64}"/>
+                          <h6>${obj[1].memberName}</h6>
+<%--                           <h6>${obj[0].ACCommentID}</h6> --%>
+
+                          <div class="messBs">
+                          <input type="text" class="form-control" disabled value="${obj[0].commentContent}"
+                          name="commentContent">
+                        </div>
+                        
+                        <c:if test= "${user.memberID == obj[1].memberID}"> 
+                        <div class="updates"> 
+                        <span class="updatebuttons" style="width:70px;height:25px">修改</span>            
+                        <input class="updatebuttons" style="width:70px;height:25px" type="hidden" value="送出">
+                        <input type="hidden" name="ACCommentID" value="${obj[0].ACCommentID}">
+                        <input type="hidden" name="actSNum" value="${param.actSNum}">
+                         <input type="hidden" name="memberID" value="${user.memberID}">
+                        </div>
+                        </c:if>
+<%--                           <input type="text" name="testmember" value="${param.actSNum}"> --%>  
+  					</form>
+                      </div>                        
+                         </c:if>    
+                      </c:forEach>
+                       </div> 
+                       
+                       <div class="outdoubleT">
+                        <c:forEach var="obj" items="${ACComment}" varStatus="status">
+                         <c:if test="${status.count>3}">                   
+                       <div id="messAs">
+                       <form action="<c:url value="/ACCommentUpdate.Controller"/>" method="get">
                           <img src="data:image/png;base64,${obj[1].memberPicToBase64}"/>
                           <h6>${obj[1].memberName} </h6>
 <%--                           <h6>${obj[0].ACCommentID}</h6> --%>
@@ -190,10 +223,15 @@ vertical-align: middle;
                         </div>
                         </c:if>
 <%--                           <input type="text" name="testmember" value="${param.actSNum}"> --%>    
+                      </form>
+                      </div>                    
+                      </c:if>
+                       </c:forEach>
+                       </div>
+                       
                       </div>
-                        </form>    
-                      </c:forEach>
-                      </div>
+                      
+                      
                       <div >
                           <p class="flips">顯示更多留言</p>
                           </div>
@@ -348,9 +386,10 @@ $( document ).ready(function() {
 
 <script type="text/javascript">
 $(document).ready(function(){
-	alert("run button check");
 if('${user.memberID}'==""){
-$("#sendbuttom").html("<button type='submit' class='btn-secondary style='margin-left: 650px; margin-bottom: 20px; border-radius:20px' id='sendbuttom' disabled='disabled'>請先登入</button>")
+	$("#sendbuttom").toggleClass('btn-secondary').toggleClass('btn-info');
+	$("#sendbuttom").text("請先登入").prop("disabled",true);
+// $("#sendbuttom").html("<button type='submit' class='btn-secondary style='margin-left: 650px; margin-bottom: 20px; border-radius:20px' id='sendbuttom' disabled='disabled'>請先登入</button>")
 $(".messUsers").html("<div class='messUsers'><img src='${pageContext.request.contextPath}/Images/Index/user.png'/></div>")
 };
 });

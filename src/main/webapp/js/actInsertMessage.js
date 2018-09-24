@@ -10,7 +10,7 @@ $(document).ready(function(){
 		});
 	
 $(".flips").click(function(){
-$(".uuus").slideToggle("fast");	
+$(".outdoubleT").slideToggle("fast");	
 });	
 
 //$(".flip").click(function(){
