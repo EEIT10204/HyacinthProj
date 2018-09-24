@@ -100,10 +100,16 @@ public class ActDisplayController {
 		model.addAttribute("useractSNum",actSNum);
 		
 		}
-		
+		 Object[] followerAttenders = memberActDAOHibernate.findFollowsAttenders(actSNum);
+		 String attenders = followerAttenders[1].toString();
+		 model.addAttribute("attendNum", attenders);
 		   
 //		
         ActBean abean = actDAOHibernate.selectByPK(actSNum);
+        
+//        abean.getActStatus();
+        
+        
         int NewAbeanNum = ((abean.getActView())+1);
         abean.setActView(NewAbeanNum);
         actDAOHibernate.insert(abean);
@@ -144,6 +150,7 @@ public class ActDisplayController {
 			 
 			 return "act.display"; 
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------	
 	
 	//Act留言新增功能
 	@RequestMapping(path= {"/Act/ActDisplay.comment"})
@@ -247,8 +254,10 @@ public class ActDisplayController {
 		return "act.display";
 		
 	}
+	//-----------------------------------------------------------------------------------------------------------------------------------------------	
 	
-	//Blog留言修改功能
+	//Act留言修改功能
+	
 	@RequestMapping(path = {"/ACCommentUpdate.Controller"})
 	public String method2(Integer actSNum,Integer memberID,Model model,
 			ACCommentBean bean,BindingResult bindingResult, @SessionAttribute(name="user" ,required=false) MemberBean memberBean) {

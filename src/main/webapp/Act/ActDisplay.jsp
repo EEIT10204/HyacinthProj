@@ -93,8 +93,11 @@ vertical-align: middle;
                 <div class="event_word">
                                                          費用:${event.budget}                        
                 </div>
-                  <div class="event_word">
-                                                         多少人參加囉:${event.participantsNow}位
+                <div class="event_word">
+                                        最高參加人數:${event.maxParticipants}位
+                </div>
+                  <div   id = "partNow" class="event_word">
+                     多少人參加囉:${event.participantsNow}位
             </div>
                 <div class="event_word">
                         ${event.actIntro}
@@ -230,10 +233,46 @@ vertical-align: middle;
 		
 <script>
 $( document ).ready(function() {
+	
+	var attNum = '${attendNum}';
+	var attNum1 = parseInt(attNum);
+	var attMax='${event.maxParticipants}'
+	var attMax1 = parseInt(attMax);
+// 	alert(attNum);
+// 	alert(attMax);
+// 	alert(attNum1);
+// 	alert(attMax1);
+	if(attMax != null){
+		if (attNum1 == attMax1){
+			$('#invite').attr('style', 'display:none');
+			$('#AttendOrNot').attr('style', 'display:none');
+// 			$('#partNow').html("<p>已經額滿囉!</p>");
+		}else if(attNum1 > attMax1){
+			$('#invite').attr('style', 'display:none');
+			$('#AttendOrNot').attr('style', 'display:none');
+// 			$('#partNow').text("已經額滿囉");
+		}
+	}
+// 	alert("attNum1=" attNum1);
+// 	alert("attMax1=" attMax1);
+	
+	
+
+	
+	
+	var status = '${event.actStatus}'
+		if(status=='finished'){
+			
+			$('#AttendOrNot').attr('style', 'display:none');
+			$('#invite').attr('style', 'display:none');
+		}
+// 	if(attNum1>attMaxc1){
+// 		$('#invite').attr('style', 'display:none');
+// 		$('#AttendOrNot').attr('style', 'display:none');
+// 	}
 // 	<c:if test = "${user==null}"></c:if>
 // 	alert("memberID=" + ${user.memberID});
 // 	alert("eventMemberID=" + ${event.memberID});
-	
 	
 //     var user = <c:choose><c:when test="${user != null}">${user};</c:when><c:otherwise>null;</c:otherwise></c:choose>
     var memID = '${user.memberID}';
@@ -294,11 +333,11 @@ $( document ).ready(function() {
 	    contentType: "application/json; charset=utf-8",
 	    dataType: "json",
 	    success: function (data) {
-	    	alert("sucess"); 	    	
+// 	    	alert("sucess"); 	    	
 	    	
               },
 	    error: function (response) {
-            alert("error");
+//             alert("error");
             },
 	    
 	});
@@ -333,11 +372,11 @@ $( document ).ready(function() {
 	    contentType: "application/json; charset=utf-8",
 	    dataType: "json",
 	    success: function (data) {
-	    	alert("sucess"); 	    	
+// 	    	alert("sucess"); 	    	
 	    	
               },
 	    error: function (response) {
-            alert("error");
+//             alert("error");
             },
 	    
 	});
