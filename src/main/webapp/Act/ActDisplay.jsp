@@ -46,6 +46,9 @@ html, body {
 #ActDetail{
 
 }
+
+
+
 .actCover{
 vertical-align: middle;
     border-style: none;
@@ -146,8 +149,10 @@ vertical-align: middle;
 <h2>留言板</h2>
 </button>
 </div>
+
 	<!-- 留言板 -->
-<div class="messOuts">
+
+<div class="messOuts" style="border: 10px groove rgb(195, 195, 195);">
       <div class="mess1s">
         <div class="messUsers"><img src="data:image/png;base64,${user.memberPicToBase64}"/></div>
         <div class="messNames">${user.memberName}</div>
@@ -244,6 +249,9 @@ vertical-align: middle;
                       </div>
                     </div>
                   </div>
+                  
+                  
+                 
 
 		<!-- Report Model Start -->
   <div class="modal fade" id="reportModal" role="dialog">
