@@ -29,7 +29,7 @@ public class MemberHistController {
 		@RequestMapping(path={"/readMyHist.do"},method= {RequestMethod.POST})
 		@ResponseBody
 		public List<NewsFeed> readMyHist(String memberID,String page) {	
-			System.out.println("memberID="+memberID);
+//			System.out.println("memberID="+memberID);
 			if(memberID==null || "0".equals(memberID)) {
 				return null;
 			}
@@ -71,10 +71,10 @@ public class MemberHistController {
 		@ResponseBody
 		public List<Object[]> readCommsByPage(String articleId,String first) {
 			
-			System.out.println("articleId="+articleId);
-			System.out.println("Comm-first="+first);
+//			System.out.println("articleId="+articleId);
+//			System.out.println("Comm-first="+first);
 			String[] tokens = articleId.split("_");
-			System.out.println("tokens[0]="+tokens[0]+",tokens[1]="+tokens[1]);
+//			System.out.println("tokens[0]="+tokens[0]+",tokens[1]="+tokens[1]);
 			Integer id = 0;
 			int p = 1;
 			try {
@@ -93,7 +93,7 @@ public class MemberHistController {
 		@RequestMapping(path={"/news_act_comments"},method= {RequestMethod.POST})
 		@ResponseBody
 		public ACCommentBean leaveMessagesOnAct(String actSNum,String memberID,String commentContent) throws URISyntaxException {
-			System.out.println("actSNum="+actSNum+",memberID="+memberID+",commentContent="+commentContent);
+//			System.out.println("actSNum="+actSNum+",memberID="+memberID+",commentContent="+commentContent);
 			
 			ACCommentBean act_CommentBean = new ACCommentBean();
 			
@@ -105,7 +105,7 @@ public class MemberHistController {
 				}else {
 					commentContent=commentContent.replaceAll("\n", "<br/>");	
 				}
-				System.out.println("editComm="+commentContent);
+//				System.out.println("editComm="+commentContent);
 				act_CommentBean.setCommentContent(commentContent);
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
@@ -129,7 +129,7 @@ public class MemberHistController {
 		@RequestMapping(path={"/news_blog_comments"},method= {RequestMethod.POST})
 		@ResponseBody
 		public BGCommentBean leaveMessagesOnBlog(String blogSNum,String memberID,String commentContent) throws URISyntaxException {
-			System.out.println("blogSNum="+blogSNum+",memberID="+memberID+",commentContent="+commentContent);
+//			System.out.println("blogSNum="+blogSNum+",memberID="+memberID+",commentContent="+commentContent);
 			
 			BGCommentBean blog_CommentBean= new BGCommentBean();
 			
@@ -141,7 +141,7 @@ public class MemberHistController {
 				}else {
 					commentContent=commentContent.replaceAll("\n", "<br/>");
 				}
-				System.out.println("editComm="+commentContent);
+//				System.out.println("editComm="+commentContent);
 				blog_CommentBean.setCommentContent(commentContent);
 			} catch (NumberFormatException e) {
 				e.printStackTrace();
@@ -164,7 +164,7 @@ public class MemberHistController {
 		@RequestMapping(path={"/tests"},method= {RequestMethod.POST})
 		@ResponseBody
 		public ResponseEntity<?> testIn(String blogSNum,String memberID,String commentContent) throws URISyntaxException {
-			System.out.println("blogSNum="+blogSNum+",memberID="+memberID+",commentContent="+commentContent);
+//			System.out.println("blogSNum="+blogSNum+",memberID="+memberID+",commentContent="+commentContent);
 			
 			BGCommentBean blog_CommentBean= new BGCommentBean();
 			
@@ -177,7 +177,7 @@ public class MemberHistController {
 				return null;
 			}
 			
-			System.out.println("blog_CommentBean="+blog_CommentBean);
+//			System.out.println("blog_CommentBean="+blog_CommentBean);
 //			return (Blog_CommentBean) memberHistService.leaveMessagesOnFeed(null,blog_CommentBean);
 			BGCommentBean resultBean = memberHistService.leaveBlogMessagesOnFeed(blog_CommentBean);
 			System.out.println("resultBean="+resultBean);
@@ -192,8 +192,8 @@ public class MemberHistController {
 		@RequestMapping(path={"/readBelongList.do"},method= {RequestMethod.GET})
 		@ResponseBody
 		public List<Object[]> readBelongList(String news,String type) {
-			System.out.println("readBelongList called~");
-			System.out.println("news="+news+",type="+type);
+//			System.out.println("readBelongList called~");
+//			System.out.println("news="+news+",type="+type);
 			if(news!=null && type!=null) {
 				String[] tokens = news.split("_");
 				int id =0;
