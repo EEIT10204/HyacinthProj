@@ -196,11 +196,12 @@ p {
         
 .divAS15 {
 			border: 2px solid rgb(0, 179, 149); 
-            text-align: center;
+/*             text-align: center; */
             font-size: 120%;
-            margin: auto;
+/*             margin: auto; */
             width: 750px;
             margin-bottom: 15px;
+            word-wrap:break-word;
         }
 #changeCityContent img{
 /* 			width: 400px; */
