@@ -238,7 +238,10 @@ $('#navSerach').click(function(event) {
 	   var searchType =$('#searchType').val();
 	   if($('#searchType').val()=='blog'){
 	    	location.href="${pageContext.request.contextPath}/Blog/BlogIndex.controller?search="+condition; 
-	   		}
+	   }
+	   if(searchType =='act'){		  
+		  location.href="${pageContext.request.contextPath}/Act/ActMain.jsp?search="+condition;
+	   }
 	    });
 </script>
 <script type="text/javascript"> //修改NavBar按鈕功能
