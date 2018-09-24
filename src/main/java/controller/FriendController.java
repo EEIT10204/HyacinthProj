@@ -176,6 +176,33 @@ public class FriendController {
 	}
 	
 	
+	@RequestMapping(path = { "/sendActRequestController" })
+	@ResponseBody
+	public Map<String, String> sendActRequest(@RequestParam String memberID, @RequestParam String lmi , @RequestParam String actSNum) {
+		System.out.println("run sendActRequest");
+		Map<String, String> status = new HashMap<>();
+		int intmemberID = Integer.parseInt(memberID);
+		int intlmi = Integer.parseInt(lmi);
+		int intactSNum = Integer.parseInt(actSNum);
+		System.out.println(intmemberID);
+		System.out.println(intlmi);
+		System.out.println(intactSNum);
+		NoticeBean notice = new NoticeBean();
+		MemberBean member = new MemberBean();
+		member = memberDAO.findByPK(intlmi);
+		notice.setMemberID_Sender(intlmi);
+		notice.setMemberID_Receiver(intmemberID);
+		notice.setMessegeContent(member.getMemberName() +"寄送了一則活動邀請給您");
+		notice.setIsRead(false);
+		notice.setNoticeTime(new Date());
+		notice.setActSNum(intactSNum);
+		noticeDAO.insertNotice(notice);	
+		status.put("status", "寄送活動邀請成功");
+		return status;
+		}
+	
+	
+	
 	
 	
 	
