@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
+	<head> 
 		<title>hyacinth by TEMPLATED</title>
 		<jsp:include page="../Index/NewHeader.jsp" />
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
