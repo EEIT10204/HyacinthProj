@@ -164,7 +164,7 @@
                                                 </div>
                                                 <div class="form-group row">
                                                     <div class="col-sm-3"><label for="memberBirthday"><h4>Birthday</h4></label></div>
-                                                    <div class="col-sm-8"><input type="date" class="form-control" name="memberBirthday" id="memberBirthday" value="${user.memberBirthdayToString}"></div>
+                                                    <div class="col-sm-8"><input type="date" class="form-control" name="memberBirthDay" id="memberBirthDay" value="${user.memberBirthdayToString}"></div>
                                                 </div>
 
                                                 <div class="form-group"><div class="col-xs-12 text-center">

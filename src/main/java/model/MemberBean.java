@@ -175,8 +175,9 @@ create table member
 	public java.util.Date getMemberBirthDay() {
 		return memberBirthDay;
 	}
-	public void setMemberBirthDay(java.util.Date memberBirthday) {
-		this.memberBirthDay = memberBirthday;
+
+	public void setMemberBirthDay(java.util.Date memberBirthDay) {
+		this.memberBirthDay = memberBirthDay;
 	}
 	public String getGoogleToken() {
 		return googleToken;

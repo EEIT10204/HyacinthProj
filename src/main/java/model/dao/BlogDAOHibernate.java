@@ -74,7 +74,7 @@ public class BlogDAOHibernate implements BlogDAO {
 			hql = hql + "order by b.blogView Desc";
 		}
 		else {
-			hql = hql + "order by b.blogReleaseTime Desc";
+			hql = hql + "order by b.updateTime Desc";
 		}
 		
 		 Query<Object[]> query = this.getSession().createQuery(hql,Object[].class);

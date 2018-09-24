@@ -100,15 +100,26 @@ public class ActDisplayController {
 		model.addAttribute("useractSNum",actSNum);
 		
 		}
-		
+		 Object[] followerAttenders = memberActDAOHibernate.findFollowsAttenders(actSNum);
+		 if(followerAttenders[1] != null) {
+			 
+			 Long attenders = (Long)followerAttenders[1];
+			System.out.println("attenders="+attenders);
+			 model.addAttribute("attendNum", attenders);
+		 }
+		 
 		   
 //		
         ActBean abean = actDAOHibernate.selectByPK(actSNum);
+        
+//        abean.getActStatus();
+        
+        
         int NewAbeanNum = ((abean.getActView())+1);
         abean.setActView(NewAbeanNum);
         actDAOHibernate.insert(abean);
-//        Object[] who = memberActDAOHibernate.findFollowsAttenders(abean.getActSNum());
-//        System.out.println("who=" + who.toString());
+        Object[] who = memberActDAOHibernate.findFollowsAttenders(abean.getActSNum());
+        System.out.println("who=" + who.toString());
         
 	    List<TripBean> trip = tripDAOHibernate.select(abean.getActSNum());		
          
@@ -144,6 +155,7 @@ public class ActDisplayController {
 			 
 			 return "act.display"; 
 }
+//-----------------------------------------------------------------------------------------------------------------------------------------------	
 	
 	//Act留言新增功能
 	@RequestMapping(path= {"/Act/ActDisplay.comment"})
@@ -247,8 +259,10 @@ public class ActDisplayController {
 		return "act.display";
 		
 	}
+	//-----------------------------------------------------------------------------------------------------------------------------------------------	
 	
 	//Act留言修改功能
+
 	@RequestMapping(path = {"/ACCommentUpdate.Controller"})
 	public String method2(Integer actSNum,Integer memberID,Model model,
 			ACCommentBean bean,BindingResult bindingResult, @SessionAttribute(name="user" ,required=false) MemberBean memberBean) {

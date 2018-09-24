@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>page1</title>
+<title>Hyacinth BlogPerson</title>
 <jsp:include page="../Index/NewHeader.jsp" />
 <!-- <link rel="stylesheet" -->
 <%-- 	href="${pageContext.request.contextPath}/css/bootstrap.min.css"> --%>

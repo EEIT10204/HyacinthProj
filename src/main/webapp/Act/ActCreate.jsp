@@ -125,7 +125,7 @@
 	  <tr><input type="hidden" name="actCreateDate" value="${newEvent.actCreateDate}" id="memberID"></tr>
 	 <tr><input type="hidden" name="actView" value="0" id="actView"></tr>
 	 <tr><input type="hidden" name="actVisibility" value="1" id="actVisibility"></tr>
-	 <tr><input type="hidden" name="participantsNow" value="0" id="participantsNow"></tr>
+	 <tr><input type="hidden" name="participantsNow" value="1" id="participantsNow"></tr>
 <!-- 	 hidden  -->
 	
 		<tr>
@@ -327,7 +327,7 @@
                          }   
                       },
         	    error: function (response) {
-                    alert("error");
+//                     alert("error");
                     },
         	    
         	});
@@ -370,11 +370,11 @@
  	                 contentType: "application/json; charset=utf-8",
  	                 dataType: "json",
  	                 success: function (data) {
-                     alert("success");
+                     alert("儲存成功");
                      	
                      },
                      error: function (response) {
-                     alert("error");
+//                      alert("error");
                      },
            
 });
