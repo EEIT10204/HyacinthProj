@@ -5,7 +5,7 @@ $(document).ready(function(){
 			$('#loopBlog'+(idx+1) + ' img').attr("src","data:image/png;base64," + blogBean.blogCover);
 			$('#cities'+(idx+1)).text(blogBean.blogCity);
 			$('#textTile'+(idx+1)).text(blogBean.blogTitle);
-			$('#loopBlog'+(idx+1) + 'a').attr("href","http://localhost:8080/HyacinthProj/Blog/BlogMember.controller?blogSNum="+blogBean.blogSNum)
+			$('#loopBlog'+(idx+1) + '>a').attr("href","../Blog/BlogMember.controller?blogSNum="+blogBean.blogSNum);
 		});
 	});
 	
