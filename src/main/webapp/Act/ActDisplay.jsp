@@ -11,8 +11,11 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/actcomment.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.29/sweetalert2.min.css" />
 <script src="${pageContext.request.contextPath}/js/actInsertMessage.js"></script>
 <script src="${pageContext.request.contextPath}/js/actUpdateMessage.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.26.29/sweetalert2.all.min.js" type="text/javascript"></script>
+
 
 <style>
 #left-panel {
@@ -216,7 +219,7 @@ vertical-align: middle;
         	<form>
        		<span style="margin-left:5px;font-size:16px;">理由:</span> <br>
        		<textArea style="vertical-align:top; width:400px;margin-left:55px;margin-top:10px;height:200px;" id="reportReason" ></textArea>
-       		<input type="text" id="reportMember" value="<c:if test="${user != null}">${user.memberID}</c:if>" style="display:""/> <input type="text" id="reportReferID" style="display:"" value="${event.actID}"/>
+       		<input type="text" id="reportMember" value="<c:if test="${user != null}">${user.memberID}</c:if>" style="display:none"/> <input type="text" id="reportReferID" style="display:none" value="${event.actID}"/>
        		</form>
         </div>
         <div class="modal-footer">
@@ -505,7 +508,7 @@ $( document ).ready(function() {
 		});
 	 }); 
 	 
-
+})
 
 	//-----------Report Ajax --------
 		function sendReport(){
@@ -541,7 +544,6 @@ $( document ).ready(function() {
 				},				
 		});	
 	}
-})
 </script>
 </body>
 <jsp:include page="../Index/Footer.jsp" />
