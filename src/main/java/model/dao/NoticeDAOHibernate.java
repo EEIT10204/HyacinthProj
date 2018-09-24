@@ -29,6 +29,7 @@ public class NoticeDAOHibernate implements NoticeDAO {
 		query.setParameter("arg1", memberID);
 		return query.list();
 	}
+	
 
 	@Override
 	public Boolean updateReadStatus(Integer noticeID) {
