@@ -249,7 +249,6 @@ $('#navSerach').click(function(event) {
 		if('${user}'!=""){
 				$.getJSON("${pageContext.request.contextPath}/getNotice",{"memberID":${user.memberID}},function(data){
 		    	if(data.status=="findNoticeList"){
-		    		alert("有新訊息")	
 					if('${user.memberHierachy}'=='Admin'){
 						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a style='text-decoration:none;color:black' href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
 						);
@@ -268,7 +267,7 @@ $('#navSerach').click(function(event) {
 						$('#spanNoticeCount1').text(data.count);				
 		    		}
 		    	}else if (data.status=="NoNewNoticeList"){
-		    		alert("無新訊息")
+// 		    		alert("無新訊息")
 		    		if('${user.memberHierachy}'=='Admin'){
 						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a style='text-decoration:none;color:black' href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
 						);

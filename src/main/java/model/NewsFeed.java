@@ -44,7 +44,8 @@ public class NewsFeed {
 				+ ", posterAction=" + posterAction + ", postTime=" + postTime + ", authorID=" + authorID
 				+ ", authorName=" + authorName + ", blogSNum=" + blogSNum + ", actSNum=" + actSNum + ", articleTime="
 				+ articleTime + ", articleLocation=" + articleLocation + ", articleTitle=" + articleTitle
-				+ ", articleContent=" + articleContent + ", commentsNum=" + commentsNum + ", savesNum=" + savesNum
+//				+ ", articleContent=" + articleContent 
+				+ ", commentsNum=" + commentsNum + ", savesNum=" + savesNum
 				+ ", viewsNum=" + viewsNum + ", rating=" + rating + ", ratingPoints=" + ratingPoints
 				+ ", followsNum=" + followsNum + ", joinsNum=" + joinsNum + "]";
 	}

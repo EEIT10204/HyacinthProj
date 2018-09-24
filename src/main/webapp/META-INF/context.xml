@@ -5,6 +5,13 @@
 				username="sa" password="passw0rd"
 				driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
 				url="jdbc:sqlserver://localhost:1433;database=HYACINTH" />
+				
+<!-- 	<Resource name="jdbc/xxx" auth="Container" type="javax.sql.DataSource" -->
+<!-- 				maxTotal="100" maxIdle="30"	maxWaitMillis="10000" -->
+<!-- 				username="HyacinthBoss@dbserverhyacinth" password="eeit10203Hyacinth" -->
+<!-- 				driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" -->
+<!-- 				url="jdbc:sqlserver://dbserverhyacinth.database.windows.net:1433;database=HyacinthDB" /> -->
+	
 	
 	<!-- Gmail as SMTP Server example -->
 	<Resource name="mail/Session" auth="Container" type="javax.mail.Session"

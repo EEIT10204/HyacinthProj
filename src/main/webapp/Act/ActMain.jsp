@@ -371,19 +371,20 @@ $('#tabs a[href="#tabs-3"]').click(function(){
 
 $('#actSearch').click(function(event) {
 	event.preventDefault();
-	$("#actResult").css("display","block");
-	$("#actResult").click();
-	$('#myPageList').css("visibility","visible");
-// 	$("#tabs-3").empty();
-// 	alert($('#actKeyword').val());
-// 	alert($('#actType :selected').val());
-// 	alert($('#actSorting :selected').val());
-    keyword = $('#actKeyword').val();
-    status = $('#actType :selected').val();
-    sorting = $('#actSorting :selected').val();
-    searchPage = 1;
-	showSearch(keyword,status,sorting,searchPage);
-
+	if($('#actKeyword').val()!=""){
+		$("#actResult").css("display","block");
+		$("#actResult").click();
+		$('#myPageList').css("visibility","visible");
+//	 	$("#tabs-3").empty();
+//	 	alert($('#actKeyword').val());
+//	 	alert($('#actType :selected').val());
+//	 	alert($('#actSorting :selected').val());
+	    keyword = $('#actKeyword').val();
+	    status = $('#actType :selected').val();
+	    sorting = $('#actSorting :selected').val();
+	    searchPage = 1;
+		showSearch(keyword,status,sorting,searchPage);
+	}
 });
 
 $('#myPageList').on("click",".myPage,.myPrev,.myNext",function(){
@@ -474,7 +475,10 @@ $('#myPageList').on("click",".myPage,.myPrev,.myNext",function(){
          
          $("#tabs-3").append(fragment);
 //          alert('completed');
-	 });
+	 }).fail(function(){
+		 $('#myPageList ul').empty();
+		 $('#actNums').text('查無相關結果。');
+     });
 }
 
 </script>
