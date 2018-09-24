@@ -399,7 +399,7 @@ $( document ).ready(function() {
 		 var process = true;
 	    	$('#AttendOrNot').text("disAttend").attr("value","disAttend");
 	 }
-	 else if (this.value == 'disLike'){
+	 else if (this.value == 'disAttend'){
 		 var process = false;
 	    	$('#AttendOrNot').text("Attend").attr("value","Attend");
 	  } 
