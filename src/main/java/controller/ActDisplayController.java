@@ -158,11 +158,11 @@ public class ActDisplayController {
 			@RequestParam("actSNum")Integer actSNum,
 			Model model,ACCommentBean bean,BindingResult bindingResult, @SessionAttribute(name="user" ,required=false) MemberBean memberBean
 			) {
+		System.out.println(actSNum);
 		System.out.println("run commet: " + bean.toString());
 		ACCommentBean result = aCCommentService.insert(bean);
 		List<Object[]> InsertComment = aCCommentService.selectActSNumMeberIdJoin(actSNum);
-
-		
+        
 		model.addAttribute("ACComment",InsertComment);
 		
 		
@@ -257,7 +257,7 @@ public class ActDisplayController {
 	//-----------------------------------------------------------------------------------------------------------------------------------------------	
 	
 	//Act留言修改功能
-	
+
 	@RequestMapping(path = {"/ACCommentUpdate.Controller"})
 	public String method2(Integer actSNum,Integer memberID,Model model,
 			ACCommentBean bean,BindingResult bindingResult, @SessionAttribute(name="user" ,required=false) MemberBean memberBean) {
