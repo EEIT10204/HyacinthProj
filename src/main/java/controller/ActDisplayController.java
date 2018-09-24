@@ -149,17 +149,17 @@ public class ActDisplayController {
 			@RequestParam("actSNum")Integer actSNum,
 			Model model,ACCommentBean bean,BindingResult bindingResult
 			) {
+		System.out.println(actSNum);
 		System.out.println("run commet: " + bean.toString());
 		ACCommentBean result = aCCommentService.insert(bean);
 		List<Object[]> InsertComment = aCCommentService.selectActSNumMeberIdJoin(actSNum);
-
-		
+        
 		model.addAttribute("ACComment",InsertComment);
 		return "act.display";
 		
 	}
 	
-	//Blog留言修改功能
+	//Act留言修改功能
 	@RequestMapping(path = {"/ACCommentUpdate.Controller"})
 	public String method2(Integer actSNum,Integer memberID,Model model,
 			ACCommentBean bean,BindingResult bindingResult) {
