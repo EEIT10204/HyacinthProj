@@ -247,7 +247,7 @@
          <select id ="find-type" name="type">
   				<option></option>
   				<option value="美食">美食</option>
-  				<option value="景點">景點</option>
+  				<option value="觀光">觀光</option>
   				<option value="購物">購物</option>
 		</select>
 		 
