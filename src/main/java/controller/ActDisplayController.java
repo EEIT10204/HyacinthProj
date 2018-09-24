@@ -101,8 +101,13 @@ public class ActDisplayController {
 		
 		}
 		 Object[] followerAttenders = memberActDAOHibernate.findFollowsAttenders(actSNum);
-		 String attenders = followerAttenders[1].toString();
-		 model.addAttribute("attendNum", attenders);
+		 if(followerAttenders[1] != null) {
+			 
+			 Long attenders = (Long)followerAttenders[1];
+			System.out.println("attenders="+attenders);
+			 model.addAttribute("attendNum", attenders);
+		 }
+		 
 		   
 //		
         ActBean abean = actDAOHibernate.selectByPK(actSNum);
@@ -113,8 +118,8 @@ public class ActDisplayController {
         int NewAbeanNum = ((abean.getActView())+1);
         abean.setActView(NewAbeanNum);
         actDAOHibernate.insert(abean);
-//        Object[] who = memberActDAOHibernate.findFollowsAttenders(abean.getActSNum());
-//        System.out.println("who=" + who.toString());
+        Object[] who = memberActDAOHibernate.findFollowsAttenders(abean.getActSNum());
+        System.out.println("who=" + who.toString());
         
 	    List<TripBean> trip = tripDAOHibernate.select(abean.getActSNum());		
          
