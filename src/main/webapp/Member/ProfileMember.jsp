@@ -48,11 +48,11 @@
                     <li>
                       <div id="idSocialBar" class="col col_4">
                          <div class="edit-pic">
-                              <a href="https://web.facebook.com/" target="_blank" class="fab fa-facebook" style="color: #3b5998; border: 1px solid #3b5998;"></a>
-                              <a href="https://www.instagram.com/" target="_blank" class="fab fa-instagram"  style="color: #833ab4;border: 1px solid #833ab4;"></a>
-                              <a href="https://twitter.com/" target="_blank" class="fab fa-twitter"  style="color: #1da1f2;border: 1px solid #1da1f2;"></a>
-                              <a href="https://plus.google.com/" target="_blank" class="fab fa-google"  style="color: #dd4b39; border: 1px solid #dd4b39;"></a>
-                              <a href="https://www.youtube.com/" target="_blank" class="fab fa-youtube"  style="color: #ff0000; border: 1px solid #ff0000;"></a>
+                              <a href="${subUserInfo.memberFB}" target="_blank" class="fab fa-facebook" style="color: #3b5998; border: 1px solid #3b5998;"></a>
+                              <a href="${subUserInfo.memberIG}" target="_blank" class="fab fa-instagram"  style="color: #833ab4;border: 1px solid #833ab4;"></a>
+                              <a href="${subUserInfo.memberTwitter}" target="_blank" class="fab fa-twitter"  style="color: #1da1f2;border: 1px solid #1da1f2;"></a>
+                              <a href="${subUserInfo.memberGooglePlus}" target="_blank" class="fab fa-google"  style="color: #dd4b39; border: 1px solid #dd4b39;"></a>
+                              <a href="${subUserInfo.memberYT}" target="_blank" class="fab fa-youtube"  style="color: #ff0000; border: 1px solid #ff0000;"></a>
                          </div>
                      	
                       </div>
@@ -261,5 +261,4 @@
      })
     </script>
 </body>
-<jsp:include page="../Index/Footer.jsp" />
 </html>

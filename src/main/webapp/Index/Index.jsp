@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
+	<head> 
 		<title>hyacinth by TEMPLATED</title>
 		<jsp:include page="../Index/NewHeader.jsp" />
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -39,90 +39,12 @@
 <!-- // }); -->
 <!-- <!--  </script> -->
 
-<script>
-    var map;
-    function initMap() {
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 0, lng: 0 },
-        zoom: 2
-      });
- 
-    }
 
-    var map;
-    function myTrip() {
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: 0, lng: 0 },
-        zoom: 2
-      });
-      var data = [
-        {
-          position : { lat: 25.00000000, lng: 121.563998 },
-          map:map,
-          title:"stroke1",
-          href:"https://dotblogs.com.tw/jeff-yeh/2010/03/28/14259"
-          
-      },
-      {
-          position : { lat: 52.034385, lng: 121.566047 },
-          map:map,
-          title:"stroke2",
-          href:"https://www.google.com.tw/search?q=google+map+marker+link&oq=google+map+marker+link&aqs=chrome..69i57j0l5.8637j0j7&sourceid=chrome&ie=UTF-8"
-      }
-      ];
-      
-      for (var i= 0; data.length >i ; i++) {
-        var marker = new google.maps.Marker(data[i]);
-        google.maps.event.addListener(marker, 'click', function() {
-    window.location.href = this.href;
-});
-      }
- 
-    }
-  </script>
   
   
-  <script>
-    var map;
-    function hotPoint() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 0, lng: 0 },
-        zoom: 2
-      });
-      var data = [
-        {
-          position : { lat: 23.00000000, lng: 124.563998 },
-          map:map,
-          title:"stroke1",
-          href:"https://dotblogs.com.tw/jeff-yeh/2010/03/28/14259"
-          
-      },
-      {
-          position : { lat: 22.034385, lng: 133.5655 },
-          map:map,
-          title:"stroke2",
-          href:"https://www.google.com.tw/search?q=google+map+marker+link&oq=google+map+marker+link&aqs=chrome..69i57j0l5.8637j0j7&sourceid=chrome&ie=UTF-8"
-      }
-      ];
-      
-      for (var i= 0; data.length >i ; i++) {
-        var marker = new google.maps.Marker(data[i]);
-        google.maps.event.addListener(marker, 'click', function() {
-    window.location.href = this.href;
-});
-      }
- 
-    }
 
-function enlarge(){
-var imageP = document.getElementById("P1");
-imageP.width="500px";
-imageP.height="400px";
-}
-	
-	</script>
 
-	<style>
+<style>
 .ulcolor{
 	background-color: rgb(85, 134, 180);
 }
@@ -232,13 +154,7 @@ background-color: rgb(235, 235, 235);
 		<br>	
 		<div id="articleDown">
 		<div>
-		 <!-- <img src="image/world-map.png" width="1380px" height="600px"> -->
-	
-		 <form action="">
-			<button type="button" class="btn btn-primary" style="background-color:rgb(100, 100, 100);" onclick="myTrip()">myTrip</button>
-			<button type="button" class="btn btn-primary" style="background-color:rgb(100, 100, 100);" onclick="hotPoint()" >hotPoint</button>
-			</form>
-				<div id="map" ></div>
+
 		</div>
 	    </div>
 

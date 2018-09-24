@@ -344,22 +344,24 @@ article {
 /* 	border: 1px solid red;  */
 	font-size: 120%;
 	display: inline-block;
-	width: 100px;
+	width: 180px;
 	height: 40px;
-	text-align: center;
+/* 	text-align: center; */
 }
 
 .divblog221 {
 	/*              border: 3px solid rgb(0, 179, 149); */
 	/*             display: inline-block; */
 	/*             height: 40px; */
+	 position: relative;
+     top: 4px;  
 	
 }
 
 .divblog22111 {
 /* border: 3px solid rgb(0, 179, 149);  */
 	width: 150px;
-	text-align: center;
+/* 	text-align: center; */
 	font-family: 'Noto Sans TC';
 	color: white;
 	font-size: 110%;
@@ -514,8 +516,9 @@ article {
 
 .divAS15 {
 	/*             width: 900px; */
-	text-align: center;
+/* 	text-align: center; */
 	font-size: 120%;
+	word-wrap:break-word;
 	/*             margin: auto; */
 }
 
@@ -1906,7 +1909,6 @@ margin-top:10px;
 
 <script type="text/javascript">
 $(document).ready(function(){
-	alert("run button check");
 if('${user.memberID}'==""){
 $("#sendbuttom").toggleClass('btn-secondary').toggleClass('btn-info');
 $("#sendbuttom").text("請先登入").prop("disabled",true);

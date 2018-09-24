@@ -78,7 +78,8 @@ vertical-align: middle;
                     </div>
                 <div class="speakers">
                     <strong>舉辦人</strong>
-                    <span><a href="${pageContext.request.contextPath}/ProfilePageGet?memberID=${member.memberID}">${member.memberName}</a></span>
+<%--                     <span><a href="${pageContext.request.contextPath}/ProfilePageGet?memberID=${member.memberID}">${member.memberName}</a></span> --%>
+                    <span><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${event.memberID }&lmi=${user.memberID }&page=main' >${member.memberName}</a></span>
                 </div>
                 <div class="event_date">
                 <td>
@@ -118,11 +119,15 @@ vertical-align: middle;
   </div>
 </div>
 
-    <div id="btns" style="background-color: #f5f5f5; margin:auto; text-align: center; margin-right:; ">
+    <div id="btns" style="background-color:white; margin:auto; text-align: center;">
+   
 		<button type="button" id="LikeOrDisLike"class="btn btn-primary"  value="${likebottuntype}">${likebottuntype}</button>
 		<button type="button" class="btn btn-success" id="AttendOrNot"  value="${attendbottuntype}">${attendbottuntype}</button> <!-- ${attendStatus} -->
+
 		<button type="button" class="btn btn-danger"  id="sendReport" value="sendReport" data-toggle="modal" data-target="#reportModal">Report</button>
+
 		<button type="button" class="btn btn-warning" id="invite" value="invite">Invite</button>
+		
 		<input type="hidden" id= "num" value="${useractSNum}">
 		<input type="hidden" id= "mem" value="${userid}">
 	</div>
@@ -152,6 +157,7 @@ vertical-align: middle;
 <!--                           <input type="hidden" name="commentContent" value="1"> -->
                           <input type="hidden" name="memberID" value="${user.memberID}">
                           <input type="hidden" name="actSNum" value="${param.actSNum}">
+                          
                           
                   </div>
                   </form>
@@ -262,15 +268,36 @@ vertical-align: middle;
 		
 <script>
 $( document ).ready(function() {
+// 	<c:if test = "${user==null}"></c:if>
+// 	alert("memberID=" + ${user.memberID});
+// 	alert("eventMemberID=" + ${event.memberID});
 	
-	if( ${ user == null }){
-		$('#btns').html("<div></div>");
-	}
-	if(${user.memberID}==${event.memberID}){
-		$('#LikeOrDisLike').attr('style', 'display:none');
-		$('#AttendOrNot').attr('style', 'display:none');
-		
-	}
+	
+//     var user = <c:choose><c:when test="${user != null}">${user};</c:when><c:otherwise>null;</c:otherwise></c:choose>
+    var memID = '${user.memberID}';
+    
+    var eventMemID=${event.memberID}
+    if(memID != ""){
+    	
+    	if( memID == eventMemID ){
+    		
+        	$('#LikeOrDisLike').attr('style', 'display:none');
+    		$('#AttendOrNot').attr('style', 'display:none');
+    		
+    	}
+    }
+    else{
+    	$('#btns').attr('style', 'display:none');
+    }
+	
+	
+// 	<c:if test = " ${user.memberID == event.memberID}">$('#btns2').empty();</c:if>
+
+// if (memID== null){
+// 	$('#btns').attr('style', 'display:none');
+// }
+
+	
 	
 	
  $('#LikeOrDisLike').on('click',this.value ,function () {
@@ -287,10 +314,11 @@ $( document ).ready(function() {
 	 } else if (this.value == 'disLike'){
 		 var process = false;
 	    	$('#LikeOrDisLike').text("Like").attr("value","Like");
-	  }else if (this.value == 'none'){
-		 var process = 'none';
-	    	$('#LikeOrDisLike').html("<h3>please login !<h3>");
-	 }
+	  }
+// 	 else if (this.value == 'none'){
+// 		 var process = 'none';
+// 	    	$('#LikeOrDisLike').html("<h3>please login !<h3>");
+// 	 }
 	 
     $.ajax({
 	    type : "post",
@@ -324,10 +352,11 @@ $( document ).ready(function() {
 	 else if (this.value == 'disLike'){
 		 var process = false;
 	    	$('#AttendOrNot').text("Attend").attr("value","Attend");
-	  } else if (this.value == 'none'){
-		 var process = 'none';
-	    	$('#AttendOrNot').html("<h3>please login !<h3>");
-	 }
+	  } 
+// 	 else if (this.value == 'none'){
+// 		 var process = 'none';
+// 	    	$('#AttendOrNot').html("<h3>please login !<h3>");
+// 	 }
 	 
 	 
     $.ajax({
@@ -368,69 +397,126 @@ $(".messUsers").html("<div class='messUsers'><img src='${pageContext.request.con
 </script>			
 			
 <script> 
-			 function initMap() {
-        var directionsService = new google.maps.DirectionsService;
-        var directionsDisplay = new google.maps.DirectionsRenderer;
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 2,
-          center: {lat: 0, lng: 0}
-        });
-        directionsDisplay.setMap(map);
+function initMap() {
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 2,
+      center: {lat: 0, lng: 0}
+    });
+    directionsDisplay.setMap(map);
 
-        document.getElementById('route').addEventListener('click', function() {
-          calculateAndDisplayRoute(directionsService, directionsDisplay);
-        });
+    <c:forEach var='beanbean' items='${beanbean}'>
+	
+	var lat = parseFloat(${beanbean.latitue});
+	var lng = parseFloat(${beanbean.longtitue});			
+
+	var positon = {}; 
+	var data = {};
+	positon.lat = lat;
+	positon.lng = lng;
+	
+				var marker = new google.maps.Marker({
+				
+					position: {lat: lat, lng: lng},
+					map: map, 
+				
+				});
+				var content =  '<span style="color:#003377;font-weight:bold"></span><br>';
+				var contentString ='<span style="font-weight:bold;font-size:15px;">${beanbean.viewPointName}</span><br>'+
+				'<span style="font-weight:bold;font-size:15px;">${beanbean.viewPointAddress}</span><br>';
+				
+				attachSecretMessage(marker,content,contentString) ;
+	</c:forEach>
+// 	 var infowindow = new google.maps.InfoWindow({
+//          content: contentString
+//        });
+	 
+// 	 marker.addListener('click', function() {
+//          infowindow.open(map, marker);
+//        });
+	
+		function attachSecretMessage(marker, content,contentString) {
+			var infowindow = new google.maps.InfoWindow({
+				content:contentString ,
+
+			});
+			 var a = -1;
+			infowindow.open(marker.get('map'), marker);
+			google.maps.event.addListener(marker, 'click', function() {
+				a= a*-1;
+				if (a > 0) {
+					infowindow.setContent(content);
+					infowindow.open(marker.get('map'), marker);
+				}else {
+					 
+					 infowindow.setContent(contentString);
+					 infowindow.open(marker.get('map'), marker);
+				}
+			
+			});
+			
+			
+			
+		
+		}
+				
+
+    
+    document.getElementById('route').addEventListener('click', function() {
+      calculateAndDisplayRoute(directionsService, directionsDisplay);
+    });
+  }
+
+  function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+    
+var array = [];
+var waypts = [];
+var array =document.getElementsByClassName("address");
+
+
+
+for(i=0; i<array.length; i++){
+if(i==0){
+  var start =(array[0].value);
+}else if(i==((array.length)-1)){
+  var end = (array[(array.length)-1].value);
+}else{
+  waypts.push({
+        location: array[i].value,
+         stopover: true             
+  });
+ 
+} 
+}
+     directionsService.route({
+      origin: start,
+      destination: end,
+      waypoints: waypts,
+      optimizeWaypoints: true,
+      travelMode: 'DRIVING'
+    }, function(response, status) {
+      if (status === 'OK') {
+        directionsDisplay.setDirections(response);
+        var route = response.routes[0];
+       
+       
+      } else {
+        window.alert('Directions request failed due to ' + status);
       }
-
-      function calculateAndDisplayRoute(directionsService, directionsDisplay) {
-        
-  var array = [];
-  var waypts = [];
-  var array =document.getElementsByClassName("address");
-
-   
-
-  for(i=0; i<array.length; i++){
-    if(i==0){
-      var start =(array[0].value);
-    }else if(i==((array.length)-1)){
-      var end = (array[(array.length)-1].value);
-    }else{
-      waypts.push({
-            location: array[i].value,
-             stopover: true             
-      });
-     
-    } 
-    }
-         directionsService.route({
-          origin: start,
-          destination: end,
-          waypoints: waypts,
-          optimizeWaypoints: true,
-          travelMode: 'DRIVING'
-        }, function(response, status) {
-          if (status === 'OK') {
-            directionsDisplay.setDirections(response);
-            var route = response.routes[0];
-           
-           
-          } else {
-            window.alert('Directions request failed due to ' + status);
-          }
-        });
-      }
+    });
+  }
 </script>
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKem0vApPHBwQOr2Zft7YrT_AeGbnNNO0&callback=initMap">
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKem0vApPHBwQOr2Zft7YrT_AeGbnNNO0&callback=initMap">
 </script>
 <script>
 $( document ).ready(function() { 
 	
 	 $('#invite').click(function () {
 		
-		 if( ${ user != null })
-		  var loginMemberID = ${user.memberID};
+// 		 if( ${ user != null })
+		  var loginMemberID = '${user.memberID}';
 		 
 	    $.ajax({
 		    type : "post",
@@ -458,7 +544,7 @@ $( document ).ready(function() {
 		});
 	 }); 
 	 
-})
+
 
 	//-----------Report Ajax --------
 		function sendReport(){
@@ -494,6 +580,7 @@ $( document ).ready(function() {
 				},				
 		});	
 	}
+})
 </script>
 </body>
 <jsp:include page="../Index/Footer.jsp" />

@@ -231,14 +231,17 @@ html, body {
 		     });
 		   });
 </script>
-<script type="text/javascript">	
+<script type="text/javascript"> //nav 搜尋
 $('#navSerach').click(function(event) {
 	event.preventDefault();
 	   var condition = $("#condition").val();
 	   var searchType =$('#searchType').val();
 	   if($('#searchType').val()=='blog'){
 	    	location.href="${pageContext.request.contextPath}/Blog/BlogIndex.controller?search="+condition; 
-	   		}
+	   }
+	   if(searchType =='act'){		  
+		  location.href="${pageContext.request.contextPath}/Act/ActMain.jsp?search="+condition;
+	   }
 	    });
 </script>
 <script type="text/javascript"> //修改NavBar按鈕功能
@@ -246,7 +249,6 @@ $('#navSerach').click(function(event) {
 		if('${user}'!=""){
 				$.getJSON("${pageContext.request.contextPath}/getNotice",{"memberID":${user.memberID}},function(data){
 		    	if(data.status=="findNoticeList"){
-		    		alert("有新訊息")	
 					if('${user.memberHierachy}'=='Admin'){
 						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a style='text-decoration:none;color:black' href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
 						);
@@ -265,7 +267,7 @@ $('#navSerach').click(function(event) {
 						$('#spanNoticeCount1').text(data.count);				
 		    		}
 		    	}else if (data.status=="NoNewNoticeList"){
-		    		alert("無新訊息")
+// 		    		alert("無新訊息")
 		    		if('${user.memberHierachy}'=='Admin'){
 						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a style='text-decoration:none;color:black' href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
 						);

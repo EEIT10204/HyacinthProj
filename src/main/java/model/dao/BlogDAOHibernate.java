@@ -264,7 +264,7 @@ public class BlogDAOHibernate implements BlogDAO {
 	
 	@Override
 	public List<BlogBean> selectTopSix() {
-		String HQL = "from BlogBean as b order by b.blogView desc";
+		String HQL = "from BlogBean as b WHERE blogVisibility = 1 order by b.blogView desc";
 		Query query = this.getSession().createQuery(HQL);
 		query.setMaxResults(6);
 		return query.list();

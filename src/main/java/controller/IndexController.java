@@ -67,7 +67,7 @@ public class IndexController {
 		if(status==null || "".equals(status)) { status = "prepare"; }
 		if(sorting==null || "".equals(sorting)) { sorting = "actStartTime"; }
 		
-		if(keyword !=null || "".equals(keyword)) {
+		if(keyword !=null && !"".equals(keyword)) {
 			return actService.fetchByMultiConditions(keyword, status, sorting, p, 6);
 		}
 		return null;

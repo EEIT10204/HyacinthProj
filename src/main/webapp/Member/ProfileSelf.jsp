@@ -61,9 +61,9 @@
                         <a class="nav-link text-right list-group-item <c:if test="${page eq 'notice'}"> <c:out value="active"/>  </c:if>" id="v-pills-notification-tab" data-toggle="pill" href="#v-pills-notification" role="tab" aria-controls="v-pills-notification" aria-selected="false">
                             <span class="float-left"><i class="far fa-envelope"></i>&nbsp;&nbsp;<strong>Notification</strong></span> <span id="spanNoticeCount1"></span>
                         </a>
-                        <a class="nav-link text-right list-group-item" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">
-                            <span class="float-left"><i class="fab fa-facebook-messenger"></i>&nbsp;&nbsp;<strong>Messages</strong></span> (暫無)
-                        </a>
+<!--                         <a class="nav-link text-right list-group-item" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false"> -->
+<!--                             <span class="float-left"><i class="fab fa-facebook-messenger"></i>&nbsp;&nbsp;<strong>Messages</strong></span> (暫無) -->
+<!--                         </a> -->
                     </div>
                </div>
             </div>
