@@ -125,19 +125,19 @@
 	  <tr><input type="hidden" name="actCreateDate" value="${newEvent.actCreateDate}" id="memberID"></tr>
 	 <tr><input type="hidden" name="actView" value="0" id="actView"></tr>
 	 <tr><input type="hidden" name="actVisibility" value="1" id="actVisibility"></tr>
-	 <tr><input type="hidden" name="participantsNow" value="1" id="participantsNow"></tr>
+	 <tr><input type="hidden" name="participantsNow" value="0" id="participantsNow"></tr>
 <!-- 	 hidden  -->
 	
 		<tr>
 			<td>活動主題:</td>
-			<td><input type="text" name="actTitle" value="${param.eventname}"></td>
+			<td><input type="text" name="actTitle" id="actTitle" value="${param.eventname}"></td>
 			<td>${errors.eventname}</td>
 		</tr>
 		
 		<tr>
 			<td>選取城市:</td>
 			
-			<td><select id ="factCity"  name="actCity" value="${param.actCity}">
+			<td><select id ="actCity"  name="actCity" value="${param.actCity}">
   				<option></option>
   				<option value="台北">台北</option>
   				<option value="台中">台中</option>
@@ -185,24 +185,24 @@
 		</tr>
 		<tr>
 		     <td>活動成團人數:</td>
-             <td><input  type="text" name="minParticipants" value="${param.minParticipants}" ></td>
+             <td><input  type="text" id="minParticipants" name="minParticipants" value="${param.minParticipants}" ></td>
               <td>${errors.minParticipants}</td>
         </tr> 
         <tr>
              <td>活動最大成團人數:</td>
-             <td><input  type="text" name="maxParticipants" value="${param.maxParticipants}" ></td>
+             <td><input  type="text" id="maxParticipants" name="maxParticipants" value="${param.maxParticipants}" ></td>
               <td>${errors.maxParticipants}</td>
 		
 		</tr>
 		<tr>
 		     <td>預算:</td>
-             <td><input type="text" name="budget" value="${param.budget}"></td>
+             <td><input type="text" id="budget" value="${param.budget}"></td>
              <td>${errors.budget}</td>
 		</tr>
 		<tr>
 		     <td>付款方式:</td>
              <td>
-             <select name="payment">
+             <select id="payment">
               <option>VISA</option>
       		  <option>Transfer</option>
       		   <option>Cash</option>
@@ -217,7 +217,7 @@
 		</tr>
 		<tr>
 		   <td>詳細內容</td>
-		   <td><textarea style="width: 250px" rows="4" cols="50" name="actIntro" value="${param.actintro}"></textarea></td>
+		   <td><textarea style="width: 250px" rows="4" cols="50" name="actIntro" id="actIntro" value="${param.actintro}"></textarea></td>
 		   <td>${errors.eventinfo}</td>
 		</tr>
 	
@@ -254,6 +254,7 @@
          <input type="button" id="save"  class="btn btn-primary" value="save" name="save">
 		 <input type="button" id="search" class="btn btn-primary" value="search" >
 		 <input type="button" class="btn btn-warning" id="btn" value="addItem"> 
+		 <input type="button" id="hehe" class="btn btn-primary" value="addData">
 		 <div style="padding-top: 25px" id="select"></div>
 		 <div style="height: 100px; padding-top: 50px; display: none" id="sortable1" class="connectedSortable" ></div>
 		 
@@ -370,7 +371,7 @@
  	                 contentType: "application/json; charset=utf-8",
  	                 dataType: "json",
  	                 success: function (data) {
-                     alert("儲存成功");
+//                      alert("儲存成功");
                      	
                      },
                      error: function (response) {
@@ -384,7 +385,37 @@
          
         </div>
         </div>
+<script>
+$(document).ready(function(){
+	 $("#hehe").click(function(){
+	        $("#actTitle").val("台北好玩");
+	        $("#actCity").val("台北");
+	        $('#actStartTime').val("2018-09-25T12:59");
+	        $('#actEndTime').val("2018-09-30T12:59");
+	        
+	        $('#minParticipants').val("10");
+	        $('#maxParticipants').val("120");
+	        $('#budget').val("10100000");
+	        $('#payment').val("VISA");
+	       
+	        $('#actJoinDeadLine').val("2018-09-10T12:59");
+	        $('#actIntro').val("台北天龍國好玩好玩好好玩");
+	        
+	        $('#startTime1').val("2018-09-26T00:00");
+	        $('#endTime1').val("2018-09-27T00:00");
+	        $('#startTime2').val("2018-09-28T00:00");
+	        $('#endTime2').val("2018-09-29T00:00");
+	        $('#startTime3').val("2018-09-29T00:00");
+	        $('#endTime3').val("2018-09-30T11:59");
+	        
+     
+	    });
+	
 
+
+})
+
+</script>
 
 <script>
 //google api

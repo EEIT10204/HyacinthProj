@@ -190,10 +190,10 @@
      }
      var memberID = GetQueryString("memberID");
      var lmi = GetQueryString("lmi");
-     alert(memberID)
-     alert(lmi)
+//      alert(memberID)
+//      alert(lmi)
         $.getJSON("${pageContext.request.contextPath}/checkFriendShipController",{"memberID":memberID,"lmi":lmi},function(data){
-         alert(data.status)
+//          alert(data.status)
          if(data.status=="好友"){
           $('#FriendButton').html("<i class='fa fa-user-times'></i>&nbsp;&nbsp;刪除好友 ")
          }else if(data.status=="已傳送邀請"){
@@ -225,16 +225,16 @@
 	     if(content=="  刪除好友 "){
 	//        alert("run 刪除好友")
 			    $.getJSON("${pageContext.request.contextPath}/deleteFriendController",{"memberID":memberID,"lmi":lmi},function(data){
-				     alert(data.status);
+// 				     alert(data.status);
 				     if(data.status=="刪除成功"){
 				      location.reload();
 			     	}
 	    	})
 	     }
 	     else if(content=="   加入好友 "){
-	      	alert("run 加入好友");
+// 	      	alert("run 加入好友");
 		       $.getJSON("${pageContext.request.contextPath}/sendFriendReqController",{"memberID":memberID,"lmi":lmi},function(data){
-		     	alert(data.status);
+// 		     	alert(data.status);
 		     	if(data.status=="寄送邀請成功"){
 			      location.reload();
 			     }
