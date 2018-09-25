@@ -869,20 +869,20 @@ hr {
 }
 
 	.form-group textarea{
-      width: 700px;
+      width: 550px;
       height: 150px;
-      margin-left: 35px;
+      margin-left: 55px;
   
     }
     .messOut{
-      width: 820px;
+      width: 680px;
       margin: auto;
       margin-top: 50px;
       border-radius: 10px;
       
     }
     .form-control{
-      width: 450px;
+      width: 300px;
       margin: auto;
       margin-top: 10px;
       display: inline-block;
@@ -919,7 +919,7 @@ hr {
     .btn-primaryMY{
 		position: relative;
         right: 80px;
-         margin-left: 650px;  
+         margin-left: 620px;  
          margin-bottom: 20px; 
     }
     .selectUser{
@@ -985,7 +985,6 @@ margin-top:10px;
 }
 
   } 
-
 
 </style>
 </head>
@@ -1706,6 +1705,8 @@ margin-top:10px;
                       </div>
                     </div>
                   </div>
+                  
+                  
 
 			</article>
 			<aside class="col-sm-4">

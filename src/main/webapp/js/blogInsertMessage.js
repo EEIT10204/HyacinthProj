@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$(".outdoubleSD").hide();
 		$(".flip").mouseenter(function(){
 			$(".flip").css("background-color","#999e8a");
 		});	
