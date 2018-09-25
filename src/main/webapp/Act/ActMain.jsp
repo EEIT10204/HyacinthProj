@@ -431,11 +431,16 @@ $('#myPageList').on("click",".myPage,.myPrev,.myNext",function(){
 // 		alert(JSON.stringify(Math.ceil(datas.length/6)));
 		if(page == 1){
 			$('#myPageList ul').empty();
-			var fragment0 = $(document.createDocumentFragment());
-			var liPrev = $('<li class="page-item"><a class="page-link" tabindex="-1">上一頁</a></li>').addClass("myPrev").css("visibility","hidden");
-			fragment0.append(liPrev);
-			var liNext = $('<li class="page-item"><a class="page-link">下一頁</a></li>').addClass("myNext");
+			
 			pageNum = Math.ceil(datas[0]/6);
+			var fragment0 = $(document.createDocumentFragment());
+			
+			if(pageNum>1){
+				var liPrev = $('<li class="page-item"><a class="page-link" tabindex="-1">上一頁</a></li>').addClass("myPrev").css("visibility","hidden");
+				fragment0.append(liPrev);
+				var liNext = $('<li class="page-item"><a class="page-link">下一頁</a></li>').addClass("myNext");
+			}
+// 			alert('1');
 			for(var i=1;i<=pageNum;i++){
 				var aPage = $('<a></a>').addClass("page-link").text(i);
 				var liItem = $('<li></li>').addClass("page-item myPage").append(aPage);
@@ -444,6 +449,7 @@ $('#myPageList').on("click",".myPage,.myPrev,.myNext",function(){
 				}
 				fragment0.append(liItem);
 			}
+// 			alert('2');
 			fragment0.append(liNext);
 			$('#myPageList ul').append(fragment0);
 		 	$('#actNums').text('共有'+datas[0]+'筆相關結果。')
