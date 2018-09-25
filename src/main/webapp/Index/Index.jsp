@@ -194,37 +194,37 @@ right:-950px;
 			  <div class="carousel-item active" id="loopBlog1">
 			  <div class="city" id="cities1" style="white-space: nowrap" "width: 300px" "height: 100px"></div>
               <div class="words" id="textTile1"></div>
-				<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/Japan-Travel.jpg" alt="First slide"></a>
+				<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}" alt="First slide"></a>
 			  </div>
 			  
 			  <div class="carousel-item" id="loopBlog2">
 			  <div class="city" id="cities2"></div>
               <div class="words" id="textTile2"></div>
-				<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/london2.jpg" alt="Second slide"></a>
+				<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}" alt="Second slide"></a>
 			  </div>
 			  
 			  <div class="carousel-item" id="loopBlog3">
 			  <div class="city" id="cities3"></div>
               <div class="words" id="textTile3"></div>
-				<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/london3.jpg" alt="Third slide"></a>
+				<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}" alt="Third slide"></a>
 			  </div>
 			  
 			  <div class="carousel-item" id="loopBlog4">
 			  <div class="city" id="cities4"></div>
               <div class="words" id="textTile4"></div>
-					<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/Japan-Travel.jpg" alt="Fourth slide"></a>
+					<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}" alt="Fourth slide"></a>
 				  </div>
 				  
 			  <div class="carousel-item" id="loopBlog5">
 			  <div class="city" id="cities5"></div>
               <div class="words" id="textTile5"></div>
-					<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/Tokyo_Travel.jpg" alt="Fifth slide"></a>
+					<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}" alt="Fifth slide"></a>
 			  </div>
 			  
 			   <div class="carousel-item" id="loopBlog6">
 			   <div class="city" id="cities6"></div>
               <div class="words" id="textTile6"></div>
-					<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}/Images/Index/Japan-Travel.jpg" alt="Sixth slide"></a>
+					<a href=""><img class="d-block w-100" src="${pageContext.request.contextPath}" alt="Sixth slide"></a>
 			  </div>
 			</div>
 			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
