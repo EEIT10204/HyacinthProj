@@ -121,6 +121,8 @@ background-color: 	#acd6ff;
 			
 <!-- 		 <input type="button" value="Clear" onclick="clearForm()" -->
 		 <button type="button" class="btn  " name="action" value="Clear" onclick="clearForm()" style="background-color: #46a3ff;color: white;margin-left:5px;margin-top:-50px;; ">清空</button>			
+		 
+		 <button type="button" class="btn" id="fillForm" value="一鍵輸入" style="background-color: #46a3ff;color: white;margin-left:5px;margin-top:-50px; ">一鍵輸入</button>
 		 </p>
 	</form>
 
@@ -194,6 +196,15 @@ background-color: 	#acd6ff;
 		    		"order": [[ 0, "asc" ]],
 		    		"bLengthChange": false,
 					});
+		    
+			$('#fillForm').click(function(){
+				$('#inputName').val('台北101');
+				$('#inputCity').val('台北');
+				$('#inputInfo').val('一座傑出的地標建築，足以改變這個城市。如同帝國大廈之於紐約、艾菲爾鐵塔之於巴黎、更如晚近的金茂大廈之於上海，面對二十一世紀，台北需要更寬廣的舞台、更亮眼的演出，高度508公尺，地上101層，地下5層的TAIPEI 101專案即是「將台北帶向全世界」(Bringing Taipei to the world )的希望工程。TAIPEI 101在93年12月31日舉行大樓開幕典禮，除了宣示TAIPEI 101進入全新的營運階段，當晚的跨年點燈配合炫麗耀眼的煙火秀，更是成功的向世人宣告TAIPEI 101的時代來臨；94年2月，台灣證券交易所正式簽約宣布進駐，4月18日，德國拜耳公司更成為第一家進駐的跨國企業，緊接著包括瑞泰人壽、荷蘭銀行、Google等國內外一流企業進駐，101商圈已經成為台灣經濟發展的重要指標。');
+				$('#inputType').val('觀光');
+// 				$('#inputID').val(id);
+				$('#inputAddress').val('台北市信義區信義路五段7號');
+			})
 		} );
 		
 			function fillForm(id, name, info, city, type, address){
@@ -214,6 +225,8 @@ background-color: 	#acd6ff;
 			        errors[i].innerHTML="";
 			    }
 			}
+			
+
 		</script>
 
 </body>

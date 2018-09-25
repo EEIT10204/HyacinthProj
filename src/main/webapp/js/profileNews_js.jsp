@@ -40,7 +40,7 @@ $(document).ready(function() {
             	  var userAvatar = $("<img>").addClass("avatar").attr("src","data:image/png;base64,"+fbPic);
               }
               var userCommentsPic=$('<div class="commentsPic"></div>').append(userAvatar);
-              var userNewComment = $('<div class="newComment"></div>').append(userCommentsPic,'<div class="commentsText"><textarea rows="2" cols="65" class="commentsArea" name="userNewComment" placeholder="&nbsp;回應"></textarea><button>留言</button></div>');
+              var userNewComment = $('<div class="newComment"></div>').append(userCommentsPic,'<div class="commentsText"><textarea rows="2" cols="55" class="commentsArea" name="userNewComment" placeholder="&nbsp;回應"></textarea><button>留言</button></div>');
               divCommBox.append("<hr>",userNewComment);
 //				divCommBox.slideDown(500);
               reqComms(this);
