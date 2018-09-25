@@ -217,7 +217,7 @@
 		</tr>
 		<tr>
 		   <td>詳細內容</td>
-		   <td><textarea style="width: 250px" rows="4" cols="50" name="actintro" value="${param.actintro}"></textarea></td>
+		   <td><textarea style="width: 250px" rows="4" cols="50" name="actIntro" value="${param.actintro}"></textarea></td>
 		   <td>${errors.eventinfo}</td>
 		</tr>
 	
