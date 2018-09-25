@@ -254,7 +254,7 @@
          <input type="button" id="save"  class="btn btn-primary" value="save" name="save">
 		 <input type="button" id="search" class="btn btn-primary" value="search" >
 		 <input type="button" class="btn btn-warning" id="btn" value="addItem"> 
-		 <input type="button" id="hehe" class="btn btn-primary" value="addData">
+<!-- 		 <input type="button" id="hehe" class="btn btn-primary" value="addData"> -->
 		 <div style="padding-top: 25px" id="select"></div>
 		 <div style="height: 100px; padding-top: 50px; display: none" id="sortable1" class="connectedSortable" ></div>
 		 
