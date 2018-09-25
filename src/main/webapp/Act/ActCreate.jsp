@@ -407,7 +407,8 @@ $(document).ready(function(){
 	        $('#endTime2').val("2018-09-29T00:00");
 	        $('#startTime3').val("2018-09-29T00:00");
 	        $('#endTime3').val("2018-09-30T11:59");
-	        
+	        $('#startTime4').val("2018-09-29T00:00");
+	        $('#endTime4').val("2018-09-30T11:59");
      
 	    });
 	
