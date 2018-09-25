@@ -394,7 +394,7 @@ $( document ).ready(function() {
  
  	 $('#AttendOrNot').on('click',this.value ,function () {
 	 
-	 alert(this.value);
+// 	 alert(this.value);
 	 if(this.value == 'Attend'){
 		 var process = true;
 	    	$('#AttendOrNot').text("disAttend").attr("value","disAttend");
