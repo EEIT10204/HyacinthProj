@@ -589,7 +589,7 @@ $( document ).ready(function() {
 		    }
 		    },
 		    error: function (response) {
-	            alert("error");
+// 	            alert("error");
 	            },
 		    
 		});
