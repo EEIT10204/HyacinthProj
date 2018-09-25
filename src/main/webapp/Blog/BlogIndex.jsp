@@ -1388,7 +1388,7 @@ hr {
 										$('#changeTitle'+(i+1)).html(product[0].blogTitle);
 										$('#changeDate'+(i+1)).html(new Date(product[0].updateTime).toISOString().split('T')[0]);
 										$('#changeMember'+(i+1)).html(product[2].memberName).attr("href",path3+product[0].memberID+"&lmi="+"${user.memberID}"+"&page=main");
-										}
+										} 
 // 										aside
 										if(i >= 6 && i<10){
 // 											$('.url'+((i+1)-6)).attr("href",path+product[0].blogSNum);

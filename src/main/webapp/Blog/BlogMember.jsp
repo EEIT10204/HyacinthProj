@@ -875,6 +875,7 @@ hr {
   
     }
     .messOut{
+
       width: 680px;
       margin: auto;
       margin-top: 50px;
@@ -882,7 +883,7 @@ hr {
       
     }
     .form-control{
-      width: 300px;
+      width: 350px;
       margin: auto;
       margin-top: 10px;
       display: inline-block;
