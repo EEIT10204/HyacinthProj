@@ -638,10 +638,10 @@ function inviteFriend(){
 	var c = event.target.id
     var d = c.substring(6);
 	var e ="button"+d
-	alert(d);
+	
 	$.getJSON("${pageContext.request.contextPath}/sendActRequestController",{"memberID":d,"lmi":'${user.memberID}',"actSNum":'${event.actSNum}'},function(data){   
 	     if(data.status=="寄送活動邀請成功"){
-	    	 alert(data.status);  
+// 	    	 alert(data.status);  
 	      $("#"+e).text("已邀請").prop("disabled","disabled").removeClass("btn btn-success").addClass("btn btn-secondary");
     	}
 	})
