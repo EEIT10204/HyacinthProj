@@ -119,7 +119,7 @@ public class ActDisplayController {
         abean.setActView(NewAbeanNum);
         actDAOHibernate.insert(abean);
         Object[] who = memberActDAOHibernate.findFollowsAttenders(abean.getActSNum());
-        System.out.println("who=" + who.toString());
+//        System.out.println("who=" + who.toString());
         
 	    List<TripBean> trip = tripDAOHibernate.select(abean.getActSNum());		
          
