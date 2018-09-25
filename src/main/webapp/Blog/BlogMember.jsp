@@ -869,20 +869,20 @@ hr {
 }
 
 	.form-group textarea{
-      width: 700px;
+      width: 650px;
       height: 150px;
       margin-left: 35px;
   
     }
     .messOut{
-      width: 820px;
+      width: 730px;
       margin: auto;
       margin-top: 50px;
       border-radius: 10px;
       
     }
     .form-control{
-      width: 450px;
+      width: 350px;
       margin: auto;
       margin-top: 10px;
       display: inline-block;

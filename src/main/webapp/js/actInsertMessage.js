@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	$(".outdoubleT").hide();
 		$(".flips").mouseenter(function(){
 			$(".flips").css("background-color","#999e8a");
 		});	
