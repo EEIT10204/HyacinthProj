@@ -1306,24 +1306,24 @@ hr {
 							var member = "${user.memberID}"; 
 // 							alert('member= ' +  member);
 							
-							var nav = ["台北","台中","台南","高雄","東京","大阪","沖繩","北海道","首爾","釜山","大邱","濟州島","紐約","洛杉磯","舊金山","邁阿密","柏林","漢堡","慕尼黑","法蘭克福"]; 
-							var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
-							var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
-							 $.getJSON('${pageContext.request.contextPath}/Blog/BlogIndexNav.controller',function(jsonNav){
-// 								 		alert(JSON.stringify(jsonNav));
-									 $.each(jsonNav,function(idx,navProduct){
-// 										 alert(idx+"====="+navProduct.blogTitle);
-										 for(var i = 1;i<=20;i++){
-										 if(navProduct.blogCity==nav[i-1]){
-											    $('.urlC'+(i)).attr("href",path+navProduct.blogSNum);
-												$('#navA'+(i)).attr("src","data:image/png;base64,"+navProduct.blogCover);
-												$('#navB'+(i)).html(navProduct.blogTitle);
-												$('.link'+(i)).attr("href",path2+navProduct.blogCity);
-										 }
-										 }
+// 							var nav = ["台北","台中","台南","高雄","東京","大阪","沖繩","北海道","首爾","釜山","大邱","濟州島","紐約","洛杉磯","舊金山","邁阿密","柏林","漢堡","慕尼黑","法蘭克福"]; 
+// 							var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
+// 							var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
+// 							 $.getJSON('${pageContext.request.contextPath}/Blog/BlogIndexNav.controller',function(jsonNav){
+// // 								 		alert(JSON.stringify(jsonNav));
+// 									 $.each(jsonNav,function(idx,navProduct){
+// // 										 alert(idx+"====="+navProduct.blogTitle);
+// 										 for(var i = 1;i<=20;i++){
+// 										 if(navProduct.blogCity==nav[i-1]){
+// 											    $('.urlC'+(i)).attr("href",path+navProduct.blogSNum);
+// 												$('#navA'+(i)).attr("src","data:image/png;base64,"+navProduct.blogCover);
+// 												$('#navB'+(i)).html(navProduct.blogTitle);
+// 												$('.link'+(i)).attr("href",path2+navProduct.blogCity);
+// 										 }
+// 										 }
 										
-									 });
-								 });
+// 									 });
+// 								 });
 
 							//Change 6FORM
 							if ('${result}' != "") {
