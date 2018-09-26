@@ -538,7 +538,7 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a  class="urlC2" href="#"><img id="navA2" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/taipei1.jpg"
+									src="${pageContext.request.contextPath}/Images/Blog/taipei2.jpg"
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
