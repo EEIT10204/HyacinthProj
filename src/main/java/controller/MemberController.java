@@ -34,9 +34,9 @@ public class MemberController {
 									@RequestParam(value="page" , required=false)String page,
 									Model model) {
 		//lmi = login memberID
-		System.out.println("run MemberGetcontroller");
-		System.out.println("memberID:"+memberID);
-		System.out.println("lmi:"+lmi);
+//		System.out.println("run MemberGetcontroller");
+//		System.out.println("memberID:"+memberID);
+//		System.out.println("lmi:"+lmi);
 		
 		if(!memberID.equals(lmi)) {
 		MemberBean bean = memberDAO.findByPK(memberID);
@@ -47,8 +47,8 @@ public class MemberController {
 		int friendCount = friendList.size();
 		model.addAttribute("friendCount",friendCount);
 		model.addAttribute("friendList",friendList);
-		System.out.println("會員 "+ bean.getMemberName()+" 的好友列表: "+friendList);
-		System.out.println("GO MEMBER_PAGE");
+//		System.out.println("會員 "+ bean.getMemberName()+" 的好友列表: "+friendList);
+//		System.out.println("GO MEMBER_PAGE");
 		return "forwardProfileMember";
 		}else {
 			if("".equals(page)!=true&&page.length()!=0) {
@@ -77,8 +77,8 @@ public class MemberController {
 //				return "forwardProfileSelf";
 //			}
 //			model.addAttribute("noticeCount",0);
-			System.out.println("會員 "+ bean.getMemberName()+" 的好友列表: "+friendList);
-			System.out.println("GO SELF_PAGE");
+//			System.out.println("會員 "+ bean.getMemberName()+" 的好友列表: "+friendList);
+//			System.out.println("GO SELF_PAGE");
 			return "forwardProfileSelf";
 			
 		}

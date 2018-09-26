@@ -411,7 +411,7 @@
 			                             <c:forEach var="friend" items="${friendList}">
 			                             <div class="iconList_Icon">
 				                             <a href="<c:url value="/ProfilePageGet?memberID=${friend.memberID }&lmi=${user.memberID}" />">
-				                              <img src="data:image/png;base64,${friend.memberPicToBase64}" style="width:150px;height: 150px;border-radius:50%">
+                                              <img src="data:image/png;base64,${friend.memberPicToBase64}" style="width:150px;height: 150px;border-radius:50%">
 				                              <p>${friend.memberName}</p>
 			                             </a>
 			                             </div>
@@ -440,7 +440,7 @@ function reloadOnce() {
     var laststr =str.substring(str.length-1,str.length)
     closeButtonId = 'closeButton' + laststr
     $.getJSON("${pageContext.request.contextPath}/answerFriendReqController",{"memberID":senderID,"lmi":receiverID},function(data){
-     alert(data.status)
+//      alert(data.status)
      if(data.status=="回覆交友邀請成功"){
    var c = document.getElementById(buttonId).parentNode.id //當下按鈕找父層ID
    $("#"+c).html("<button type='button' class='btn btn-success btn-sm ' disabled>已接受</button>");
@@ -448,7 +448,7 @@ function reloadOnce() {
    
   }
     }).fail(function(){
-     alert("回覆失敗")
+//      alert("回覆失敗")
     })
    }
 function ActAccept(senderID, receiverID , actSNum){
@@ -458,7 +458,7 @@ function ActAccept(senderID, receiverID , actSNum){
 	    var laststr =str.substring(str.length-1,str.length)
 	    closeButtonId = 'closeButton' + laststr
 	    $.getJSON("${pageContext.request.contextPath}/answerActReqController",{"memberID":senderID,"lmi":receiverID,"actSNum":actSNum},function(data){
-	     alert(data.status)
+// 	     alert(data.status)
 	     if(data.status=="回覆活動邀請成功"){
 	   var c = document.getElementById(buttonId).parentNode.id //當下按鈕找父層ID
 	   $("#"+c).html("<button type='button' class='btn btn-success btn-sm ' disabled>已接受</button>");
@@ -466,7 +466,7 @@ function ActAccept(senderID, receiverID , actSNum){
 	   
 	  }
 	    }).fail(function(){
-	     alert("回覆失敗")
+// 	     alert("回覆失敗")
 	    })
 	   }
 function clickClose(id){
@@ -479,9 +479,11 @@ function clickClose(id){
      if(data.status=="已讀"){
       $('#spanNoticeCount').html(count-1);
       $('#spanNoticeCount1').html(count-1);
-  }
-    })
+  	}
+    	})
    }
+   
+  
 </script>
 </body>
 </html>

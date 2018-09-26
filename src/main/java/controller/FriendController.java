@@ -40,10 +40,10 @@ public class FriendController {
 	@ResponseBody
 	public Map<String,String> checkFriendShip(String memberID,String lmi){
 		MembershipBean membershipBean = new MembershipBean();
-		System.out.println("checkFriend");
+//		System.out.println("checkFriend");
 		Map<String, String> status = new HashMap<>();
 		int intmemberID = Integer.parseInt(memberID);
-		System.out.println(intmemberID);
+//		System.out.println(intmemberID);
 		membershipBean.setMemberID_B(intmemberID);
 		if(lmi.length()==0||""==lmi) {
 			return null;
@@ -73,7 +73,7 @@ public class FriendController {
 	@RequestMapping(path = { "/deleteFriendController" })//OK
 	@ResponseBody
 	public Map<String,String> deleteFriend(@RequestParam String memberID, @RequestParam String lmi) {
-		System.out.println("run deleteFriendController");
+//		System.out.println("run deleteFriendController");
 		Map<String, String> status = new HashMap<>();
 		MembershipBean membershipBean = new MembershipBean();
 		int intmemberID = Integer.parseInt(memberID);
@@ -92,7 +92,7 @@ public class FriendController {
 	@RequestMapping(path = { "/sendFriendReqController" })  //OK
 	@ResponseBody
 	public Map<String, String> sendFriendReq(@RequestParam String memberID, @RequestParam String lmi) {
-		System.out.println("run sendFriendReqController");
+//		System.out.println("run sendFriendReqController");
 		Map<String, String> status = new HashMap<>();
 		MembershipBean membershipBean = new MembershipBean();
 		int intmemberID = Integer.parseInt(memberID);
@@ -104,7 +104,7 @@ public class FriendController {
 			int intlmi = Integer.parseInt(lmi);
 			membershipBean.setMemberID_A(intlmi);
 			Boolean result = membershipDAO.checkSame(membershipBean);
-			System.out.println("result="+result);
+//			System.out.println("result="+result);
 			if(!result) {
 				membershipService.sendFriendRequest(membershipBean);
 				status.put("status", "寄送邀請成功");
@@ -152,7 +152,7 @@ public class FriendController {
 	public String showFriendList(MembershipBean bean,BindingResult bindingResult,Model model) {
 		List<MemberBean> friendList = membershipService.friendList(bean.getMemberID_A());
 		model.addAttribute("friendList",friendList);
-		System.out.println("好友列表:"+friendList);
+//		System.out.println("好友列表:"+friendList);
 		return "forwardTEST";
 	}
 	
@@ -179,14 +179,14 @@ public class FriendController {
 	@RequestMapping(path = { "/sendActRequestController" })
 	@ResponseBody
 	public Map<String, String> sendActRequest(@RequestParam String memberID, @RequestParam String lmi , @RequestParam String actSNum) {
-		System.out.println("run sendActRequest");
+//		System.out.println("run sendActRequest");
 		Map<String, String> status = new HashMap<>();
 		int intmemberID = Integer.parseInt(memberID);
 		int intlmi = Integer.parseInt(lmi);
 		int intactSNum = Integer.parseInt(actSNum);
-		System.out.println(intmemberID);
-		System.out.println(intlmi);
-		System.out.println(intactSNum);
+//		System.out.println(intmemberID);
+//		System.out.println(intlmi);
+//		System.out.println(intactSNum);
 		NoticeBean notice = new NoticeBean();
 		MemberBean member = new MemberBean();
 		member = memberDAO.findByPK(intlmi);

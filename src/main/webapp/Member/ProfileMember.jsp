@@ -179,6 +179,7 @@
 
 <script > //判斷好友狀況
     $( document ).ready(function() {   
+    	
      function GetQueryString(name){
           var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
           var r = window.location.search.substr(1).match(reg);
@@ -188,6 +189,7 @@
            return null;
           }
      }
+     
      var memberID = GetQueryString("memberID");
      var lmi = GetQueryString("lmi");
 //      alert(memberID)
@@ -204,7 +206,6 @@
           $('#FriendButton').prop("disabled")
          }
         }).fail(function(){
-         alert("無資料")
           
         })
     })
@@ -221,7 +222,7 @@
 	     var memberID = GetQueryString("memberID");
 	     var lmi = GetQueryString("lmi");
 	     var content = $('#FriendButton').text();
-			alert(content);
+			//alert(content);
 	     if(content=="  刪除好友 "){
 	//        alert("run 刪除好友")
 			    $.getJSON("${pageContext.request.contextPath}/deleteFriendController",{"memberID":memberID,"lmi":lmi},function(data){
