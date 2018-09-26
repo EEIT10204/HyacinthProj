@@ -51,7 +51,7 @@ public class BlogPage1Controller {
 				,@RequestParam("blogSNum")Integer blogSNum) {
 			System.out.println("run controller  MemberBlogselectScoreONload");
 			Double selectScore = memberBlogService.selectScore(memberID, blogSNum);
-			System.out.println("selectScore = "+selectScore);
+//			System.out.println("selectScore = "+selectScore);
 			return selectScore;
 			
 		}
@@ -71,7 +71,7 @@ public class BlogPage1Controller {
 		System.out.println("run controller  MemberBlogScore!!!!Update");
 		
 		 MemberBlogBean tempScore = memberBlogService.updateupdateScoreike(memberID, blogSNum, Double.valueOf(score));
-		System.out.println("檢查評分是否成功回傳 = "+tempScore);
+//		System.out.println("檢查評分是否成功回傳 = "+tempScore);
 		return tempScore;
 		
 	}
@@ -88,7 +88,7 @@ public class BlogPage1Controller {
 		System.out.println("run controller  MemberBloglikeUpdate");
 		
 		MemberBlogBean temp = memberBlogService.updateLike(memberID, blogSNum, Integer.valueOf(like));
-		System.out.println("MemberBloglikeUpdate = "+temp);
+//		System.out.println("MemberBloglikeUpdate = "+temp);
 		return temp;
 		
 	}
@@ -101,7 +101,7 @@ public class BlogPage1Controller {
 			,@RequestParam("blogSNum")Integer blogSNum) {
 		System.out.println("run controller  MemberBloglikeONload");
 		Boolean temp = memberBlogService.selectLike(memberID, blogSNum);
-		System.out.println("MemberBloglikeONload = "+temp);
+//		System.out.println("MemberBloglikeONload = "+temp);
 		return temp;
 		
 	}
@@ -112,7 +112,7 @@ public class BlogPage1Controller {
 	public Object[] MemberBloglike(@RequestParam("blogSNum")Integer blogSNum) {
 		System.out.println("run controller  MemberBloglike");
 		 Object[] temp = memberBlogService.findSavesAVGScores(blogSNum);
-		 System.out.println("MemberBloglike = "+ temp[0]);
+//		 System.out.println("MemberBloglike = "+ temp[0]);
 		return temp;
 		
 	}
@@ -124,10 +124,10 @@ public class BlogPage1Controller {
 			Model model
 			) {
 		System.out.println("run controller BlogDelete");
-		System.out.println("blogSNum = "+blogSNum);
+//		System.out.println("blogSNum = "+blogSNum);
 		Map<String, String> map = new HashMap<>();
 		BlogBean beanDelete = blogService.updateDelete(blogSNum);
-		System.out.println("beanDelete = "+beanDelete);
+//		System.out.println("beanDelete = "+beanDelete);
 //		model.addAttribute("beanDelete", beanDelete);
 		if(beanDelete!=null) {
 			map.put("result", "網誌刪除成功");
@@ -167,9 +167,9 @@ public class BlogPage1Controller {
 		List<Object[]> BeanSNum = blogService.selectByBlogNewPage(blogSNum);
 		
 		
-		for(Object[] BeanSNum1:BeanSNum) {
-			System.out.println(((CityBean)BeanSNum1[1]).getNation());
-		}
+//		for(Object[] BeanSNum1:BeanSNum) {
+//			System.out.println(((CityBean)BeanSNum1[1]).getNation());
+//		}
 		List<Object[]> catchAllComment = bGCommentService.selectBlogCommMemberJoin(blogSNum);
 		model.addAttribute("BGComment",catchAllComment);
 		model.addAttribute("BeanSNum", BeanSNum);
@@ -183,10 +183,10 @@ public class BlogPage1Controller {
 				@RequestParam("blogSNum")Integer blogSNum,
 				Model model,BGCommentBean bean,BindingResult bindingResult
 				) {
-			System.out.println("run commet: " + bean.toString());
+//			System.out.println("run commet: " + bean.toString());
 			BGCommentBean result = bGCommentService.insert(bean);
 			List<Object[]> InsertComment = bGCommentService.selectBlogCommMemberJoin(blogSNum);
-			System.out.println("comment catch reply: " + InsertComment.size());
+//			System.out.println("comment catch reply: " + InsertComment.size());
 			List<Object[]> BeanSNum = blogService.selectByBlogNewPage(blogSNum);
 
 			
@@ -201,15 +201,15 @@ public class BlogPage1Controller {
 		public String method2(Integer blogSNum,Integer memberID,Model model,
 				BGCommentBean bean,BindingResult bindingResult) {
 			BGCommentBean result = bGCommentService.update(bean);
-			System.out.println("beanid="+bean.getBGCommentID());
+//			System.out.println("beanid="+bean.getBGCommentID());
 //			System.out.println("bean="+bean);
-			System.out.println("blogSNum="+blogSNum);
-			System.out.println("memberID="+memberID);
-			System.out.println("result="+result);
+//			System.out.println("blogSNum="+blogSNum);
+//			System.out.println("memberID="+memberID);
+//			System.out.println("result="+result);
 //			model.addAttribute("update",result);
 			
 			List<Object[]> beans = bGCommentService.selectBlogCommMemberJoin(blogSNum);
-			System.out.println("beans="+beans);
+//			System.out.println("beans="+beans);
 			
 			List<Object[]> BeanSNum = blogService.selectByBlogNewPage(blogSNum);
 			model.addAttribute("BeanSNum", BeanSNum);
@@ -226,9 +226,9 @@ public class BlogPage1Controller {
 			String newhot,
 			Model model) {
 		System.out.println("run controller1111");
-		System.out.println("page = " + page);
-		System.out.println("search = " + search);
-		System.out.println("newhot = " + newhot);
+//		System.out.println("page = " + page);
+//		System.out.println("search = " + search);
+//		System.out.println("newhot = " + newhot);
 		
 		List<Object[]> beanMain = blogService.selectByInput(search, page,6,newhot);
 		List<Object[]> beanAsideHot = blogService.selectByInput(null,"1",4,"hot");
@@ -307,7 +307,7 @@ public class BlogPage1Controller {
 //				Integer mID = Integer.valueOf(memberID);
 				System.out.println("run controller NEW~~");
 //				System.out.println("memberID = "+memberID);
-				System.out.println("blogBean now = "+blogBean);
+//				System.out.println("blogBean now = "+blogBean);
 //				System.out.println("summernote = "+summernote);
 				
 //				try {
@@ -329,7 +329,7 @@ public class BlogPage1Controller {
 				blogBean.setBlogVisibility(1);
 //				blogBean.setBlogCity(blogBean.getBlogCity());
 				blogBean.setBlogContext(summernote);
-				System.out.println("Cover = "+blogBean.getBlogCover());
+//				System.out.println("Cover = "+blogBean.getBlogCover());
 //				System.out.println("Cover = "+blogBean.getBlogCover().length);
 				if(blogBean.getBlogCover().length==0) {
 					BlogBean pic = blogService.selectByPk(blogBean.getBlogSNum());
@@ -398,9 +398,9 @@ public class BlogPage1Controller {
 				String newhot,
 				Model model) {
 			System.out.println("run controller1111");
-			System.out.println("page = " + page);
-			System.out.println("search = " + search);
-			System.out.println("newhot = " + newhot);
+//			System.out.println("page = " + page);
+//			System.out.println("search = " + search);
+//			System.out.println("newhot = " + newhot);
 			
 			List<Object[]> beanMain = blogService.selectByInput(search, page,6,newhot);
 			List<Object[]> beanAsideHot = blogService.selectByInput(null,"1",4,"hot");
@@ -408,12 +408,12 @@ public class BlogPage1Controller {
 //			for(Object[] beanAsideHot1:beanAsideHot) {
 //				System.out.println((BlogBean)beanAsideHot1[0]);
 //			}
-			for(Object[] beanAsideHot1:beanAsideHot) {
-			System.out.println(((BlogBean)beanAsideHot1[0]).getBlogView());
-		}
-			for(Object[] beanAsideNew1:beanAsideNew) {
-				System.out.println(((BlogBean)beanAsideNew1[0]).getBlogReleaseTime());
-			}
+//			for(Object[] beanAsideHot1:beanAsideHot) {
+//			System.out.println(((BlogBean)beanAsideHot1[0]).getBlogView());
+//		}
+//			for(Object[] beanAsideNew1:beanAsideNew) {
+//				System.out.println(((BlogBean)beanAsideNew1[0]).getBlogReleaseTime());
+//			}
 //			System.out.println("beanAsideHot = " + beanAsideHot);
 //			System.out.println("beanAsideNew = " + beanAsideNew);
 			

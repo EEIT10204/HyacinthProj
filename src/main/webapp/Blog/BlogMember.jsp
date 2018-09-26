@@ -1011,7 +1011,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a  class="urlC2" href="#"><img id="navA2" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/taipei2.jpg"
+									src="${pageContext.request.contextPath}/Images/Blog/taipei1.jpg"
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
@@ -1733,13 +1733,12 @@ margin-top:10px;
 										<a class="urlA1" href="#"> <img id="changeAsidePicDate1"
 											class="divT31"
 <%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP1.jpg" --%>
-											alt="taipei1">
+											>
 										</a>
 									</div>
 								</div>
 								<div class="divT4">
-									<a id="changeAsideTitleDate1" href="#" class="a1 urlA1">2018
-										跨年哪兒過？ 六個台灣跨年景點大盤點</a>
+									<a id="changeAsideTitleDate1" href="#" class="a1 urlA1"></a>
 									<div id="changeAsideViewsDate1" class="divText">2018-8-8</div>
 								</div>
 							</div>
@@ -1750,13 +1749,12 @@ margin-top:10px;
 										<a class="urlA2" href="#"> <img id="changeAsidePicDate2"
 											class="divT31"
 <%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP2.jpg" --%>
-											alt="taipei1">
+											>
 										</a>
 									</div>
 								</div>
 								<div class="divT4">
-									<a id="changeAsideTitleDate2" href="#" class="a1 urlA2">2018
-										跨年哪兒過？ 六個台灣跨年景點大盤點</a>
+									<a id="changeAsideTitleDate2" href="#" class="a1 urlA2"></a>
 									<div id="changeAsideViewsDate2" class="divText">2018-8-8</div>
 								</div>
 							</div>
@@ -1767,13 +1765,12 @@ margin-top:10px;
 										<a class="urlA3" href="#"> <img id="changeAsidePicDate3"
 											class="divT31"
 <%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP3.jpg" --%>
-											alt="taipei1">
+											>
 										</a>
 									</div>
 								</div>
 								<div class="divT4">
-									<a id="changeAsideTitleDate3" href="#" class="a1 urlA3">2018
-										跨年哪兒過？ 六個台灣跨年景點大盤點</a>
+									<a id="changeAsideTitleDate3" href="#" class="a1 urlA3"></a>
 									<div id="changeAsideViewsDate3" class="divText">2018-8-8</div>
 								</div>
 							</div>
@@ -1784,14 +1781,13 @@ margin-top:10px;
 										<a class="urlA4" href="#"> <img id="changeAsidePicDate4"
 											class="divT31"
 <%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP4.jpg" --%>
-											alt="taipei1">
+											>
 										</a>
 									</div>
 								</div>
 								<div class="divT4">
 
-									<a id="changeAsideTitleDate4" href="#" class="a1 urlA4">2018
-										跨年哪兒過？ 六個台灣跨年景點大盤點</a>
+									<a id="changeAsideTitleDate4" href="#" class="a1 urlA4"></a>
 									<div id="changeAsideViewsDate4" class="divText">2018-8-8</div>
 								</div>
 							</div>
@@ -1814,13 +1810,12 @@ margin-top:10px;
 										<a class="urlB1" href="#"> <img id="changeAsidePic1"
 											class="divT31"
 <%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP1.jpg" --%>
-											alt="taipei1">
+											>
 										</a>
 									</div>
 								</div>
 								<div class="divT4">
-									<a id="changeAsideTitle1" href="#" class="a1 urlB1">2018
-										跨年哪兒過？ 六個台灣跨年景點大盤點</a> <span class="divText a1">瀏覽次數(<span
+									<a id="changeAsideTitle1" href="#" class="a1 urlB1"></a> <span class="divText a1">瀏覽次數(<span
 										id="changeAsideViews1">999</span>) 
 								</div>
 							</div>
@@ -1831,13 +1826,12 @@ margin-top:10px;
 										<a class="urlB2" href="#"> <img id="changeAsidePic2"
 											class="divT31"
 <%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP2.jpg" --%>
-											alt="taipei1">
+											>
 										</a>
 									</div>
 								</div>
 								<div class="divT4">
-									<a id="changeAsideTitle2" href="#" class="a1 urlB2">2018
-										跨年哪兒過？ 六個台灣跨年景點大盤點</a> <span class="divText a1">瀏覽次數(<span
+									<a id="changeAsideTitle2" href="#" class="a1 urlB2"></a> <span class="divText a1">瀏覽次數(<span
 										id="changeAsideViews2">999</span>) 
 								</div>
 							</div>
@@ -1848,13 +1842,12 @@ margin-top:10px;
 										<a class="urlB3" href="#"> <img id="changeAsidePic3"
 											class="divT31"
 <%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP3.jpg" --%>
-											alt="taipei1">
+											>
 										</a>
 									</div>
 								</div>
 								<div class="divT4">
-									<a id="changeAsideTitle3" href="#" class="a1 urlB3">2018
-										跨年哪兒過？ 六個台灣跨年景點大盤點</a> <span class="divText a1">瀏覽次數(<span
+									<a id="changeAsideTitle3" href="#" class="a1 urlB3"></a> <span class="divText a1">瀏覽次數(<span
 										id="changeAsideViews3">999</span>) 
 								</div>
 							</div>
@@ -1865,13 +1858,12 @@ margin-top:10px;
 										<a class="urlB4" href="#"> <img id="changeAsidePic4"
 											class="divT31"
 <%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP4.jpg" --%>
-											alt="taipei1">
+											>
 										</a>
 									</div>
 								</div>
 								<div class="divT4">
-									<a id="changeAsideTitle4" href="#" class="a1 urlB4">2018
-										跨年哪兒過？ 六個台灣跨年景點大盤點</a> <span class="divText a1">瀏覽次數(<span
+									<a id="changeAsideTitle4" href="#" class="a1 urlB4"></a> <span class="divText a1">瀏覽次數(<span
 										id="changeAsideViews4">999</span>) 
 								</div>
 							</div>

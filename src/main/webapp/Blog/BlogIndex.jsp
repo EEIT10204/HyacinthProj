@@ -942,7 +942,7 @@ hr {
 							<a id="changeCity1" href="#" class="a1 distance">台灣</a>
 						</div>
 						<div class="divAS13">
-							<a id="changeTitle1" href="#" class="a1 url1">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+							<a id="changeTitle1" href="#" class="a1 url1"></a>
 						</div>
 						<div class="divAS14">
 							<span id="changeDate1" class="border1 distance">2018-09-28</span>
@@ -967,7 +967,7 @@ hr {
 							</span> <a id="changeCity3" href="#" class="a1 distance">台灣</a>
 						</div>
 						<div class="divAS13">
-							<a id="changeTitle3" href="#" class="a1 url3">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+							<a id="changeTitle3" href="#" class="a1 url3"></a>
 						</div>
 						<div class="divAS14">
 							<span id="changeDate3" class="border1 distance">2018-09-28</span>
@@ -990,7 +990,7 @@ hr {
 							</span> <a id="changeCity5" href="#" class="a1 distance">台灣</a>
 						</div>
 						<div class="divAS13">
-							<a id="changeTitle5" href="#" class="a1 url5">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+							<a id="changeTitle5" href="#" class="a1 url5"></a>
 						</div>
 						<div class="divAS14">
 							<span id="changeDate5" class="border1 distance">2018-09-28</span>
@@ -1015,7 +1015,7 @@ hr {
 							</span> <a id="changeCity2" href="#" class="a1 distance">台灣</a>
 						</div>
 						<div class="divAS13">
-							<a id="changeTitle2" href="#" class="a1 url2">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+							<a id="changeTitle2" href="#" class="a1 url2"></a>
 						</div>
 						<div class="divAS14">
 							<span id="changeDate2" class="border1 distance">2018-09-28</span>
@@ -1038,7 +1038,7 @@ hr {
 							</span> <a id="changeCity4" href="#" class="a1 distance">台灣</a>
 						</div>
 						<div class="divAS13">
-							<a id="changeTitle4" href="#" class="a1 url4">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+							<a id="changeTitle4" href="#" class="a1 url4"></a>
 						</div>
 						<div class="divAS14">
 							<span id="changeDate4" class="border1 distance">2018-09-28</span>
@@ -1062,7 +1062,7 @@ hr {
 							</span> <a id="changeCity6" href="#" class="a1 distance">台灣</a>
 						</div>
 						<div class="divAS13">
-							<a id="changeTitle6" href="#" class="a1 url6">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+							<a id="changeTitle6" href="#" class="a1 url6"></a>
 						</div>
 						<div class="divAS14">
 							<span id="changeDate6" class="border1 distance">2018-09-28</span>
@@ -1161,7 +1161,7 @@ hr {
 								<div class="divT31">
 									<a class="urlA1" href="#"> <img id="changeAsidePicDate1" class="divT31"
 <%-- 										src="${pageContext.request.contextPath}/Images/Blog/asideP1.jpg" --%>
-										alt="taipei1">
+										>
 									</a>
 								</div>
 							</div>
@@ -1175,8 +1175,8 @@ hr {
 							<div class="divT3">
 								<div class="divT31">
 									<a class="urlA2" href="#"> <img id="changeAsidePicDate2" class="divT31"
-										src="${pageContext.request.contextPath}/Images/Blog/asideP2.jpg"
-										alt="taipei1">
+<%-- 										src="${pageContext.request.contextPath}/Images/Blog/asideP2.jpg" --%>
+										>
 									</a>
 								</div>
 							</div>
@@ -1190,8 +1190,8 @@ hr {
 							<div class="divT3">
 								<div class="divT31">
 									<a class="urlA3" href="#"> <img id="changeAsidePicDate3" class="divT31"
-										src="${pageContext.request.contextPath}/Images/Blog/asideP3.jpg"
-										alt="taipei1">
+<%-- 										src="${pageContext.request.contextPath}/Images/Blog/asideP3.jpg" --%>
+										>
 									</a>
 								</div>
 							</div>
@@ -1205,8 +1205,8 @@ hr {
 							<div class="divT3">
 								<div class="divT31">
 									<a class="urlA4" href="#"> <img id="changeAsidePicDate4" class="divT31"
-										src="${pageContext.request.contextPath}/Images/Blog/asideP4.jpg"
-										alt="taipei1">
+<%-- 										src="${pageContext.request.contextPath}/Images/Blog/asideP4.jpg" --%>
+										>
 									</a>
 								</div>
 							</div>
@@ -1233,8 +1233,8 @@ hr {
 							<div class="divT3">
 								<div class="divT31">
 									<a class="urlB1" href="#"> <img id="changeAsidePic1" class="divT31"
-										src="${pageContext.request.contextPath}/Images/Blog/asideP1.jpg"
-										alt="taipei1">
+<%-- 										src="${pageContext.request.contextPath}/Images/Blog/asideP1.jpg" --%>
+										>
 									</a>
 								</div>
 							</div>
@@ -1248,8 +1248,8 @@ hr {
 							<div class="divT3">
 								<div class="divT31">
 									<a class="urlB2" href="#"> <img id="changeAsidePic2" class="divT31"
-										src="${pageContext.request.contextPath}/Images/Blog/asideP2.jpg"
-										alt="taipei1">
+<%-- 										src="${pageContext.request.contextPath}/Images/Blog/asideP2.jpg" --%>
+										>
 									</a>
 								</div>
 							</div>
@@ -1263,8 +1263,8 @@ hr {
 							<div class="divT3">
 								<div class="divT31">
 									<a class="urlB3" href="#"> <img id="changeAsidePic3" class="divT31"
-										src="${pageContext.request.contextPath}/Images/Blog/asideP3.jpg"
-										alt="taipei1">
+<%-- 										src="${pageContext.request.contextPath}/Images/Blog/asideP3.jpg" --%>
+										>
 									</a>
 								</div>
 							</div>
@@ -1278,8 +1278,8 @@ hr {
 							<div class="divT3">
 								<div class="divT31">
 									<a class="urlB4" href="#"> <img id="changeAsidePic4" class="divT31"
-										src="${pageContext.request.contextPath}/Images/Blog/asideP4.jpg"
-										alt="taipei1">
+<%-- 										src="${pageContext.request.contextPath}/Images/Blog/asideP4.jpg" --%>
+										>
 									</a>
 								</div>
 							</div>

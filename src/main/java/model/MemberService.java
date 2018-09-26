@@ -144,7 +144,8 @@ public class MemberService {
 					    + bean.getMemberMail()+ "). This lets you access all of Hyacinth's features.<br/>";
 			
 //			String verifyAddress="http://localhost:8080/HyacinthProj/verifyMail.do?account="+bean.getMemberAccount()+"&code="+bean.getMemberCertify();
-			String verifyAddress="http://192.168.30.52:8080/HyacinthProj/verifyMail.do?account="+bean.getMemberAccount()+"&code="+bean.getMemberCertify();
+//			String verifyAddress="http://192.168.30.52:8080/HyacinthProj/verifyMail.do?account="+bean.getMemberAccount()+"&code="+bean.getMemberCertify();
+			String verifyAddress="http://hyacinthtw.eeit.me:8080/HyacinthProj/verifyMail.do?account="+bean.getMemberAccount()+"&code="+bean.getMemberCertify();
 			
 			String line3="<a href='"+verifyAddress+"'>Verify email address</a><hr/>";
 			
