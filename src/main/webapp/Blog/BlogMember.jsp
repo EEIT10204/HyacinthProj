@@ -1730,7 +1730,7 @@ margin-top:10px;
 									<div class="divT31">
 										<a class="urlA1" href="#"> <img id="changeAsidePicDate1"
 											class="divT31"
-											src="${pageContext.request.contextPath}/Images/Blog/asideP1.jpg"
+<%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP1.jpg" --%>
 											alt="taipei1">
 										</a>
 									</div>
@@ -1747,7 +1747,7 @@ margin-top:10px;
 									<div class="divT31">
 										<a class="urlA2" href="#"> <img id="changeAsidePicDate2"
 											class="divT31"
-											src="${pageContext.request.contextPath}/Images/Blog/asideP2.jpg"
+<%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP2.jpg" --%>
 											alt="taipei1">
 										</a>
 									</div>
@@ -1764,7 +1764,7 @@ margin-top:10px;
 									<div class="divT31">
 										<a class="urlA3" href="#"> <img id="changeAsidePicDate3"
 											class="divT31"
-											src="${pageContext.request.contextPath}/Images/Blog/asideP3.jpg"
+<%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP3.jpg" --%>
 											alt="taipei1">
 										</a>
 									</div>
@@ -1781,7 +1781,7 @@ margin-top:10px;
 									<div class="divT31">
 										<a class="urlA4" href="#"> <img id="changeAsidePicDate4"
 											class="divT31"
-											src="${pageContext.request.contextPath}/Images/Blog/asideP4.jpg"
+<%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP4.jpg" --%>
 											alt="taipei1">
 										</a>
 									</div>
@@ -1811,7 +1811,7 @@ margin-top:10px;
 									<div class="divT31">
 										<a class="urlB1" href="#"> <img id="changeAsidePic1"
 											class="divT31"
-											src="${pageContext.request.contextPath}/Images/Blog/asideP1.jpg"
+<%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP1.jpg" --%>
 											alt="taipei1">
 										</a>
 									</div>
@@ -1828,7 +1828,7 @@ margin-top:10px;
 									<div class="divT31">
 										<a class="urlB2" href="#"> <img id="changeAsidePic2"
 											class="divT31"
-											src="${pageContext.request.contextPath}/Images/Blog/asideP2.jpg"
+<%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP2.jpg" --%>
 											alt="taipei1">
 										</a>
 									</div>
@@ -1845,7 +1845,7 @@ margin-top:10px;
 									<div class="divT31">
 										<a class="urlB3" href="#"> <img id="changeAsidePic3"
 											class="divT31"
-											src="${pageContext.request.contextPath}/Images/Blog/asideP3.jpg"
+<%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP3.jpg" --%>
 											alt="taipei1">
 										</a>
 									</div>
@@ -1862,7 +1862,7 @@ margin-top:10px;
 									<div class="divT31">
 										<a class="urlB4" href="#"> <img id="changeAsidePic4"
 											class="divT31"
-											src="${pageContext.request.contextPath}/Images/Blog/asideP4.jpg"
+<%-- 											src="${pageContext.request.contextPath}/Images/Blog/asideP4.jpg" --%>
 											alt="taipei1">
 										</a>
 									</div>
@@ -2021,7 +2021,8 @@ $(".messUser").html("<div class='messUsers'><img src='${pageContext.request.cont
 									 
 									 $.each(json,function(i,product){
 // 										 alert($('#rating-stars-value').attr("placeholder"));
-										$('#starpoint').html(json[1]);
+// 										$('#starpoint').html(json[1]);
+										$('#starpoint').html(json[1].toFixed(1));
 									 })
 								 })
 							 })
