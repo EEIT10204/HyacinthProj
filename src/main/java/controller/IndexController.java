@@ -25,7 +25,7 @@ public class IndexController {
 	@GetMapping("/intoAct")
 	@ResponseBody
 	public List<ActBean> onloadA(){
-		System.out.println("logining sucess!");
+//		System.out.println("logining sucess!");
 		List<ActBean> acts = actService.selectTopSix();
 //		System.out.println("Index Controll acts: " + acts.toString());
 		return acts;
@@ -34,7 +34,7 @@ public class IndexController {
 	@GetMapping("/ActMain")
 	@ResponseBody
 	public List<ActBean> onloadMAct(){
-		System.out.println("mainAct login sucess!");
+//		System.out.println("mainAct login sucess!");
 		List<ActBean> macts = actService.Newset();
 		return macts;
 	 }
@@ -55,7 +55,7 @@ public class IndexController {
 	@ResponseBody
 	public Object[] showSelectResults(String keyword,String status,String sorting,String page){
 		
-		System.out.println("keyword="+keyword+",status="+status+",sorting="+sorting+",page"+page);
+//		System.out.println("keyword="+keyword+",status="+status+",sorting="+sorting+",page"+page);
 		int p =1;
 		try {
 			 p= Integer.valueOf(page);

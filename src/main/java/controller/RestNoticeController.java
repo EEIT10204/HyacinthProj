@@ -35,11 +35,11 @@ public class RestNoticeController {
 			List<NoticeBean> noticeList1 = noticeService.selectMyNotice(intmemberID);
 			if (noticeList1.size() != 0) {
 				int noticeCount1 = noticeList1.size();
-				System.out.println("DB notice count: " + noticeCount1);
+//				System.out.println("DB notice count: " + noticeCount1);
 //				System.out.println("noticeCountFirst(有SESSION)=" + noticeCount1);
 //				System.out.println("noticeListFirst(有SESSION)=" + noticeList1);
 				session.setAttribute("noticeListFirst", noticeList1);
-				System.out.println("After session count: "+ session.getAttribute("noticeCountFirst"));
+//				System.out.println("After session count: "+ session.getAttribute("noticeCountFirst"));
 				status.put("count", String.valueOf(noticeCount1));
 				status.put("status", "findNoticeList");
 				return status;

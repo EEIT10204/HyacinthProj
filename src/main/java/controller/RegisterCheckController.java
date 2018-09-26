@@ -24,7 +24,7 @@ public class RegisterCheckController {
 	@RequestMapping(path = { "/register.controller" })
 	public String register( Model model,MemberBean memberBean,BindingResult bindingResult) {
 		MemberBean bean = memberService.register(memberBean);
-		System.out.println("Controller"+bean);
+//		System.out.println("Controller"+bean);
 			model.addAttribute("memberID", bean.getMemberID());
 			model.addAttribute("memberName", bean.getMemberName());
 			return "redirectIndex";
@@ -33,9 +33,9 @@ public class RegisterCheckController {
 	
 	@RequestMapping(path = {"memberAccountCheck"})
 	public String checkAccount(String memberAccount,Model model)  {
-		System.out.println("controller_checkAccount:"+memberAccount);
+//		System.out.println("controller_checkAccount:"+memberAccount);
 		MemberBean temp = memberDao.findByAccount(memberAccount);
-		System.out.println("temp :"+temp);
+//		System.out.println("temp :"+temp);
 		if(memberAccount.length()==0||temp!=null){
 			return "error";
 		}else {
@@ -44,9 +44,9 @@ public class RegisterCheckController {
 	}
 	@RequestMapping(path = {"memberMailCheck"})
 	public String checkMail(String memberMail) {
-		System.out.println("controller_checkEmail:"+memberMail);
+//		System.out.println("controller_checkEmail:"+memberMail);
 		MemberBean temp1 = memberDao.findByMail(memberMail);
-		System.out.println("temp1 :"+temp1);
+//		System.out.println("temp1 :"+temp1);
 		if(memberMail.length()==0||temp1!=null) {
 			return "error";
 		}else {

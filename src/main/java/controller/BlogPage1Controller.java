@@ -49,7 +49,7 @@ public class BlogPage1Controller {
 		public Double MemberBlogselectScoreONload(
 				 @RequestParam("memberID")Integer memberID
 				,@RequestParam("blogSNum")Integer blogSNum) {
-			System.out.println("run controller  MemberBlogselectScoreONload");
+//			System.out.println("run controller  MemberBlogselectScoreONload");
 			Double selectScore = memberBlogService.selectScore(memberID, blogSNum);
 //			System.out.println("selectScore = "+selectScore);
 			return selectScore;
@@ -65,10 +65,10 @@ public class BlogPage1Controller {
 			String score
 			) {
 		//Console沒印---------------------------------------
-		System.out.println("檢查是否有MEMBERID = "+memberID);
-		System.out.println("檢查是否有blogSNum = "+blogSNum);
-		System.out.println("檢查是否有score = "+score);
-		System.out.println("run controller  MemberBlogScore!!!!Update");
+//		System.out.println("檢查是否有MEMBERID = "+memberID);
+//		System.out.println("檢查是否有blogSNum = "+blogSNum);
+//		System.out.println("檢查是否有score = "+score);
+//		System.out.println("run controller  MemberBlogScore!!!!Update");
 		
 		 MemberBlogBean tempScore = memberBlogService.updateupdateScoreike(memberID, blogSNum, Double.valueOf(score));
 //		System.out.println("檢查評分是否成功回傳 = "+tempScore);
@@ -85,7 +85,7 @@ public class BlogPage1Controller {
 			@RequestParam("blogSNum")Integer blogSNum,
 			String like
 			) {
-		System.out.println("run controller  MemberBloglikeUpdate");
+//		System.out.println("run controller  MemberBloglikeUpdate");
 		
 		MemberBlogBean temp = memberBlogService.updateLike(memberID, blogSNum, Integer.valueOf(like));
 //		System.out.println("MemberBloglikeUpdate = "+temp);
@@ -123,7 +123,7 @@ public class BlogPage1Controller {
 			@RequestParam("blogSNum")Integer blogSNum,
 			Model model
 			) {
-		System.out.println("run controller BlogDelete");
+//		System.out.println("run controller BlogDelete");
 //		System.out.println("blogSNum = "+blogSNum);
 		Map<String, String> map = new HashMap<>();
 		BlogBean beanDelete = blogService.updateDelete(blogSNum);
@@ -144,7 +144,7 @@ public class BlogPage1Controller {
 			@RequestParam("blogSNum")Integer blogSNum,
 			Model model
 			) {
-		System.out.println("run controller  BlogUpdate");
+//		System.out.println("run controller  BlogUpdate");
 		
 		List<Object[]> BeanSNum = blogService.selectByBlogNewPage(blogSNum);
 		model.addAttribute("BeanSNum", BeanSNum);
@@ -162,7 +162,7 @@ public class BlogPage1Controller {
 			@RequestParam("blogSNum")Integer blogSNum,
 			Model model,BGCommentBean bean,BindingResult bindingResult
 			) {
-		System.out.println("run controller  Editor");
+//		System.out.println("run controller  Editor");
 		
 		List<Object[]> BeanSNum = blogService.selectByBlogNewPage(blogSNum);
 		
@@ -225,7 +225,7 @@ public class BlogPage1Controller {
 			String page,
 			String newhot,
 			Model model) {
-		System.out.println("run controller1111");
+//		System.out.println("run controller1111");
 //		System.out.println("page = " + page);
 //		System.out.println("search = " + search);
 //		System.out.println("newhot = " + newhot);
@@ -258,7 +258,7 @@ public class BlogPage1Controller {
 		model.addAttribute("search", search);
 		model.addAttribute("newhot", newhot);
 		if(beanMain==null) {
-			System.out.println("!!!!");
+//			System.out.println("!!!!");
 			return "errorPage1";
 		}
 		return "okPage1";
@@ -270,7 +270,7 @@ public class BlogPage1Controller {
 	@ResponseBody
 	public List<BlogBean> forNavLoad() {//預先載入Date使用
 
-			System.out.println("run controller NAV");
+//			System.out.println("run controller NAV");
 
 			 List<BlogBean> select1 = blogService.selectByCityNav();
 
@@ -281,7 +281,7 @@ public class BlogPage1Controller {
 	@RequestMapping(path= {"/Blog/BlogIndexFirstOnload2.controller"})
 	@ResponseBody
 	public List<Object[]> forFirstLoad2() {//預先載入使用
-		System.out.println("run controller WWWWWWWW");
+//		System.out.println("run controller WWWWWWWW");
 		List<Object[]> main = blogService.selectByInput("台灣", "1",6,"hot");
 		List<Object[]> mainAsideNew = blogService.selectByInput(null,"1",4,"new");
 		List<Object[]> mainAsideHot = blogService.selectByInput(null,"1",4,"hot");
@@ -305,7 +305,7 @@ public class BlogPage1Controller {
 //				@RequestParam("blogSNum")Integer blogSNum
 				) {
 //				Integer mID = Integer.valueOf(memberID);
-				System.out.println("run controller NEW~~");
+//				System.out.println("run controller NEW~~");
 //				System.out.println("memberID = "+memberID);
 //				System.out.println("blogBean now = "+blogBean);
 //				System.out.println("summernote = "+summernote);
@@ -356,7 +356,7 @@ public class BlogPage1Controller {
 	@RequestMapping(path= {"/Blog/BlogIndexFirstOnload.controller"})
 	@ResponseBody
 	public List<Object[]> forFirstLoad() {//預先載入使用
-		System.out.println("run controller 2222");
+//		System.out.println("run controller 2222");
 //		if(page==null) {
 //			BlogBean bb=new BlogBean();
 //			bb.setBlogCity("台中");		
@@ -378,7 +378,7 @@ public class BlogPage1Controller {
 //		if(page==null) {
 //			BlogBean bb=new BlogBean();
 //			bb.setBlogCity("台中");
-			System.out.println("run controller 33333");
+//			System.out.println("run controller 33333");
 //			System.out.println("beanCITY="+bean.getBlogCity());
 			 List<Object[]> select1 = blogService.selectByNationDate("台灣",1);
 //			 for( Object[] select11:select1) {
@@ -397,7 +397,7 @@ public class BlogPage1Controller {
 				String page,
 				String newhot,
 				Model model) {
-			System.out.println("run controller1111");
+//			System.out.println("run controller1111");
 //			System.out.println("page = " + page);
 //			System.out.println("search = " + search);
 //			System.out.println("newhot = " + newhot);
@@ -423,7 +423,7 @@ public class BlogPage1Controller {
 			model.addAttribute("search", search);
 			model.addAttribute("newhot", newhot);
 			if(beanMain==null) {
-				System.out.println("!!!!");
+//				System.out.println("!!!!");
 				return "errorPage1";
 			}
 

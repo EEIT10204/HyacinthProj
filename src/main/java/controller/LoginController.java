@@ -78,10 +78,10 @@ public class LoginController {
 			MemberBean bean = memberService.register(mem);
 			if (bean.getMemberPic() ==null) {
 				String contexPath = request.getSession().getServletContext().getRealPath("/");
-				System.out.println(contexPath);
+//				System.out.println(contexPath);
 				File img = new File(contexPath + "/Images/Member/memberPic_default.png");
 				byte[] byteToDB = fileToByte(img);
-				System.out.println("photoByte[] : " + byteToDB);
+//				System.out.println("photoByte[] : " + byteToDB);
 				bean.setMemberPic(byteToDB);
 			}
 			//新增預設MemberCover 

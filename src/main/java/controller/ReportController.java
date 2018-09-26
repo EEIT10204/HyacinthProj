@@ -49,10 +49,10 @@ public class ReportController {
 			produces = {"application/json;charset=UTF-8"})
 	public String selectReport(@RequestParam String type, @RequestParam String process) {
 		
-		System.out.println("type: " + type + " progress: " + process);
+//		System.out.println("type: " + type + " progress: " + process);
 				
 		if("".equals(type) && "".equals(process)){  // no setting condition, select all
-			System.out.println("select all");
+//			System.out.println("select all");
 			List<ReportBean> results = reportService.selectAll();
 //			System.out.println("console controller result: " + results.size());
 			Gson beanToJson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
@@ -60,7 +60,7 @@ public class ReportController {
 			return json;
 		}
 		else {  //select by condition
-			System.out.println("select by condition");
+//			System.out.println("select by condition");
 			
 			ReportBean bean = new ReportBean();
 			bean.setReferID(type);
@@ -80,7 +80,7 @@ public class ReportController {
 	public String showReportDetail(@RequestParam String referID) {
 //		System.out.println(referID);
 		if(referID.contains("ACC")) {
-			System.out.println("Acc");
+//			System.out.println("Acc");
 			ACCommentBean temp = new ACCommentBean();
 			temp.setACCommentID(referID);
 			ACCommentBean acCommentresult = aCCommentService.selectByCommentID(temp);
@@ -110,19 +110,19 @@ public class ReportController {
 			JsonElement jsonTree = beanToJson.toJsonTree(acCommentresult);
 			jsonTree.getAsJsonObject().addProperty("memberName", memberResult.getMemberName());
 			String json = beanToJson.toJson(jsonTree);
-			System.out.println("json: " + json);
+//			System.out.println("json: " + json);
 			return json;
 			
 		}
 		else if(referID.contains("BGC")) {		
-			System.out.println("BGC");
+//			System.out.println("BGC");
 
 			//Select by CommentID
 			BGCommentBean temp = new BGCommentBean();			
 			temp.setBGCommentID(referID);
 			BGCommentBean bgCommentResult = bGCommentService.selectByCommentID(temp);
 			MemberBean memberResult = memberDAO.findByPK(bgCommentResult.getMemberID());
-			System.out.println("show detail BGC: " + bgCommentResult.toString());
+//			System.out.println("show detail BGC: " + bgCommentResult.toString());
 			//test select by blogSNum
 //			temp.setBGCommentID(null);
 //			temp.setBlogSNum(1);
@@ -145,14 +145,14 @@ public class ReportController {
 			JsonElement jsonTree = beanToJson.toJsonTree(bgCommentResult);
 			jsonTree.getAsJsonObject().addProperty("memberName", memberResult.getMemberName());
 			String json = beanToJson.toJson(jsonTree);
-			System.out.println("bgComment json: " + json);
+//			System.out.println("bgComment json: " + json);
 			return json;
 		}
 		else if(referID.contains("BG")) {
 			BlogBean blog = new BlogBean();
 			blog.setBlogID(referID);
 			BlogBean blogResult = blogService.selectByBlogID(blog);
-			System.out.println(blogResult.toString());
+//			System.out.println(blogResult.toString());
 			MemberBean memberResult = memberDAO.findByPK(blogResult.getMemberID());
 			Gson beanToJson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 			JsonElement jsonTree = beanToJson.toJsonTree(blogResult);
@@ -166,7 +166,7 @@ public class ReportController {
 			ActBean actBean = new ActBean();
 			actBean.setActID(referID);
 			ActBean actResult = actDAO.selectByActID(actBean);
-			System.out.println("Act detail: " + actResult.toString());
+//			System.out.println("Act detail: " + actResult.toString());
 			MemberBean memberResult = memberDAO.findByPK(actResult.getMemberID());
 			
 			Gson beanToJson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
@@ -185,7 +185,7 @@ public class ReportController {
 	@ResponseBody
 	public String reportProcess(String referID, String type, String caseID, String process) {
 		
-		System.out.println("referID: " + referID +", type: " + type + ", caseID: " + caseID);
+//		System.out.println("referID: " + referID +", type: " + type + ", caseID: " + caseID);
 		if(process.equals("accept")) {
 		if("comment".equals(type)) {
 			ReportBean reportBean = new ReportBean();
@@ -215,7 +215,7 @@ public class ReportController {
 			reportService.caseDeny(reportBean, referID);
 		}
 		
-		System.out.println("case deny");
+//		System.out.println("case deny");
 		return "process deny success";
 	}
 	
@@ -223,7 +223,7 @@ public class ReportController {
 			produces = {"application/json;charset=UTF-8"})
 	@ResponseBody
 	public String sendReport(String reportMember, String referID, String reportReason) {
-		System.out.println(reportMember + " - " + referID + " - " + reportReason);
+//		System.out.println(reportMember + " - " + referID + " - " + reportReason);
 		
 		ReportBean reportBean = new ReportBean();
 		reportBean.setMemberID(Integer.parseInt(reportMember));

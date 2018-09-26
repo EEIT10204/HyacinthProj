@@ -42,8 +42,8 @@ public class InviteYourFriendsController {
 		Gson JsonToBean = new GsonBuilder().create(); 
 		
 		MemberBean result = JsonToBean.fromJson(json, MemberBean.class);
-		System.out.println("result= " + result);
-		System.out.println("json= " + json);
+//		System.out.println("result= " + result);
+//		System.out.println("json= " + json);
 		
 		
 		List<MemberBean> result1 = membershipDAOHibernate.selectWhoIsMyFriend(result.getMemberID());

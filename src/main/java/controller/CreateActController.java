@@ -152,7 +152,7 @@ public class CreateActController {
 			
             List<TripBean> trip = tripDAOHibernate.select(actbean.getActSNum());		
             
-            System.out.println("trip=" +trip);
+//            System.out.println("trip=" +trip);
   	
    	
             ViewPointBean vbean;

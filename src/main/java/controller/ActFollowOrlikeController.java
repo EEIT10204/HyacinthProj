@@ -43,10 +43,10 @@ public class ActFollowOrlikeController {
 	public  MemberActBean method(@RequestBody String json, Model model,   BindingResult bindingResult, String select) {
 		Gson BeanToJson = new Gson();
 		Gson JsonToBean = new GsonBuilder().create();
-		System.out.println("json= " + json);
+//		System.out.println("json= " + json);
 		
 		MemberActBean result = JsonToBean.fromJson(json, MemberActBean.class);
-		System.out.println("result= " + result.toString());
+//		System.out.println("result= " + result.toString());
 		
 
 		 MemberActBean memberAct = memberActDAOHibernate.select(result);
@@ -55,16 +55,16 @@ public class ActFollowOrlikeController {
 		MemberActBean insert = memberActDAOHibernate.insert(result);
 	
 
-		System.out.println("insert= " + insert);
+//		System.out.println("insert= " + insert);
 		}else {
 			if(result.getIsAttend()== null) {
 				memberAct.setIsLike(result.getIsLike());
 				MemberActBean update1 = memberActDAOHibernate.update(memberAct);
-				System.out.println("update1= " + update1);
+//				System.out.println("update1= " + update1);
 			}if(result.getIsLike()== null) {
 				memberAct.setIsAttend(result.getIsAttend());
 				MemberActBean update2 = memberActDAOHibernate.update(memberAct);
-				System.out.println("update2= " + update2);
+//				System.out.println("update2= " + update2);
 			}
 			 
 
@@ -75,16 +75,15 @@ public class ActFollowOrlikeController {
 	
 	@RequestMapping(path={"/answerActReqController"})
 	@ResponseBody
-	public Map<String, String> answerActReq(@RequestParam String memberID, @RequestParam String lmi,@RequestParam String actSNum){
+	public Map<String, String> answerActReq(@RequestParam String lmi,@RequestParam String actSNum){
 		Map<String, String> status = new HashMap<>();
-		int intmemberID = Integer.parseInt(memberID);
 		int intlmi = Integer.parseInt(lmi);
 		int inactSNum = Integer.parseInt(actSNum);
 		MemberActBean bean = new MemberActBean();
 		bean.setActSNum(inactSNum);
 		bean.setIsAttend(true);
 		bean.setMemberID(intlmi);
-		bean.setIsLike(null);
+		bean.setIsLike(false);
 		memberActDAOHibernate.insert(bean);
 		status.put("status", "回覆活動邀請成功");
 		return status;

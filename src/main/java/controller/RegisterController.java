@@ -49,10 +49,10 @@ public class RegisterController {
 		//若無上傳個人照片  則 新增預設個人照
 		if (memberBean.getMemberPic().length == 0) {
 			String contexPath = request.getSession().getServletContext().getRealPath("/");
-			System.out.println(contexPath);
+//			System.out.println(contexPath);
 			File img = new File(contexPath + "/Images/Member/memberPic_default.png");
 			byte[] byteToDB = fileToByte(img);
-			System.out.println("photoByte[] : " + byteToDB);
+//			System.out.println("photoByte[] : " + byteToDB);
 			memberBean.setMemberPic(byteToDB);
 		}
 		
@@ -69,7 +69,7 @@ public class RegisterController {
 			subMemberDAO.insert(sub);
 		
 		
-		System.out.println("Controller" + bean);
+//		System.out.println("Controller" + bean);
 		model.addAttribute("user", bean);
 		
 		return "redirectIndex";
@@ -82,7 +82,7 @@ public class RegisterController {
 			bi = ImageIO.read(img);
 			ImageIO.write(bi, "jpg", baos);
 			bytes = baos.toByteArray();
-			System.err.println(bytes.length);
+//			System.err.println(bytes.length);
 			return bytes;
 		} catch (Exception e) {
 			e.printStackTrace();

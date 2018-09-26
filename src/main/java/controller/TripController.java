@@ -44,14 +44,14 @@ public class TripController {
 			String action) throws JsonParseException, JsonMappingException, IOException {
 		Gson BeanToJson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm").create();
 		Gson JsonToBean=  new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm").create();
-		System.out.println("jsonsave= " + jsonsave);
+//		System.out.println("jsonsave= " + jsonsave);
 		TripBean[] result = JsonToBean.fromJson(jsonsave, TripBean[].class);
 		
 		ObjectMapper mapper = new ObjectMapper(); 
 		TripBean[] tbean = mapper.readValue(jsonsave, TripBean[].class);
 		for( TripBean index : tbean ) {
 		
-			System.out.println(index); 
+//			System.out.println(index); 
 			 tripDAOHibernate.insert(index);
 		}
 		

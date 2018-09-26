@@ -36,8 +36,8 @@ public class ViewPointController {
 		Map<String,String> errors = new HashMap<String,String>();
 		
 		if("Select".equals(action)) {
-			System.out.println("Form bean: " + bean.toString());
-			System.out.println("pointname: " + bean.getViewPointName().equals(""));
+//			System.out.println("Form bean: " + bean.toString());
+//			System.out.println("pointname: " + bean.getViewPointName().equals(""));
 //|| !bean.getViewPointCity().equals(null) || !bean.getViewPointType().equals(null)
 				if((bean.getViewPointName()!= null && !"".equals(bean.getViewPointName())) || bean.getViewPointCity() != null || bean.getViewPointType() != null) {				
 					List<ViewPointBean> results = viewPointService.selectByCondition(bean);	
@@ -46,13 +46,13 @@ public class ViewPointController {
 				}
 				else{  //selectAll					
 					List<ViewPointBean> results = viewPointService.select(bean);	
-					System.out.println("select All: " + results.get(0).getViewPointAddress());
+//					System.out.println("select All: " + results.get(0).getViewPointAddress());
 					model.addAttribute("selectResult",results);
 					return "viewPoint.select";
 				}				
 		}
 		else if ("Insert".equals(action)) {
-			System.out.println("Insert controller bean: " + bean.toString());
+//			System.out.println("Insert controller bean: " + bean.toString());
 
 				if( bean.getViewPointName().length() == 0 || "".equals(bean.getViewPointName())) {					
 					errors.put("name", "請輸入名稱");			
@@ -72,7 +72,7 @@ public class ViewPointController {
 				
 				if(!errors.isEmpty()) {  //輸入資料有誤，回傳錯誤訊息
 					model.addAttribute("errors",errors);
-					System.out.println("hass errors: " + errors.size());
+//					System.out.println("hass errors: " + errors.size());
 					return "viewPoint.insert";	
 				}
 				else {  //輸入資料完整
@@ -111,7 +111,7 @@ public class ViewPointController {
 			
 			if(!errors.isEmpty()) {  //輸入資料有誤，回傳錯誤訊息
 				model.addAttribute("errors",errors);
-				System.out.println("has errors: " + errors.size());
+//				System.out.println("has errors: " + errors.size());
 				return "viewPoint.insert";	
 			}
 			else {  //輸入資料完整
@@ -146,7 +146,7 @@ public class ViewPointController {
 
 		ObjectMapper mapper = new ObjectMapper(); 
 		ViewPointBean vbean = mapper.readValue(jsonsearch, ViewPointBean.class);
-		System.out.println(vbean);
+//		System.out.println(vbean);
 		
 		if((vbean.getViewPointName()!= null && !"".equals(vbean.getViewPointName())) ||
 				 vbean.getViewPointCity() != null || vbean.getViewPointType() != null) {

@@ -78,10 +78,10 @@ public class MemberController {
 		}else {
 			if("".equals(page)!=true&&page.length()!=0) {
 				if("main".equals(page)) {
-					System.out.println(page);
+//					System.out.println(page);
 					model.addAttribute("page","main");
 				}else if("notice".equals(page)) {
-					System.out.println(page);
+//					System.out.println(page);
 					model.addAttribute("page","notice");
 				}
 			}

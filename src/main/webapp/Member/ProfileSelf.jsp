@@ -402,7 +402,7 @@
 										            <span id="timeshow">${noticeFirst.noticeTime}</span>
 										            <div id="buttonStatus${loop.count}" style="display: inline-block;">
 										            <button class="btn btn-primary btn-sm " data-toggle="modal" data-target="#getActPreview" onclick="previewAct(${noticeFirst.actSNum})">預覽</button>
-										            <button id="confirmButton${loop.count}" type="button" onclick="friendAccept(${noticeFirst.memberID_Sender},${noticeFirst.memberID_Receiver})" class="btn btn-success btn-sm">接受</button>
+										            <button id="confirmButton${loop.count}" type="button" onclick="ActAccept(${noticeFirst.memberID_Receiver},${noticeFirst.actSNum})" class="btn btn-success btn-sm">參加</button>
 										            <button id="rejectButton${loop.count}" type="button" class="btn btn-danger btn-sm ">拒絕</button>
 	             									</div>
 	             								</div>
@@ -483,13 +483,13 @@ function reloadOnce() {
 //      alert("回覆失敗")
     })
    }
-function ActAccept(senderID, receiverID , actSNum){
+function ActAccept(receiverID , actSNum){
 // 	    alert(senderID + ' - ' +receiverID);
 	    var buttonId = event.target.id; //當下按鈕ID
 	    var str = buttonId
 	    var laststr =str.substring(str.length-1,str.length)
 	    closeButtonId = 'closeButton' + laststr
-	    $.getJSON("${pageContext.request.contextPath}/answerActReqController",{"memberID":senderID,"lmi":receiverID,"actSNum":actSNum},function(data){
+	    $.getJSON("${pageContext.request.contextPath}/answerActReqController",{"lmi":receiverID,"actSNum":actSNum},function(data){
 // 	     alert(data.status)
 	     if(data.status=="回覆活動邀請成功"){
 	   var c = document.getElementById(buttonId).parentNode.id //當下按鈕找父層ID

@@ -104,7 +104,7 @@ public class ActDisplayController {
 		 if(followerAttenders[1] != null) {
 			 
 			 Long attenders = (Long)followerAttenders[1];
-			System.out.println("attenders="+attenders);
+//			System.out.println("attenders="+attenders);
 			 model.addAttribute("attendNum", attenders);
 		 }
 		 
@@ -163,8 +163,8 @@ public class ActDisplayController {
 			@RequestParam("actSNum")Integer actSNum,
 			Model model,ACCommentBean bean,BindingResult bindingResult, @SessionAttribute(name="user" ,required=false) MemberBean memberBean
 			) {
-		System.out.println(actSNum);
-		System.out.println("run commet: " + bean.toString());
+//		System.out.println(actSNum);
+//		System.out.println("run commet: " + bean.toString());
 		ACCommentBean result = aCCommentService.insert(bean);
 		List<Object[]> InsertComment = aCCommentService.selectActSNumMeberIdJoin(actSNum);
         
@@ -267,15 +267,15 @@ public class ActDisplayController {
 	public String method2(Integer actSNum,Integer memberID,Model model,
 			ACCommentBean bean,BindingResult bindingResult, @SessionAttribute(name="user" ,required=false) MemberBean memberBean) {
 		ACCommentBean result = aCCommentService.update(bean);
-		System.out.println("beanid="+bean.getACCommentID());
+//		System.out.println("beanid="+bean.getACCommentID());
 //		System.out.println("bean="+bean);
-		System.out.println("blogSNum="+actSNum);
-		System.out.println("memberID="+memberID);
-		System.out.println("result="+result);
+//		System.out.println("blogSNum="+actSNum);
+//		System.out.println("memberID="+memberID);
+//		System.out.println("result="+result);
 //		model.addAttribute("update",result);
 		
 		List<Object[]> beans = aCCommentService.selectActSNumMeberIdJoin(actSNum);
-		System.out.println("beans="+beans);
+//		System.out.println("beans="+beans);
 		model.addAttribute("ACComment",beans);
 		
 	////////////////////////////////
