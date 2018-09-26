@@ -245,10 +245,10 @@ public class BlogPage1Controller {
 //		System.out.println("beanAsideHot = " + beanAsideHot);
 //		System.out.println("beanAsideNew = " + beanAsideNew);
 		
-		for(Object[] beanMain1:beanMain) {
-			System.out.println("test22 = "+((BlogBean)beanMain1[0]).getBlogCover());
-			
-		}
+//		for(Object[] beanMain1:beanMain) {
+//			System.out.println("test22 = "+((BlogBean)beanMain1[0]).getBlogCover());
+//			
+//		}
 		
 		
 		
