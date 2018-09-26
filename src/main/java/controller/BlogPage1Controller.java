@@ -217,7 +217,7 @@ public class BlogPage1Controller {
 			return "BlogMember";	
 		}
 		
-	//BlogIndex用-----------------------------------------------------------
+	//BlogIndex用   圖片問題未解-----------------------------------------------------------
 	@RequestMapping(path= {"/Blog/BlogIndex.controller"})
 	public String forSubmit(//String傳入使用
 //			BlogBean bean,BindingResult bindingResult,
@@ -237,13 +237,20 @@ public class BlogPage1Controller {
 //			System.out.println((BlogBean)beanAsideHot1[0]);
 //		}
 		for(Object[] beanAsideHot1:beanAsideHot) {
-		System.out.println(((BlogBean)beanAsideHot1[0]).getBlogView());
+		System.out.println("test = "+((BlogBean)beanAsideHot1[0]).getBlogCoverToBase64());
 	}
 		for(Object[] beanAsideNew1:beanAsideNew) {
 			System.out.println(((BlogBean)beanAsideNew1[0]).getBlogReleaseTime());
 		}
 //		System.out.println("beanAsideHot = " + beanAsideHot);
 //		System.out.println("beanAsideNew = " + beanAsideNew);
+		
+		for(Object[] beanMain1:beanMain) {
+			System.out.println("test22 = "+((BlogBean)beanMain1[0]).getBlogCover());
+			
+		}
+		
+		
 		
 		model.addAttribute("result", beanMain);
 		model.addAttribute("result2", beanAsideHot);

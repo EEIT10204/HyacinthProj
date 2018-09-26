@@ -528,41 +528,41 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC1" href="#"><img id="navA1" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/taipei1.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/taipei1.jpg"
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
-								<a id="navB1" href="#" class="a1 urlC1">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB1" href="#" class="a1 urlC1">2018 跨年哪兒過？ 六個台灣跨年景點大盤點</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
 								<a  class="urlC2" href="#"><img id="navA2" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/taipei1.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/taipei2.jpg"
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
-								<a id="navB2" href="#" class="a1 urlC2">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB2" href="#" class="a1 urlC2">親子旅遊週末就出發！特色親子行程、住宿，看這篇就對了！</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC3" href="#"><img id="navA3" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/taipei3.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/taipei3.jpg"
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
-								<a id="navB3" href="#" class="a1 urlC3">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB3" href="#" class="a1 urlC3">不一樣的台北之旅 台北公共單車一日遊攻略</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC4" href="#"><img id="navA4" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/taipei4.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/taipei4.jpg"
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
-								<a id="navB4" href="#" class="a1 urlC4">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB4" href="#" class="a1 urlC4">【台灣】台北實用基本資訊，交通、必去、WIFI、電壓、旅遊須知一次搞定</a>
 							</div>
 						</div>
 					</div>
@@ -604,41 +604,41 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC5" href="#"><img id="navA5" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan1.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/japan1.jpg"
 									alt="japan1">
 							</div>
 							<div class="div4">
-								<a id="navB5" href="#" class="a1 urlC5">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB5" href="#" class="a1 urlC5">【日本】關西廣域JR Pass交通攻略，省錢玩京都、大阪、岡山</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC6" href="#"><img id="navA6" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan2.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/japan2.jpg"
 									alt="japan2">
 							</div>
 							<div class="div4">
-								<a id="navB6" href="#" class="a1 urlC6">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB6" href="#" class="a1 urlC6">【日本環球影城】2019冬季再狂歡，環球奇幻聖誕節 x 2019跨年倒數派對</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC7" href="#"><img id="navA7" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan3.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/japan3.jpg"
 									alt="japan3">
 							</div>
 							<div class="div4">
-								<a id="navB7" href="#" class="a1 urlC7">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB7" href="#" class="a1 urlC7">【日本】鎌倉、江之島一日遊攻略：行程規劃、交通、必去景點</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="urlC8" class="div3">
 								<a href="#"><img id="navA8" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/japan4.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/japan4.jpg"
 									alt="japan4">
 							</div>
 							<div class="div4">
-								<a id="navB8" href="#" class="a1 urlC8">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB8" href="#" class="a1 urlC8">【日本】五大京都和服推薦店家，和服經典特色、樣式、套餐價錢及交通資訊全都整理給你！</a>
 							</div>
 						</div>
 					</div>
@@ -679,41 +679,41 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC9" href="#"><img id="navA9" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea1.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/korea1.jpg"
 									alt="korea1">
 							</div>
 							<div class="div4">
-								<a id="navB9" href="#" class="a1 urlC9">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB9" href="#" class="a1 urlC9">【韓國】南怡島一日遊攻略：交通資訊、ITX青春列車、票價、小法國村</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC10" href="#"><img id="navA10" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea2.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/korea2.jpg"
 									alt="korea2">
 							</div>
 							<div class="div4">
-								<a id="navB10" href="#" class="a1 urlC10" >尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB10" href="#" class="a1 urlC10" >【韓國】首爾CP值最高5大韓服租借店家推薦：景福宮、仁寺洞</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC11" href="#"><img id="navA11" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea3.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/korea3.jpg"
 									alt="korea3">
 							</div>
 							<div class="div4">
-								<a id="navB11" href="#" class="a1 urlC11">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB11" href="#" class="a1 urlC11">【韓國】2018釜山自由行攻略：行程規劃、推薦景點、交通教學、住宿建議</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC12" href="#"><img id="navA12" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/korea4.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/korea4.jpg"
 									alt="korea4">
 							</div>
 							<div class="div4">
-								<a id="navB12" href="#" class="a1 urlC12 ">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB12" href="#" class="a1 urlC12 ">【韓國】首爾五大必看表演秀推薦：亂打秀、猛男秀、塗鴉秀、拌飯秀</a>
 							</div>
 						</div>
 					</div>
@@ -754,41 +754,41 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC13" href="#"><img id="navA13" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/us1.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/us1.jpg"
 									alt="us1">
 							</div>
 							<div class="div4">
-								<a id="navB13" href="#" class="a1 urlC13">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB13" href="#" class="a1 urlC13">【美國】洛杉磯交通網整理，機場交通、廂型車共乘方式、市區Metro地鐵、公車、TAP購票方式通通告訴你！</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
 								<a  class="urlC14" href="#"><img id="navA14" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/us2.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/us2.jpg"
 									alt="us2">
 							</div>
 							<div class="div4">
-								<a id="navB14" href="#" class="a1 urlC14">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB14" href="#" class="a1 urlC14">【美國】洛杉磯基本資訊攻略，航班、簽證、SIM卡、緊急聯絡整理</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC15" href="#"><img id="navA15" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/us3.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/us3.jpg"
 									alt="us3">
 							</div>
 							<div class="div4">
-								<a id="navB15" href="#" class="a1 urlC15">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB15" href="#" class="a1 urlC15">【美國】紐約地鐵一次就上手，MetroCard票種、機場巴士、市區地鐵、公車和渡輪一篇搞定！</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC16" href="#"><img id="navA16" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/us4.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/us4.jpg"
 									alt="us4">
 							</div>
 							<div class="div4">
-								<a id="navB16" href="#" class="a1 urlC16">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB16" href="#" class="a1 urlC16">【美國】勇闖惡魔島！舊金山必訪景點，惡魔島購票、交通、必看景點總攻略</a>
 							</div>
 						</div>
 					</div>
@@ -828,41 +828,41 @@ hr {
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC17" href="#"><img id="navA17" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany1.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/germany1.jpg"
 									alt="germany1">
 							</div>
 							<div class="div4">
-								<a id="navB17" href="#" class="a1 urlC17">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB17" href="#" class="a1 urlC17">【德國】迪士尼城堡的原型！慕尼黑郊區必去新天鵝堡攻略：交通、周邊景點整理推薦</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC18" href="#"><img id="navA18" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany2.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/germany2.jpg"
 									alt="germany2">
 							</div>
 							<div class="div4">
-								<a id="navB18" href="#" class="a1 urlC18">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB18" href="#" class="a1 urlC18">【德國】慕尼黑自由行全攻略，啤酒節、新天鵝堡、國王湖，四天三夜行程安排、交通、景點整理</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC19" href="#"><img id="navA19" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany3.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/germany3.jpg"
 									alt="germany3">
 							</div>
 							<div class="div4">
-								<a id="navB19" href="#" class="a1 urlC19">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB19" href="#" class="a1 urlC19">柏林購物指南，必逛平價超市、特色市集、獨立書店整理</a>
 							</div>
 						</div>
 						<div class="div2">
 							<div class="div3">
 								<a class="urlC20" href="#"><img id="navA20" class="div3"
-<%-- 									src="${pageContext.request.contextPath}/Images/Blog/germany4.jpg" --%>
+									src="${pageContext.request.contextPath}/Images/Blog/germany4.jpg"
 									alt="germany4">
 							</div>
 							<div class="div4">
-								<a id="navB20" href="#" class="a1 urlC20">尚未有相關的網誌，<br>歡迎您分享旅遊經驗。</a>
+								<a id="navB20" href="#" class="a1 urlC20">藝術之旅，教你怎麼參觀三大美術館：羅浮宮、奧塞美術館、龐畢度藝術中心（附上票券整理和鎮店之寶）</a>
 							</div>
 						</div>
 					</div>
@@ -1306,24 +1306,24 @@ hr {
 							var member = "${user.memberID}"; 
 // 							alert('member= ' +  member);
 							
-							var nav = ["台北","台中","台南","高雄","東京","大阪","沖繩","北海道","首爾","釜山","大邱","濟州島","紐約","洛杉磯","舊金山","邁阿密","柏林","漢堡","慕尼黑","法蘭克福"]; 
-							var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
-							var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
-							 $.getJSON('${pageContext.request.contextPath}/Blog/BlogIndexNav.controller',function(jsonNav){
-// 								 		alert(JSON.stringify(jsonNav));
-									 $.each(jsonNav,function(idx,navProduct){
-// 										 alert(idx+"====="+navProduct.blogTitle);
-										 for(var i = 1;i<=20;i++){
-										 if(navProduct.blogCity==nav[i-1]){
-											    $('.urlC'+(i)).attr("href",path+navProduct.blogSNum);
-												$('#navA'+(i)).attr("src","data:image/png;base64,"+navProduct.blogCover);
-												$('#navB'+(i)).html(navProduct.blogTitle);
-												$('.link'+(i)).attr("href",path2+navProduct.blogCity);
-										 }
-										 }
+// 							var nav = ["台北","台中","台南","高雄","東京","大阪","沖繩","北海道","首爾","釜山","大邱","濟州島","紐約","洛杉磯","舊金山","邁阿密","柏林","漢堡","慕尼黑","法蘭克福"]; 
+// 							var path2 = "<c:url value='/Blog/BlogIndex.controller'><c:param name='search' value=""/></c:url>"; 
+// 							var path = "<c:url value='/Blog/BlogMember.controller'><c:param name='blogSNum' value=""/></c:url>";
+// 							 $.getJSON('${pageContext.request.contextPath}/Blog/BlogIndexNav.controller',function(jsonNav){
+// // 								 		alert(JSON.stringify(jsonNav));
+// 									 $.each(jsonNav,function(idx,navProduct){
+// // 										 alert(idx+"====="+navProduct.blogTitle);
+// 										 for(var i = 1;i<=20;i++){
+// 										 if(navProduct.blogCity==nav[i-1]){
+// 											    $('.urlC'+(i)).attr("href",path+navProduct.blogSNum);
+// 												$('#navA'+(i)).attr("src","data:image/png;base64,"+navProduct.blogCover);
+// 												$('#navB'+(i)).html(navProduct.blogTitle);
+// 												$('.link'+(i)).attr("href",path2+navProduct.blogCity);
+// 										 }
+// 										 }
 										
-									 });
-								 });
+// 									 });
+// 								 });
 
 							//Change 6FORM
 							if ('${result}' != "") {
