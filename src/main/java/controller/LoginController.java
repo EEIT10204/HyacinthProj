@@ -1,21 +1,23 @@
 package controller;
 
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.util.HashMap;
-import java.util.List;
+
+import javax.imageio.ImageIO;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.bind.support.SessionStatus;
-import org.springframework.web.servlet.ModelAndView;
 
 import model.MemberBean;
+import model.MemberDAO;
 import model.MemberService;
-import model.NoticeBean;
 import model.NoticeService;
 import model.SubMemberBean;
 import model.SubMemberDAO;
@@ -29,6 +31,8 @@ public class LoginController {
 	NoticeService noticeService;
 	@Autowired
 	SubMemberDAO subMemberDAO;
+	@Autowired
+	MemberDAO membeDAO;
 	
 	@RequestMapping(path = { "LoginController" })
 	public String login(Model model, String memberAccount, String memberPwd) {
@@ -59,13 +63,63 @@ public class LoginController {
 	}
 	
 	
-	@RequestMapping(path = { "FBLoginController" })
-	public String FBlogin(Model model, String userInfo) {
+	@RequestMapping(path = { "/fbController" })
+	public String FBlogin( HttpServletRequest request , @RequestParam String fbToken , @RequestParam String memberMail , @RequestParam String memberName ,Model model) throws Exception {
 		System.out.println("run FBLoginController");
-		System.out.println(userInfo);
+		if(membeDAO.findByfbToken(fbToken)==null) {
+			MemberBean mem = new MemberBean();
+			mem.setFbToken(fbToken);
+			mem.setMemberMail(memberMail);
+			mem.setMemberName(memberName);
+			mem.setMemberHierachy("Uncertified");
+			mem.setMemberAccount("FB");
+			mem.setMemberPwd("qwe123");
+			mem.setMemberPic(null);
+			MemberBean bean = memberService.register(mem);
+			if (bean.getMemberPic() ==null) {
+				String contexPath = request.getSession().getServletContext().getRealPath("/");
+				System.out.println(contexPath);
+				File img = new File(contexPath + "/Images/Member/memberPic_default.png");
+				byte[] byteToDB = fileToByte(img);
+				System.out.println("photoByte[] : " + byteToDB);
+				bean.setMemberPic(byteToDB);
+			}
+			//新增預設MemberCover 
+			SubMemberBean sub = new SubMemberBean();
+			sub.setMemberID(bean.getMemberID());
+			String contexPath = request.getSession().getServletContext().getRealPath("/");
+			File img = new File(contexPath+"/Images/Member/memberCover_default.jpg");
+			byte[] CoverToDB = fileToByte(img);
+			sub.setMemberCover(CoverToDB);
+			subMemberDAO.insert(sub);
+			model.addAttribute("user",bean);
+			return "success";
+		}else {
+			model.addAttribute("user",membeDAO.findByfbToken(fbToken));
+			return "success";
+		}
 		
-		return userInfo;
 		
+		
+		
+	}
+	
+	static byte[] bytes;
+	public static byte[] fileToByte(File img) throws Exception {
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		try {
+			BufferedImage bi;
+			bi = ImageIO.read(img);
+			ImageIO.write(bi, "jpg", baos);
+			bytes = baos.toByteArray();
+			System.err.println(bytes.length);
+			return bytes;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			baos.close();
+		}
+		return bytes;
 	}
 	
 }

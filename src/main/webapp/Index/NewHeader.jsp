@@ -27,8 +27,61 @@ html, body {
 </style>
 </head>
 <body>
+<div id="fb-root"></div>
+<script>
+		function checkLoginState() {
+		    FB.getLoginStatus(function(response) {
+		      statusChangeCallback(response);
+		    });
+		 }
+		function statusChangeCallback(response) {
+		    console.log('statusChangeCallback');
+		    console.log(response);
+		    // The response object is returned with a status field that lets the
+		    // app know the current login status of the person.
+		    // Full docs on the response object can be found in the documentation
+		    // for FB.getLoginStatus().
+		    if (response.status === 'connected') {
+		      // Logged into your app and Facebook.
+		      GoToBack();
+		    } 
+		  }
 
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '301047760708850',
+		      cookie     : true,  // enable cookies to allow the server to access 
+		                          // the session
+		      xfbml      : true,  // parse social plugins on this page
+		      version    : 'v3.1' 
+		    });
 
+  };
+  
+(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v3.1&appId=301047760708850&autoLogAppEvents=1";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+	  // Here we run a very simple test of the Graph API after login is
+	  // successful.  See statusChangeCallback() for when this call is made.
+	  function GoToBack() {
+	    FB.api('/me','GET', { "fields": "id,name,email" }, function (response) {
+	    	console.log('Successful login for: ' + response.name);
+		      console.log('Successful login for: ' + response.id);
+		      console.log('Successful login for: ' + response.email);
+	      $.post("${pageContext.request.contextPath}/fbController",{"fbToken":response.id,"memberName":response.name,"memberMail":response.email},function(data){
+	    	  if(data!=null){
+	    		  window.location.reload();
+	    	  }
+	      })
+	      
+	    });
+	  }
+</script>
 <nav class="navbar navbar-expand-md bg-light navbar-light" style="border-radius:10px;">
     <a href="${pageContext.request.contextPath}/Index/Index.jsp"><img class="navbar-brand" src='<c:url value="/Images/Index/Logo.png"/>' width="250px" height="70px"/></a>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
@@ -114,8 +167,8 @@ html, body {
 					        <input type="password" id="inputPassword" name="memberPwd"
 					      		   class="form-control" placeholder="Password" >
 					      	<hr>
-					      	
-					      	
+					      	<div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState();" scope="public_profile,email"></div>
+					      	<hr>		      	
 					        <div id="errormessage"></div>
 					        <hr/>
 					        <button id="loginButton" class="btn btn-sm btn-primary btn-block" type="submit" style="width: 80%; margin: auto;">登入</button>
@@ -258,8 +311,7 @@ $('#navSerach').click(function(event) {
 						$('#HomeNav').html("<a class='dropdown-item' href='<c:url value='/Index/Index.jsp'/>'>回首頁</a><a class='dropdown-item' href='<c:url value='/Console/ViewPointManage.jsp'/>'>景點管理</a><a class='dropdown-item' href='<c:url value='/Console/Console.jsp'/>'>檢舉管理</a>");	
 						$('#spanNoticeCount1').text(data.count);
 					}else if( '${user.memberID}' != ""){
-
-						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}//ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID}&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a style='text-decoration:none;color:black' href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
+						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID}&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a style='text-decoration:none;color:black' href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
 						);
 						$('#noticeNav').html("<li class='nav-item dropdown '><a class='nav-link' href='<c:url value='/ProfilePageGet?memberID=${user.memberID}&lmi=${user.memberID}&page=notice'/>'  style='margin:5px 5px 5px 0px;'><i class='far fa-envelope' style='font-size:36px'></i><span id='noticeCount' class='badge' style='position: absolute;top: 5px;right: 0px;padding: 4px 8px;border-radius: 50%;background: red;color: white;'>"+data.count+"</span></a></li>");
 						$('#blogNav').html("<a class='dropdown-item' href='<c:url value='/Blog/BlogIndex.jsp'/>'>網誌首頁</a><a class='dropdown-item' href='<c:url value='/Blog/BlogNew.jsp'/>'>新增網誌</a>")
@@ -267,7 +319,6 @@ $('#navSerach').click(function(event) {
 						$('#spanNoticeCount1').text(data.count);				
 		    		}
 		    	}else if (data.status=="NoNewNoticeList"){
-// 		    		alert("無新訊息")
 		    		if('${user.memberHierachy}'=='Admin'){
 						$('#memberNav').html("<button class='dropdown-item' type='button'><a href='${pageContext.request.contextPath}/ProfilePageGet?memberID=${user.memberID }&lmi=${user.memberID }&page=main' style='text-decoration:none;color:black'>個人首頁</a></button><a style='text-decoration:none;color:black' href='${pageContext.request.contextPath}/LogoutController'><button id='logoutButton' class='dropdown-item'>登出</button></a></div>"
 						);

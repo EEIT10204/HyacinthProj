@@ -172,4 +172,12 @@ public class MemberDAOHibernate implements MemberDAO{
 	  
 	 }
 
+	@Override
+	public MemberBean findByfbToken(String fbToken) {
+		return this.getSession()
+				  .createQuery("from MemberBean where fbToken=:fbToken", MemberBean.class)
+				  .setParameter("fbToken", fbToken)
+				  .uniqueResult();
+				  
+	}
 }

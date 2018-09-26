@@ -13,4 +13,5 @@ public interface MemberDAO {
 	public abstract MemberBean updateHierachy(Integer memberID,String memberHierachy);
 	public abstract boolean delete(Integer memberID);
 	public abstract MemberBean findByMail(String memberMail);
+	public abstract MemberBean findByfbToken(String fbToken);
 }

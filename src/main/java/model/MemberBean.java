@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -88,6 +89,7 @@ create table member
 	private String googleToken;
 	private String memberHierachy;
 	private String memberCertify;
+	private String fbToken;
 	
 //-------------------------------------------
 	@Override
@@ -198,4 +200,12 @@ create table member
 		this.memberCertify = memberCertify;
 	}
 
+	public String getFbToken() {
+		return fbToken;
+	}
+
+	public void setFbToken(String fbToken) {
+		this.fbToken = fbToken;
+	}
+	
 }
