@@ -602,7 +602,7 @@ $( document ).ready(function() {
 		var reportReason = $('#reportReason').val();
 		var reportMember = $('#reportMember').val();
 		var referID = $('#reportReferID').val();
-// 		alert(reportReason + '-' + reportMember + '-' + referID);
+		alert(reportReason + '-' + reportMember + '-' + referID);
 		
 		$.ajax({
 			type : "get",
@@ -611,7 +611,7 @@ $( document ).ready(function() {
 			contentType: "application/json; charset=utf-8",
 			dataType: "text",
 			success: function (data) {
-// 					alert(data);
+					alert(data);
 			swal({
 			  type: 'success',
 			  title: '檢舉成功',
@@ -634,7 +634,7 @@ $( document ).ready(function() {
 </script>
 <script type="text/javascript">
 function inviteFriend(){
-	alert(event.target.id);
+// 	alert(event.target.id);
 	var c = event.target.id
     var d = c.substring(6);
 	var e ="button"+d
