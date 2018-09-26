@@ -1011,7 +1011,7 @@ margin-top:10px;
 						<div class="div2">
 							<div class="div3">
 								<a  class="urlC2" href="#"><img id="navA2" class="div3"
-									src="${pageContext.request.contextPath}/Images/Blog/taipei1.jpg"
+									src="${pageContext.request.contextPath}/Images/Blog/taipei2.jpg"
 									alt="taipei1"></a>
 							</div>
 							<div class="div4">
@@ -1739,7 +1739,7 @@ margin-top:10px;
 								</div>
 								<div class="divT4">
 									<a id="changeAsideTitleDate1" href="#" class="a1 urlA1"></a>
-									<div id="changeAsideViewsDate1" class="divText">2018-8-8</div>
+									<div id="changeAsideViewsDate1" class="divText"></div>
 								</div>
 							</div>
 
@@ -1755,7 +1755,7 @@ margin-top:10px;
 								</div>
 								<div class="divT4">
 									<a id="changeAsideTitleDate2" href="#" class="a1 urlA2"></a>
-									<div id="changeAsideViewsDate2" class="divText">2018-8-8</div>
+									<div id="changeAsideViewsDate2" class="divText"></div>
 								</div>
 							</div>
 
@@ -1771,7 +1771,7 @@ margin-top:10px;
 								</div>
 								<div class="divT4">
 									<a id="changeAsideTitleDate3" href="#" class="a1 urlA3"></a>
-									<div id="changeAsideViewsDate3" class="divText">2018-8-8</div>
+									<div id="changeAsideViewsDate3" class="divText"></div>
 								</div>
 							</div>
 
@@ -1788,7 +1788,7 @@ margin-top:10px;
 								<div class="divT4">
 
 									<a id="changeAsideTitleDate4" href="#" class="a1 urlA4"></a>
-									<div id="changeAsideViewsDate4" class="divText">2018-8-8</div>
+									<div id="changeAsideViewsDate4" class="divText"></div>
 								</div>
 							</div>
 						</div>

@@ -937,17 +937,17 @@ hr {
 							</a>
 						</div>		
 						<div class="divAS12">
-							<a id="changeNation1" href="#" class="a1 border1 distance">亞洲</a>
-							<span class="a1 border1 distance">瀏覽次數(<span id="changeViews1">999</span>)</span> 
-							<a id="changeCity1" href="#" class="a1 distance">台灣</a>
+							<a id="changeNation1" href="#" class="a1 border1 distance"></a>
+							<span class="a1 border1 distance">瀏覽次數(<span id="changeViews1"></span>)</span> 
+							<a id="changeCity1" href="#" class="a1 distance"></a>
 						</div>
 						<div class="divAS13">
 							<a id="changeTitle1" href="#" class="a1 url1"></a>
 						</div>
 						<div class="divAS14">
-							<span id="changeDate1" class="border1 distance">2018-09-28</span>
+							<span id="changeDate1" class="border1 distance"></span>
 							<span class="distance">by</span> 
-							<a id="changeMember1" href="#" class="a1 ">Kobe</a>
+							<a id="changeMember1" href="#" class="a1 "></a>
 						</div>
 						<div class="divAS15">
 							<a class="url1" href="#"><button type="button" class="btn btn-info a2">閱讀全文</button></a>
@@ -961,17 +961,17 @@ hr {
 							</a>
 						</div>
 						<div class="divAS12">
-							<a id="changeNation3" href="#" class="a1 border1 distance">亞洲</a>
+							<a id="changeNation3" href="#" class="a1 border1 distance"></a>
 							<span class="a1 border1 distance">瀏覽次數(<span
-								id="changeViews3" href="#">999</span>)
-							</span> <a id="changeCity3" href="#" class="a1 distance">台灣</a>
+								id="changeViews3" href="#"></span>)
+							</span> <a id="changeCity3" href="#" class="a1 distance"></a>
 						</div>
 						<div class="divAS13">
 							<a id="changeTitle3" href="#" class="a1 url3"></a>
 						</div>
 						<div class="divAS14">
-							<span id="changeDate3" class="border1 distance">2018-09-28</span>
-							<span class="distance">by</span> <span id="changeMember3" class="a1 ">Kobe</span>
+							<span id="changeDate3" class="border1 distance"></span>
+							<span class="distance">by</span> <span id="changeMember3" class="a1 "></span>
 						</div>
 						<div class="divAS15">
 							<a class="url3" href="#"><button type="button" class="btn btn-info a2">閱讀全文</button></a>
@@ -984,18 +984,18 @@ hr {
 							</a>
 						</div>
 						<div class="divAS12">
-							<a id="changeNation5" href="#" class="a1 border1 distance">亞洲</a>
+							<a id="changeNation5" href="#" class="a1 border1 distance"></a>
 							<span class="a1 border1 distance">瀏覽次數(<span
-								id="changeViews5" href="#">999</span>)
-							</span> <a id="changeCity5" href="#" class="a1 distance">台灣</a>
+								id="changeViews5" href="#"></span>)
+							</span> <a id="changeCity5" href="#" class="a1 distance"></a>
 						</div>
 						<div class="divAS13">
 							<a id="changeTitle5" href="#" class="a1 url5"></a>
 						</div>
 						<div class="divAS14">
-							<span id="changeDate5" class="border1 distance">2018-09-28</span>
+							<span id="changeDate5" class="border1 distance"></span>
 							<span class="distance">by</span> <a id="changeMember5" href="#"
-								class="a1 ">Kobe</a>
+								class="a1 "></a>
 						</div>
 						<div class="divAS15">
 							<a class="url5" href="#"><button type="button" class="btn btn-info a2">閱讀全文</button></a>
@@ -1009,18 +1009,18 @@ hr {
 							</a>
 						</div>
 						<div class="divAS12">
-							<a id="changeNation2" href="#" class="a1 border1 distance">亞洲</a>
+							<a id="changeNation2" href="#" class="a1 border1 distance"></a>
 							<span class="a1 border1 distance">瀏覽次數(<span
-								id="changeViews2" href="#">999</span>)
-							</span> <a id="changeCity2" href="#" class="a1 distance">台灣</a>
+								id="changeViews2" href="#"></span>)
+							</span> <a id="changeCity2" href="#" class="a1 distance"></a>
 						</div>
 						<div class="divAS13">
 							<a id="changeTitle2" href="#" class="a1 url2"></a>
 						</div>
 						<div class="divAS14">
-							<span id="changeDate2" class="border1 distance">2018-09-28</span>
+							<span id="changeDate2" class="border1 distance"></span>
 							<span class="distance">by</span> <a id="changeMember2" href="#"
-								class="a1 ">Kobe</a>
+								class="a1 "></a>
 						</div>
 						<div class="divAS15">
 							<a class="url2" href="#"><button type="button" class="btn btn-info a2">閱讀全文</button></a>
@@ -1032,18 +1032,18 @@ hr {
 							</a>
 						</div>
 						<div class="divAS12">
-							<a id="changeNation4" href="#" class="a1 border1 distance">亞洲</a>
+							<a id="changeNation4" href="#" class="a1 border1 distance"></a>
 							<span class="a1 border1 distance">瀏覽次數(<span
-								id="changeViews4" href="#">999</span>)
-							</span> <a id="changeCity4" href="#" class="a1 distance">台灣</a>
+								id="changeViews4" href="#"></span>)
+							</span> <a id="changeCity4" href="#" class="a1 distance"></a>
 						</div>
 						<div class="divAS13">
 							<a id="changeTitle4" href="#" class="a1 url4"></a>
 						</div>
 						<div class="divAS14">
-							<span id="changeDate4" class="border1 distance">2018-09-28</span>
+							<span id="changeDate4" class="border1 distance"></span>
 							<span class="distance">by</span> <a id="changeMember4" href="#"
-								class="a1 ">Kobe</a>
+								class="a1 "></a>
 						</div>
 						<div class="divAS15">
 							<a class="url4" href="#"><button type="button" class="btn btn-info a2">閱讀全文</button></a>
@@ -1056,18 +1056,18 @@ hr {
 							</a>
 						</div>
 						<div class="divAS12">
-							<a id="changeNation6" href="#" class="a1 border1 distance">亞洲</a>
+							<a id="changeNation6" href="#" class="a1 border1 distance"></a>
 							<span class="a1 border1 distance">瀏覽次數(<span
-								id="changeViews6" href="#">999</span>)
-							</span> <a id="changeCity6" href="#" class="a1 distance">台灣</a>
+								id="changeViews6" href="#"></span>)
+							</span> <a id="changeCity6" href="#" class="a1 distance"></a>
 						</div>
 						<div class="divAS13">
 							<a id="changeTitle6" href="#" class="a1 url6"></a>
 						</div>
 						<div class="divAS14">
-							<span id="changeDate6" class="border1 distance">2018-09-28</span>
+							<span id="changeDate6" class="border1 distance"></span>
 							<span class="distance">by</span> <a id="changeMember6" href="#"
-								class="a1 ">Kobe</a>
+								class="a1 "></a>
 						</div>
 						<div class="divAS15">
 							<a class="url6" href="#"><button type="button" class="btn btn-info a2">閱讀全文</button></a>
@@ -1167,7 +1167,7 @@ hr {
 							</div>
 							<div class="divT4">
 								<a id="changeAsideTitleDate1" href="#" class="a1 urlA1"></a>
-								<div id="changeAsideViewsDate1" class="divText">2018-8-8</div>
+								<div id="changeAsideViewsDate1" class="divText"></div>
 							</div>
 						</div>
 
@@ -1182,7 +1182,7 @@ hr {
 							</div>
 							<div class="divT4">
 								<a id="changeAsideTitleDate2" href="#" class="a1 urlA2"></a>
-								<div id="changeAsideViewsDate2" class="divText">2018-8-8</div>
+								<div id="changeAsideViewsDate2" class="divText"></div>
 							</div>
 						</div>
 
@@ -1197,7 +1197,7 @@ hr {
 							</div>
 							<div class="divT4">
 								<a id="changeAsideTitleDate3" href="#" class="a1 urlA3"></a>
-								<div id="changeAsideViewsDate3" class="divText">2018-8-8</div>
+								<div id="changeAsideViewsDate3" class="divText"></div>
 							</div>
 						</div>
 
@@ -1213,7 +1213,7 @@ hr {
 							<div class="divT4">
 							
 								<a id="changeAsideTitleDate4" href="#" class="a1 urlA4"></a>
-								<div id="changeAsideViewsDate4" class="divText">2018-8-8</div>
+								<div id="changeAsideViewsDate4" class="divText"></div>
 							</div>
 						</div>
 					</div>
