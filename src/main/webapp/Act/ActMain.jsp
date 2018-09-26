@@ -228,7 +228,7 @@ $( function() {
 						<div class="aa3"><a href="" id="ActM3"><button type="button" class="btn btn-primary btn-sm" style="margin-top: 3px">More</button></a></div>     
 					</div>
 				</div>
-			<!-- 		<div style="width:1100px; height: 5px;" class="boxlong"></div> -->	
+					<div style="width:1100px; height: 5px;" class="boxlong"></div>	
 				<div class="A1" id="Titleout4">
 					<div class="A2" id="ActT4">【捷運遊台北】四天三夜台北旅遊</div>
 					<div class="A3" id="ActP4"><img src=""></div>
@@ -288,7 +288,9 @@ $( function() {
 						<div class="aa3"><a href="" id="ActMpu3"><button type="button" class="btn btn-primary btn-sm" style="margin-top: 3px">More</button></a></div>     
 					</div>
 				</div>
-		<!-- 		<div style="width:1100px; height: 5px;" class="boxlong"></div> -->		
+				
+				<div style="width:1100px; height: 5px;" class="boxlong"></div>	
+					
 				<div class="A1" id="Titleouts">
 					<div class="A2" id="ActTpu4">【捷運遊台北】四天三夜台北旅遊</div>
 					<div class="A3" id="ActPpu4"><img src=""></div>

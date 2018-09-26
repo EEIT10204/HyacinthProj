@@ -79,7 +79,7 @@ public class ActDAOHibernate implements ActDAO {
 	
 	@Override
 	public List<ActBean> Newset() {
-		String HQL = "from ActBean as d order by d.actCreateDate asc";
+		String HQL = "from ActBean as d where actVisibility=1 order by d.actCreateDate desc";
 		Session session = getSession();
 		Query query = session.createQuery(HQL);
 		query.setMaxResults(6);
