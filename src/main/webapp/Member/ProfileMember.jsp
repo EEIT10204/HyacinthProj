@@ -81,6 +81,7 @@
                             <span class="float-left"><i class="fas fa-user-friends"></i>&nbsp;&nbsp;<strong>Social</strong></span> ${friendCount}
                         </a>           
                     </div>
+                   
                </div>
             </div>
             <div id="asideRight" class="col-md-8 tab-content" id="v-pills-tabContent">

@@ -97,7 +97,12 @@ html, body {
         
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          	<c:if test="${user == null }">
             <i class="far fa-user" style="font-size:36px"></i>
+            </c:if>
+            <c:if test="${user != null }">
+            <i class="fas fa-user-check" style="font-size:36px"></i>
+            </c:if>
           </a>
           <div id="memberNav" class="dropdown-menu">  
             <button class="dropdown-item" type="button" data-toggle="modal" data-target="#myModal">登入</button>
@@ -133,6 +138,7 @@ html, body {
       </ul>
     </div>
 </nav>
+
 <div>
 <!-- 模態框的宣告 class="modal show" 顯示模態框 fade淡入淡出效果-->
 				<div class="modal fade" id="myModal" tabindex="-1"> <!-- id:設定id定位, tabindex: 設定取消 -->
@@ -186,7 +192,7 @@ html, body {
 						  </div>
 						  <!-- 登入成功彈窗end -->
 					    <div id="registerTAB" class="container tab-pane fade"><br>
-					    	<h2>註冊會員</h2>
+					    	<h2>註冊會員</h2><button type="button" class="btn btn-outline-success btn-sm" id="hehe">一鍵輸入</button><br>
 							<form class="form-signin" action="<c:url value="/RegistController" />" method="post" enctype="multipart/form-data">
 							    <div class="form-group">
 							      <label for="memberAccount">帳號*:</label><br>
@@ -212,7 +218,7 @@ html, body {
 							      <input type="text" class="form-control" id="memberHierachy" name="memberHierachy" value="Uncertified">
 							    </div>
 							    <a id="moreInfo" href="#hideInfo"  data-toggle="collapse">選填資訊<i class="fas fa-angle-down"></i></a>
-							    <div id="hideInfo" class="collapse" style="margin-top:20px;">
+							    <div id="hideInfo" class="collapse" style="margin-top:20px;"> 
 							    	<div class="form-group">
 								      <label for="memberNickName">暱稱:</label><br>
 								      <input type="text" class="form-control" id="memberNickName" name="memberNickName">
@@ -427,6 +433,21 @@ $('#navSerach').click(function(event) {
     $(".file-upload").on('change', function(){
         readURL(this);
     });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+   	 $("#hehe").click(function(){
+   		$('#memberAccount').val("DemoTest");
+   		$('#memberPwd').val("qwe123");
+   		$('#memberMail').val("Demo@gmail.com");
+   		$('#memberName').val("註冊展示");
+   		$('#memberNickName').val("Demo");
+   		$("input[name='memberGender'][value='S']").prop("checked", true);
+   		$('#memberTel').val("0912345678");
+   		$('#memberBirthDay').val("1994-01-01");
+   	 })
+    })
+    
     </script>
 </body>
 </html>

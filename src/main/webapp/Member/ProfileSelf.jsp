@@ -66,6 +66,10 @@
 <!--                         </a> -->
                     </div>
                </div>
+               <div style="margin-top: 30px">
+					<button type="button" class="btn btn-outline-success btn-sm" onclick="getFriendRequest(${user.memberID})">一鍵加好友</button>
+					<button type="button" class="btn btn-outline-success btn-sm" onclick="getActRequest(${user.memberID})">一鍵加活動</button>
+				</div>
             </div>
             <div id="asideRight" class="col-md-8 tab-content" id="v-pills-tabContent">
                 <div class="tab-pane fade <c:if test="${page eq 'main'}"><c:out value="show active"/>  </c:if>" id="v-pills-news" role="tabpanel" aria-labelledby="v-pills-news-tab">
@@ -372,30 +376,58 @@
 	                        <div class="col">
 	                            <div class="content">
 	                                <c:forEach var="noticeFirst" items="${noticeListFirst}" varStatus="loop">
-	                              		<div class="alert alert-info fade in alert-dismissible show">
+	                                	<c:if test="${noticeFirst.actSNum=='0'}">
+	                              			<div class="alert alert-info fade in alert-dismissible show">
 	           								<button id="closeButton${loop.count}" type="button" onclick="isRead(${noticeFirst.noticeID})" class="close" data-dismiss="alert" aria-label="Close" >
 	              							<span aria-hidden="true" style="font-size:20px">&times;</span>
-	            							</button><a href="<c:url value="/ProfilePageGet?memberID=${noticeFirst.memberID_Sender}&lmi=${user.memberID}" />">${noticeFirst.messegeContent}</a>
-	            							<c:if test="${noticeFirst.actSNum=='0'and noticeFirst.caseID=='0'}">
+	            							</button>
+	            							<a href="<c:url value="/ProfilePageGet?memberID=${noticeFirst.memberID_Sender}&lmi=${user.memberID}" />">${noticeFirst.messegeContent}</a>
 									        	<div style="float: right">
 										            <span id="timeshow">${noticeFirst.noticeTime}</span>
 										            <div id="buttonStatus${loop.count}" style="display: inline-block;">
 										            <button id="confirmButton${loop.count}" type="button" onclick="friendAccept(${noticeFirst.memberID_Sender},${noticeFirst.memberID_Receiver})" class="btn btn-success btn-sm">接受</button>
 										            <button id="rejectButton${loop.count}" type="button" class="btn btn-danger btn-sm ">拒絕</button>
+	             									</div>
 	             								</div>
 	             							</div>
-	            							</c:if>
-	            							<c:if test="${noticeFirst.actSNum!='0'and noticeFirst.caseID=='0'}">
+	            						</c:if>
+	            						<c:if test="${noticeFirst.actSNum!='0'}">
+	         								<div class="alert alert-info fade in alert-dismissible show">
+	           								<button id="closeButton${loop.count}" type="button" onclick="isRead(${noticeFirst.noticeID})" class="close" data-dismiss="alert" aria-label="Close" >
+	              							<span aria-hidden="true" style="font-size:20px">&times;</span>
+	            							</button>
+	            							<a href="<c:url value="/actdisplay.controller?actSNum=${noticeFirst.actSNum}" />">${noticeFirst.messegeContent}</a>
 									        	<div style="float: right">
+									        		
 										            <span id="timeshow">${noticeFirst.noticeTime}</span>
 										            <div id="buttonStatus${loop.count}" style="display: inline-block;">
-										            <button id="confirmButton${loop.count}" type="button" onclick="ActAccept(${noticeFirst.memberID_Sender},${noticeFirst.memberID_Receiver},${noticeFirst.actSNum})" class="btn btn-success btn-sm">接受</button>
+										            <button class="btn btn-primary btn-sm " data-toggle="modal" data-target="#getActPreview" onclick="previewAct(${noticeFirst.actSNum})">預覽</button>
+										            <button id="confirmButton${loop.count}" type="button" onclick="friendAccept(${noticeFirst.memberID_Sender},${noticeFirst.memberID_Receiver})" class="btn btn-success btn-sm">接受</button>
 										            <button id="rejectButton${loop.count}" type="button" class="btn btn-danger btn-sm ">拒絕</button>
+	             									</div>
 	             								</div>
 	             							</div>
-	            							</c:if>
-	         						</div>
-                              </c:forEach>
+	            						</c:if>
+	         						</c:forEach>
+	         						
+	         						<!-- ActPreviewModal -->
+									<div class="modal fade" id="getActPreview" tabindex="-1" role="dialog" aria-labelledby="getActPreviewLabel" aria-hidden="true">
+									  <div class="modal-dialog" role="document">
+									    <div class="modal-content">
+										    <div class="modal-header">
+										        <h5 class="modal-title" id="ActTitle"></h5>
+										        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										          <span aria-hidden="true">&times;</span>
+										        </button>
+										    </div>
+									    	<div class="modal-body">
+									    		<img id="ActCover" src="" style="width:450px;height: 300px;"/>
+        										<p id="ActContent"></p>
+      										</div>
+      									</div>
+      								 </div>
+      								</div>
+      								<!-- ActPreviewModal -->
                             </div><!--content-->
                         </div> <!--rol-->
                     </div><!-- notificationRow end-->
@@ -434,7 +466,7 @@ function reloadOnce() {
 }
  
    function friendAccept(senderID, receiverID){
-    alert(senderID + ' - ' +receiverID);
+//     alert(senderID + ' - ' +receiverID);
     var buttonId = event.target.id; //當下按鈕ID
     var str = buttonId
     var laststr =str.substring(str.length-1,str.length)
@@ -452,7 +484,7 @@ function reloadOnce() {
     })
    }
 function ActAccept(senderID, receiverID , actSNum){
-	    alert(senderID + ' - ' +receiverID);
+// 	    alert(senderID + ' - ' +receiverID);
 	    var buttonId = event.target.id; //當下按鈕ID
 	    var str = buttonId
 	    var laststr =str.substring(str.length-1,str.length)
@@ -461,7 +493,7 @@ function ActAccept(senderID, receiverID , actSNum){
 // 	     alert(data.status)
 	     if(data.status=="回覆活動邀請成功"){
 	   var c = document.getElementById(buttonId).parentNode.id //當下按鈕找父層ID
-	   $("#"+c).html("<button type='button' class='btn btn-success btn-sm ' disabled>已接受</button>");
+	   $("#"+c).html("<button type='button' class='btn btn-success btn-sm ' disabled>已參加</button>");
 	   setTimeout('clickClose(closeButtonId)',1000);
 	   
 	  }
@@ -483,7 +515,50 @@ function clickClose(id){
     	})
    }
    
-  
+function getFriendRequest(memberID){
+	$.post("${pageContext.request.contextPath}/getFriendRequest",{"memberID":memberID},function(data){
+		if(data=="success"){
+			window.location.reload();
+		}else{
+			window.location.reload();
+		}
+	})
+	
+}
+function getActRequest(memberID){
+	$.post("${pageContext.request.contextPath}/getActRequest",{"memberID":memberID},function(data){
+		if(data=="success"){
+			window.location.reload();
+		}else{
+			window.location.reload();
+		}
+	})
+	
+}
+
+</script>
+<script> 
+function previewAct(actSNum){
+		$.ajax({
+			type : "get",
+			url : "${pageContext.request.contextPath}/actPrivew",
+			data : {
+				"actSNum" : actSNum
+			},
+			contentType : "application/json; charset=utf-8",
+			dataType : "json",
+			success : function(data) {
+				$('#ActTitle').empty().text(data['actTitle']);
+				$('#ActContent').empty().text(data['actIntro']);
+				$('#ActCover').attr("src","").attr("src","data:image/jpg;base64,"+ data['actPhotoToBase64']);
+
+
+			},
+			error : function(response) {
+
+			},
+		});
+	}
 </script>
 </body>
 </html>
