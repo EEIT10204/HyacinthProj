@@ -236,19 +236,19 @@ public class BlogPage1Controller {
 //		for(Object[] beanAsideHot1:beanAsideHot) {
 //			System.out.println((BlogBean)beanAsideHot1[0]);
 //		}
-		for(Object[] beanAsideHot1:beanAsideHot) {
-		System.out.println("test = "+((BlogBean)beanAsideHot1[0]).getBlogCoverToBase64());
-	}
-		for(Object[] beanAsideNew1:beanAsideNew) {
-			System.out.println(((BlogBean)beanAsideNew1[0]).getBlogReleaseTime());
-		}
+//		for(Object[] beanAsideHot1:beanAsideHot) {
+//		System.out.println("test = "+((BlogBean)beanAsideHot1[0]).getBlogCoverToBase64());
+//	}
+//		for(Object[] beanAsideNew1:beanAsideNew) {
+//			System.out.println(((BlogBean)beanAsideNew1[0]).getBlogReleaseTime());
+//		}
 //		System.out.println("beanAsideHot = " + beanAsideHot);
 //		System.out.println("beanAsideNew = " + beanAsideNew);
 		
-		for(Object[] beanMain1:beanMain) {
-			System.out.println("test22 = "+((BlogBean)beanMain1[0]).getBlogCover());
-			
-		}
+//		for(Object[] beanMain1:beanMain) {
+//			System.out.println("test22 = "+((BlogBean)beanMain1[0]).getBlogCover());
+//			
+//		}
 		
 		
 		
