@@ -186,13 +186,15 @@ $(document).ready(function() {
                    for(var i=0;i<getObj.rating;i++){
                        spanRating.append('<i class="fas fa-star checked"></i>');
                    }
-                   if(getObj.ratingPoints>=0.5){spanRating.append('<i class="fas fa-star-half-alt checked"></i>');}
-                   else{spanRating.append('<i class="fas fa-star"></i>');}	
-                   for(var i=0;i<(5-getObj.rating-1);i++){
-//                    	   alert("black star");
-                       spanRating.append('<i class="fas fa-star"></i>');
+                   if(getObj.rating<=4){
+                   	   if(getObj.ratingPoints>=0.5){spanRating.append('<i class="fas fa-star-half-alt checked"></i>');}
+                   	   else{spanRating.append('<i class="fas fa-star"></i>');}	
+//                 	   alert("black star:"+getObj.rating+'-'+getObj.ratingPoints);
+	                   for(var i=0;i<(5-getObj.rating-1);i++){
+	//                    	   alert("black star");
+	                       spanRating.append('<i class="fas fa-star"></i>');
+	                   }
                    }
-                   
                }
                
                    
