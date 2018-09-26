@@ -57,7 +57,7 @@ public class MemberUpdateController {
 // 			,@RequestParam("memberMail") String memberMail
  			,@RequestParam("memberPic") MultipartFile memberPic
 			) {
-		System.out.println("updateMember.controller is called~");
+//		System.out.println("updateMember.controller is called~");
 //		System.out.println("user="+user);
 //		System.out.println("memberBean="+memberBean);
 //		System.out.println("bindingResult="+bindingResult);
@@ -83,7 +83,7 @@ public class MemberUpdateController {
  			,@ModelAttribute(name="registrationForm") MemberBean memberBean,BindingResult bindingResult
  			,@RequestParam("memberPic") MultipartFile memberPic
 			) {
-		System.out.println("updateMemberBasic.controller is called~");
+//		System.out.println("updateMemberBasic.controller is called~");
 		memberBean.setMemberID(user.getMemberID());
 //		memberBean.setMemberAccount(user.getMemberAccount());
 //		memberBean.setMemberPwd(user.getMemberPwd());
@@ -100,7 +100,7 @@ public class MemberUpdateController {
  			@SessionAttribute(name="user") MemberBean user
  			,@ModelAttribute(name="privacyForm") MemberBean memberBean,BindingResult bindingResult
 			) {
-		System.out.println("updateMemberPrivacy.controller is called~");
+//		System.out.println("updateMemberPrivacy.controller is called~");
 		memberBean.setMemberID(user.getMemberID());
 		if(memberBean.getMemberPwd()==null || memberBean.getMemberPwd().length()==0) {memberBean.setMemberPwd(user.getMemberPwd());}
 		MemberBean result = memberService.updateProfilePrivacy(memberBean.getMemberID(),memberBean.getMemberPwd(),memberBean.getMemberMail());
@@ -111,7 +111,7 @@ public class MemberUpdateController {
 	@RequestMapping(path={"/sendMail.do"},method= {RequestMethod.GET})
 	@ResponseBody
 	public Map<String, String> sendMail(@SessionAttribute(name="user") MemberBean user) {
-		System.out.println("sendMail called.");
+//		System.out.println("sendMail called.");
 		Map<String, String> test = new HashMap<>();
 
 		MemberBean bean = memberService.sendVerificationMail(user);
@@ -120,7 +120,7 @@ public class MemberUpdateController {
 		}else {
 			test.put("result", "寄送驗證信失敗");
 		}
-		System.out.println("test="+test+",time="+new java.util.Date());
+//		System.out.println("test="+test+",time="+new java.util.Date());
 		return test;
 	}
 	
@@ -128,7 +128,7 @@ public class MemberUpdateController {
 	public String verifyMail(String account,String code,Model model,SessionStatus sessionStatus) {
 
 		boolean result = memberService.verifyMail(account, code);
-		System.out.println("account="+account+",code="+code+",result="+result+",time="+new java.util.Date());
+//		System.out.println("account="+account+",code="+code+",result="+result+",time="+new java.util.Date());
 		model.addAttribute("msg","信箱驗證");
 		sessionStatus.setComplete();
 		if(result) {
@@ -143,7 +143,7 @@ public class MemberUpdateController {
  			,@ModelAttribute(name="advancedForm") SubMemberBean subMemberBean,BindingResult bindingResult
  			,@RequestParam("memberCover") MultipartFile memberCover
 			) {
-		System.out.println("updateSubMember.controller is called~");
+//		System.out.println("updateSubMember.controller is called~");
 //		System.out.println("subMemberBean="+subMemberBean);
 //		System.out.println("memberCover="+memberCover);
 		if(subMemberBean.getMemberCover().length==0) {

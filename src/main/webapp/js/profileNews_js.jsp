@@ -365,7 +365,7 @@ $(document).ready(function() {
 	           $('#loader').css("display","block");
 	           setTimeout(function(){
 	                reqNews();
-	           },1000); //timeoutEnd	
+	           },300); //timeoutEnd	
 	        }
 	   	}
   })

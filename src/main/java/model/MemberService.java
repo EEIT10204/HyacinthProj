@@ -36,7 +36,7 @@ public class MemberService {
 			MemberService memberService = (MemberService) context.getBean("memberService");
 			
 			MemberBean login = memberService.login("Crystal", "CCC");
-			System.out.println("login=" + login);
+//			System.out.println("login=" + login);
 			
 //			MemberBean sign = new MemberBean();
 //			sign.setMemberAccount("insertHib23333");
@@ -107,12 +107,12 @@ public class MemberService {
 		if(bean!=null) {
 			if(newPassword!=null && newPassword.length()!=0) {
 				if(!bean.getMemberMail().equals(memberMail)) {
-					System.out.println("change Mail");
+//					System.out.println("change Mail");
 					MemberBean result = memberDAO.updatePrivacy(memberID, newPassword, memberMail,"Uncertified",generateUUID());
 					sendVerificationMail(result);
 					return result;
 				}else {
-					System.out.println("unchange Mail");
+//					System.out.println("unchange Mail");
 					return memberDAO.updatePrivacy(memberID, newPassword, memberMail,bean.getMemberHierachy(),bean.getMemberCertify());	
 				}
 			}
@@ -122,7 +122,7 @@ public class MemberService {
 	
 	//H.C.Chen
 	public MemberBean sendVerificationMail(MemberBean bean){
-		System.out.println("mailAddress="+bean.getMemberMail());
+//		System.out.println("mailAddress="+bean.getMemberMail());
 		
 		try {
 			Context initCtx = new InitialContext();

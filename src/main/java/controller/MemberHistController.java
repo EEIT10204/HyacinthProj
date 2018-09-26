@@ -43,9 +43,9 @@ public class MemberHistController {
 				e.printStackTrace();
 //				return null;
 			}
-			System.out.println("readNewsFromFriends called. user:"+ mId +"page="+p);
+//			System.out.println("readNewsFromFriends called. user:"+ mId +"page="+p);
 			List<NewsFeed> result = memberHistService.readNewsFromSelf(mId, p, 5);
-			System.out.println("result="+result);
+//			System.out.println("result="+result);
 			return result;
 		}
 		
@@ -61,9 +61,9 @@ public class MemberHistController {
 //				return null;
 			}
 			
-			System.out.println("readNewsFromFriends called. user:"+ user.getMemberID() +"page="+p);
+//			System.out.println("readNewsFromFriends called. user:"+ user.getMemberID() +"page="+p);
 			List<NewsFeed> result = memberHistService.readNewsFromFriends(user.getMemberID(), p, 5);
-			System.out.println("result="+result);
+//			System.out.println("result="+result);
 			return result;
 		}
 		
