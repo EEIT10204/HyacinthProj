@@ -286,7 +286,7 @@ p {
 			<div class="sub0">
 			
 			<div class="sub1">
-					<span id="hehe" class="btn btn-outline-secondary a5 btn-lg btnbor" >一鍵輸入</span>
+					<span id="hehe123" class="btn btn-outline-secondary a5 btn-lg btnbor" >一鍵輸入</span>
 			</div>
 			
 			
@@ -325,7 +325,7 @@ p {
                     <span id="changeMemberName2" href="#" class="a1 ">Kobe</span>
                 </div>
 				<h4 class="title-text">
-						<span><button id="changeKeyword" type="button"
+						<span><button id="" type="button"
 								class="btn btn-info fa-1x hot2">Article</span>
 				</h4>
                 <div class="divAS15">
@@ -549,7 +549,7 @@ p {
         });
         //swal.resetDefaults();//清空自訂預設值
         $(function () {
-            $("#hehe").click(function () {
+            $("#hehe123").click(function () {
                 //confirm dialog範例
                 swal({
                     title: "確定自動輸入？",
